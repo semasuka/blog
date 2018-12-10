@@ -1,11 +1,11 @@
 # Machine Intelligence Blog (MIB)
 Machine Intelligence Blog (MIB) is your companion blog on learning machine learning and data science. On this blog, I will cover everything in the world of Machine Learning from maths and to programming including data analysis.
 
-##Getting Started
+## Getting Started
 
 If you are interested in using or contribute to this blog, you will need some tools to be installed on your machine.
 
-###prerequisites
+### Prerequisites
 
 To run this blog on you locale machine, you will need to install [Jekyll](https://jekyllrb.com/"Jekyll"), kindly refer to the installation process on the official website of jekyll [here](https://jekyllrb.com/docs/installation/"here").
 
@@ -22,7 +22,7 @@ if successfully installed you will get
 ```
 here the x.x.x is the version of jekyll, and if you get an error, it means that jekyll has failed to install. Kindly check [this](https://jekyllrb.com/docs/troubleshooting/#installation-problems"this").
 
-###run
+### Run
 
 After this, you will clone this repo(or download it) then using the command line, navigate to the root directory and input this
 
@@ -44,13 +44,13 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 
 ## Built With
 
-*[Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
-*[this](https://github.com/mmistakes/jekyll-theme-basically-basic"this") jekyll skin used.
+* [Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
+* [this](https://github.com/mmistakes/jekyll-theme-basically-basic"this") jekyll skin used.
 
 ## Authors
 
-*[mmistakes](https://github.com/mmistakes"mmistakes") - jekyll initial skin creator
-*[semasuka](https://github.com/semasuka"semasuka") - author of this blog
+* [mmistakes](https://github.com/mmistakes"mmistakes") - jekyll initial skin creator
+* [semasuka](https://github.com/semasuka"semasuka") - author of this blog
 
 ## License
 
