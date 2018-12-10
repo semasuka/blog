@@ -30,7 +30,7 @@ After this, you will clone this repo(or download it) then using the command line
     bundle exec jekyll serve
 ```
 
-now you shall access to the blog at 127.0.0.0
+now you shall access to the blog at 127.0.0.1
 
 ## Customize
 
