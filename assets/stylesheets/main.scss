@@ -40,7 +40,7 @@ a {
                                 .btn:focus {
                                   background-color: #539F30; }
 .sidebar > .inner {
-    width: 81%
+    width: 68%
 }
 
 .icon--bitbucket {
@@ -71,7 +71,7 @@ a {
     fill: #539F30; }
   .icon--rss {
     fill: #539F30;
-    width: 6.6%; }
+    width: 10%; }
   .icon--soundcloud {
     fill: #539F30; }
   .icon--stackoverflow {
@@ -231,9 +231,32 @@ a {
 }
 @media (max-width: 31em){
     .entries-list .entry-title {
-        text-align: center
+        text-align: center;
+        font-size: 1.5em;
     }
     .site-footer {
         text-align: center;
     }
+    .entries-list .entry-excerpt > *:last-child {
+        font-size: 0.8em;
+    }
+}
+
+.sidebar > .inner {
+    padding-left: 3em;
+    padding-top: 3em;
+
+}
+
+@media (min-width: 64em){
+    .is--pushed {
+        transform: translateX(326px);
+    }
+}
+.copyright a {
+    text-decoration: none
+}
+.copyright a:hover {
+    color: #407727;
+    text-decoration: underline
 }

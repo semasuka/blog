@@ -16,11 +16,12 @@
 title: Machine Intelligence Blog
 email: ssemasuka@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Your companion blog on learning Machine Intelligence, Deep learning and Data science.
+  "Your companion blog on learning Machine Intelligence, Deep learning and Data science."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
 github_username:  semasuka
+linkedin_username: semasuka-stern-437096150
 logo: /assets/logo/logo_1.png
 
 #disqus
@@ -37,11 +38,6 @@ algolia:
   search_only_api_key: cfdcaf59f1ae09c690f4011885a019a8
   powered_by: # true (default), false
 
-# Build settings
-markdown: kramdown
-theme: jekyll-theme-basically-basic
-plugins:
-  - jekyll-feed
 
 #author
 author:
@@ -57,6 +53,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      comments: true
       author: "Semasuka Stern"
       read_time: true
 
@@ -65,6 +62,14 @@ paginate: 5  # amount of posts to show per page
 paginate_path: /page:num/
 # Google Analytics
 google_analytics: UA-77458218-1
+
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-basically-basic
+plugins:
+  - jekyll-feed
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
