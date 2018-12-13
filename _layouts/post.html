@@ -9,10 +9,11 @@ layout: default
     <article class="entry-wrap">
       <div class="entry-content">
         {{ content }}
+        {% include share-buttons.html %}
+        {% if site.disqus.shortname %}
+          {% include disqus_comments.html %}
+        {% endif %}
       </div>
-      {% if site.disqus.shortname %}
-        {% include disqus_comments.html %}
-      {% endif %}
     </article>
   </div>
 </main>

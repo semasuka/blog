@@ -1,9 +1,10 @@
 # Machine Intelligence Blog (MIB)
-Machine Intelligence Blog (MIB) is your companion blog on learning machine learning and data science. On this blog, I will cover everything in the world of Machine Learning from maths and to programming including data analysis.
+
+Machine Intelligence Blog (MIB) is your companion blog on learning machine learning and data science. On this blog, I will cover everything in the world of Machine Learning from maths to programming including data analysis.
 
 ## Getting Started
 
-If you are interested in using or contribute to this blog, you will need some tools to be installed on your machine.
+If you are interested in using or contribute to this blog, you will need some tools on your machine.
 
 ### Prerequisites
 
@@ -30,7 +31,7 @@ After this, you will clone this repo(or download it) then using the command line
     bundle exec jekyll serve
 ```
 
-now you shall access to the blog at 127.0.0.1
+now you shall access to the blog at 127.0.0.1(or http://localhost:4000)
 
 ## Customize
 
@@ -45,12 +46,12 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 ## Built With
 
 * [Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
-* [this](https://github.com/mmistakes/jekyll-theme-basically-basic"this") jekyll skin used.
+* [this](https://github.com/mmistakes/jekyll-theme-basically-basic"this") jekyll skin.
 
 ## Authors
 
 * [mmistakes](https://github.com/mmistakes"mmistakes") - jekyll initial skin creator
-* [semasuka](https://github.com/semasuka"semasuka") - author of this blog
+* [semasuka](https://github.com/semasuka"semasuka") - author and designer of the blog
 
 ## License
 
