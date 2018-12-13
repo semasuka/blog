@@ -13,16 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Machine Intelligence Blog
+title: MIB
 email: ssemasuka@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  "Your companion blog on learning Machine Intelligence, Deep learning and Data science."
+description: Up & running with Machine Learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
 github_username:  semasuka
 linkedin_username: semasuka-stern-437096150
 logo: /assets/logo/logo_1.png
+
 
 #disqus
 disqus:
@@ -37,7 +37,6 @@ algolia:
   index_name: Machine Intelligence Blog
   search_only_api_key: cfdcaf59f1ae09c690f4011885a019a8
   powered_by: # true (default), false
-
 
 #author
 author:
