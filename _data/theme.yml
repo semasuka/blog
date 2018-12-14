@@ -23,6 +23,13 @@ t:
   of: "of"
   min_read: "min read"
   present: "Present"
+  
+#nav
+navigation_pages:
+  - archive.md
+  - about.md
+
+
 
 # Google Fonts
 google_fonts:
@@ -34,5 +41,3 @@ google_fonts:
 # Create a custom list to override the default setting of including links to all
 # pages that have a `title`. Add raw page paths in the order you'd like.
 
-navigation_pages:
-  - about.md

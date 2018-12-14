@@ -23,7 +23,14 @@
       {% if page.date %}
         {% include author %}
         <p class="entry-meta">
-          {% if author_name %}<span class="byline-item">{{ author_name | prepend: 'by ' }}</span>{% endif %}<span class="byline-item"><span class="icon">{% include icon-calendar.svg %}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%a %B %-d, %Y at %H:%M" }}</time></span>{% if page.read_time %} <span class="byline-item"><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</span>{% endif %}
+          {% if author_name %}
+            <span class="byline-item">{{ author_name | prepend: 'by ' }}</span>
+          {% endif %}
+          <span class="byline-item"><span class="icon"><img src="../assets/logo/tags.png" height="42" width="42"></span>{{ page.tags | join: ", " }}</span>
+          <span class="byline-item"><span class="icon">{% include icon-calendar.svg %}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%a %B %-d, %Y"}}</time></span>
+          {% if page.read_time %}
+            <span class="byline-item"><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</span>
+          {% endif %}
         </p>
       {% endif %}
 

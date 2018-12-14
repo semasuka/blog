@@ -15,7 +15,6 @@
 # in the templates via {{ site.myvariable }}.
 title: MIB
 email: ssemasuka@gmail.com
-description: Up & running with Machine Learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
@@ -36,7 +35,7 @@ algolia:
   application_id: S8599KF4SX
   index_name: Machine Intelligence Blog
   search_only_api_key: cfdcaf59f1ae09c690f4011885a019a8
-  powered_by: # true (default), false
+  powered_by: false
 
 #author
 author:
@@ -71,6 +70,7 @@ theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
 
 
 # Exclude from processing.
