@@ -57,8 +57,10 @@ defaults:
       read_time: true
 
 #pagination
-paginate: 5  # amount of posts to show per page
+paginate: 4  # amount of posts to show per page
 paginate_path: /page:num/
+
+
 # Google Analytics
 google_analytics: UA-77458218-1
 
@@ -68,6 +70,7 @@ markdown: kramdown
 theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 
 # Exclude from processing.

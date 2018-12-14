@@ -7,9 +7,9 @@ permalink: /about/
 
 My name is Semasuka Stern, I am a passionate software engineer and an unapologetically geek. I been writing code for 3 years, since then I have graduated from university and a coding bootcamp. Now, I am focusing more on machine intelligence (or machine learning) and it's real world-application to solve humankind problems.
 
-# Why another coding blog?
+# Why another ML/coding blog?
 
-I promise, this one is different. I'll teach you Machine Learning from the beginner level to the expert level as I am continually share important concepts through my posts every week. these concepts range from maths, programming to algorithm optimization.
+I promise, this one is different. I'll start from the beginner level of Machine Learning to the expert level and will continually share important concepts ranging from maths, programming to algorithm optimization through my posts every week.
 
 # About this blog
 

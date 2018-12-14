@@ -299,4 +299,32 @@ a {
     text-align: center;
 
 }
+@media (min-width: 600px){
+    #page-title {
+        line-height: 100px
+    }
+}
+.pager ul {
+    text-align: -webkit-center;
 
+}
+.pager a {
+    background-color: white;
+    color: black;
+    width: 15%;
+    border: 0.7px dotted #d7d8da;
+    border-radius: 20px;
+    -webkit-box-transition: all 0.5s ease;
+    -moz-box-transition: all 0.5s ease;
+    transition: all 1s ease;
+}
+.pager a:hover {
+    -webkit-box-shadow: 9px 5px 52px -7px rgba(0,0,0,0.52);
+    -moz-box-shadow: 9px 5px 52px -7px rgba(0,0,0,0.52);
+    box-shadow: 9px 5px 52px -7px rgba(0,0,0,0.52);
+    -webkit-box-transition: all 0.5s ease;
+    -moz-box-transition: all 0.5s ease;
+    transition: all 1s ease;
+    background-color: white;
+    color: #539F30
+}
