@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: MIB
 email: ssemasuka@gmail.com
+description: "Up & running with ML"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
@@ -54,9 +55,10 @@ defaults:
       comments: true
       author: "Semasuka Stern"
       read_time: true
+      permalink: /:title
 
 #pagination
-paginate: 4  # amount of posts to show per page
+paginate: 5  # amount of posts to show per page
 paginate_path: /page:num/
 
 
@@ -66,6 +68,9 @@ google_analytics: UA-77458218-1
 
 # Build settings
 markdown: kramdown
+kramdown:
+  auto_ids: false
+
 theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed

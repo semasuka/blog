@@ -26,7 +26,7 @@ t:
   
 #nav
 navigation_pages:
-  - archive.md
+  - archives.md
   - about.md
 
 

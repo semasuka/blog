@@ -13,8 +13,7 @@ I promise, this one is different. I'll start from the beginner level of Machine 
 
 # About this blog
 
-This blog is powered by [Jekyll](https://jekyllrb.com
-"Jekyll") using [this](https://github.com/mmistakes/jekyll-theme-basically-basic) skin. I have tweaked it with my own styling. If you wish to use this blog as a template to create your own blog, fork it on my github profile [here](https://github.com/semasuka/blog).
+This blog is powered by [Jekyll](https://jekyllrb.com "Jekyll") using [this](https://github.com/mmistakes/jekyll-theme-basically-basic) skin. I have tweaked it with my own styling. If you wish to use this blog as a template to create your own blog, fork it on my github profile [here](https://github.com/semasuka/blog).
 
 All of the content on this site is made available at no charge, for the benefit of the community. Please don’t reproduce the entire content (or very substantial portions) of any article without asking first.
 

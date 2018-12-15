@@ -1,7 +1,6 @@
 ---
 title:  "Python?do you mean the snake?"
-permalink: "python-do-you-mean-the-snake"
-image: ../assets/post_images/python_snake.jpg
+image: ../assets/post_images/python-snake.jpg
 tags:
 - python
 - programming

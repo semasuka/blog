@@ -1,6 +1,6 @@
 ---
 title:  "What are the requirements to get started in Machine Intelligence"
-permalink: "what-are-the-requirements"
+image: ../assets/post_images/getting-started.jpg
 tags:
 - General knowledge
 ---
