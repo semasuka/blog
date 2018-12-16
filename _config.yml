@@ -71,12 +71,14 @@ markdown: kramdown
 kramdown:
   auto_ids: false
 
-theme: jekyll-theme-basically-basic
+#theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
 
+#github page for custom theme
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
