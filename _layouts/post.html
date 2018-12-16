@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% include page-intro.html %}
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        {{ content }}
+        {% include share-buttons.html %}
+        {% if site.disqus.shortname %}
+          {% include disqus_comments.html %}
+        {% endif %}
+      </div>
+    </article>
+  </div>
+</main>
+{% include progress_bar.html %}
+
+
