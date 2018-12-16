@@ -80,6 +80,11 @@ plugins:
 #github page for custom theme
 remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
+#travis sync with algoria
+exclude: [vendor]
+
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
