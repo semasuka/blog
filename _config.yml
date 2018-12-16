@@ -16,8 +16,8 @@
 title: MIB
 email: ssemasuka@gmail.com
 description: "Up & running with ML"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://semasuka.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
 github_username:  semasuka
 linkedin_username: semasuka-stern-437096150
@@ -35,7 +35,7 @@ search_provider: algolia
 algolia:
   application_id: S8599KF4SX
   index_name: Machine Intelligence Blog
-  search_only_api_key: cfdcaf59f1ae09c690f4011885a019a8
+  search_only_api_key: 6c3dac57a31472daf82d66b8e2354adf
   powered_by: false
 
 #author

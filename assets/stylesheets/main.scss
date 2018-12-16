@@ -332,3 +332,9 @@ a {
 #tag-icon {
     text-align: center;
 }
+#entry a {
+    text-decoration: none
+}
+#entry a:hover {
+    text-decoration: underline
+}

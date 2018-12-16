@@ -1,6 +1,7 @@
 ---
 title: Why machine intelligence now
-tags: 
-- General knowledge
+tags:
+- machine learning
+- general knowledge
 ---
 In 2019

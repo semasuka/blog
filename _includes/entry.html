@@ -21,7 +21,7 @@
   <footer class="entry-meta">
     <ul>
       {% if post.tags %}
-        <li><span class="icon"><img src="../assets/logo/tags.png" height="42" width="42"></span>{{ post.tags | join: ", " }}</li>
+        <li><span class="icon"><img src=" {{ site.baseurl }}/assets/logo/tags.png" height="42" width="42"></span>{{ post.tags | join: ", " }}</li>
       {% endif %}
       {% if post.date %}
         <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
