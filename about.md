@@ -9,7 +9,7 @@ My name is Semasuka Stern, I am a passionate software engineer and an unapologet
 
 # Why another ML/coding blog?
 
-I promise, this one is different. I'll start from the beginner level of Machine Learning to the expert level and will continually share important concepts ranging from maths, programming to algorithm optimization through my posts every week.
+I promise, this one is different. I'll start from the beginner level of Machine Learning to the expert level and will continually share general knowledge about AI and most importantly main concepts on machine learning starting from maths, programming, data analysis to algorithm optimization through my posts every week.
 
 # About this blog
 

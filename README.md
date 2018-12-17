@@ -1,6 +1,6 @@
 # Machine Intelligence Blog (MIB)
 
-Machine Intelligence Blog (MIB) is your companion blog to get you up and running with machine learning and data science. On this blog, I will cover topics in the machine learning field ranging from maths, programming, algorithm optimization with also data analysis.
+Machine Intelligence Blog (MIB) is your companion blog to get you up and running with machine learning and data science. On this blog, I will cover topics in the machine learning field ranging from maths, programming, algorithm optimization and data analysis.
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ now you shall access to the blog at 127.0.0.1:4000 (or http://localhost:4000).
 
 ## Customize
 
-In order to customize this blog as you wish, please refer to the official skin github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
+In order to customize this blog as you wish, you can clone this repo and for the documentation please refer to the official skin github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
 
 ## Deployment
 
