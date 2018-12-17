@@ -71,11 +71,14 @@ markdown: kramdown
 kramdown:
   auto_ids: false
 
-#theme: jekyll-theme-basically-basic
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+
+
+#default theme: jekyll-theme-basically-basic
 
 #github page for custom theme
 remote_theme: "mmistakes/jekyll-theme-basically-basic"
