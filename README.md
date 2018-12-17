@@ -59,7 +59,7 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 * [Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
 * [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll skin.
 * [Disqus](https://disqus.com"disqus") as comment generator
-* [Google analytics](https://analytics.google.com/analytics/web/"Google analytics") as the site analytics
+* [Google_analytics](https://analytics.google.com/analytics/web/"Google analytics") as the site analytics
 * [Algolia](https://www.algolia.com/"Algolia") as the search tool within the blog
 * [Jekyll feed](https://github.com/jekyll/jekyll-feed) as the atom RSS generator
 * [Jekyll seo](https://github.com/jekyll/jekyll-seo-tag) as the blog seo
