@@ -33,9 +33,9 @@ disqus:
 search: true
 search_provider: algolia
 algolia:
-  application_id: S8599KF4SX
+  application_id: 9PQPH48NQ0
   index_name: Machine Intelligence Blog
-  search_only_api_key: 6c3dac57a31472daf82d66b8e2354adf
+  search_only_api_key: 13d366e024bfaf97e4a9e23de2b9a719
   powered_by: false
   files_to_exclude:
     - index.html
