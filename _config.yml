@@ -37,6 +37,10 @@ algolia:
   index_name: Machine Intelligence Blog
   search_only_api_key: 6c3dac57a31472daf82d66b8e2354adf
   powered_by: false
+  files_to_exclude:
+    - index.html
+    - about.md
+    - archives.md
 
 #author
 author:
@@ -83,11 +87,6 @@ plugins:
 
 #github page for custom theme
 remote_theme: "mmistakes/jekyll-theme-basically-basic"
-
-#travis ignored
-exclude: [vendor]
-
-
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
