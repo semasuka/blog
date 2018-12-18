@@ -78,13 +78,14 @@ plugins:
   - jekyll-seo-tag
 
 
-#default theme: jekyll-theme-basically-basic
+#default
+theme: jekyll-theme-basically-basic
 
 #github page for custom theme
-remote_theme: "mmistakes/jekyll-theme-basically-basic"
+#remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
 #travis ignored
-exclude: vendor
+exclude: [vendor]
 
 
 
