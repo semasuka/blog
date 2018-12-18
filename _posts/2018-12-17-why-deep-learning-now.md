@@ -31,9 +31,9 @@ Since the introduction of the world wide web in 1994, the amount of data on the 
 
 This has eventually lead to the exponential creation of data, this type of data is called Big Data and is characterized by 3 Vs which are:
 
-1 Volume
-2 Velocity
-3 Variety
+* Volume
+* Velocity
+* Variety
 
 Start with its volume, big data needs to be analysed with special tools like Hive, Spark or Hadoop because traditional database technologies like SQL or NoSQL won't be able to handle its magnitude efficiently. Talking of its velocity, which is the amount of data that flows in and out a database per second. For example, a company like Facebook has to deal with a large quantity of data each second from its users who are streaming or liking a video. Finally, when it comes to the variety, we can see a rapid change in the type of data found on the internet. Contrary to the early days where we mostly found texts linked together, now we find a variety of data file format from PDF, photos, videos, audio, location data etc.
 
@@ -41,4 +41,4 @@ The perfect marriage between big data and the increased processing power has all
 
 We can't deny that deep learning has a bright future ahead but also we should be concerned about its drawbacks like fake news.
 
-Thank you for reading this post. If you have a thought, I would love to hear it by commenting below.
+Thank you for reading this post. If you like this post, please subscribe to stay updated with a new post and if you have a thought, I would love to hear it by commenting below.

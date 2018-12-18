@@ -318,7 +318,7 @@ a {
     border-radius: 20px;
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 .pager a:hover {
     -webkit-box-shadow: 9px 5px 52px -7px rgba(0,0,0,0.52);
@@ -326,7 +326,7 @@ a {
     box-shadow: 9px 5px 52px -7px rgba(0,0,0,0.52);
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     background-color: white;
     color: #539F30
 }

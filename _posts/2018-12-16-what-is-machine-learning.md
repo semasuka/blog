@@ -36,4 +36,5 @@ Machine learning models have become increasingly efficient due to two important 
 
 In conclusion, I hope now you have a basic understanding of machine learning and why it matters. At this point, I think we can't live without Artificial intelligence because it is solving so many problems and more are yet to be solved. And yes, I know it will take so many jobs in the next decade but we can prevent this by encouraging people to switch to more creative jobs in order to remain relevant in the job market. That's why I have created this blog, to raise awareness and to encourage people to code and start to learn Machine Learning because that's where the world is heading, toward the 4th revolution. We have to embrace AI and also teach people from different background cultures around the world on how to utilize it for our common good.
 
-Thank you for reading this post. If you have a thought, I would love to hear it by commenting below.
+
+Thank you for reading this post. If you like this post, please subscribe to stay updated with a new post and if you have a thought, I would love to hear it by commenting below.
