@@ -24,11 +24,11 @@ So what happened? you may ask, well two important factors happened. processing p
 
 Since the launch of the Intel 4004 in 1971 which was composed of 2300 transistors capable of executing between 46,250 to 92,500 instructions per second(which was groundbreaking at the time), fast forward to these days with the Intel i9 capable of performing 80 billions instructions per second which translate to a 900 times increase in processing power. this increase in the power of computers has also made computers less power hungry and very affordable to the mass population and universities which invest a lot in computers labs. Another notable mention is the Qualcomm's Snapdragon 8cx new 7nm processor (processors found so far only in smartphones) said to be able to power a PC. if I would have been told this two years ago, I would have not believed it. This is to show you how the processing power has gone from the early days of a computer filling a whole room up to now where it can be carried in a pocket. But as of anything, this trend will not continue forever and we are reaching the plateau of microprocessor's innovation.
 
-[Moore_law](/blog/assets/post_cont_image/mlaw.png)
+![Moore_law](/blog/assets/post_cont_image/mlaw.png)
 
 Since the introduction of the world wide web in 1994, the amount of data on the web, which proportionally correlated to the number of internet users (bots and humans), has skyrocketed. More people, especially from the developing countries, are discovering the internet dues to a decrease in the price of smartphones and internet bundles. There is more and more tweets, shares and clicks on the web each year. Adding to this, online retailers services, schools to hospitals need to store data from their customers.
 
-[use_of_internet](/blog/assets/post_cont_image/web-per-min.jpg)
+![use_of_internet](/blog/assets/post_cont_image/web-per-min.jpg)
 
 This has eventually lead to the exponential creation of data, this type of data is called Big Data and is characterized by 3 Vs which are:
 
