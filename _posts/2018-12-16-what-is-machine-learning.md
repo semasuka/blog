@@ -1,5 +1,5 @@
 ---
-title:  "What is Machine Learning? does it matter?"
+title:  What is Machine Learning? does it matter?
 image: /assets/post_images/what-is-ml.jpg
 excerpt_separator: <!-- more -->
 tags:

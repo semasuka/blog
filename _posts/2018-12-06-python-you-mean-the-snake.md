@@ -1,5 +1,5 @@
 ---
-title:  "Python?do you mean the snake?"
+title:  "Python? you mean the snake?"
 image: /assets/post_images/python-snake.jpg
 tags:
 - python
