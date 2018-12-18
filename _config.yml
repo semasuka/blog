@@ -40,7 +40,6 @@ algolia:
   files_to_exclude:
     - index.html
     - about.md
-    - archives.md
 
 #author
 author:
