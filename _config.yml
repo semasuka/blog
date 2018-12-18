@@ -83,8 +83,8 @@ plugins:
 #github page for custom theme
 remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
-#travis sync with algoria
-exclude: [vendor]
+#travis ignored
+exclude: vendor
 
 
 
