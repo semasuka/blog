@@ -7,7 +7,7 @@ tags:
 - programming
 - tutorial
 ---
-No, I ain't talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural. The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.<!-- more -->
+No, I ain't talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.<!-- more --> The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.
 
 ![fastest growing language](/blog/assets/post_cont_image/fastest-prg-lang.png)
 picture credit: [stackoverflow](https://insights.stackoverflow.com/survey/2018)
