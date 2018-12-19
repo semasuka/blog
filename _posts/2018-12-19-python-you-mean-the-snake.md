@@ -31,10 +31,13 @@ Let's install python but before we start, I have to mention one thing about Pyth
 
 Go to the official python organization [here](https:https://www.python.org/downloads/) and download the latest version of Python for your platform (windows, mac os or Linux)and install it.
 
-NB: while you are installing Python on Windows, remember to tick the box "Add Python 3 to PATH" in order to use it in the command line
-![tick installation]()
+![python download](/blog/assets/post_cont_image/py-web.png)
 
-Now go to your terminal/command line and type(/blog/assets/post_cont_image/tick-py.png)
+NB: while you are installing Python on Windows, remember to tick the box "Add Python 3 to PATH" in order to use it in the command line
+
+![tick installation](/blog/assets/post_cont_image/tick-py.png)
+
+Now go to your terminal/command line and type
 
 After the installation, run the following command
 
