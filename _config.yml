@@ -30,16 +30,7 @@ disqus:
 
 
 #search
-search: false
-search_provider: algolia
-algolia:
-  application_id: 9PQPH48NQ0
-  index_name: Machine Intelligence Blog
-  search_only_api_key: 13d366e024bfaf97e4a9e23de2b9a719
-  powered_by: true
-  files_to_exclude:
-    - index.html
-    - about.md
+search: true
 
 #author
 author:
