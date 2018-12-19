@@ -30,13 +30,13 @@ disqus:
 
 
 #search
-search: true
+search: false
 search_provider: algolia
 algolia:
   application_id: 9PQPH48NQ0
   index_name: Machine Intelligence Blog
   search_only_api_key: 13d366e024bfaf97e4a9e23de2b9a719
-  powered_by: false
+  powered_by: true
   files_to_exclude:
     - index.html
     - about.md
@@ -58,7 +58,6 @@ defaults:
       comments: true
       author: "Semasuka Stern"
       read_time: true
-      permalink: /:title
 
 #pagination
 paginate: 5  # amount of posts to show per page
