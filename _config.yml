@@ -31,8 +31,13 @@ disqus:
 
 #search
 search: true
-search_provider: lunr
-search_full_content: false
+search_provider: algolia
+algolia:
+  application_id: 2G0E5ME37Q
+  index_name: Machine Learning Blog
+  search_only_api_key: afde2e91a28f543ce7c4afdefa8ecfbf
+  powered_by: true
+
 #author
 author:
   name: Semasuka Stern
