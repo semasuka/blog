@@ -31,6 +31,8 @@ disqus:
 
 #search
 search: true
+search_provider: lunr
+search_full_content: true
 
 #author
 author:
