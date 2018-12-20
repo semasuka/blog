@@ -32,7 +32,7 @@ disqus:
 #search
 search: true
 search_provider: lunr
-search_full_content: true
+search_full_content: false
 #author
 author:
   name: Semasuka Stern
