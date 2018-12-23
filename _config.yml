@@ -17,7 +17,7 @@ title: MIB
 email: ssemasuka@gmail.com
 description: "Up & running with ML"
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://semasuka.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://semasuka.ml/blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
 github_username:  semasuka
 linkedin_username: semasuka-stern-437096150
