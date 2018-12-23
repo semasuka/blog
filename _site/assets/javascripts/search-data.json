@@ -1,0 +1,21 @@
+var store = [{
+        "title": "What is Machine Learning anyway? does it matter?",
+        "excerpt":"Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI). These days, it is very common to hear this: “…the cameras on X...","categories": [],
+        "tags": ["machine learning","artificial intelligence"],
+        "url": "http://localhost:4000/blog/2018/12/16/what-is-machine-learning.html"
+      },{
+        "title": "Why deep learning now?",
+        "excerpt":"As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into...","categories": [],
+        "tags": ["deep learning"],
+        "url": "http://localhost:4000/blog/2018/12/17/why-deep-learning-now.html"
+      },{
+        "title": "The requirements to get started in Machine Intelligence",
+        "excerpt":"Machine learning is a cross-disciplinary field that includes computer science, mathematics and sometimes domain knowledge. We can’t just focus on one part and expect to be great at it, and no you don’t have to be a master at everything to get started as it is said jack of all...","categories": [],
+        "tags": ["machine learning"],
+        "url": "http://localhost:4000/blog/2018/12/18/what-are-the-requirements.html"
+      },{
+        "title": "Python? you mean the snake?",
+        "excerpt":"No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly...","categories": [],
+        "tags": ["python","programming","tutorial"],
+        "url": "http://localhost:4000/blog/2018/12/19/python-you-mean-the-snake.html"
+      }]

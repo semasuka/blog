@@ -41,7 +41,7 @@ layout: page
             {% include entry.html %}
           {% endfor %}
         </div>
-        <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+        <a href="#" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: '' }} &uarr;</a>
       </section>
     {% endif %}
   {% endfor %}

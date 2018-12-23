@@ -1,7 +1,7 @@
 ---
 layout: tags
-title: Archive
-permalink: /archive/
+title: Archives
+permalink: /archives/
 ---
 
-# Archive & tags
+# Archives & tags
