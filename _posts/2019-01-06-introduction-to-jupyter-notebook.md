@@ -215,7 +215,7 @@ Another magic command is %% which mean that all the lines of code in the cell wi
 
 ![Jupyter_all_cmd](/blog/assets/post_cont_image/j_all_cmd.png)
 
-let's use the %%HTML, which basically means that all the code in the cell will be rendered as HTML, we will use the iframe tag to display a video for YouTube.
+let's use the %%HTML, which basically means that all the code in the cell will be rendered as HTML, we will use the iframe tag to display a video from YouTube.
 
 ![Jupyter_html](/blog/assets/post_cont_image/j_html.png)
 
