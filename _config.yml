@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: MIB
 email: ssemasuka@gmail.com
-description: "Up & running with ML"
+description: "Up & running with machine learning | machine learning blog"
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://semasuka.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: semasuka
@@ -36,7 +36,14 @@ algolia:
   application_id: 2G0E5ME37Q
   index_name: Machine Learning Blog
   search_only_api_key: afde2e91a28f543ce7c4afdefa8ecfbf
-  powered_by: true
+  powered_by: false
+  files_to_exclude:
+    - archive.md
+    - index.html
+    - archives.md
+    - about.md
+    - README.md
+
 
 #author
 author:

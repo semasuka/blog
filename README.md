@@ -69,7 +69,7 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 
 * [semasuka](https://github.com/semasuka"semasuka") - author and designer of the blog.
 
-* [mmistakes](https://github.com/mmistakes"mmistakes") - initial jekyll skin creator.
+* [mmistakes](https://github.com/mmistakes"mmistakes") - initial jekyll theme creator.
 
 ## License
 

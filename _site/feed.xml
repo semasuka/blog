@@ -1,4 +1,242 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2018-12-23T17:41:46+02:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">MIB</title><subtitle>Up &amp; running with ML</subtitle><author><name>Semasuka Stern</name></author><entry><title type="html">Jupyter notebook.. your indispensable tool</title><link href="http://localhost:4000/blog/2018/12/23/jupyter-notebook.html" rel="alternate" type="text/html" title="Jupyter notebook.. your indispensable tool" /><published>2018-12-23T00:00:00+02:00</published><updated>2018-12-23T00:00:00+02:00</updated><id>http://localhost:4000/blog/2018/12/23/jupyter-notebook</id><content type="html" xml:base="http://localhost:4000/blog/2018/12/23/jupyter-notebook.html"></content><author><name>Semasuka Stern</name></author><category term="python" /><category term="jupyter" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/blog/assets/post_images/jupyter.png" /></entry><entry><title type="html">Python? you mean the snake?</title><link href="http://localhost:4000/blog/2018/12/19/python-you-mean-the-snake.html" rel="alternate" type="text/html" title="Python? you mean the snake?" /><published>2018-12-19T00:00:00+02:00</published><updated>2018-12-19T00:00:00+02:00</updated><id>http://localhost:4000/blog/2018/12/19/python-you-mean-the-snake</id><content type="html" xml:base="http://localhost:4000/blog/2018/12/19/python-you-mean-the-snake.html">&lt;p&gt;No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.&lt;!-- more --&gt; The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://semasuka.github.io/blog/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://semasuka.github.io/blog/blog/" rel="alternate" type="text/html" /><updated>2019-01-06T16:56:08+02:00</updated><id>https://semasuka.github.io/blog/blog/feed.xml</id><title type="html">MIB</title><subtitle>Up &amp; running with machine learning | machine learning blog</subtitle><author><name>Semasuka Stern</name></author><entry><title type="html">Introduction to Jupyter notebook</title><link href="https://semasuka.github.io/blog/blog/2019/01/06/introduction-to-jupyter-notebook.html" rel="alternate" type="text/html" title="Introduction to Jupyter notebook" /><published>2019-01-06T00:00:00+02:00</published><updated>2019-01-06T00:00:00+02:00</updated><id>https://semasuka.github.io/blog/blog/2019/01/06/introduction-to-jupyter-notebook</id><content type="html" xml:base="https://semasuka.github.io/blog/blog/2019/01/06/introduction-to-jupyter-notebook.html">&lt;p&gt;Jupyter notebook formally called ipython, is a web application that runs in the browser and runs the code and also add comments, visualizations, paragraph, equations, title, add links, figures, LaTex and so on in order to explain the code by using markdown language which is very useful while writing code that needs to be explained.&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;p&gt;The good thing with Jupyter it is the fact that you can easily integrate and import different machine learning packages like pandas, numpy, scipy and matplotlib and many more through anaconda distribution. This is why Jupyter has become the most indispensable tool for anyone doing machine learning and data science and did I forgot to mention? it is 100% FREE!!&lt;/p&gt;
+
+&lt;h3&gt;These are the top 10 reasons data scientist use jupyter notebook&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;All in one place: The Jupyter Notebook is a web-based interactive environment that combines code, rich text, images, videos, animations, mathematical equations, plots, maps, interactive figures and widgets, and graphical user interfaces, into a single document.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Easy to share: Notebooks are saved as structured text files (JSON format), which makes them easily shareable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Easy to convert: Jupyter comes with a special tool, nbconvert, which converts notebooks to other formats such as HTML and PDF. Another online tool, nbviewer, allows us to render a publicly-available notebook directly in the browser.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Language independent: The architecture of Jupyter is language independent. The decoupling between the client and kernel makes it possible to write kernels in any language.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Easy to create kernel wrappers: Jupyter brings a lightweight interface for kernel languages that can be wrapped in Python. Wrapper kernels can implement optional methods, notably for code completion and code inspection.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Easy to customize: Jupyter interface can be used to create an entirely customized experience in the Jupyter Notebook (or another client application such as the console).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extensions with custom magic commands: Create IPython extensions with custom magic commands to make interactive computing even easier. Many third-party extensions and magic commands exist, for example, the %%cython magic that allows one to write Cython code directly in a notebook.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stress-free Reproducible experiments: Jupyter notebooks can help you conduct efficient and reproducible interactive computing experiments with ease. It lets you keep a detailed record of your work. Also, the ease of use of the Jupyter Notebook means that you don’t have to worry about reproducibility; just do all of your interactive work in notebooks, put them under version control, and commit regularly. Don’t forget to refactor your code into independent reusable components.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Effective teaching-cum-learning tool: The Jupyter Notebook is not only a tool for scientific research and data analysis but also a great tool for teaching. An example is IPython Blocks – a library that allows you or your students to create grids of colorful blocks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Interactive code and data exploration: The ipywidgets package provides many common user-interface controls for exploring code and data interactively.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;source: &lt;a href=&quot;https://hub.packtpub.com/10-reasons-data-scientists-love-jupyter-notebooks/&quot;&gt;Packt&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;Jupyter comes bundle in Anaconda navigator so logically you will need first to download Anaconda &lt;a href=&quot;https://www.anaconda.com/download/&quot;&gt;here&lt;/a&gt;. Quick mention, you will be asked to download between python 2 or python 3, and as I have already said in my other post I will be using python 3 on this blog, so I suggest to download Python 3 as well.&lt;/p&gt;
+
+&lt;p&gt;After the downloading and installing the anaconda executable file, you check if anaconda is properly installed by using the following command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and this shall display&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/anaconda_info.png&quot; alt=&quot;anaconda_info&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can see the version of python and anaconda installed.&lt;/p&gt;
+
+&lt;h3&gt;Installation of Machine Learning packages&lt;/h3&gt;
+
+&lt;p&gt;to install numpy run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install pandas run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda pandas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install scipy run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda scipy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install matplotlib run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; conda-forge matplotlib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install scitkit-learn run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; anaconda scikit-learn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install tensorflow run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; conda-forge tensorflow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install pytorch run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; pytorch pytorch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to install keras run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; conda-forge keras
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt;Update the packages&lt;/h3&gt;
+
+&lt;p&gt;To update all the packages install in Anaconda at once, run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda update &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and to update python version in Anaconda, run this command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda update python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt;Basics on the interface of Jupyter&lt;/h3&gt;
+
+&lt;p&gt;Ok now that we all set, you can click on the anaconda shortcut and you shall get a menu like this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_menu.png&quot; alt=&quot;Jupyter_menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;now click on launch jupyter notebook and it should open a new tab in your default browser window at &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8888&lt;/code&gt;. The path shows where will the .ipynb file (jupyter notebook extension file) will be saved on the disk. To create a new .ipynb file, you click on new on the right corner of the page and then click on python 3&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_browser.png&quot; alt=&quot;Jupyter_browser&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The place where the code goes is called the cell, and you can run the code in the cell by pressing the run button or by using the shortcut &lt;code class=&quot;highlighter-rouge&quot;&gt;SHIFT+ENTER&lt;/code&gt;. The output will be then displayed at the bottom of the cell.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_new.png&quot; alt=&quot;Jupyter_new&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you press &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt; only, a new line will be created in the cell but no output will be displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_hello.png&quot; alt=&quot;Jupyter_hello&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;you can also use a variable(I will explain more on this in my next post) to store a value and retrieve it by running the cell. To change the name of the .ipynb file, you can click on the untitled file name and change it to whatever you want.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_var.png&quot; alt=&quot;Jupyter_var&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to save the .ipynb file, you click on the file in the menu bar and then Save and Checkpoint&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_save.png&quot; alt=&quot;Jupyter_save&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Modes in Jupyter&lt;/h3&gt;
+
+&lt;p&gt;We have two different modes in Jupyter notebook&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit mode&lt;/li&gt;
+  &lt;li&gt;Command mode&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We can clearly see that we are in the edit mode when the border’s cell turn green while a small pencil appears in the right corner of the page like shown in the picture below. In this mode, we are making changes to the cell only. The edit mode is activated by clicking simply in the cell or by hitting the &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt; key.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_e_mode.png&quot; alt=&quot;Jupyter_e_mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We also have the command mode which means that you can navigate around the notebook using keyboard shortcuts, helpful when adding or deleting cells. The command mode can be activated by pressing the &lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; key. The color of the border cell is changed to blue in this mode and the small pencil disappears.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_c_mode.png&quot; alt=&quot;Jupyter_c_mode&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Toolbar icon&lt;/h3&gt;
+
+&lt;p&gt;We are going to explore the purpose of each icon in the toolbar&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_toolbar.png&quot; alt=&quot;Jupyter_toolbar&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;To save the file&lt;/li&gt;
+  &lt;li&gt;To create a new cell&lt;/li&gt;
+  &lt;li&gt;To cut the content of a cell&lt;/li&gt;
+  &lt;li&gt;To copy the content of a cell&lt;/li&gt;
+  &lt;li&gt;To duplicate a cell&lt;/li&gt;
+  &lt;li&gt;To move the cell up&lt;/li&gt;
+  &lt;li&gt;To move the cell down&lt;/li&gt;
+  &lt;li&gt;To run the cell&lt;/li&gt;
+  &lt;li&gt;To stop the kernel&lt;/li&gt;
+  &lt;li&gt;To restart the kernel&lt;/li&gt;
+  &lt;li&gt;To restart the kernel &amp;amp; re-run the notebook&lt;/li&gt;
+  &lt;li&gt;To change the cell option (code, markdown, etc)&lt;/li&gt;
+  &lt;li&gt;To open the command palette&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Cell execution&lt;/h3&gt;
+
+&lt;p&gt;We also have to pay attention to the numbers found at the left of the cell, these numbers represent the order by which the code has been executed since the code in the notebook doesn’t have to be arranged in chronologically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_line.png&quot; alt=&quot;Jupyter_line&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When the kernel is busy, you won’t be able to execute any other cell in the notebook&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_busy.png&quot; alt=&quot;Jupyter_busy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So when you can’t run a cell, just restart the kernel. If you restart and clear output, all the number will disappear meaning that none of the code has been run yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_empty.png&quot; alt=&quot;Jupyter_empty&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Add markdown to the cell&lt;/h3&gt;
+
+&lt;p&gt;Jupyter has a great feature to add markdown to our code,markdow can be used for example to give an explanation or visualization to the code written in the cells.&lt;/p&gt;
+
+&lt;p&gt;To change the cell to markdown, you press the drop-down menu and select markdown.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_markdown.png&quot; alt=&quot;Jupyter_markdown&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can insert images and text using markdown and then hit &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt; to display the markdown. There is a good guide on markdown &lt;a href=&quot;https://www.markdownguide.org/basic-syntax/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Magic commands&lt;/h3&gt;
+
+&lt;p&gt;Jupyter has special commands called magic command. These commands are unique for jupyter notebooks and are of two types:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;line magics (start with ! or %)&lt;/li&gt;
+  &lt;li&gt;cell magics (start with %%)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;line magic command starts with ! or %, all the code on that line after the ! or % character will be interpreted as bash command. so can easily do all the commands you would have to type in the terminal, straight in your Jupyter. Cool hein?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_cmd.png&quot; alt=&quot;Jupyter_cmd&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another magic command is %% which mean that all the lines of code in the cell will be rendered as magic. We can list all the magic commands of Jupyter by running %lsmagic in the cell as follow&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_all_cmd.png&quot; alt=&quot;Jupyter_all_cmd&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;let’s use the %%HTML, which basically means that all the code in the cell will be rendered as HTML, we will use the iframe tag to display a video for YouTube.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_html.png&quot; alt=&quot;Jupyter_html&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;as we can see, we can use jupyter to write multi-line codes of HTML, JavaScript, LaTex, Perl and even svg which makes Jupyter an all-in-one tool.&lt;/p&gt;
+
+&lt;p&gt;There is one very useful command that I use quite often, and it is the %%timeit command that calculates how long a script takes to complete.&lt;/p&gt;
+
+&lt;h3&gt;Export&lt;/h3&gt;
+
+&lt;p&gt;you can export the .ipynb into different file format ranging from python, HTML, markdown, LaTex or pdf by pressing the file button in the menu bar and download as.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/j_export.jpeg&quot; alt=&quot;Jupyter_export&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;To sum up&lt;/h3&gt;
+
+&lt;p&gt;Jupyter notebook is a pretty useful tool especially if you are a researcher who writes codes that need to be explained deeply. Yes, you can use a normal text editor with comments but you can’t compare comments and markdown. Plus all the features that Jupyter has to offer I would say that it is hands down the go-to “text editor” for Machine Learning in 2019. I will be using Jupyter notebook to write code in Python on this blog. One downside of jupyter I can think of, would be its lack of code auto-suggestion.&lt;/p&gt;
+
+&lt;p&gt;I hope now you have a basic understanding on how Jupyter works and it’s main features, If you want to learn more, you can read the full documentation &lt;a href=&quot;https://jupyter-notebook.readthedocs.io/en/stable/index.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="python" /><category term="jupyter" /><category term="tutorial" /><summary type="html">Jupyter notebook formally called ipython, is a web application that runs in the browser and runs the code and also add comments, visualizations, paragraph, equations, title, add links, figures, LaTex and so on in order to explain the code by using markdown language which is very useful while writing code that needs to be explained.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://semasuka.github.io/blog/blog/assets/post_images/jupyter.png" /></entry><entry><title type="html">Python? you mean the snake?</title><link href="https://semasuka.github.io/blog/blog/2018/12/19/python-you-mean-the-snake.html" rel="alternate" type="text/html" title="Python? you mean the snake?" /><published>2018-12-19T00:00:00+02:00</published><updated>2018-12-19T00:00:00+02:00</updated><id>https://semasuka.github.io/blog/blog/2018/12/19/python-you-mean-the-snake</id><content type="html" xml:base="https://semasuka.github.io/blog/blog/2018/12/19/python-you-mean-the-snake.html">&lt;p&gt;No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.&lt;!-- more --&gt; The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.&lt;/p&gt;
+
+&lt;h3&gt;The most popular programming language&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/fastest-prg-lang.png&quot; alt=&quot;fastest growing language&quot; /&gt;
 picture credit: &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018&quot;&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;
@@ -11,11 +249,15 @@ picture credit: &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018&
 &lt;p&gt;output
 &lt;img src=&quot;/blog/assets/post_cont_image/zen-py.png&quot; alt=&quot;zen of python&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;So now comes the question, why is python popular in machine learning? the answer is that its syntax is easy to understand and therefore making it an awesome language for prototyping and testing during an ML project. As most of the algorithms used in Machine Learning are a bit complex, we don’t need to add another layer of complexity by worrying about a “;” that might cause the whole program not to run.&lt;/p&gt;
+&lt;h3&gt;Why is python popular in machine learning?&lt;/h3&gt;
+
+&lt;p&gt;the answer is that its syntax is easy to understand and therefore making it an awesome language for prototyping and testing during an ML project. As most of the algorithms used in Machine Learning are a bit complex, we don’t need to add another layer of complexity by worrying about a “;” that might cause the whole program not to run.&lt;/p&gt;
 
 &lt;p&gt;Another reason why Python wins is the fact that most of the ML frameworks are written in C++ with Python even though Python is not the most rapid programming language in terms of speed. To compensate for this, most of the core codes of the ML frameworks are written in C++ in order to take advantage of its speed and then wrapped with Python code for prototyping purposes.&lt;/p&gt;
 
 &lt;p&gt;I am hoping that now you understand why Python is the language to use when it comes to machine learning especially if you are a beginner.&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
 
 &lt;p&gt;Let’s install python but before we start, I have to mention one thing about Python, Python comes into two different versions Python 2 and Python 3. They are not compatible and there are some minor differences in syntax between the two. I suggest to always use version 3 since version 2 will be discontinued by 2020. I will only be using Python 3 on this blog.&lt;/p&gt;
 
@@ -39,6 +281,8 @@ picture credit: &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018&
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3&gt;Hello world and basic arithmetics&lt;/h3&gt;
+
 &lt;p&gt;We gonna print the classic “hello world” on the console using the &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; keyword like this&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -50,9 +294,9 @@ picture credit: &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018&
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; keyword display anything in place in the bracket inside the “”&lt;/p&gt;
 
-&lt;p&gt;you can also make some basic operation like addition&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, subtraction&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;, division&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;, multiplication&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; and modulo&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt; which is the remainder of the division&lt;/p&gt;
+&lt;p&gt;you can also make some basic operation like addition&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, subtraction&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;, division&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;(only return whole numbers), multiplication&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; and modulo&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt; which is the remainder of the division&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;15+2 //output: 18
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;15+2 //output: 17
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;15-2 //output: 13
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;15//3 //output: 5
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;15&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;2 //output: 30
@@ -61,7 +305,9 @@ picture credit: &lt;a href=&quot;https://insights.stackoverflow.com/survey/2018&
 
 &lt;p&gt;This is a brief introduction to python and an overview of its installation. I will go in depth of Python in the upcoming posts. Stay tuned by subscribing!&lt;/p&gt;
 
-&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="python" /><category term="programming" /><category term="tutorial" /><summary type="html">No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/blog/assets/post_images/python-snake.jpg" /></entry><entry><title type="html">The requirements to get started in Machine Intelligence</title><link href="http://localhost:4000/blog/2018/12/18/what-are-the-requirements.html" rel="alternate" type="text/html" title="The requirements to get started in Machine Intelligence" /><published>2018-12-18T00:00:00+02:00</published><updated>2018-12-18T00:00:00+02:00</updated><id>http://localhost:4000/blog/2018/12/18/what-are-the-requirements</id><content type="html" xml:base="http://localhost:4000/blog/2018/12/18/what-are-the-requirements.html">&lt;p&gt;Machine learning is a cross-disciplinary field that includes computer science, mathematics and sometimes domain knowledge. We can’t just focus on one part and expect to be great at it, and no you don’t have to be a master at everything to get started as it is said jack of all trades, master of none. You just need to have a basic understanding of these topics &lt;!-- more --&gt;&lt;/p&gt;
+&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="python" /><category term="programming" /><category term="tutorial" /><summary type="html">No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://semasuka.github.io/blog/blog/assets/post_images/python-snake.jpg" /></entry><entry><title type="html">The requirements to get started in Machine Intelligence</title><link href="https://semasuka.github.io/blog/blog/2018/12/18/what-are-the-requirements-for-ML.html" rel="alternate" type="text/html" title="The requirements to get started in Machine Intelligence" /><published>2018-12-18T00:00:00+02:00</published><updated>2018-12-18T00:00:00+02:00</updated><id>https://semasuka.github.io/blog/blog/2018/12/18/what-are-the-requirements-for-ML</id><content type="html" xml:base="https://semasuka.github.io/blog/blog/2018/12/18/what-are-the-requirements-for-ML.html">&lt;p&gt;Machine learning is a cross-disciplinary field that includes computer science, mathematics and sometimes domain knowledge. We can’t just focus on one part and expect to be great at it, and no you don’t have to be a master at everything to get started as it is said jack of all trades, master of none. You just need to have a basic understanding of these topics &lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h3&gt;The maths&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/math-ml.png&quot; alt=&quot;math_for_ml&quot; /&gt;
 picture credit: &lt;a href=&quot;https://towardsdatascience.com/the-mathematics-of-machine-learning-894f046c568&quot;&gt;towardsdatascience&lt;/a&gt;&lt;/p&gt;
@@ -74,24 +320,36 @@ picture credit: &lt;a href=&quot;https://towardsdatascience.com/the-mathematics-
 
 &lt;p&gt;Statistic and probability are also very important since machine learning and statistics aren’t very different fields.  Some of the fundamental statistical and probability theory needed for ML are combinatorics, probability rules &amp;amp; axioms, Bayes’ theorem, random variables, variance and expectation, conditional and joint distributions, standard distributions (Bernoulli, binomial, multinomial, Uniform and Gaussian), moment generating functions, Maximum Likelihood estimation (MLE), prior and posterior, maximum a posteriori Estimation (MAP) and Sampling Methods. Check out this MIT statistic courseware &lt;a href=&quot;https://www.youtube.com/watch?v=VPZD_aij8H0&amp;amp;list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0&quot;&gt;here&lt;/a&gt; and this Harvard probability course &lt;a href=&quot;https://www.youtube.com/watch?v=KbB0FjPg0mw&amp;amp;list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3&gt;Programming&lt;/h3&gt;
+
 &lt;p&gt;the other part of ML is programming, and as of the end of 2018, the most popular language to write machine learning is Python because it is syntactically easy to understand. Hear me right, I am NOT saying that you can only write machine learning using python, No you can write ML in Javascript, Java even Assembly language if you want to but what I mean is that python is the most suited since it has so many ML frameworks written in Python and is relatively easy to learn for beginners. Here is an awesome course on Udemy by Tim buchalka that will take you from beginner to upper intermediate level, it is worth every cent. The course is found &lt;a href=&quot;https://www.udemy.com/python-the-complete-python-developer-course/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;It is also important to learn Data Structure and Algorithm. This is not mentioned on many resources online but I can say that this probably the most important part in programming since data structure and algorithms are the backbones of any computer science field. They are also crucial for understanding the computational efficiency and scalability of our machine learning algorithm and for exploiting sparsity in our datasets. Knowledge of data structures (Binary Trees, Hashing, Heap, Stack etc), dynamic programming, randomized &amp;amp; sublinear algorithm, graphs, gradient/stochastic descents and primal-dual methods are needed. I recommend Cracking the coding interview book &lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=dp_ob_image_bk&quot;&gt;here&lt;/a&gt; and Elements of Programming Interviews in Python &lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The rest of the skills are good to have but not required, these skills are data engineering which is the ability to get insight into a large amount of data using Hadoop, spark, SQL and NoSQL and data analysis and visualization skills using tableau or excel pivot.&lt;/p&gt;
+&lt;h3&gt;Good to know&lt;/h3&gt;
 
-&lt;p&gt;Only after acquiring understanding these topics above, Do the the Andrew NG course on coursera found &lt;a href=&quot;https://www.coursera.org/courses?query=machine%20learning%20andrew%20ng&quot;&gt;here&lt;/a&gt;.After finishing that course, you can consider specializing in any ML algorithm such as linear regression, K-means, Logistic regression, clustering, reinforcement learning etc or any ML frameworks like Tensorfow, Scikit-learn, Keras etc. I know all this list might seem daunting at first to learn all these maths and programming skills and I can’t say it will be easy because me too I am an not expert at all of them, but I can promise that if you are determined and persevere  through you can learn this and get an understanding of the foundations of ML, then it will be much much easier to debug errors (yes you are going to encounter many of those) while using complex machine learning algorithms.&lt;/p&gt;
+&lt;p&gt;The rest of the skills are good to have but not required, these skills are data engineering which is the ability to get insight into a large amount of data using Hadoop, spark, SQL and NoSQL and data analysis and visualization skills using tableau or excel.&lt;/p&gt;
+
+&lt;p&gt;Only after acquiring understanding these topics above, Do the the Andrew NG course on coursera found &lt;a href=&quot;https://www.coursera.org/courses?query=machine%20learning%20andrew%20ng&quot;&gt;here&lt;/a&gt;. After finishing that course, you can consider specializing in any ML algorithm such as linear regression, K-means, Logistic regression, clustering, reinforcement learning etc or start using any ML frameworks like Tensorfow, Scikit-learn, Keras etc.&lt;/p&gt;
 
 &lt;p&gt;Last but definitely not least, you must practice! and keep on practising in order to sharpen your skills. You will understand more Machine Learning if you work on real projects. Start by using free datasets found on websites like &lt;a href=&quot;https://www.data.gov/&quot;&gt;this&lt;/a&gt; or by competing at &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt; challenges. Another thing you can do is to read research papers found on websites like &lt;a href=&quot;https://paperswithcode.com&quot;&gt;paper with code&lt;/a&gt; to stay up to date with the latest trend in machine learning at least once a week. You should also improve your art of googling because chances are that you will run into problems or errors and you need to search on how someone else fixed it. Another area to improve is your communication skills because if you are applying for a machine learning jobs, you will likely be working in a team where you will be required to communicate and present effectively all your findings to the non-techies staffs or management board which is crucial.&lt;/p&gt;
 
-&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="machine learning" /><summary type="html">Machine learning is a cross-disciplinary field that includes computer science, mathematics and sometimes domain knowledge. We can’t just focus on one part and expect to be great at it, and no you don’t have to be a master at everything to get started as it is said jack of all trades, master of none. You just need to have a basic understanding of these topics</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/blog/assets/post_images/getting-started.jpg" /></entry><entry><title type="html">Why deep learning now?</title><link href="http://localhost:4000/blog/2018/12/17/why-deep-learning-now.html" rel="alternate" type="text/html" title="Why deep learning now?" /><published>2018-12-17T00:00:00+02:00</published><updated>2018-12-17T00:00:00+02:00</updated><id>http://localhost:4000/blog/2018/12/17/why-deep-learning-now</id><content type="html" xml:base="http://localhost:4000/blog/2018/12/17/why-deep-learning-now.html">&lt;p&gt;As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.&lt;!-- more --&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;I know all this list might seem daunting at first to learn all these maths and programming skills and I can’t say it will be easy because me too I am an not expert at all of them, but I can promise that if you are determined and persevere  through you can learn this and get an understanding of the foundations of ML, then it will be much much easier to debug errors (yes you are going to encounter many of those) while using complex machine learning algorithms.&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="machine learning" /><summary type="html">Machine learning is a cross-disciplinary field that includes computer science, mathematics and sometimes domain knowledge. We can’t just focus on one part and expect to be great at it, and no you don’t have to be a master at everything to get started as it is said jack of all trades, master of none. You just need to have a basic understanding of these topics</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://semasuka.github.io/blog/blog/assets/post_images/getting-started.jpg" /></entry><entry><title type="html">Why deep learning now?</title><link href="https://semasuka.github.io/blog/blog/2018/12/17/why-deep-learning-now.html" rel="alternate" type="text/html" title="Why deep learning now?" /><published>2018-12-17T00:00:00+02:00</published><updated>2018-12-17T00:00:00+02:00</updated><id>https://semasuka.github.io/blog/blog/2018/12/17/why-deep-learning-now</id><content type="html" xml:base="https://semasuka.github.io/blog/blog/2018/12/17/why-deep-learning-now.html">&lt;p&gt;As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.&lt;!-- more --&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/nn.jpeg&quot; alt=&quot;neural net&quot; /&gt;
 picture credit: &lt;a href=&quot;https://medium.com/xanaduai/making-a-neural-network-quantum-34069e284bcf&quot;&gt;medium&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3&gt;Quick example&lt;/h3&gt;
+
 &lt;p&gt;Let take an oversimplified example, let’s say that this neural net above is supposed to tell which number (0-9) is a character input (the nodes in blue) while it has been trained, it has an idea on how the number 0 to 9 looks like (the node in green). So it has to simply match the input and the output.&lt;/p&gt;
 
 &lt;p&gt;Let’s say we give it a 2. The character 2 will be divided into many small pieces of the character 2 in either straight or curved lines, These lines will be passed to the hidden layer (the orange nodes). the nodes at this layer will analyse them depending on whether these are straight or curved, they will be passed on to the next layer in the hidden section, this layer on its turn will analyse and check if there is a collection of intersections or curves between the lines from the previous layer. The more we add the layer, the more new collections are formed and that the end of the hidden layers, it can guess approximately using % which number it is because of the patterns received.&lt;/p&gt;
+
+&lt;h3&gt;why now?&lt;/h3&gt;
 
 &lt;p&gt;Now let’s answer to the pertinent question. Why has deep learning gain popularity in the recent past years? Indeed from 2010, deep learning has been massively used in the tech community as well as in other sectors. Even though this is true, artificial intelligence was not invented yesterday, nor last week. Surprisingly, it has been around since the 50’s early 60’s but from then it has evolved steadily in the ’70s. In fact, they were self-driving cars in the ’80s. Don’t believe me? watch &lt;a href=&quot;https://www.youtube.com/watch?v=_HbVWm7wdmE&quot;&gt;this&lt;/a&gt; video. Something worth mentioning is that by then AI with its sub-field was a very young academic subject and was mostly studied at the ivy league university.&lt;/p&gt;
 
@@ -102,6 +360,8 @@ picture credit: &lt;a href=&quot;https://blog.ai-academy.com/six-graphs-to-under
 
 &lt;p&gt;Since the launch of the Intel 4004 in 1971 which was composed of 2300 transistors capable of executing between 46,250 to 92,500 instructions per second(which was groundbreaking at the time), fast forward to these days with the Intel i9 capable of performing 80 billions instructions per second which translate to a 900 times increase in processing power. this increase in the power of computers has also made computers less power hungry and very affordable to the mass population and universities which invest a lot in computers labs. Another notable mention is the Qualcomm’s Snapdragon 8cx new 7nm processor (processors found so far only in smartphones) said to be able to power a PC. if I would have been told this two years ago, I would have not believed it. This is to show you how the processing power has gone from the early days of a computer filling a whole room up to now whereas it can be carried in a pocket. But as of anything, this trend will not continue forever and we are reaching the plateau of microprocessor’s innovation.&lt;/p&gt;
 
+&lt;h3&gt;Moore’s law&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/mlaw.jpg&quot; alt=&quot;Moore_law&quot; /&gt;
 picture credit: &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
 
@@ -109,6 +369,8 @@ picture credit: &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quo
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/post_cont_image/web-per-min.jpg&quot; alt=&quot;use_of_internet&quot; /&gt;
 picture credit: &lt;a href=&quot;https://www.visualcapitalist.com/internet-minute-2018/&quot;&gt;visualcapitalist&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;the 3 VS&lt;/h3&gt;
 
 &lt;p&gt;This has eventually lead to the exponential creation of data, this type of data is called Big Data and is characterized by 3 Vs which are:&lt;/p&gt;
 
@@ -120,11 +382,13 @@ picture credit: &lt;a href=&quot;https://www.visualcapitalist.com/internet-minut
 
 &lt;p&gt;Start with its volume, big data needs to be analysed with special tools like Hive, Spark or Hadoop because traditional database technologies like SQL or NoSQL won’t be able to handle its magnitude efficiently. Talking of its velocity, which is the amount of data that flows in and out a database per second. For example, a company like Facebook has to deal with a large quantity of data each second from its users who are streaming or liking a video. Finally, when it comes to the variety, we can see a rapid change in the type of data found on the internet. Contrary to the early days where we mostly found texts linked together, now we find a variety of data file format from PDF, photos, videos, audio, location data etc.&lt;/p&gt;
 
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
 &lt;p&gt;The perfect marriage between big data and the increased processing power has allowed the training of complex algorithms on super-computers thus leading to an increased usage of deep learning since 2010. Some interesting advancement in technology has been enabled by deep learning like changing a low-resolution image to a high definition using GANs (Generative adversarial network)(YouTube video &lt;a href=&quot;https://www.youtube.com/watch?v=HvH0b9K_Iro&quot;&gt;here&lt;/a&gt;) or &lt;a href=&quot;https://lyrebird.ai/&quot;&gt;this&lt;/a&gt; website that let you create your own vocal avatar using celebrities’ voices like Trump. Another one called “everybody can dance now” (YouTube video &lt;a href=&quot;https://www.youtube.com/watch?v=WzRonX_bs34&quot;&gt;here&lt;/a&gt;) uses a video from a professional dancer and apply to another video where there is a person who does not clearly dance. After the training on those two videos, the person on the second video now dances like a pro. Very cool!&lt;/p&gt;
 
 &lt;p&gt;We can’t deny that deep learning has a bright future ahead but also we should be concerned about its drawbacks like fake news.&lt;/p&gt;
 
-&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="deep learning" /><summary type="html">As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/blog/assets/post_images/why-dp-now.jpg" /></entry><entry><title type="html">What is Machine Learning anyway? does it matter?</title><link href="http://localhost:4000/blog/2018/12/16/what-is-machine-learning.html" rel="alternate" type="text/html" title="What is Machine Learning anyway? does it matter?" /><published>2018-12-16T00:00:00+02:00</published><updated>2018-12-16T00:00:00+02:00</updated><id>http://localhost:4000/blog/2018/12/16/what-is-machine-learning</id><content type="html" xml:base="http://localhost:4000/blog/2018/12/16/what-is-machine-learning.html">&lt;p&gt;Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI).&lt;!-- more --&gt; These days, it is very common to hear this:&lt;/p&gt;
+&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="deep learning" /><summary type="html">As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://semasuka.github.io/blog/blog/assets/post_images/why-dp-now.jpg" /></entry><entry><title type="html">What is Machine Learning anyway? does it matter?</title><link href="https://semasuka.github.io/blog/blog/2018/12/16/what-is-machine-learning.html" rel="alternate" type="text/html" title="What is Machine Learning anyway? does it matter?" /><published>2018-12-16T00:00:00+02:00</published><updated>2018-12-16T00:00:00+02:00</updated><id>https://semasuka.github.io/blog/blog/2018/12/16/what-is-machine-learning</id><content type="html" xml:base="https://semasuka.github.io/blog/blog/2018/12/16/what-is-machine-learning.html">&lt;p&gt;Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI).&lt;!-- more --&gt; These days, it is very common to hear this:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;“…the cameras on X smartphone is powered by an advanced AI that improves the image quality at night by 25.5%…”&lt;/p&gt;
@@ -134,6 +398,8 @@ picture credit: &lt;a href=&quot;https://www.visualcapitalist.com/internet-minut
 
 &lt;p&gt;Going back to the title of this post, what is an Artificial intelligence and machine learning? simply put, an AI is the ability of computers to make a decision without any intervention of human (no preset rules) and exhibit a “sort” of intelligence. Machine learning, on the other hand, is a set of computer instructions (algorithms) applied on a large scale of data (a large number of bits of information) also refer as big data and train on that data to come up with predictions that might occur in the future. As more and more data is generated each day online, it has become very hard to get a sense of it using our human capacity, therefore we use a clever algorithm to understand the data and make anticipations.&lt;/p&gt;
 
+&lt;h3&gt;Applications&lt;/h3&gt;
+
 &lt;p&gt;Machine learning can be used in different areas ranging from health, robotics to even agriculture (YouTube video &lt;a href=&quot;https://www.youtube.com/watch?v=NlpS-DhayQA&quot;&gt;here&lt;/a&gt;), but as of the end of 2018, it is mostly used in the recommendation system like the one on Amazon or Alibaba that uses recent viewed/purchased item to predict the next item to buy.&lt;/p&gt;
 
 &lt;p&gt;Machine learning is also used in the self-driving car (YouTube video &lt;a href=&quot;https://www.youtube.com/watch?v=aaOB-ErYq6Y&quot;&gt;here&lt;/a&gt;) and face recognition used by Facebook and Apple on their iPhone X. This kind of machine learning uses computer vision with pattern recognition to detect an object on the picture or in the surrounding. There is another kind of machine learning called natural language processing (NLP) that rely on speech recognition to translate input using the voice. An example of the application of NLP is Siri or Google voice assistant. These kind of AI are called artificial narrow intelligence (ANI) which mean that these AI particularly excel at one single task and perform poorly in any other task which they haven’t been trained on.&lt;/p&gt;
@@ -142,9 +408,11 @@ picture credit: &lt;a href=&quot;https://www.visualcapitalist.com/internet-minut
 
 &lt;p&gt;These areas are the ones that come to my mind but you should not assume that the application of ML is only limited to this. Areas such as GPS navigation in order to find the shortest route, Search engine result refinement and many more are using ML.&lt;/p&gt;
 
+&lt;h3&gt;Type of Machine Learning&lt;/h3&gt;
+
 &lt;p&gt;Machine learning are grouped into two different category, supervised learning and unsupervised learning. In unsupervised ML, you dont tell the algorithm what to look for in the given dataset. this is generally used to discover pattern in data that you might not have otherwise noticed. In supervised ML, you specify what particular feature or model you want your model to learn about but comparing the input variable and the output variable in a dataset and learn the relationship between the two so it can later predict and output based on the given input.&lt;/p&gt;
 
-&lt;p&gt;So now what is the difference between AI and Machine learning?&lt;/p&gt;
+&lt;h3&gt;The difference between AI and Machine learning?&lt;/h3&gt;
 
 &lt;p&gt;the short answer is that there no big difference as to say. The long answer is that ML is a subset of Artificial intelligence. AI is considered to be more generic.&lt;/p&gt;
 
@@ -153,8 +421,12 @@ picture credit: &lt;a href=&quot;https://blogs.nvidia.com/blog/2016/07/29/whats-
 
 &lt;p&gt;As we can see in the picture above, AI is the parent and ML is its child. We can see that within ML, we also have a subset called Deep learning. Deep learning is machine learning model that mimic neurons found in our brain, to form a connected net (that’s why they are called neural network) that uses input and pass through a series of feedback within that network to produce at the end an accurate desired output. I will reserve the discussion of deep learning in another post.&lt;/p&gt;
 
+&lt;h3&gt;key factors&lt;/h3&gt;
+
 &lt;p&gt;Machine learning models have become increasingly efficient due to two important factors. First, is the amount of data that they are fed on. As the years go by, more and more data is being generated. It has been proven that 50% of all the data from the beginning of time, were generated just within the past two years. I would like also to mention that no matter how well designed the algorithm if it is not trained with correct and clean data, the outcome will always be inaccurate. Think of the data as the fuel of the car, and the algorithm to be the car. If the car is supplied with the wrong fuel, it won’t reach far. The second factor is the improvement in terms of computing power and processor. According to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;Moore’s law&lt;/a&gt;, the computing capability keeps on doubling every two years, which allow us to process of a large chunk of data on advanced CPU and GPU in a fairly short amount of time.&lt;/p&gt;
+
+&lt;h3&gt;conclusion&lt;/h3&gt;
 
 &lt;p&gt;In conclusion, I hope now you have a basic understanding of machine learning and why it matters. At this point, I think we can’t live without Artificial intelligence because it is solving so many problems and more are yet to be solved. And yes, I know it will take so many jobs in the next decade but we can prevent this by encouraging people to switch to more creative jobs in order to remain relevant in the job market. That’s why I have created this blog, to raise awareness and to encourage people to code and start to learn Machine Learning because that’s where the world is heading, toward the 4th revolution. We have to embrace AI and also teach people from different background cultures around the world on how to utilize it for our common good.&lt;/p&gt;
 
-&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI).</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/blog/assets/post_images/what-is-ml.jpg" /></entry></feed>
+&lt;p&gt;Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.&lt;/p&gt;</content><author><name>Semasuka Stern</name></author><category term="machine learning" /><category term="artificial intelligence" /><summary type="html">Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI).</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://semasuka.github.io/blog/blog/assets/post_images/what-is-ml.jpg" /></entry></feed>

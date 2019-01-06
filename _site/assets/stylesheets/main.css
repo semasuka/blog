@@ -906,9 +906,7 @@ a:hover { color: #539F30; }
 .sidebar > .inner { padding-left: 3em; padding-top: 3em; }
 
 @media (min-width: 64em) { .is--pushed { transform: translateX(326px); } }
-.copyright a { text-decoration: none; }
-
-.copyright a:hover { color: #407727; text-decoration: underline; }
+.copyright a:hover { color: #407727; }
 
 .share-page { font-size: 1.3em; margin-bottom: 2%; }
 
@@ -930,10 +928,6 @@ a:hover { color: #539F30; }
 .pager a:hover { -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; background-color: white; color: #539F30; }
 
 #tag-icon { text-align: center; }
-
-#entry a { text-decoration: none; }
-
-#entry a:hover { text-decoration: underline; }
 
 .back-to-top { display: none; }
 
