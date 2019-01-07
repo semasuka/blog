@@ -56,14 +56,14 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 
 ## Built With
 
-* [Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
+* [Jekyll](https://jekyllrb.com) static site generator.
 * [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll skin.
-* [Disqus](https://disqus.com"disqus") as comment generator
-* [Google analytics](https://analytics.google.com/analytics/web/"Google_analytics") as the site analytics
-* [Algolia](https://www.algolia.com/"Algolia") as the search tool within the blog
+* [Disqus](https://disqus.com) as comment generator
+* [Google analytics](https://analytics.google.com/analytics/web) as the site analytics
+* [Algolia](https://www.algolia.com) as the search tool within the blog
 * [Jekyll feed](https://github.com/jekyll/jekyll-feed) as the atom RSS generator
 * [Jekyll seo](https://github.com/jekyll/jekyll-seo-tag) as the blog seo
-* [mailchimp](https://mailchimp.com/"mailchimp") as mail newsletter subscriber service
+* [mailchimp](https://mailchimp.com) as mail newsletter subscriber service
 
 ## Authors
 
