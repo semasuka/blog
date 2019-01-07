@@ -80,6 +80,8 @@ you can also make some basic operation like addition`+`, subtraction`-`, divisio
 >>>15-2 //output: 13
 >>>15//3 //output: 5
 >>>15*2 //output: 30
+>>>15/3 //output: 5.0
+>>>15**2 //output: 225
 >>>15%3 //output: 0
 ```
 

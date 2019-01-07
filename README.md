@@ -8,7 +8,7 @@ If you are interested in using to build you blog or simply contribute to this bl
 
 ### Prerequisites
 
-To run this blog on you locale machine, you will need to install [Jekyll](https://jekyllrb.com/"Jekyll"), kindly refer to the installation process on the official website of jekyll [here](https://jekyllrb.com/docs/installation/).
+To run this blog on you locale machine, you will need to install [Jekyll](https://jekyllrb.com), kindly refer to the installation process on the official website of jekyll [here](https://jekyllrb.com/docs/installation/).
 
 Sometimes it can be hard to know if jekyll is installed, to check if it is successfully installed run this command
 
@@ -67,10 +67,10 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 
 ## Authors
 
-* [semasuka](https://github.com/semasuka"semasuka") - author and designer of the blog.
+* [semasuka](https://github.com/semasuka) - author and designer of the blog.
 
-* [mmistakes](https://github.com/mmistakes"mmistakes") - initial jekyll theme creator.
+* [mmistakes](https://github.com/mmistakes) - initial jekyll theme creator.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/semasuka/blog/blob/master/LICENSE"LICENSE.md") file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/semasuka/blog/blob/master/LICENSE) file for details.

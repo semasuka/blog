@@ -6,7 +6,6 @@ tags:
 - deep learning
 ---
 
-
 As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain in order to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.<!-- more -->
 
 ![neural net](/blog/assets/post_cont_image/nn.jpeg)
