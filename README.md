@@ -48,7 +48,7 @@ now you shall access to the blog at 127.0.0.1:4000 (or http://localhost:4000).
 
 ## Customize
 
-In order to customize this blog as you wish, you can clone this repo and for the documentation please refer to the official skin github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
+In order to customize this blog as you wish, you can clone this repo and for the documentation please refer to the official theme github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
 
 ## Deployment
 
@@ -57,7 +57,7 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 ## Built With
 
 * [Jekyll](https://jekyllrb.com) static site generator.
-* [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll skin.
+* [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll theme.
 * [Disqus](https://disqus.com) as comment generator
 * [Google analytics](https://analytics.google.com/analytics/web) as the site analytics
 * [Algolia](https://www.algolia.com) as the search tool within the blog
