@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About Me
 
-My name is Semasuka Stern, I am a passionate software engineer and an unapologetically geek. I been writing code for 3 years, since then I have graduated from university and a coding bootcamp. I code in Python, Java, Javascript, HTML and CSS. Now, I am focusing more on machine intelligence (or machine learning) and it's real world-application to solve humankind problems. Myself, I am learning Machine Learning and the act writing posts pushes me to explain complex topics in simple words, helping me on way to gain even a better understanding as Albert Einstein said "You do not really understand something unless you can explain it to your grandmother.".
+My name is Semasuka Stern, I am a passionate software engineer and an unapologetically geek. I been writing code for 3 years, since then I have graduated from university and a coding bootcamp. I code in Python, Java, Javascript, HTML and CSS. Now, I am focusing more on machine intelligence (or machine learning) and it's real world-application to solve humankind problems. Myself, I am learning Machine Learning and the act writing posts pushes me to explain complex topics in simple words, helping me on way to gain even a better understanding as Albert Einstein said "You do not really understand something unless you can explain it to your grandmother".
 
 # Why another ML/coding blog?
 
