@@ -9,7 +9,7 @@ tags:
 ---
 Jupyter notebook formally called ipython, is a web application that runs code in the browser with an addition of comments, visualizations, paragraph, equations, title, links, figures and LaTex by using the markdown language in order to explain the code which is very useful while writing code that requires explanation.<!-- more -->
 
-The good thing with Jupyter it is the fact that you can easily integrate and import different machine learning packages like pandas, numpy, scipy and matplotlib and many more through anaconda distribution. This is why Jupyter has become the most indispensable tool for anyone doing machine learning and data science and did I forgot to mention? it is 100% FREE!!
+The good thing with Jupyter it is the fact that you can easily integrate and import different machine learning packages like pandas, numpy, scipy and matplotlib and many more through anaconda distribution making it the best swiss army knife for data science research. This is why Jupyter has become the most indispensable tool for anyone doing machine learning and did I forgot to mention? it is 100% FREE!!
 
 ### These are the top 10 reasons data scientist use jupyter notebook
 
@@ -228,6 +228,8 @@ There is one very useful command that I use quite often, and it is the %%timeit 
 you can export the .ipynb into different file format ranging from python, HTML, markdown, LaTex or pdf by pressing the file button in the menu bar and download as.
 
 ![Jupyter_export](/blog/assets/post_cont_image/j_export.jpeg)
+
+I will be writing all my tutorial post in Jupyter notebook and export it as markdown file.
 
 ### To sum up
 
