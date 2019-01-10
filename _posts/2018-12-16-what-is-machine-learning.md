@@ -1,5 +1,5 @@
 ---
-title:  What is Machine Learning anyway? does it matter?
+title:  What is Machine Learning? does it matter?
 image: /assets/post_images/what-is-ml.jpg
 excerpt_separator: <!-- more -->
 tags:
@@ -28,8 +28,7 @@ These areas are the ones that come to my mind but you should not assume that the
 
 Machine learning are grouped into two different category, supervised learning and unsupervised learning. In unsupervised ML, you dont tell the algorithm what to look for in the given dataset. this is generally used to discover pattern in data that you might not have otherwise noticed. In supervised ML, you specify what particular feature or model you want your model to learn about but comparing the input variable and the output variable in a dataset and learn the relationship between the two so it can later predict and output based on the given input.
 
-
-### The difference between AI and Machine learning?
+### The difference between Artificial intelligence, Machine learning and Deep learning?
 
 the short answer is that there no big difference as to say. The long answer is that ML is a subset of Artificial intelligence. AI is considered to be more generic.
 

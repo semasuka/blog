@@ -33,8 +33,6 @@ Since the launch of the Intel 4004 in 1971 which was composed of 2300 transistor
 ![Moore_law](/blog/assets/post_cont_image/mlaw.jpg)
 picture credit: [wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
 
-
-
 Since the introduction of the world wide web in 1994, the amount of data on the web, which proportionally correlated to the number of internet users (bots and humans), has skyrocketed. More people, especially from the developing countries, are discovering the internet dues to a decrease in the price of smartphones and internet bundles. There is more and more tweets, shares and clicks on the web each year. Adding to this, online retailers services, schools to hospitals need to store data from their customers.
 
 > "Data is the new uranium"
