@@ -19,4 +19,4 @@ All of the content on this site is made available at no charge, for the benefit 
 
 # Contact Me
 
-Do you want to share a comment, a constructive critic or anything related to machine learning or this blog? Don't hesitate, get in touch through e-mail or social media. links are found on the side navigation.
+Do you want to share a comment, a constructive critic or any question related to machine learning or this blog? Don't hesitate, get in touch through e-mail or social media. links are found on the side navigation.
