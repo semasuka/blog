@@ -8,7 +8,7 @@ If you are interested in using to build you blog or simply contribute to this bl
 
 ### Prerequisites
 
-To run this blog on you locale machine, you will need to install [Jekyll](https://jekyllrb.com/"Jekyll"), kindly refer to the installation process on the official website of jekyll [here](https://jekyllrb.com/docs/installation/).
+To run this blog on you locale machine, you will need to install [Jekyll](https://jekyllrb.com), kindly refer to the installation process on the official website of jekyll [here](https://jekyllrb.com/docs/installation/).
 
 Sometimes it can be hard to know if jekyll is installed, to check if it is successfully installed run this command
 
@@ -48,7 +48,7 @@ now you shall access to the blog at 127.0.0.1:4000 (or http://localhost:4000).
 
 ## Customize
 
-In order to customize this blog as you wish, you can clone this repo and for the documentation please refer to the official skin github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
+In order to customize this blog as you wish, you can clone this repo and for the documentation please refer to the official theme github page [here](https://github.com/mmistakes/jekyll-theme-basically-basic).
 
 ## Deployment
 
@@ -56,21 +56,21 @@ To host your jekyll blog to github page, use [this](https://www.youtube.com/watc
 
 ## Built With
 
-* [Jekyll](https://jekyllrb.com/"Jekyll") static site generator.
-* [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll skin.
-* [Disqus](https://disqus.com"disqus") as comment generator
-* [Google analytics](https://analytics.google.com/analytics/web/"Google_analytics") as the site analytics
-* [Algolia](https://www.algolia.com/"Algolia") as the search tool within the blog
+* [Jekyll](https://jekyllrb.com) static site generator.
+* [this](https://github.com/mmistakes/jekyll-theme-basically-basic) jekyll theme.
+* [Disqus](https://disqus.com) as comment generator
+* [Google analytics](https://analytics.google.com/analytics/web) as the site analytics
+* [Algolia](https://www.algolia.com) as the search tool within the blog
 * [Jekyll feed](https://github.com/jekyll/jekyll-feed) as the atom RSS generator
 * [Jekyll seo](https://github.com/jekyll/jekyll-seo-tag) as the blog seo
-* [mailchimp](https://mailchimp.com/"mailchimp") as mail newsletter subscriber service
+* [mailchimp](https://mailchimp.com) as mail newsletter subscriber service
 
 ## Authors
 
-* [semasuka](https://github.com/semasuka"semasuka") - author and designer of the blog.
+* [semasuka](https://github.com/semasuka) - author and designer of the blog.
 
-* [mmistakes](https://github.com/mmistakes"mmistakes") - initial jekyll theme creator.
+* [mmistakes](https://github.com/mmistakes) - initial jekyll theme creator.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/semasuka/blog/blob/master/LICENSE"LICENSE.md") file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/semasuka/blog/blob/master/LICENSE) file for details.

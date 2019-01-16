@@ -1,5 +1,5 @@
 var store = [{
-        "title": "What is Machine Learning anyway? does it matter?",
+        "title": "What is Machine Learning? does it matter?",
         "excerpt":"Many may ask what is machine learning (ML)? we have been hearing this buzzword very often in the media or by big-name tech companies and lately, it has been used interchangeably with the word “artificial intelligence” (AI). These days, it is very common to hear this: “…the cameras on X...","categories": [],
         "tags": ["machine learning","artificial intelligence"],
         "url": "https://semasuka.github.io/blog/blog/2018/12/16/what-is-machine-learning.html"
@@ -15,12 +15,17 @@ var store = [{
         "url": "https://semasuka.github.io/blog/blog/2018/12/18/what-are-the-requirements-for-ML.html"
       },{
         "title": "Python? you mean the snake?",
-        "excerpt":"No, I ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly...","categories": [],
+        "excerpt":"No, ain’t talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces,...","categories": [],
         "tags": ["python","programming","tutorial"],
         "url": "https://semasuka.github.io/blog/blog/2018/12/19/python-you-mean-the-snake.html"
       },{
         "title": "Introduction to Jupyter notebook",
-        "excerpt":"Jupyter notebook formally called ipython, is a web application that runs in the browser and runs the code and also add comments, visualizations, paragraph, equations, title, add links, figures, LaTex and so on in order to explain the code by using markdown language which is very useful while writing code...","categories": [],
+        "excerpt":"Jupyter notebook formally called ipython, is a web application that runs code in the browser with an addition of comments, visualizations, paragraph, equations, title, links, figures and LaTex by using the markdown language in order to explain the code which is very useful while writing code that requires explanation. The...","categories": [],
         "tags": ["python","jupyter","tutorial"],
         "url": "https://semasuka.github.io/blog/blog/2019/01/06/introduction-to-jupyter-notebook.html"
+      },{
+        "title": "A step by step introduction data types, variables and operators in Python",
+        "excerpt":"In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyternotebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data...","categories": [],
+        "tags": ["python","tutorial"],
+        "url": "https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html"
       }]
