@@ -53,6 +53,9 @@ We can see the version of python and anaconda installed.
 
 ### Installation of Machine Learning packages
 
+Packages or libraries in programming is a bunch of codes written by someone else that we add and use into our code. Some popular libraries for ML are: numpy for scientific computation, pandas for data extraction and preparation, scipy for modules
+optimization, Matplotlib and Seaborn for data visualization, Scikit-learn is the most popular ML libraries. It supports many supervised and unsupervised learning algorithms and finally tensorflow, pytorch and keras used mostly for deep learning.
+
 to install numpy run this command
 
 ```bash
@@ -75,6 +78,12 @@ to install matplotlib run this command
 
 ```bash
 conda install -c conda-forge matplotlib
+```
+
+to install seaborn run this command
+
+```bash
+conda install -c anaconda seaborn
 ```
 
 to install scitkit-learn run this command

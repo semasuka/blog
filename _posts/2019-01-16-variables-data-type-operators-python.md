@@ -1,14 +1,15 @@
 ---
-title:  "A step by step introduction data types, variables and operators in Python"
+title:  "A step by step introduction to data types, variables and operators in Python"
 image: /assets/post_images/py_tuto.jpeg
 excerpt_separator: <!-- more -->
 tags:
 - python
 - tutorial
+- programming
 ---
 
 In this post, we are going to discover all you need to know about data types, operators and variables in python. I'll be using jupyter
-notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This blog is entirely written in Jupyter and exported as a markdown file.<!-- more -->
+notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.<!-- more -->
 
 ### print function
 
@@ -989,7 +990,7 @@ The backslash ( \ ) character is used to escape characters that otherwise have a
 
 ```python
 print('this is kevin\'s house')
-print("****") #this starts are used to separate the output
+print("****") #this stars are used to separate the output
 print("Your coach said:\"You need to exercise more often\"")
 print("****")
 print("You will send this letter via DHL\\FEDEX")

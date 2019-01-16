@@ -10,21 +10,21 @@
   
     
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>A step by step introduction data types, variables and operators in Python | MIB</title>
+<title>A step by step introduction to data types, variables and operators in Python | MIB</title>
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="A step by step introduction data types, variables and operators in Python" />
+<meta property="og:title" content="A step by step introduction to data types, variables and operators in Python" />
 <meta name="author" content="Semasuka Stern" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This blog is entirely written in Jupyter and exported as a markdown file." />
-<meta property="og:description" content="In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This blog is entirely written in Jupyter and exported as a markdown file." />
-<link rel="canonical" href="https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html" />
-<meta property="og:url" content="https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html" />
+<meta name="description" content="In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll." />
+<meta property="og:description" content="In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html" />
 <meta property="og:site_name" content="MIB" />
-<meta property="og:image" content="https://semasuka.github.io/blog/blog/assets/post_images/py_tuto.jpeg" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/py_tuto.jpeg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-16T00:00:00+02:00" />
 <script type="application/ld+json">
-{"headline":"A step by step introduction data types, variables and operators in Python","dateModified":"2019-01-16T00:00:00+02:00","datePublished":"2019-01-16T00:00:00+02:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://semasuka.github.io/blog/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html"},"author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This blog is entirely written in Jupyter and exported as a markdown file.","image":"https://semasuka.github.io/blog/blog/assets/post_images/py_tuto.jpeg","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"headline":"A step by step introduction to data types, variables and operators in Python","dateModified":"2019-01-16T00:00:00+02:00","datePublished":"2019-01-16T00:00:00+02:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html"},"author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.","image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -47,7 +47,7 @@
 </head>
 
 
-  <body class="layout--post a-step-by-step-introduction-data-types-variables-and-operators-in-python">
+  <body class="layout--post a-step-by-step-introduction-to-data-types-variables-and-operators-in-python">
 
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
@@ -169,12 +169,20 @@
         -webkit-box-transition: all 0.5s ease;
         -moz-box-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
         }
     #mc_embed_signup .button:hover {
         background-color: rgb(52, 99, 30);
         -webkit-box-transition: all 0.5s ease;
         -moz-box-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
         }
     #mc_embed_signup {width: 80%;}
 </style>
@@ -225,9 +233,9 @@
     
 
     <div class="intro-image">
-        <img src="/blog/assets/post_images/py_tuto.jpeg" alt="A step by step introduction data types, variables and operators in Python">
+        <img src="/blog/assets/post_images/py_tuto.jpeg" alt="A step by step introduction to data types, variables and operators in Python">
         <div class="pattern"></div>
-        <h1 id="page-title" class="intro-title">A step by step introduction data types, variables and operators in Python
+        <h1 id="page-title" class="intro-title">A step by step introduction to data types, variables and operators in Python
 </h1>
     </div>
   
@@ -243,7 +251,7 @@
           
             <span class="byline-item">by Semasuka Stern</span>
           
-          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial</span>
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</span>
           <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-01-16T00:00:00+02:00">Wed January 16, 2019</time></span>
           
             <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>25 min read</span>
@@ -264,7 +272,7 @@
     <article class="entry-wrap">
       <div id="entry" class="entry-content">
         <p>In this post, we are going to discover all you need to know about data types, operators and variables in python. I’ll be using jupyter
-notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This blog is entirely written in Jupyter and exported as a markdown file.<!-- more --></p>
+notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.<!-- more --></p>
 
 <h3>print function</h3>
 
@@ -1095,7 +1103,7 @@ SyntaxError: invalid syntax
 <p>The backslash ( \ ) character is used to escape characters that otherwise have a special meaning, such as newline, backslash itself, the quote character, or tab.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'this is kevin</span><span class="se">\'</span><span class="s">s house'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span> <span class="c">#this starts are used to separate the output</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span> <span class="c">#this stars are used to separate the output</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Your coach said:</span><span class="se">\"</span><span class="s">You need to exercise more often</span><span class="se">\"</span><span class="s">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"You will send this letter via DHL</span><span class="se">\\</span><span class="s">FEDEX"</span><span class="p">)</span>
@@ -1607,10 +1615,10 @@ IndexError: tuple index out of range
 
         <div class="share-page">
     Share this post on
-    <a href="https://twitter.com/intent/tweet?text=A step by step introduction data types, variables and operators in Python&url=https://semasuka.github.io/blog/2019/01/16/variables-data-type-operators-python.html&via=semasuka&related=semasuka" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://facebook.com/sharer.php?u=https://semasuka.github.io/blog/2019/01/16/variables-data-type-operators-python.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html&title=A%20step%20by%20step%20introduction%20data%20types,%20variables%20and%20operators%20in%20Python" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
-    <a href="mailto:?subject=A step by step introduction data types, variables and operators in Python&amp;body=Check out this post https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+    <a href="https://twitter.com/intent/tweet?text=A step by step introduction to data types, variables and operators in Python&url=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html&via=semasuka&related=semasuka" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html&title=A%20step%20by%20step%20introduction%20to%20data%20types,%20variables%20and%20operators%20in%20Python" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="mailto:?subject=A step by step introduction to data types, variables and operators in Python&amp;body=Check out this post http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
 </div>
 
         
@@ -1618,8 +1626,8 @@ IndexError: tuple index out of range
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html';
-      this.page.identifier = 'https://semasuka.github.io/blog/blog/2019/01/16/variables-data-type-operators-python.html';
+      this.page.url = 'http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html';
+      this.page.identifier = 'http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html';
     };
 
     (function() {
@@ -1667,7 +1675,7 @@ $(function() {
       <div class="copyright">
           <p></a>Copyright &copy; 2018-<script type="text/javascript">
             document.write(new Date().getFullYear());
-          </script></a>&#160;MIB.</br>Built & maintained with <span style="color: #e25555;">&#9829;</span> by <a href="https://github.com/semasuka">Semasuka</p>
+          </script></a>&#160;MIB.</br>Built & maintained with <span style="color: #e25555;">&#9829;</span> by <a href="https://github.com/semasuka">Semasuka Stern</p>
       </div>
     </div>
 </footer>

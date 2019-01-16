@@ -399,25 +399,30 @@ a:hover {
 }
 
 .pager a {
-    background-color: white;
-    color: black;
+    background-color: #539F30;
+    color: white;
     width: 30%;
     border: 0.7px dotted #d7d8da;
     border-radius: 20px;
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
-
-.pager a:hover {
     -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
     box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+    border: 1px solid #539F30;
+}
+
+.pager a:hover {
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    background-color: white;
-    color: #539F30
+    background-color: rgb(52, 99, 30);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: rgb(187, 187, 187);
+    border: 1px solid rgb(52, 99, 30);
 }
 
 #tag-icon {
@@ -442,10 +447,13 @@ a:hover {
     color: white;
     cursor: pointer;
     padding: 15px;
-    border-radius: 40px;
+    border-radius: 18px;
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    -webkit-box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7);
+    box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7);
 }
 
 #myBtn:hover {
@@ -453,4 +461,8 @@ a:hover {
     -webkit-box-transition: all 0.5s ease;
     -moz-box-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: rgb(187, 187, 187);
 }

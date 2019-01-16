@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About Me
 
-Hi there! I’m Semasuka Stern, I’m a passionate software engineer with more than 3 years of coding experience. I code in Python, Java, Javascript, HTML and CSS. Now, I’m focusing more on machine intelligence (or machine learning) and it’s real world-application to solve humankind challenges. Myself am learning Machine Learning and the act of writing posts pushes me to explain complex topics in simple words, helping you to gain even a better understanding of Machine Learning.
+Hi there! I’m Semasuka Stern, I’m a passionate software engineer with more than 3 years of coding experience. I code in Python, Java, Javascript, HTML and CSS. Now, I’m focusing more on machine intelligence (or machine learning) and it’s real world-application to solve humankind challenges. Myself am learning Machine Learning and the act of writing posts pushes me to explain complex topics in simple words, helping you to gain a better understanding of Machine Learning.
 
 # Why another ML/coding blog?
 
