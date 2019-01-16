@@ -1,5 +1,5 @@
 ---
-title:  "A step by step introduction to data types, variables and operators in Python"
+title:  "Data types, variables and operators in Python"
 image: /assets/post_images/py_tuto.jpeg
 excerpt_separator: <!-- more -->
 tags:
