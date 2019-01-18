@@ -1,5 +1,5 @@
 ---
-title:  "Python, "The" programming language of Machine Learning"
+title:  "Python, The programming language of Machine Learning"
 image: /assets/post_images/python-snake.jpg
 excerpt_separator: <!-- more -->
 tags:

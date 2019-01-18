@@ -85,10 +85,10 @@ plugins:
 
 
 #default
-#theme: jekyll-theme-basically-basic
+theme: jekyll-theme-basically-basic
 
 #github page for custom theme
-remote_theme: "mmistakes/jekyll-theme-basically-basic"
+#remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

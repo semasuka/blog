@@ -923,7 +923,7 @@ a:hover { color: #539F30; }
 @media (min-width: 600px) { #page-title { line-height: 100px; } }
 .pager ul { text-align: -webkit-center; }
 
-.pager a { background-color: #539F30; color: white; width: 30%; border: 0.7px dotted #d7d8da; border-radius: 20px; -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); border: 1px solid #539F30; }
+.pager a { background-color: #539F30; color: white; width: 35%; border: 0.7px dotted #d7d8da; border-radius: 20px; -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52); border: 1px solid #539F30; }
 
 .pager a:hover { -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; background-color: #34631e; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: #bbbbbb; border: 1px solid #34631e; }
 
