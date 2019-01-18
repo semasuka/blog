@@ -1,5 +1,5 @@
 ---
-title:  "Python? you mean the snake?"
+title:  "Python, "The" programming language of Machine Learning"
 image: /assets/post_images/python-snake.jpg
 excerpt_separator: <!-- more -->
 tags:
@@ -7,7 +7,7 @@ tags:
 - programming
 - tutorial
 ---
-No, ain't talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.<!-- more --> The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.
+When I say python most of folk will think that I am talking about the snake.No, ain't talking about the snake, I am talking about Python the programming language. Python is an open source high-level programming language(a programming language is a language computers can understand) created by Guido van Rossum and was first released to the public in 1991. Its main features are code readability by using whitespace instead of the curly braces, dynamic typing and automatic memory management. It also supports multiple programming paradigms including object-oriented, imperative, functional and procedural.<!-- more --> The name python comes from the fact that Rossum was influenced by “Monty Python’s Flying Circus”, a comedy series from the 1970s. he thought he needed a name that was short, unique, and slightly mysterious, so he decided to call the language Python.
 
 ### The most popular programming language
 

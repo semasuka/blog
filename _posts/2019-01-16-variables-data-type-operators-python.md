@@ -842,7 +842,7 @@ print(not girl)
 
 #### membership operator
 
-"is" and "is not" are the identity operators in Python. They are used to check if two values (or variables) are located on the same part of the memory. Two variables that are equal does not imply that they are identical.
+"is" and "is not" are the identity operators in Python. They are used to check if two values (or variables) are located in the same part of the memory. Two variables that are equal does not imply that they are identical.
 
 * "is" return True if the operands are identical (refer to the same object in memory).
 * "is not" return True if the operands are not identical (do not refer to the same object in memory).
@@ -1528,7 +1528,7 @@ Challenges are problems that I will be giving you at the end of each tutorial po
 
 NB: the formula of BMI is equal to the weight in kilogram divided by the square of the height expressed in meters.
 
-Now go ahead try this challenge on your own, ONLY after you have finished or tried the challenge come back and compare your solution with mine.
+Now go away and attempt this challenge by your own, ONLY after you have finished or tried the challenge you should come back and compare your solution with mine.
 
 ### solution
 
