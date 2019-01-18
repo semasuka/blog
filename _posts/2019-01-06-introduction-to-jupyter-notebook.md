@@ -7,7 +7,7 @@ tags:
 - jupyter
 - tutorial
 ---
-Jupyter notebook formally called ipython, is a web application that runs code in the browser with an addition of comments, visualizations, paragraph, equations, title, links, figures and LaTex by using the markdown language in order to explain the code which is very useful while writing code that requires explanation.<!-- more -->
+Jupyter notebook formally called ipython, is a web application that runs code in the browser with an addition of comments, visualizations, paragraph, equations, title, links, figures and LaTex by using the markdown language which is very useful while writing code that requires explanation.<!-- more -->
 
 The good thing with Jupyter it is the fact that you can easily integrate and import different machine learning packages like pandas, numpy, scipy and matplotlib and many more through anaconda distribution making it the best swiss army knife for data science research. This is why Jupyter has become the most indispensable tool for anyone doing machine learning and did I forgot to mention? it is 100% FREE!!
 

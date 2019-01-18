@@ -175,9 +175,9 @@ As we have seen at the beginning, a string is a sequence of characters. it is pa
 ```python
 print("a")
 print("This a sequence of characters")
-print('I am a delimited by single quotes')
-print("I am a delimited by double quotes")
-print("""I am a delimited by single quotes""")
+print('I am delimited by single quotes')
+print("I am delimited by double quotes")
+print("""I am delimited by triple quotes""")
 ```
 
     a
@@ -571,7 +571,7 @@ print("Your weight is "+weight)
     Your weight is 74
 
 
-N.B: Remember all the input are stored as string even though they are numberical input
+N.B: Remember all the input are stored as string even though they are numerical input
 
 
 ```python
@@ -935,7 +935,7 @@ print(word_4_to_search not in the_sentence)
     True
 
 
-N.B: All remember that Python is case sensitive
+N.B: Remember that Python is case sensitive
 
 
 ```python
@@ -990,7 +990,7 @@ The backslash ( \ ) character is used to escape characters that otherwise have a
 
 ```python
 print('this is kevin\'s house')
-print("****") #this stars are used to separate the output
+print("****") #these stars are used to separate the output
 print("Your coach said:\"You need to exercise more often\"")
 print("****")
 print("You will send this letter via DHL\\FEDEX")
@@ -1135,7 +1135,7 @@ print(dog_breed[0:8:2])
     lbao
 
 
-Every second character(starting from 0) is printed
+In this example,every second character(starting from 0) is printed
 
 
 ```python
@@ -1221,7 +1221,7 @@ print("I leave in {0}".format("Africa"))
 ```
 
     I am 84 years old
-    I leave in Africa
+    I live in Africa
 
 
 Here the curly { } act as a placeholders in the string literal, and the value that will be placed there will be the variable(s)/value(s) in the .format( ). the numbers written in the { }, are the position of the variable(s)/value(s) in the .format( ) and dont forget that in Python, we count from 0.
@@ -1523,7 +1523,7 @@ Challenges are problems that I will be giving you at the end of each tutorial po
 * The program should get value through the input ( ) function
 * Don't use the truncation division while calculating the BMI
 * Should display the BMI using format ( )
-* When displaying the BMI, use this format "The BMI of a person with XX kg and X.XX m is XX.XXX"
+* When displaying the BMI, use this format "The BMI of a person with XX kg and a height of X.XX m is XX.XXX"
 * BMI should a float and have 3 decimal digits with 6 as left alignment width
 
 NB: the formula of BMI is equal to the weight in kilogram divided by the square of the height expressed in meters.
@@ -1569,7 +1569,7 @@ BMI = weight/(height**2)
 
 
 ```python
-print("The BMI of a person with {} kg and {} m is {:6.3f}".format(weight,height,BMI))
+print("The BMI of a person with {} kg and a height of {} m is {:6.3f}".format(weight,height,BMI))
 ```
 
     The BMI of a person with 77.0 kg and 1.88 m is 21.786
