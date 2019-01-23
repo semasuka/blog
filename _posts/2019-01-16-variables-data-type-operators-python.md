@@ -9,7 +9,7 @@ tags:
 ---
 
 In this post, we are going to discover all you need to know about data types, operators and variables in python. I'll be using jupyter
-notebook, feel free to use any text editor of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.<!-- more -->
+notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.<!-- more -->
 
 ### print function
 
@@ -1217,7 +1217,7 @@ format( ) method takes any number of parameters. But, is divided into two types 
 ```python
 age = 84
 print("I am {0} years old".format(age))
-print("I leave in {0}".format("Africa"))
+print("I live in {0}".format("Africa"))
 ```
 
     I am 84 years old
@@ -1575,4 +1575,4 @@ print("The BMI of a person with {} kg and a height of {} m is {:6.3f}".format(we
     The BMI of a person with 77.0 kg and 1.88 m is 21.786
 
 
-Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
