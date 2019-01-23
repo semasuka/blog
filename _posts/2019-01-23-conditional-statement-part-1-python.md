@@ -1,5 +1,5 @@
 ---
-title:  "Control Flow in Python Part 1 - conditional statement and pass statement"
+title:  "Control Flow in Part 1 - conditional statement"
 image: /assets/post_images/py_tuto.jpeg
 excerpt_separator: <!-- more -->
 tags:
