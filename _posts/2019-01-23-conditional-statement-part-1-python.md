@@ -8,8 +8,7 @@ tags:
 - programming
 ---
 In this series of posts, we going to talk about the control flow in Python programming. A program’s control flow is the order in which the program’s code executes. In this first post of the series, we'll talk about
-the conditional and pass statement. But before we start, let's discuss on the indentation in python and difference between a statement and an expression. Again, this post is written entirely in Jupyter notebook and 
-exported as a markdown file Jekyll.
+the conditional and pass statement. But before we start, let's discuss on the indentation in python and difference between a statement and an expression. Again, this post is written entirely in Jupyter notebook and exported as a markdown file Jekyll.<!-- more -->
 
 ### statement vs expression
 
