@@ -129,7 +129,7 @@ you can learn more about binary [here](https://en.wikipedia.org/wiki/Binary_numb
 
 ##### float
 
-floats are numbers with a decimal part. Optionally, the character e or E followed by a positive or negative integer can be appended to it to represent mathematical notation.
+floats are numbers with a decimal part. Optionally, the character e or E followed by a positive or negative integer can be appended to it to represent a mathematical notation.
 
 
 ```python
@@ -596,7 +596,7 @@ print("Substraction of 12 and 3 is "+str(first_num-sec_num))
 print("Multiplication of 12 and 3 is "+str(first_num*sec_num))
 print("division of 12 and 3 is "+str(first_num/sec_num))
 print("Truncation Division (also known as floordivision or floor division) of 12 and 3 is "+str(first_num//sec_num))
-print("12 exponential 3 is "+str(first_num**sec_num))
+print("12 power of 3 is "+str(first_num**sec_num))
 print("modulus of 12 and 3 is "+str(12%3))
 ```
 
@@ -605,7 +605,7 @@ print("modulus of 12 and 3 is "+str(12%3))
     Multiplication of 12 and 3 is 36
     division of 12 and 3 is 4.0
     Truncation Division (also known as floordivision or floor division) of 12 and 3 is 4
-    12 exponential 3 is 1728
+    12 power of 3 is 1728
     modulus of 12 and 3 is 0
 
 
@@ -666,7 +666,7 @@ print(price)
     49.99
 
 
-There is a short hand form of writing this, which is much more prefered
+There is a short hand form of writing this called augmented assignment, which is much more efficient
 
 
 ```python
@@ -726,7 +726,7 @@ print(price)
     79.98
 
 
-exponential
+power of
 
 
 ```python

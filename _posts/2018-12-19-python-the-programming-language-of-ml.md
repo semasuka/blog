@@ -73,7 +73,7 @@ Hello world
 ```
 the `print` keyword display anything in place in the bracket inside the ""
 
-you can also make some basic operation like addition`+`, subtraction`-`, division`//`(only return whole numbers),division`/`(return float or whole numbers),multiplication`*`,exponential`**` and modulo`%` which is the remainder of the division
+you can also make some basic operation like addition`+`, subtraction`-`, division`//`(only return whole numbers),division`/`(return float or whole numbers),multiplication`*`,power of`**` and modulo`%` which is the remainder of the division
 
 ```bash
 >>>15+2 //output: 17

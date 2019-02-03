@@ -1,5 +1,5 @@
 ---
-title:  "Control Flow Part 1 - conditional statement"
+title:  "Control flow part 1 - conditional statement"
 image: /assets/post_images/py_tuto.jpeg
 excerpt_separator: <!-- more -->
 tags:
@@ -8,12 +8,12 @@ tags:
 - programming
 ---
 In this series of posts, we going to talk about the control flow in Python programming. A program’s control flow is the order in which the program’s code executes. In this first post of the series, we'll talk about
-the conditional and pass statement. But before we start, let's discuss on the indentation in python and the difference between a statement and an expression. Again, this post is written entirely in Jupyter notebook and exported as a markdown file Jekyll.<!-- more -->
+the conditional and pass statement. But before we start, let's discuss on the indentation in python and the difference between a statement and an expression. Again, this post is written entirely in Jupyter notebook and exported as a markdown file to Jekyll.<!-- more -->
 
 ### statement vs expression
 
 From this point, I will be using the term expression and statement quite often so let me explain right away
-the difference. The general rule of thumb is that If you can print it, or assign it to a variable, 
+the difference. The general rule of thumb is that If you can print it, or assign it to a variable,
 it’s an expression and if you can’t then it’s a statement.
 
 
