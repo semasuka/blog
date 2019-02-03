@@ -8,7 +8,7 @@ tags:
 - programming
 ---
 
-In this second part of the control flow series, we will discuss the for and while loop which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task.<!-- more -->
+In this second part of the control flow series, we will discuss the for and while loop statement which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task.<!-- more -->
 
 ### For loop statement
 
