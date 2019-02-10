@@ -864,17 +864,18 @@ A particular use case of the while loop would be reading data from a file since 
 
 Challenge time!! For this first challenge, let's create a program that checks if an inputted IP address is valid or not. A message saying "valid IP address" or "Invalid IP address" should be returned. A valid IP address consists of 4 numbers separated by a dot, and those numbers must be between 0 and 255
 examples of a valid IP address:
-    	- 127.0.0.1
-    	- 255.255.255.255
-    	- 192.198.22.1
-    	- 0.0.0.0
+- 127.0.0.1
+- 255.255.255.255
+- 192.198.22.1
+- 0.0.0.0
+
 example of an invalid IP address:
-    	- 342.11.333.1
-        - .23.11.2.2
-    	- 122.11.54.2.
-    	- 123.145.22.34343343
-    	- 192.184.22.1.5
-    	- empty input eg: ""
+- 342.11.333.1
+- .23.11.2.2
+- 122.11.54.2.
+- 123.145.22.34343343
+- 192.184.22.1.5
+- empty input eg: ""
 
 Go ahead and try this challenge.
 
@@ -1032,11 +1033,10 @@ If the two numbers are equal, then we have won. We will print the message with t
 
 Else if the number inputted is greater than 11 or smaller than 1, a message will be print as a reminder to choose a number between 1 and 10. The continue keyword will be executed and the loop will resume to the next count.
 
-The last else statement will be True only if the number inputted is between 1 and 10 and different from answer_to_find value which is the range we are looking for. In case we will increment the attempt count by 1 we will create a new conditional statement that will help to guide the user to either guess higher or lower depending on the 
-inputted number at the same time displaying the number of guesses left by subtracting the maximum number of guess ( which is 3 ) to the guesses count already performed. We have an else if statement that check if we have reached the maximum guesses. If we have, then we have lost the game and then break out the loop.
+The last else statement will be True only if the number inputted is between 1 and 10 and different from answer_to_find value which is the range we are looking for. In case we will increment the attempt count by 1 we will create a new conditional statement that will help to guide the user to either guess higher or lower depending on the inputted number at the same time displaying the number of guesses left by subtracting the maximum number of guess ( which is 3 ) to the guesses count already performed. We have an else if statement that check if we have reached the maximum guesses. If we have, then we have lost the game and then break out the loop.
 
 ### Conclusion
 
-In this tutorial post, we have seen the loops in Python. The loops, in general, are very useful in a way that they help us execute the same code multiple times without writing more codes. They also can be used with a conditional statement to create complex codes that can perform various operations. In the upcoming post, we will discuss lists, tuples and sets in python. Stay tuned!
+In this tutorial post, we have seen the loops in Python. The loops, in general, are very useful in a way that they help us execute the same code multiple times without writing more codes. They also can be used with a conditional statement to create complex codes. In the upcoming post, we will discuss lists, tuples and ranges in python. Stay tuned!
 
-Thank you for reading this tutorial. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.

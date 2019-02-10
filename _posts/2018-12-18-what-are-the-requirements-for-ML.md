@@ -40,4 +40,4 @@ Last but definitely not least, you must practice! and keep on practising in orde
 
  I know all this list might seem daunting at first to learn all these maths and programming skills and I can't say it will be easy because me too I am an not expert at all of them, but I can promise that if you are determined and persevere  through you can learn this and get an understanding of the foundations of ML, then it will be much much easier to debug errors (yes you are going to encounter many of those) while using complex machine learning algorithms.
 
-Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.

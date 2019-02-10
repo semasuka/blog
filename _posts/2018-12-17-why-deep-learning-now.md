@@ -56,4 +56,4 @@ The perfect marriage between big data and the increased processing power has all
 
 We can't deny that deep learning has a bright future ahead but also we should be concerned about its drawbacks like fake news.
 
-Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.

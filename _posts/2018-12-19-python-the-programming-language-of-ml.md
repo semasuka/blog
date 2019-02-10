@@ -87,4 +87,4 @@ you can also make some basic operation like addition`+`, subtraction`-`, divisio
 
 This is a brief introduction to python and an overview of its installation. I will go in depth of Python in the upcoming posts. Stay tuned by subscribing!
 
-Thank you for reading this post. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
