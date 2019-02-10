@@ -8,7 +8,7 @@ tags:
 - programming
 ---
 
-So far, we have seen one sequence data type which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will discuss 3 of them which are the lists, tuple and range and see their functions.<!-- more -->
+So far, we have seen one sequence data type which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will discuss 3 of them which are the lists, tuple and range and see their functions.In this post, we will focus on the list only<!-- more -->
 
 let's see how we can use a built-in function to a sequence data type to actually make our code more readable.
 
