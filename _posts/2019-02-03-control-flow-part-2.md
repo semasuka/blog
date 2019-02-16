@@ -877,7 +877,7 @@ example of an invalid IP address:
 - 192.184.22.1.5
 - empty input eg: ""
 
-Go ahead and try this challenge.
+Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.
 
 ### Challenge 1 Solution
 

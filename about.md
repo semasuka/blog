@@ -9,11 +9,11 @@ Hi there! I’m Semasuka Stern, I’m a passionate software engineer with more t
 
 # Why another ML/coding blog?
 
-This one is different. This blog helps ANYONE who is interested in Machine Learning and doesn’t have a clue where to start. If this sound like you, then you are at the right place this blog starts from the beginner level of Machine Learning to more advanced level. If you have some experience, you’ll also gain extra knowledge. You will learn concepts ranging from programming, maths, data analysis to algorithm optimization and models used in Machine Learning every week.
+This one is different. This blog helps ANYONE who is interested in Machine Learning and doesn’t have a clue where to start. If this sound like you, then you are at the right place this blog starts from the beginner level of Machine Learning to more advanced level. If you have some experience, you’ll also gain extra knowledge. You will learn concepts ranging from programming, maths, data analysis to algorithm optimization and models used in Machine Learning every week. You will learn these concepts through easy to understand examples.
 
 # About the blog
 
-This blog is powered by [Jekyll](https://jekyllrb.com "Jekyll") using [this](https://github.com/mmistakes/jekyll-theme-basically-basic) theme, I have tweaked it with my own styling. If you wish to use this blog as a template to create your own blog, or contribute to this project fork it on my github profile [here](https://github.com/semasuka/blog).
+This blog is powered by [Jekyll](https://jekyllrb.com "Jekyll") using [this](https://github.com/mmistakes/jekyll-theme-basically-basic) theme, I have tweaked it with my own styling. If you wish to use this blog as a template to create your own blog, or contribute to this project fork it on my GitHub profile [here](https://github.com/semasuka/blog).
 
 All of the content on this site is FREE with no ads for the benefit of the community. Please do not reproduce the entire content (or very substantial portions) of any article without asking first.
 

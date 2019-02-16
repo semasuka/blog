@@ -8,7 +8,7 @@ tags:
 - programming
 ---
 
-So far, we have seen one sequence data type which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will discuss 3 of them which are the lists, tuple and range and see their functions.In this post, we will focus on the list only<!-- more -->
+So far, we have seen one sequence data type which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will discuss 3 of them which are the lists, tuple and range and see their functions. In this post, we will focus on the list only<!-- more -->
 
 let's see how we can use a built-in function to a sequence data type to actually make our code more readable.
 
@@ -581,6 +581,8 @@ No surprise here since the two lists have the same elements arranged in the same
 
 For this challenge, we will have a list that contains lists of ingredients. These lists of ingredients will be added to the list then print all the ingredients that doesn't contain a specific unwanted ingredient. for eg, let's say that we don't want "nuts" as ingredient, the program shall print all the list elements that does not have "nuts" in it. While printing, we shall have a count of each element.
 
+Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.
+
 ### Challenge solution
 
 
@@ -616,7 +618,7 @@ After this finding,  we will loop through the list and enumerate all the element
 
 ### Conclusion
 
-A list is a clean way of storing data in a container that allow us to iterate over on its elements and perform useful operation on it like adding and removing new elements. We will be using lists a lot. In the upcoming post, we will discuss tuples ranges.
+A list is a clean way of storing data in a container that allow us to iterate over on its elements and perform useful operation on it like adding and removing new elements. We will be using lists a lot. In the upcoming post, we will discuss tuples and ranges.
 
 Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
 
