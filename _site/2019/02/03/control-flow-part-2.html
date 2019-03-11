@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Control flow part 2 - loop statement | MIB</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Control flow part 2 - loop statement" />
+<meta name="author" content="Semasuka Stern" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this second part of the control flow series, we will discuss the for and while loop statement which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task." />
+<meta property="og:description" content="In this second part of the control flow series, we will discuss the for and while loop statement which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/02/03/control-flow-part-2.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/02/03/control-flow-part-2.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/py_tuto.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-03T00:00:00+02:00" />
+<script type="application/ld+json">
+{"headline":"Control flow part 2 - loop statement","dateModified":"2019-02-03T00:00:00+02:00","datePublished":"2019-02-03T00:00:00+02:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/02/03/control-flow-part-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/02/03/control-flow-part-2.html"},"author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this second part of the control flow series, we will discuss the for and while loop statement which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task.","image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+
+
+  <body class="layout--post control-flow-part-2-loop-statement">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://twitter.com/semasuka">
+  <span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Twitter</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/semasuka-stern-437096150">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/py_tuto.jpeg" alt="Control flow part 2 - loop statement">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">Control flow part 2 - loop statement
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Semasuka Stern</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-02-03T00:00:00+02:00">Sun February 3, 2019</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>31 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>In this second part of the control flow series, we will discuss the for and while loop statement which is one of the most important concepts in programming. This allows repetition of a certain block of code without rewriting the code multiple times, this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task.<!-- more --></p>
+
+<h3>For loop statement</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 1
+i is now 2
+i is now 3
+i is now 4
+i is now 5
+i is now 6
+i is now 7
+i is now 8
+i is now 9
+i is now 10
+i is now 11
+i is now 12
+i is now 13
+i is now 14
+i is now 15
+i is now 16
+i is now 17
+i is now 18
+i is now 19
+i is now 20
+i is now 21
+i is now 22
+i is now 23
+i is now 24
+</code></pre></div></div>
+
+<p>As we have already seen in the previous post, the for loop statement count from 1 to 24 and assign that value 
+to i and execute the block of code once for each value.</p>
+
+<p>the range is an exclusive function which means that the last number will not be included. 
+If we want i to go up to 25, we’ll rewrite it like this</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c">#print 1</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 1
+i is now 2
+i is now 3
+i is now 4
+i is now 5
+i is now 6
+i is now 7
+i is now 8
+i is now 9
+i is now 10
+i is now 11
+i is now 12
+i is now 13
+i is now 14
+i is now 15
+i is now 16
+i is now 17
+i is now 18
+i is now 19
+i is now 20
+i is now 21
+i is now 22
+i is now 23
+i is now 24
+i is now 25
+</code></pre></div></div>
+
+<p>what is happening here, is that Python is executing the print function 25 times starting from 1. 
+Another thing to mention is on the naming of the variable in the for loop statement, in the previous posts. 
+I have said that we should give a meaningful name to our variables, but in this case, we have an exception</p>
+
+<p>“i” which stands for index and “j” are generally accepted to be the variable’s names in a for a loop statement.</p>
+
+<p>let’s see another example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+,
+3
+3
+,
+1
+1
+2
+,
+3
+,
+5
+5
+,
+3
+2
+,
+1
+1
+,
+9
+0
+9
+,
+3
+</code></pre></div></div>
+
+<p>here we have a sequence of characters separated by a comma and stored in a string variable called numbers. We have a for loop that will loop from 0 the length of numbers, this length is calculated using the len() function, this function will count starting from 1 to the number of characters found in a string. In our example, numbers variable has 25 characters.</p>
+
+<p>so the range function will count from 0 to 24 and assign each count to the variable i. The value assigned to i is an integer and for each count i is incremented by one</p>
+
+<p>Now inside the print function, the value of i will be used as the index of numbers and will print the character at the index corresponding to the value of i, this will print all the character from the character at index 0 (which is 2) to the last character at index 25 (which is 3).</p>
+
+<p>Now, what if we want to print only the number and exclude the commas. We can easily do this by using a for loop with the conditional statement</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+3
+3
+1
+1
+2
+3
+5
+5
+3
+2
+1
+1
+9
+0
+9
+3
+</code></pre></div></div>
+
+<p>We have introduced a conditional statement before printing the character, We are testing if the character at that particular index is found in “0123456789” if it is then the program shall proceed and print that character, else the program shall skip that index to the next one. That is why the commas are not printed since they are not part of “0123456789”</p>
+
+<p>By default, Python will print each character on a new line. This is due to a keyword in the print function named “end”, even though it is not written, by default the “end” is hidden and set to “\n” like this</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+3
+3
+1
+1
+2
+3
+5
+5
+3
+2
+1
+1
+9
+0
+9
+3
+</code></pre></div></div>
+
+<p>We overwrite this by changing the value of end, let’s say for example instead of print the character on a new line we want to print the character on the same line with space between, we are going to change “end” and assign it to an empty string “” like this</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s">""</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23311235532119093
+</code></pre></div></div>
+
+<p>As we can see, now all the characters are printed and joined together without the comma on the same line.</p>
+
+<p>We can also separate the string with any character of our choice.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s">"*"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2*3*3*1*1*2*3*5*5*3*2*1*1*9*0*9*3*
+</code></pre></div></div>
+
+<p>what if we want to cast each character to an actual integer and ignore the comma, we can easily do that too</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="n">only_numbers</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="n">only_numbers</span> <span class="o">+=</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">int_numbers</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">only_numbers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">int_numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23311235532119093
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">int_numbers</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+</code></pre></div></div>
+
+<p>we have created an empty string variable named only_numbers that will store each numerical character. After checking if the character is found in “0123456789”, we used augmented assignment operator += and kept on storing each numerical character to only_numbers. After the for loop has exhausted all its count, all the numerical characters are stored in the only_numbers variables. Now we cast only_numbers to integer and store it to the int_numbers and print it</p>
+
+<p>let’s see another similar example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="s">"2,33,112,3,55,32,11,909,3"</span>
+<span class="n">only_numbers</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="s">"0123456789"</span><span class="p">:</span>
+        <span class="n">only_numbers</span> <span class="o">+=</span> <span class="n">char</span>
+<span class="n">int_numbers</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">only_numbers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">int_numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23311235532119093
+</code></pre></div></div>
+
+<p>since now we ain’t dealing with indexes and range function, we are going to name the variable in the for loop “char”, so this loop will be interpreted as “for each char found in numbers do something with it”, and we shall get the same answer as we did before. This much more concise and readable code than using the range function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Burundi"</span><span class="p">,</span><span class="s">"Rwanda"</span><span class="p">,</span><span class="s">"Tanzania"</span><span class="p">,</span><span class="s">"Kenya"</span><span class="p">,</span><span class="s">"Uganda"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The country now we are printing is {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The country now we are printing is Burundi
+The country now we are printing is Rwanda
+The country now we are printing is Tanzania
+The country now we are printing is Kenya
+The country now we are printing is Uganda
+</code></pre></div></div>
+
+<p>We can also loop through a list. In the example above we have a list of countries, we’ll see list in more detail in the upcoming post but as I have already said, a list is just container and we can traverse through all the elements in the container using the for loop statement. Each country will be printed on its turn up to the last country in the list.</p>
+
+<p>We can also use concatenation since we are dealing with string data type</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Burundi"</span><span class="p">,</span><span class="s">"Rwanda"</span><span class="p">,</span><span class="s">"Tanzania"</span><span class="p">,</span><span class="s">"Kenya"</span><span class="p">,</span><span class="s">"Uganda"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The country now we are printing is "</span><span class="o">+</span> <span class="n">country</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The country now we are printing is Burundi
+The country now we are printing is Rwanda
+The country now we are printing is Tanzania
+The country now we are printing is Kenya
+The country now we are printing is Uganda
+</code></pre></div></div>
+
+<p>Now let’s go back to the range function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 0
+i is now 2
+i is now 4
+i is now 6
+i is now 8
+i is now 10
+i is now 12
+i is now 14
+i is now 16
+i is now 18
+</code></pre></div></div>
+
+<p>we have introduced a third value in the range function, the general format of the range function is like this: range(start, end, step). So in this example, i will start counting from 0(start) up to 19(end), for each iteration we going to increment i by 2(step).</p>
+
+<p>let’s see another example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 0
+i is now 5
+i is now 10
+i is now 15
+i is now 20
+i is now 25
+i is now 30
+i is now 35
+i is now 40
+i is now 45
+</code></pre></div></div>
+
+<p>Here we are printing from 0 to 49 with a step of 5</p>
+
+<p>we can use nested for loop to get very meaningful results</p>
+
+<p>let’s illustrate this by printing the multiplication tables from 1 to 12</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"{} x {} = {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+1 x 11 = 11
+1 x 12 = 12
+
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+2 x 11 = 22
+2 x 12 = 24
+
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+3 x 11 = 33
+3 x 12 = 36
+
+4 x 1 = 4
+4 x 2 = 8
+4 x 3 = 12
+4 x 4 = 16
+4 x 5 = 20
+4 x 6 = 24
+4 x 7 = 28
+4 x 8 = 32
+4 x 9 = 36
+4 x 10 = 40
+4 x 11 = 44
+4 x 12 = 48
+
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+5 x 11 = 55
+5 x 12 = 60
+
+6 x 1 = 6
+6 x 2 = 12
+6 x 3 = 18
+6 x 4 = 24
+6 x 5 = 30
+6 x 6 = 36
+6 x 7 = 42
+6 x 8 = 48
+6 x 9 = 54
+6 x 10 = 60
+6 x 11 = 66
+6 x 12 = 72
+
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+7 x 11 = 77
+7 x 12 = 84
+
+8 x 1 = 8
+8 x 2 = 16
+8 x 3 = 24
+8 x 4 = 32
+8 x 5 = 40
+8 x 6 = 48
+8 x 7 = 56
+8 x 8 = 64
+8 x 9 = 72
+8 x 10 = 80
+8 x 11 = 88
+8 x 12 = 96
+
+9 x 1 = 9
+9 x 2 = 18
+9 x 3 = 27
+9 x 4 = 36
+9 x 5 = 45
+9 x 6 = 54
+9 x 7 = 63
+9 x 8 = 72
+9 x 9 = 81
+9 x 10 = 90
+9 x 11 = 99
+9 x 12 = 108
+
+10 x 1 = 10
+10 x 2 = 20
+10 x 3 = 30
+10 x 4 = 40
+10 x 5 = 50
+10 x 6 = 60
+10 x 7 = 70
+10 x 8 = 80
+10 x 9 = 90
+10 x 10 = 100
+10 x 11 = 110
+10 x 12 = 120
+
+11 x 1 = 11
+11 x 2 = 22
+11 x 3 = 33
+11 x 4 = 44
+11 x 5 = 55
+11 x 6 = 66
+11 x 7 = 77
+11 x 8 = 88
+11 x 9 = 99
+11 x 10 = 110
+11 x 11 = 121
+11 x 12 = 132
+
+12 x 1 = 12
+12 x 2 = 24
+12 x 3 = 36
+12 x 4 = 48
+12 x 5 = 60
+12 x 6 = 72
+12 x 7 = 84
+12 x 8 = 96
+12 x 9 = 108
+12 x 10 = 120
+12 x 11 = 132
+12 x 12 = 144
+</code></pre></div></div>
+
+<p>We start by counting the first index i,  i will start from 1 to 12 and will correspond to the multiplication tables from 1 to 12. The nested for loop has an index of j, which will count from 1 to 12 and will correspond to the factor in the table. The print function will print the table number (i) times the factor (j) and return the result. After each table has exhausted all its factors,a print function without anything inside is placed out the nested for loop. The purpose of this is to add a space after each table and it should be placed at the same level of indentation as the nested for loop statement in order for it to print whitespace after each table.</p>
+
+<p>Sometime when we are coding we might need to stop the flow of a loop when a certain condition occurs. We may want to jump out the ongoing iteration and go to the next or stop completely the loop.  That is when keyword like continue and break come in.</p>
+
+<h3>Continue keyword</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">available_cars</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bmw"</span><span class="p">,</span><span class="s">"porshes"</span><span class="p">,</span><span class="s">"benz"</span><span class="p">,</span><span class="s">"audi"</span><span class="p">,</span><span class="s">"mazda"</span><span class="p">,</span><span class="s">"tesla"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">available_cars</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Buy "</span> <span class="o">+</span> <span class="n">car</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buy bmw
+Buy porshes
+Buy benz
+Buy audi
+Buy mazda
+Buy tesla
+</code></pre></div></div>
+
+<p>There is nothing new here that we have not seen, what’s happening is that we are going through all the car names in the list, and for each car, we are concatenating the string “Buy “ with the name of the car.</p>
+
+<p>But what if we are not interested in a particular car, let’s say we don’t want to buy a Mazda for instance, we want to skip Mazda each time it is its turn. That’s when the continue keyword comes into place.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">available_cars</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Bmw"</span><span class="p">,</span><span class="s">"Porshes"</span><span class="p">,</span><span class="s">"Benz"</span><span class="p">,</span><span class="s">"Audi"</span><span class="p">,</span><span class="s">"Mazda"</span><span class="p">,</span><span class="s">"Tesla"</span><span class="p">,</span><span class="s">"Toyota"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">available_cars</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">car</span> <span class="o">==</span> <span class="s">"Mazda"</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Buy "</span> <span class="o">+</span> <span class="n">car</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buy Bmw
+Buy Porshes
+Buy Benz
+Buy Audi
+Buy Tesla
+Buy Toyota
+</code></pre></div></div>
+
+<p>We can see that “buy Mazda” is now missing. what happened? well, we have introduced a test using a conditional statement to check if the name from the list is “Mazda” if it not, the test will fail and the print function will execute. if it is, python will read the continue keyword and will interpret it like this: “skip this item to the next item in the list”. the print function will be bypassed.</p>
+
+<p>To make things more clear, we can rewrite it like this</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">available_cars</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Bmw"</span><span class="p">,</span><span class="s">"Porshes"</span><span class="p">,</span><span class="s">"Benz"</span><span class="p">,</span><span class="s">"Audi"</span><span class="p">,</span><span class="s">"Mazda"</span><span class="p">,</span><span class="s">"Tesla"</span><span class="p">,</span><span class="s">"Toyota"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">available_cars</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">car</span> <span class="o">==</span> <span class="s">"Mazda"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Ignoring "</span><span class="o">+</span><span class="n">car</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Buy "</span> <span class="o">+</span> <span class="n">car</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buy Bmw
+Buy Porshes
+Buy Benz
+Buy Audi
+Ignoring Mazda
+Buy Tesla
+Buy Toyota
+</code></pre></div></div>
+
+<h3>Break keyword</h3>
+
+<p>On the other hand, break keyword will completely terminate the loop.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">available_cars</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Bmw"</span><span class="p">,</span><span class="s">"Porshes"</span><span class="p">,</span><span class="s">"Benz"</span><span class="p">,</span><span class="s">"Audi"</span><span class="p">,</span><span class="s">"Mazda"</span><span class="p">,</span><span class="s">"Tesla"</span><span class="p">,</span><span class="s">"Toyota"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">available_cars</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">car</span> <span class="o">==</span> <span class="s">"Mazda"</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Buy "</span> <span class="o">+</span> <span class="n">car</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The for loop have pre-maturity stop. mazda ,tesla and toyota will not be printed"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buy Bmw
+Buy Porshes
+Buy Benz
+Buy Audi
+The for loop have pre-maturity stop. mazda ,tesla and toyota will not be printed
+</code></pre></div></div>
+
+<p>All the strings after Mazda will not be printed. why? because we have terminated the for loop as soon as the conditional statement has been evaluated to True when compared the car variable to “Mazda”, the break keyword will exit out of the for loop and will execute the code found after the for loop. “Tesla” and “Toyota” are not printed too because the for loop has exited before their turns.</p>
+
+<p>let’s see another example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meal_ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bacon"</span><span class="p">,</span><span class="s">"egg"</span><span class="p">,</span><span class="s">"tomato"</span><span class="p">,</span><span class="s">"milk"</span><span class="p">,</span><span class="s">"nuts"</span><span class="p">,</span><span class="s">"mangoe"</span><span class="p">,</span><span class="s">"rice"</span><span class="p">,</span><span class="s">"beans"</span><span class="p">]</span>
+<span class="n">allergic_food</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">meal_ingredients</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ingredient</span> <span class="o">==</span> <span class="s">"nuts"</span><span class="p">:</span>
+        <span class="n">allergic_food</span> <span class="o">=</span> <span class="n">ingredient</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="n">allergic_food</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sorry but I can't eat that, I am allergic to nuts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sorry but I can't eat that, I am allergic to nuts
+</code></pre></div></div>
+
+<p>In this example, we don’t want to eat any meal that contains allergic food like nuts in this instance. We can see how helpful the break keyword is, in a sense that we don’t have to traverse the whole list instead as soon as we find a match to an allergic ingredient, the program shall stop right away and exit the loop. This is done by first testing if any ingredient equal to “nuts” if it is we will store the ingredient value in the allergic_food variable then break out of the loop. After the loop, we are going to test if allergic_food is a none empty string. In this example, allergic_food is not empty, which means that it will be evaluated to True and display the message that the food can’t be eaten.</p>
+
+<p>let’s see the same example but this time nuts is removed from the ingredients list.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meal_ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bacon"</span><span class="p">,</span><span class="s">"egg"</span><span class="p">,</span><span class="s">"tomato"</span><span class="p">,</span><span class="s">"milk"</span><span class="p">,</span><span class="s">"mangoe"</span><span class="p">,</span><span class="s">"rice"</span><span class="p">,</span><span class="s">"beans"</span><span class="p">]</span>
+<span class="n">allergic_food</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">meal_ingredients</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ingredient</span> <span class="o">==</span> <span class="s">"nuts"</span><span class="p">:</span>
+        <span class="n">allergic_food</span> <span class="o">=</span> <span class="n">ingredient</span>
+        <span class="k">break</span> 
+<span class="k">if</span> <span class="n">allergic_food</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sorry but I can't eat that, I am allergic to nuts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>As we can see “nuts” ain’t in the list, so allergic_food will remain an empty string, which will be evaluated as False when using the conditional statement. After running the program nothing will happen.</p>
+
+<h3>Else in a for loop statement</h3>
+
+<p>Python unlike most of the other programming language can have an else statement for a for loop statement.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meal_ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bacon"</span><span class="p">,</span><span class="s">"egg"</span><span class="p">,</span><span class="s">"tomato"</span><span class="p">,</span><span class="s">"milk"</span><span class="p">,</span><span class="s">"mangoe"</span><span class="p">,</span><span class="s">"rice"</span><span class="p">,</span><span class="s">"beans"</span><span class="p">]</span>
+<span class="n">allergic_food</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">meal_ingredients</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ingredient</span> <span class="o">==</span> <span class="s">"nuts"</span><span class="p">:</span>
+        <span class="n">allergic_food</span> <span class="o">=</span> <span class="n">ingredient</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hummm Yummiee I want to eat!!"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">allergic_food</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sorry but I can't eat that, I am allergic to nuts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hummm Yummiee I want to eat!!
+</code></pre></div></div>
+
+<p>The else statement in a for loop will be executed only if the for loop has not broken out, in our case only when the nuts are not found in the meal_ingredients.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meal_ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bacon"</span><span class="p">,</span><span class="s">"egg"</span><span class="p">,</span><span class="s">"tomato"</span><span class="p">,</span><span class="s">"milk"</span><span class="p">,</span><span class="s">"nuts"</span><span class="p">,</span><span class="s">"mangoe"</span><span class="p">,</span><span class="s">"rice"</span><span class="p">,</span><span class="s">"beans"</span><span class="p">]</span>
+<span class="n">allergic_food</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">meal_ingredients</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ingredient</span> <span class="o">==</span> <span class="s">"nuts"</span><span class="p">:</span>
+        <span class="n">allergic_food</span> <span class="o">=</span> <span class="n">ingredient</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hummm Yummiee I want to eat!!"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">allergic_food</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sorry but I can't eat that, I am allergic to nuts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sorry but I can't eat that, I am allergic to nuts
+</code></pre></div></div>
+
+<p>If the break keyword has been executed, then else statement will be ignored. Careful here with the indentation of else statement should be aligned on the same level as the for loop, in order for it to be considered as part of the for loop statement.</p>
+
+<p>We can also rewrite this code by initializing allergic_food to an empty string when the else statement of the for loop, which will make the conditional evaluation after the for loop equal to False because allergic_food was not initialized in the first place.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meal_ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bacon"</span><span class="p">,</span><span class="s">"egg"</span><span class="p">,</span><span class="s">"tomato"</span><span class="p">,</span><span class="s">"milk"</span><span class="p">,</span><span class="s">"nuts"</span><span class="p">,</span><span class="s">"mangoe"</span><span class="p">,</span><span class="s">"rice"</span><span class="p">,</span><span class="s">"beans"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">meal_ingredients</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ingredient</span> <span class="o">==</span> <span class="s">"nuts"</span><span class="p">:</span>
+        <span class="n">allergic_food</span> <span class="o">=</span> <span class="n">ingredient</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">allergic_food</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hummm Yummiee I want to eat!!"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">allergic_food</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sorry but I can't eat that, I am allergic to nuts"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sorry but I can't eat that, I am allergic to nuts
+</code></pre></div></div>
+
+<p>This is a matter of preferences, some people may declare allergic_food before it is being used or might just like it this way, Python is flexible with either way. Personally, I like to initialize a variable before it is being used.</p>
+
+<h3>While loop statement</h3>
+
+<p>Python provides two different ways to loop around a block of code, using the for loop as we have already seen and using the while loop.</p>
+
+<p>let’s see the same example using first the for loop and later the while loop.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 0
+i is now 1
+i is now 2
+i is now 3
+i is now 4
+i is now 5
+i is now 6
+i is now 7
+i is now 8
+i is now 9
+i is now 10
+i is now 11
+i is now 12
+i is now 13
+i is now 14
+i is now 15
+i is now 16
+i is now 17
+i is now 18
+i is now 19
+i is now 20
+</code></pre></div></div>
+
+<p>now let’s use while loop.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 0
+i is now 1
+i is now 2
+i is now 3
+i is now 4
+i is now 5
+i is now 6
+i is now 7
+i is now 8
+i is now 9
+i is now 10
+i is now 11
+i is now 12
+i is now 13
+i is now 14
+i is now 15
+i is now 16
+i is now 17
+i is now 18
+i is now 19
+i is now 20
+</code></pre></div></div>
+
+<p>Let’s see how the while loop works, we first initialize the variable i to 0 which is the starting point of our loop, then we will write the while loop statement and specify the stop of the loop. In this example, we are stating
+that i should not go beyond 20 else skip the while loop. Now that we are inside the loop, Python will start by executing the print function for the first time after that there is an increment by 1 of the i variable using augmented assignment at the last line of code.</p>
+
+<p>Python will go back to the while statement and check if i is still less or equal to 20, if it is then we will execute the print function and so on up the point when the while loop evaluates to False, this is the case when i will be incremented to 21, since 21 is greater than 20, the execution will jump out of the while loop. so in some way, we have to make our while loop statement to evaluate to False in order for it to escape from the loop.</p>
+
+<p>lets see what will happen if we don’t make our while loop statement evaluate to False.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="c">#i += 1</span>
+</code></pre></div></div>
+
+<p>I have not run this code because this will result in an infinite loop. Let’s see what we did, we first specify 0 as the start of i and evaluate i in a while loop against the limit which is 20, but here is the important thing we did not change the value of i, meaning that all throughout the while loop, i has remained 0 and has not increased in order to make the evaluation of while statement False. this means that it will never reach 21 in order to escape the loop.</p>
+
+<p>The main thing to keep in mind is that a while loop must have a start, and end and an incremental step value, if one of these is missing, it will result in an infinite loop or an error.</p>
+
+<p>Another way to write an infinite loop would be the use of True boolean value.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">the_condition</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">while</span> <span class="n">the_condition</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"i is now {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="c">#i += 1</span>
+    <span class="n">the_condition</span> <span class="o">=</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i is now 0
+</code></pre></div></div>
+
+<p>You will see many while loop statements are written using True boolean value, which mean that the block of code inside will be executed at least once whatever the situation. We have to make sure that the condition has a way to break out of the while else we will end up with an infinite loop that is why we are setting the_condition variable to False on the last line of code.</p>
+
+<p>Let’s see another example when actually while is useful.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brand_available</span> <span class="o">=</span> <span class="p">[</span><span class="s">"lenovo"</span><span class="p">,</span><span class="s">"dell"</span><span class="p">,</span><span class="s">"apple"</span><span class="p">,</span><span class="s">"HP"</span><span class="p">,</span><span class="s">"asus"</span><span class="p">,</span><span class="s">"acer"</span><span class="p">]</span>
+
+<span class="n">choosen_brand</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="k">while</span> <span class="n">choosen_brand</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">brand_available</span><span class="p">:</span>
+    <span class="n">choosen_brand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter the brand of your choice: "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Thank you for inputing {} as your brand of choice..."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choosen_brand</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter the brand of your choice: 
+Please enter the brand of your choice: imaginary brand
+Please enter the brand of your choice: lenovo
+Thank you for inputing lenovo as your brand of choice...
+</code></pre></div></div>
+
+<p>In this example, we have a list of different brands of laptop available in a store and this program give a choice to the user to choose one brand among the brands available. we initialize the variable choosen_brand to an empty string, we do this because we can’t use this variable in the while loop before it is being declared.</p>
+
+<p>This while loop will check if the choose_brand is not in the brand_available list if it is, it will break out of the loop, else if it is not it will keep on looping and prompting to input till an input of a brand found in the brand_available is inputted. If the input is not found in the list, it will keep on looping.
+After the while loop has exited, the print function on the last line will be printed.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brand_available</span> <span class="o">=</span> <span class="p">[</span><span class="s">"lenovo"</span><span class="p">,</span><span class="s">"dell"</span><span class="p">,</span><span class="s">"apple"</span><span class="p">,</span><span class="s">"HP"</span><span class="p">,</span><span class="s">"asus"</span><span class="p">,</span><span class="s">"acer"</span><span class="p">]</span>
+
+<span class="n">choosen_brand</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="k">while</span> <span class="n">choosen_brand</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">brand_available</span><span class="p">:</span>
+    <span class="n">choosen_brand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter the brand of your choice: "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">choosen_brand</span> <span class="o">==</span> <span class="s">"none"</span> <span class="ow">or</span> <span class="n">choosen_brand</span> <span class="o">==</span> <span class="s">"None"</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">choosen_brand</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"No brand choosen"</span><span class="p">)</span>
+        <span class="k">continue</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Thank you for inputing {} as your brand of choice..."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">choosen_brand</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter the brand of your choice: 
+No brand choosen
+Please enter the brand of your choice: none
+No brand choosen
+Please enter the brand of your choice: None
+No brand choosen
+Please enter the brand of your choice: not a brand
+Please enter the brand of your choice: lenovo
+Thank you for inputing lenovo as your brand of choice...
+</code></pre></div></div>
+
+<p>we have added a test in the while loop, this will test if choosen_brand is “none” or “None” string or an empty string. if it is then the loop will keep on looping using the continue keyword. While loop can also have the else statement which behaves exactly the same as the for loop statement.</p>
+
+<h3>For loop VS While loop statement</h3>
+
+<p>Even though the main purpose of the two loops is to iterate, in order to know when to use one instead of the other is that the for loop is used when we already know ahead of time how many times we are going to loop but on the other hand, while loop is used when we don’t know ahead of time how many times we’ll loop.</p>
+
+<p>A particular use case of the while loop would be reading data from a file since most of the time we don’t know how much data we are dealing with in advance. The while loop will keep on repeating till there is no more data left to process. We will talk more on this when we will see about input/output.</p>
+
+<h3>Challenge 1</h3>
+
+<p>Challenge time!! For this first challenge, let’s create a program that checks if an inputted IP address is valid or not. A message saying “valid IP address” or “Invalid IP address” should be returned. A valid IP address consists of 4 numbers separated by a dot, and those numbers must be between 0 and 255
+examples of a valid IP address:</p>
+<ul>
+  <li>127.0.0.1</li>
+  <li>255.255.255.255</li>
+  <li>192.198.22.1</li>
+  <li>0.0.0.0</li>
+</ul>
+
+<p>example of an invalid IP address:</p>
+<ul>
+  <li>342.11.333.1</li>
+  <li>.23.11.2.2</li>
+  <li>122.11.54.2.</li>
+  <li>123.145.22.34343343</li>
+  <li>192.184.22.1.5</li>
+  <li>empty input eg: “”</li>
+</ul>
+
+<p>Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.</p>
+
+<h3>Challenge 1 Solution</h3>
+
+<p>This is just one of the different way you could have approached this challenge there are many ways to do the same challenge, the important is to get the right answer. Bear with me here there are better ways to write this code but since we have not seen most advanced techniques like sets data type or error handling we will suppose that all the input are only numerical strings. The main goal here is to use the concepts that we have already seen.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ip_address</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">ip_address</span><span class="p">:</span>
+    <span class="n">ip_address</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter an IP address: "</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter an IP address: 
+Please enter an IP address: 
+Please enter an IP address: 
+Please enter an IP address: 127.3.1.99
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dot_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dot_index</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ip_address</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"."</span> <span class="ow">and</span> <span class="n">ip_address</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"."</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">ip_address</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s">"."</span><span class="p">:</span>
+                <span class="n">dot_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">dot_count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ip_address</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s">"."</span><span class="p">:</span>
+                    <span class="n">dot_index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ip_address</span><span class="p">[:</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ip_address</span><span class="p">[</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+            <span class="n">num3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ip_address</span><span class="p">[</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+            <span class="n">num4</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ip_address</span><span class="p">[</span><span class="n">dot_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="k">if</span> <span class="n">num1</span> <span class="ow">and</span> <span class="n">num2</span> <span class="ow">and</span> <span class="n">num3</span> <span class="ow">and</span> <span class="n">num4</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">"Valid IP address"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">"Invalid IP address"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Invalid IP address"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Invalid IP address"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Invalid IP address"</span><span class="p">)</span>
+            
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Valid IP address
+</code></pre></div></div>
+
+<p>We first initialize ip_address to an empty string and test it using the while loop to check if we have not inputted an empty string. The while loop will keep on looping if an empty string is inputted.</p>
+
+<p>We then initialize the dot_count to 0, this variable will count the dots in the IP address variable since we know that a valid IP address has 3 and only 3 dots separating the 4 numbers. dox_index will be initialized as an empty list. this list will contain the indexes (positions) where the dot characters are found in the string. We also initialize to zero variables that will hold all the numerical character in the string.</p>
+
+<p>We will first check if the length of ip_address is lower or equal to 15 because the length of the string that forms of a valid IP address can’t be greater than 15 else we are dealing with an invalid IP address.</p>
+
+<p>After that, we will check if the first or last character in the ip_address string is not a dot if it is then we are dealing again with an invalid IP address.</p>
+
+<p>Then we will perform a for loop that will traverse the whole string and test if a character is a dot character. If it is a dot character, the dot_count will be incremented by 1 using augmented assignment. A valid IP address has 3 and only 3 dots so if we have less or more than 3, then we are dealing with an Invalid IP address.</p>
+
+<p>After it has passed this test, we will use a new function called enumerate, which will traverse each the character in a string and will also count its position at the same time as it is traversing the string and store it in the index variable.</p>
+
+<p>For each loop, we will test if the character is a dot character if it is its position index will be added to the dot_index list using the append function which adds each value at the end of a list container. The dot_index will hold all the indexes where the dot character had occur. For example, if the IP address 127.0.0.1, the dot_index will [3,5,7] which correspond to the positions where the dot are found in the string.</p>
+
+<p>After we have stored all the indexes in the list, we use slicing in order to extract the exact position that corresponds to the number and cast it to the integer. The slicings are delimited by the indexes found in the dot_index list.</p>
+
+<p>Now that we have gotten all the numbers, we have to check that all the numbers are in a range between 0 and 255. Only if all the numbers are in that range then we have a valid IP address.</p>
+
+<h3>Challenge 2</h3>
+
+<p>In this second challenge, we will implement upon what we have already seen from the previous post. we have built a guessing number program but that program had two major drawbacks:
+	- first, it was always guessing the same number (5)
+    - secondly, we were only given two chance to guess the number. the more guesses we add the more conditional statement we would have to write which is not inefficient.</p>
+
+<p>So for your second challenge, we will rewrite that program in a more efficient way. We will use the while loop with a conditional statement in order to guess the number. We will also have to guess the number within 3 attempts and guide the user to guess lower or higher.</p>
+
+<p>But before you start let’s see how to generate a random number between a specific range by importing the random module.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random_num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">random_num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+</code></pre></div></div>
+
+<p>The random module is a built-in function in python, but not used in the normal instance because we want to keep python lightweight so we have to import it to our code and to only use it when needed. After importing it now we can start using it. We use the dot operator the same way we did when we are using the format() function on a string, to access to the functionalities that belong to the modules. In our case, we are using randint function from the random module. The general format of randint is like this randint(start_num,end_num) and will generate randomly a number between the value of start_num and end_num. This function is not exclusive which mean that the end_num will be part of the numbers randomly generated.</p>
+
+<p>Now that we have seen the random module, you can go ahead and attempt the challenge.</p>
+
+<h3>Challenge 2 Solution</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">highest_num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">answer_to_find</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">highest_num</span><span class="p">)</span>
+<span class="n">attempt_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">input_num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">input_num</span> <span class="ow">or</span> <span class="n">input_num</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">or</span> <span class="n">attempt_count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">input_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Please guess a number between 1 to 10: "</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">input_num</span> <span class="o">==</span> <span class="n">answer_to_find</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">You have won the game, The number to guess was {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">answer_to_find</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">input_num</span> <span class="o">&gt;</span> <span class="mi">11</span> <span class="ow">or</span> <span class="n">input_num</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Please guess between 1 and 10"</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">attempt_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">input_num</span> <span class="o">&gt;</span> <span class="n">answer_to_find</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Guess lower. You are left with {} guesse(s)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">attempt_count</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">attempt_count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Game over...you have exhausted all your guesse(s)"</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Guess higher. You are left with {} guesse(s)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">attempt_count</span><span class="p">))</span>
+            
+
+        
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please guess a number between 1 to 10: 10
+
+Guess lower. You are left with 2 guesse(s)
+Please guess a number between 1 to 10: 4
+
+You have won the game, The number to guess was 4
+</code></pre></div></div>
+
+<p>so we started by importing the random module as we have already seen and set the highest number to be 10, this means that the number that will be randomly generated will range from 1 to 10, including 10.</p>
+
+<p>Now we will initialize attempt_count which will count how many time we are attempting to guess the number and input_num which will hold the number that the user is inputting. We will assume that all the inputs will be only in numerical characters.</p>
+
+<p>Now we are entering the while statement, this while loop will continue to loop as long as these 3 conditions are True:
+	- input_num is a zero integer
+	- input_num is greater than 10
+	- attemmpt_count is less than 3</p>
+
+<p>Now we are entering the block code inside the while loop, and input the number the user is guessing and cast it to an integer.</p>
+
+<p>We use the conditional statement to compare the input with the randomly generated number</p>
+
+<p>If the two numbers are equal, then we have won. We will print the message with the number we were guessing and break out of the loop</p>
+
+<p>Else if the number inputted is greater than 11 or smaller than 1, a message will be print as a reminder to choose a number between 1 and 10. The continue keyword will be executed and the loop will resume to the next count.</p>
+
+<p>The last else statement will be True only if the number inputted is between 1 and 10 and different from answer_to_find value which is the range we are looking for. In case we will increment the attempt count by 1 we will create a new conditional statement that will help to guide the user to either guess higher or lower depending on the inputted number at the same time displaying the number of guesses left by subtracting the maximum number of guess ( which is 3 ) to the guesses count already performed. We have an else if statement that check if we have reached the maximum guesses. If we have, then we have lost the game and then break out the loop.</p>
+
+<h3>Conclusion</h3>
+
+<p>In this tutorial post, we have seen the loops in Python. The loops, in general, are very useful in a way that they help us execute the same code multiple times without writing more codes. They also can be used with a conditional statement to create complex codes. In the upcoming post, we will discuss lists, tuples and ranges in python. Stay tuned!</p>
+
+<p>Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=Control flow part 2 - loop statement&url=http://localhost:4000/2019/02/03/control-flow-part-2.html&via=semasuka&related=semasuka" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/02/03/control-flow-part-2.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/2019/02/03/control-flow-part-2.html&title=Control%20flow%20part%202%20-%20loop%20statement" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="mailto:?subject=Control flow part 2 - loop statement&amp;body=Check out this post http://localhost:4000/blog/2019/02/03/control-flow-part-2.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2019/02/03/control-flow-part-2.html';
+      this.page.identifier = 'http://localhost:4000/blog/2019/02/03/control-flow-part-2.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>
