@@ -4,7 +4,7 @@ Machine Intelligence Blog (MIB) is your companion blog to get you up and running
 
 ## Getting Started
 
-If you are interested in using to build you blog or simply contribute to this blog, you will need to install some tools on your machine.
+If you are interested in using this blog to build your blog or simply contribute, you will need to install some tools on your machine.
 
 ### Prerequisites
 
