@@ -806,7 +806,7 @@ plt.show()
 ```
 
 
-![png](output_34_0.png)
+![png](/blog/assets/post_cont_image/output_34_0.png)
 
 
 We pass to the function the c_data.isna(), which will evaluate each value in each column and return True or False depending on whether there is a missing value or not. We set the cbar, which is a sort of legend, and yticklabels to False to remove the label on Y axis because we don't need them in this case.
@@ -894,7 +894,7 @@ sns.barplot(x=country_per_reg.index,y=country_per_reg.values,palette="rocket")
 
 
 
-![png](output_48_1.png)
+![png](/blog/assets/post_cont_image/output_48_1.png)
 
 
 we will use sns to access to the imported Seaborn library, now we can use its bar plot function to create the plot. The arguments that we pass is x which is the column that goes to the X axis which in our case is the index of country_per_reg. The index is like a primary key in databases system and is located at the first column of any dataframe. On the Y axis, we will put the value of country_per_reg which is the count of countries since we only had two columns (one is the dataframe's index and the other is the dataframe's value). Finally, we specify the palette which is the color of the bars.
@@ -918,7 +918,7 @@ plt.show()
 ```
 
 
-![png](output_51_0.png)
+![png](/blog/assets/post_cont_image/output_51_0.png)
 
 
 In our first plot, have you noticed that the names of the regions on the X axis overlap each other? making it difficult to read. A solution to that would be to rotate the label by 90° using the plt variable from matplotlib and call the xticks function on it then pass as argument rotation = 90.
@@ -1502,7 +1502,7 @@ plt.show()
 ```
 
 
-![png](output_65_0.png)
+![png](/blog/assets/post_cont_image/output_65_0.png)
 
 
 Now the fun part! All the code has been explained.
@@ -1678,7 +1678,7 @@ plt.show()
 ```
 
 
-![png](output_77_0.png)
+![png](/blog/assets/post_cont_image/output_77_0.png)
 
 
 This code plots the least populated countries in the world starting from the last moving forward. We were able to achieve this by inverting the order on the X axis using plt.gca().invert_xaxis().
@@ -1810,7 +1810,7 @@ plt.show()
 ```
 
 
-![png](output_87_0.png)
+![png](/blog/assets/post_cont_image/output_87_0.png)
 
 
 We are using the seaborn library to access to the scatter plot function. We pass to the X axis the countries and to the Y axis we give it the infant mortality, we increase the size of the marker by 90. Last, we change the size of the legend and set a title.
@@ -1873,7 +1873,7 @@ plt.show()
 ```
 
 
-![png](output_96_0.png)
+![png](/blog/assets/post_cont_image/output_96_0.png)
 
 
 We set the X axis to be equal to the index which is the different regions and the Y axis to be equal to the values of av_child_mortal_region average and set the marker's size to 90.
@@ -1928,7 +1928,7 @@ plt.show()
 ```
 
 
-![png](output_109_0.png)
+![png](/blog/assets/post_cont_image/output_109_0.png)
 
 
 In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn read the documentation [here](https://seaborn.pydata.org/tutorial/aesthetics.html).
@@ -1976,7 +1976,7 @@ plt.show()
 ```
 
 
-![png](output_121_0.png)
+![png](/blog/assets/post_cont_image/output_121_0.png)
 
 
 The first argument in the joint plot is the birthrate placed on the X axis and the second is the literacy, we'll give to the plot a height of 8 and a green color.
@@ -1992,7 +1992,7 @@ plt.show()
 ```
 
 
-![png](output_124_0.png)
+![png](/blog/assets/post_cont_image/output_124_0.png)
 
 
 It is the same plot as before just that this time we are using hexagon with lighter or darker color to represent the density of data. The darker the hexagon, the higher the concentration of data. 
@@ -2025,7 +2025,7 @@ plt.show()
 ```
 
 
-![png](output_134_0.png)
+![png](/blog/assets/post_cont_image/output_134_0.png)
 
 
 #### Observation
@@ -2053,7 +2053,7 @@ plt.show()
 ```
 
 
-![png](output_141_0.png)
+![png](/blog/assets/post_cont_image/output_141_0.png)
 
 
 We are using the distplot function from the seaborn, we pass the column that will be evaluated on the X axis, the Y axis is the amplitude. The X axis is divided into 20 equal parts also called bins that represent each the amplitude of the birthrate.
@@ -2081,7 +2081,7 @@ plt.show()
 ```
 
 
-![png](output_147_0.png)
+![png](/blog/assets/post_cont_image/output_147_0.png)
 
 
 We first set a white grid with font scale of 1, then start plotting.
@@ -2112,7 +2112,7 @@ plt.show()
 ```
 
 
-![png](output_153_0.png)
+![png](/blog/assets/post_cont_image/output_153_0.png)
 
 
 We start first by setting the grid to dark with a font_scale of 1.5 and then use the subplots function pass to it 2 as the first argument to represent two rows then another 2 to represent two columns. Finally, the third argument is the figure's size as a tuple with 15 for the width and 10 for the height.
@@ -2148,7 +2148,7 @@ plt.show()
 ```
 
 
-![png](output_163_0.png)
+![png](/blog/assets/post_cont_image/output_163_0.png)
 
 
 Let's plot the violin plot by placing at the X axis the different regions in the world and at the Y axis the GDP, set the data to our c_data and increase the width of our violin plot to 1.5 to avoid plots cluttering.
@@ -2237,7 +2237,7 @@ plt.show()
 ```
 
 
-![png](output_176_0.png)
+![png](/blog/assets/post_cont_image/output_176_0.png)
 
 
 We are using the subplots function to get the axis (X ans Y axis) of the plot, then change the Y label from ["-0.2","0.0","0.2","0.4","0.6","0.8","1.0"] to the percentage equivalent ["-20%","0%","20%","40%","60%","80%","100%"].
@@ -2271,7 +2271,7 @@ plt.show()
 ```
 
 
-![png](output_182_0.png)
+![png](/blog/assets/post_cont_image/output_182_0.png)
 
 
 We call the corr() function on the dataframe to get a correlation of each column to each other column in the dataset and pass it to the heat map function. Then annotation to True so that each box of the matrix is given its corresponding value and set fmt to .1f which means that value is written with one decimal point.
@@ -2300,7 +2300,7 @@ plt.show()
 ```
 
 
-![png](output_188_0.png)
+![png](/blog/assets/post_cont_image/output_188_0.png)
 
 
 the first argument we pass to the pair plot function is the dataset, then set the hue to region so that a different color is given to each marker depending on its region, vars will be a list of the columns that we want to plot and finally set a palette.
