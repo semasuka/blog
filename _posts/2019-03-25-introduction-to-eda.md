@@ -8,9 +8,7 @@ tags:
 - data analysis
 ---
 
-There is this concept called exploratory data analysis (EDA) which is important in machine learning. In this beginner friendly blog, we will solely discuss EDA.
-
-So what is exploratory data analysis or EDA? Well, it is the process of analyzing data in order to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization. In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.<!-- more -->
+There is this concept called exploratory data analysis (EDA) which is important in machine learning. In this beginner friendly blog, we will solely discuss EDA.So what is exploratory data analysis or EDA? Well, it is the process of analyzing data in order to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.
 
 The next question would be, how is it related to machine learning? As we have explained in [this post](https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html), for a machine learning model to make accurate predictions, it needs to be trained using clean data but since we ain't living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That's when libraries like pandas, matplotlib and seaborn come in handy.
 
