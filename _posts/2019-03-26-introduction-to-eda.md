@@ -2320,7 +2320,7 @@ Have you noticed how we have by now a good understanding of our dataset? Now you
 
 Exploratory data analysis is a whole field of study by its own. Seaborn, matplotlib, pandas and numpy are the most popular libraries for EDA in Python as of March 2019 and are quite easy to understand. There are many other libraries like Dash by plotly (based on the popular D3.js framework) or Bokeh that helps in the creation of interactive plots which are very fun to play with and give a whole new understanding of a dataset. I'll do a blog on one of the two in the near future.
 
-There are many other libraries but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as you time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem this means that solving the problem is our priority no matter the tools used.
+There are many other libraries but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem this means that solving the problem is our priority no matter the tools used.
 
 Lastly, you should choose the tool(s) to use based on:
 
