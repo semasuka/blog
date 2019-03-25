@@ -2129,7 +2129,7 @@ Its name comes from the fact that this plot has a form of a violin and its gener
 
 ![violin_plot](/blog/assets/post_cont_image/violin_plot.svg?sanitize=true)
 
-picture creadit: [datavizcatalogue](https://datavizcatalogue.com/methods/violin_plot.html)
+picture credit: [datavizcatalogue](https://datavizcatalogue.com/methods/violin_plot.html)
 
 Let's explain the image above, the small black rectangle inside the purple area represents the interquartile range like the one in a box plot with the white dot in its middle representing the median. The two line (upper and lower adjacent value) extend to the minimum and the maximum.
 
