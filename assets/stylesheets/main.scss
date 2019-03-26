@@ -271,15 +271,6 @@ a:hover {
     }
 }
 
-@media (max-width: 31em) {
-    .site-logo {
-        width: 245px;
-        height: 100px;
-        margin-right: 0.5rem;
-        border-radius: 0%;
-    }
-}
-
 .search-toggle .icon:hover {
     fill: #539F30;
     -webkit-box-transition: all 0.5s ease;
@@ -312,6 +303,12 @@ a:hover {
 }
 
 @media (max-width: 31em) {
+    .site-logo {
+        width: 245px;
+        height: 100px;
+        margin-right: 0.5rem;
+        border-radius: 0%;
+    }
     .entries-list .entry-title {
         text-align: center;
         font-size: 1.5em;
@@ -323,6 +320,9 @@ a:hover {
 
     .entries-list .entry-excerpt>*:last-child {
         font-size: 0.8em;
+    }
+    .pager a {
+        width: 50%;
     }
 }
 
