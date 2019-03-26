@@ -322,7 +322,7 @@ a:hover {
         font-size: 0.8em;
     }
 }
-@media (max-width: 600px){
+@media all and (max-width: 600px){
     .pager a {
         width: 50% !important;
     }
