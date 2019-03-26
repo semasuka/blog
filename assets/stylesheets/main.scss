@@ -321,6 +321,8 @@ a:hover {
     .entries-list .entry-excerpt>*:last-child {
         font-size: 0.8em;
     }
+}
+@media (max-width: 600px){
     .pager a {
         width: 50% !important;
     }
