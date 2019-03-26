@@ -318,7 +318,7 @@ c_data.describe()
 
 Applying the describe function on the dataframe, it returns some of the most used proprieties in statistics like mean, standard deviation and three percentiles of all the numerical columns. This helps us to get an overview understanding of the numerical columns at once.
 
-But there is one problem with this dataset, have you seen it? if we look closely at some columns like pop density, coastline, net migration and 11 other columns we can see that the decimal numbers are written using a comma instead of a dot. This implies that Python will not be considered these columns as numerical columns that is why they were not included in the first place when we called the describe function.
+But there is one problem with this dataset, have you seen it? if we look closely at some columns like pop density, coastline, net migration and 11 other columns we can see that the decimal numbers are written using a comma instead of a dot. This implies that Python wont consider these columns as numerical columns that is why they were not included in the first place when we called the describe function.
 
 This is definitely something that needs to be changed, we can easily fix this using a simple function that replaces commas with points.
 
