@@ -2327,7 +2327,7 @@ Lastly, you should choose the tool(s) to use based upon:
 * The type of project
 * The type of dataset you are working with (for example it should not be appropriate to use pandas if you are working with big data)
 * How important it is to communicate the findings from a dataset to non-technical persons
-* Its documentation and community (trust me on this, if you choose a badly documented library you gonna have a hard time working with)
+* Its documentation and community (If you choose a badly documented library you gonna have a hard time working with it)
 
 I know this post was kinda long but because it's essential to have a good basic foundation of EDA, we had to emphasize on it.
 
