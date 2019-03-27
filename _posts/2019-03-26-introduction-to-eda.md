@@ -2322,11 +2322,12 @@ Exploratory data analysis is a whole field of study by its own. Seaborn, matplot
 
 There are many other libraries but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem this means that solving the problem is our priority no matter the tools used.
 
-Lastly, you should choose the tool(s) to use based on:
+Lastly, you should choose the tool(s) to use based upon:
 
 * The type of project
 * The type of dataset you are working with (for example it should not be appropriate to use pandas if you are working with big data)
 * How important it is to communicate the findings from a dataset to non-technical persons
+* Its documentation and community (trust me on this, if you choose a badly documented library you gonna have a hard time working with)
 
 I know this post was kinda long but because it's essential to have a good basic foundation of EDA, we had to emphasize on it.
 
