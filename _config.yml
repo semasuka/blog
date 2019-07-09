@@ -18,9 +18,8 @@ email: ssemasuka@gmail.com
 description: "Up & running with machine learning | semasuka stern machine learning blog"
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://semasuka.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: semasuka
 github_username:  semasuka
-linkedin_username: semasuka-stern-437096150
+linkedin_username: stern-semasuka
 logo: /assets/logo/logo_1.png
 
 
@@ -48,7 +47,6 @@ algolia:
 #author
 author:
   name: Semasuka Stern
-  twitter: semasuka
   picture: /assets/profile/profile.jpg
 
 #default front matter

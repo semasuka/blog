@@ -47,5 +47,10 @@ var store = [{
         "title": "Iterators and range in Python",
         "excerpt":"In this post, we will mainly discuss iterator and range function. we have been using them previously this time we’ll go in depth. Let’s first talk about iterator and iterable object in Python. Iterator and Iterable object An iterator is an object that represents a stream of data in order...","categories": [],
         "tags": ["python","tutorial","programming"],
-        "url": "http://localhost:4000/blog/2019/02/16/Iterators-and-range-in-python.html"
+        "url": "http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html"
+      },{
+        "title": "A step-by-step introduction to exploratory data analysis",
+        "excerpt":"There is this concept called exploratory data analysis (EDA) which is important in machine learning. In this beginner friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data in order to make sense of it and come...","categories": [],
+        "tags": ["python","tutorial","data analysis"],
+        "url": "http://localhost:4000/blog/2019/03/26/introduction-to-eda.html"
       }]
