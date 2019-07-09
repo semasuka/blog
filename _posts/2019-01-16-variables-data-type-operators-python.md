@@ -8,7 +8,7 @@ tags:
 - programming
 ---
 
-In this post, we are going to discover all you need to know about data types, operators and variables in python. I'll be using jupyter
+In this post, we are going to discover all you need to know about data types, operators, and variables in python. I'll be using jupyter
 notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.<!-- more -->
 
 ### print function
@@ -23,7 +23,7 @@ print(34)
     34
 
 
-To print text, we have to add double or single quotes
+To print text, we have to add double or single quotes.
 
 
 ```python
@@ -41,7 +41,7 @@ print('Hello world')
     Hello world
 
 
-We can also print special character
+We can also print a special character.
 
 
 ```python
@@ -51,7 +51,7 @@ print("$%#@")
     $%#@
 
 
-The print function can be empty, in this instance nothing will be displayed
+The print function can be empty; in this instance, nothing will be displayed.
 
 
 ```python
@@ -63,7 +63,7 @@ print("")
 
 ### Data type
 
-data type simply means the type of information stored in computer memory. In python, we have several data types, but for this introductory post, we are going to talk about 3 of them: numerical, string and boolean data type.
+Data type means the kind of information stored in computer memory. In python, we have several data types, but for this introductory post, we are going to talk about 3 of them: numerical, string, and boolean data type.
 
 #### Numerical data type
 
@@ -129,7 +129,7 @@ you can learn more about binary [here](https://en.wikipedia.org/wiki/Binary_numb
 
 ##### float
 
-floats are numbers with a decimal part. Optionally, the character e or E followed by a positive or negative integer can be appended to it to represent a mathematical notation.
+Floats are numbers with a decimal part. Optionally, the character e or E followed by a positive or negative integer can be appended to it to represent a mathematical notation.
 
 
 ```python
@@ -169,7 +169,7 @@ print(3+2j)
 
 #### string data type
 
-As we have seen at the beginning, a string is a sequence of characters. it is part of the sequence data type and is used to represent a single, special character or a sequence of characters which form text. String literals are delimited using either single, double or triple quotes.
+As we have seen at the beginning, a string is a sequence of characters. It is part of the sequence data type and is used to represent a single, special character or a sequence of characters which form text. String literals are delimited using either single, double, or triple quotes.
 
 
 ```python
@@ -202,7 +202,7 @@ print('This is wrong")
 
 
 
-N.B: Errors are your best friend, it is a way python is just telling you that it does not understand what you have written. It also gives useful information on where you have gone wrong by using an arrow point at where you've made a mistake and also tells you what type of error it is. In the case above, It is saying that we have made a SyntaxError. There are many more types of errors in Python and we are going to discuss how to handle them gracefully in the upcoming posts using exception handling. 
+N.B: Errors are your best friend; it is a way Python is just telling you that it does not understand what you have written. It also gives useful information on where you have gone wrong by using an arrow point at where you've made a mistake and also tells you what type of error it is. In the case above, It is saying that we have made a SyntaxError. There are many more types of errors in Python, and we are going to discuss how to handle them gracefully in the upcoming posts using exception handling. 
 
 if we want to use simple and double quotes at the same time, we have these options:
 1. to use a backslash key also called the escape sequence
@@ -212,24 +212,24 @@ if we want to use simple and double quotes at the same time, we have these optio
 print("this is kevin\'s house")
 ```
 
-    this is kevin's house
+    this is Kevin's house
 
 
-I explain in detail about the escape sequences in python toward the end of the blog
+I explain in detail about the escape sequences in python toward the end of the blog.
 
 2. Delimit the string by using double or single quote
 
 
 ```python
-print("This is kevin's house")
-print('Marcus said:"freedom to the people"')
+print("This is Kevin's house")
+print('Marcus said: "freedom to the people"')
 ```
 
-    This is kevin's house
-    Marcus said:"freedom to the people"
+    This is Kevin's house
+    Marcus said: "freedom to the people"
 
 
-3. We can also delimit the string with triple quotes this allows to use double and single quote in the same string.
+3. We can also delimit the string with three quotes; this allows using double and single quote in the same string.
 
 
 ```python
@@ -246,11 +246,11 @@ print(''' The chief said:"No, this is Bob's house" ''')
 Boolean data type, named after the mathematician George Boole, is a type of information that can be expressed as True or False only.
 
 As you will see in upcoming tutorials, expressions in Python 
-are often evaluated in Boolean context, meaning they are 
+are often evaluated in a Boolean context, meaning they are 
 interpreted to represent truth or falsehood.
 A value that is true in Boolean context is sometimes said 
-to be “truthy,” and one that is false in Boolean context 
-is said to be “falsy.” (You may also see “falsy” spelt “falsey.”)
+to be “truthy,” and one that is false in a Boolean context 
+is said to be “falsy.” (You may also see “falsy” spelled “falsey.”)
 
 The “truthiness” of an object of the Boolean type is self-evident: Boolean objects that are equal to True are truthy (true), and those equal to False are falsy (false). But non-Boolean objects can be evaluated in a Boolean context as well and determined to be true or false.
 
@@ -262,11 +262,11 @@ print(False)
 
 You will learn more about the evaluation of objects using Booleans when you encounter logical operators and conditional statements in the upcoming tutorial.
 
-To conclude on this topic, these are 3 basic data types they are many more and we will discuss them as we move to the more advanced topics in python
+To conclude on this topic, these are three basic data types they are many more, and we will discuss them as we move to the more advanced topics in python.
 
 ### Type function
 
-The type function in python returns the data type of a given value is. This function is very useful when we don't know or when we are in doubt of the data type of a given value. we are using the print( ) function to display the data type which was returned by the type( ) function.
+The type function in python returns the data type of a given value is. This function is handy when we don't know or when we are in doubt of the data type of a given value. We are using the print( ) function to display the data type which was returned by the type( ) function.
 
 
 ```python
@@ -339,7 +339,7 @@ print("This will also print")
 
 ### Variables in python
 
-To easily find and recall codes stored in computer memory, we use variables. think of variables as boxes that contain the values and those boxes have labels on them to easily differentiate them. the labels correspond to the names given to the variables. The values(right of the = sign) are stored into variables(left of the = sign). The act of giving a value to a variable using the = sign is called declaring a variable
+To easily find and recall codes stored in computer memory, we use variables. Think of variables as boxes that contain the values, and those boxes have labels on them to easily differentiate them. The labels correspond to the names given to the variables. The values(right of the = sign) are stored into variables(left of the = sign). The act of giving a value to a variable using the = sign is called declaring a variable
 
 
 ```python
@@ -350,15 +350,15 @@ print(name)
     semasuka
 
 
-Here "name" is the variable name, the value is "semasuka", we can print the value stored in the variable by calling
+Here "name" is the variable name; the value is "semasuka", we can print the value stored in the variable by calling
 the name in this case and the value of the name will be printed.
 
 In python, there are conventions to keep in mind while naming a variable:
 1. Don't use names that are too long
-2. The name should explicitly define the value, for example, avoid calling your variable naive names like x or a, you should be specific as possible
-3. The variable name can't start with a number or contain any special character($%&...) except underscore ( _ ) otherwise, this will result in a syntax error
+2. The name should explicitly define the value, for example, avoid calling your variables naive names like x or a, you should be specific as possible
+3. The variable name can't start with a number or contain any special character($%&...) except underscore ( _ ) otherwise; this will result in a syntax error
 4. Since space is a special character, the pythonic way to represent a space in a variable name is by using the _
-5. Python is case-sensitive, for example naming a variable greeting and another one named Greeting, these variables will be considered as two be different variable
+5. Python is case-sensitive, for example naming a variable greeting and another one named Greeting, these variables will be considered as two different variables
 
 
 ```python
@@ -471,7 +471,7 @@ print("country + city: "+country_city)
     country + city: Burundi Bujumbura
 
 
-We can not concatenate two variable with different data types
+We can not concatenate two variables with different data types.
 
 
 ```python
@@ -502,7 +502,7 @@ print("My name is "+my_name+" and I am "+age+" years old")
     TypeError: can only concatenate str (not "int") to str
 
 
-We are encountering a TypeError, this is due to the fact we want to add together an integer data type to a string data type. To solve this problem, we have to change the integer data type into a string data type, this process is called casting. 
+We are encountering a TypeError; this is due to the fact we want to add together an integer data type to a string data type. To solve this problem, we have to change the integer data type into a string data type; this process is called casting. 
 
 #### casting
 
@@ -513,10 +513,10 @@ casting is transforming one variable data type into another compatible data type
 print("My name is "+my_name+" and I am "+str(age)+" years old")
 ```
 
-    My name is semasuka and I am 55 years old
+    My name is semasuka, and I am 55 years old
 
 
-So what I did there was to change(cast) the age data type from integer to a string data type using str( ) function.
+So what I did there was to change(cast) the age data type from integer to a string data type using the str( ) function.
 
 
 ```python
@@ -530,11 +530,11 @@ print(type(some_age))
     <class 'str'>
 
 
-We can clearly see that some_age has changed from int(integer) data type to str(string). 
+We can see that some_age has changed from int(integer) data type to str(string). 
 
 ### input variable
 
-We can input value from the user using the input( ) function and store it in a variable
+We can input value from the user using the input( ) function and store it in a variable.
 
 When we run it, as small box appear that's where we will input the value 
 
@@ -601,7 +601,7 @@ print("modulus of 12 and 3 is "+str(12%3))
 ```
 
     Addition of 12 and 3 is 15
-    Substraction of 12 and 3 is 9
+    Subtraction of 12 and 3 is 9
     Multiplication of 12 and 3 is 36
     division of 12 and 3 is 4.0
     Truncation Division (also known as floordivision or floor division) of 12 and 3 is 4
@@ -609,11 +609,11 @@ print("modulus of 12 and 3 is "+str(12%3))
     modulus of 12 and 3 is 0
 
 
-To perform addition we use +, subtraction we use -, multiplication we use *, the division we use /, truncation division we use //. Truncation division returns the result as an integer and ignores the decimal part on the result, exponential we use ** and lastly modulus we use %. Modulus returns the remainder of the division.
+To perform addition, we use +, subtraction we use -, multiplication we use *, the division we use /, truncation division we use //. Truncation division returns the result as an integer and ignores the decimal part on the result, exponential we use ** and lastly modulus we use %. Modulus returns the remainder of the division.
 
 #### operator precedence
 
-As it is in math, when different operators are found in the same expression, the operator with the highest precedence will be executed first. this is due to the operator precedence. In Python, it is the same.
+As it is in math, when different operators are found in the same expression, the operator with the highest precedence will be executed first. This is due to the operator precedence. In Python, it is the same.
 
 
 ```python
@@ -623,7 +623,7 @@ print(6 + 15/3 - 4*12)
     -37.0
 
 
-here we might think that the answer would 6 plus 15 which is 21 then divide it by 3 then minus 4 and multiply by 12 to give a result of 36 but the answer is -37. why? well in Python the operators with the highest precedence will be calculated first (in this case division and multiplication will be evaluated first) and then the operators with the lowest precedence. So 15 divided by 3 will be executed first at the same time as 4 times 12, the result from 15 divided by 3 will be then added to 6 which is 11 then substracte 48(4 times 12) to give the final result of -37.
+Here we might think that the answer would 6 plus 15 which is 21 then divide it by 3 then minus 4 and multiply by 12 to give a result of 36 but the answer is -37. Why? Well in Python, the operators with the highest precedence will be calculated first (in this case division and multiplication will be evaluated first) and then the operators with the lowest precedence. So 15 divided by 3 will be executed first at the same time as 4 times 12, the result from 15 divided by 3 will be then added to 6 which is 11 then substrate 48(4 times 12) to give the final result of -37.
 
 To remove ambiguity caused by operator precedence, we can use parathesis to group together expressions to be executed first.
 
@@ -639,23 +639,23 @@ To learn more about operator precedence in Python, visit [this](https://www.tuto
 
 #### assignment operator
 
-As we have already seen, to declare a variable in python we use the = sign, this is called assignment of variables
+As we have already seen, to declare a variable in python we use the = sign, this is called assignment of variables.
 
 
 ```python
 price = 39.99
 ```
 
-What if there is an increase in price of 10, we can either declare a new price value and assign it to the variable
+What if there is an increase in the price of 10, we can either declare a new price value and assign it to the variable.
 
 
 ```python
 price = 49.99
 ```
 
-But this is not convenient
+But this is not convenient.
 
-A better solution is to add 10 to the existing price, then assign it to itself
+A better solution is to add 10 to the current price, then assign it to itself.
 
 
 ```python
@@ -666,7 +666,7 @@ print(price)
     49.99
 
 
-There is a short hand form of writing this called augmented assignment, which is much more efficient
+There is a shorthand form of writing this called augmented assignment, which is much more efficient.
 
 
 ```python
@@ -678,7 +678,7 @@ print(price)
     49.99
 
 
-we can do substraction
+we can do subtraction
 
 
 ```python
@@ -752,7 +752,7 @@ print(price)
 
 #### comparison operator
 
-Comparison operators are used for comparing values, It either returns True or False according to the condition. An operand is a name given to  each value that is being compared
+Comparison operators are used for comparing values; It either returns True or False according to the condition. An operand is a name given to each value that is being compared.
 
 * ">"    Greater that - True if the left operand is greater than the right
 * "<"    Less that - True if the left operand is less than the right
@@ -842,7 +842,7 @@ print(not girl)
 
 #### membership operator
 
-"is" and "is not" are the identity operators in Python. They are used to check if two values (or variables) are located in the same part of the memory. Two variables that are equal does not imply that they are identical.
+"is" and "is not" are the identity operators in Python. They are used to check if two values (or variables) are located in the same part of the memory. Two equal variables do not imply that they are identical.
 
 * "is" return True if the operands are identical (refer to the same object in memory).
 * "is not" return True if the operands are not identical (do not refer to the same object in memory).
@@ -861,7 +861,7 @@ print(string_1 is string_2)
     True
 
 
-Now let's see an example using a list, We'll see list data type in depth in the upcoming post but bear with me for now and just simply put, a list data type is a container that can store many other types at once.
+Now let's see an example using a list, We'll see list data type in depth in the upcoming post but bear with me for now, a list data type is a container that can store many other types at once.
 
 
 ```python
@@ -881,7 +881,7 @@ As we can see, False was returned. This means that Python stores the_list_1 in a
 
 #### identify operator
 
-"in" and "not in" are the membership operators in Python. They are used to test whether a value or variable is found in a sequence (string, list, tuple, set and dictionary)data type. List, tuple, set and dictionaries will be explained in the upcoming posts.
+"in" and "not in" are the membership operators in Python. They are used to test whether a value or variable is found in a sequence (string, list, tuple, set, and dictionary)data type. List, tuple, set, and dictionaries will be explained in the upcoming posts.
 
 * "in" return True if value/variable is found in the sequence.
 * "not in" return True if value/variable is not found in the sequence.
@@ -960,7 +960,7 @@ print(uppercase_word not in the_sentence)
 
 #### the escaping character
 
-String literals can be enclosed(delimited) by single quote('), double quotes(") or triple quotes("""). if we use single quote to delimit a string character and use at the same time another single quote in the string literal, this will result in an error.
+String literals can be enclosed(delimited) by single quote('), double quotes(") or triple quotes("""). if we use a single quote to delimit a string character and use at the same time another single quote in the string literal, this will result in an error.
 
 
 ```python
@@ -975,7 +975,7 @@ print('let's learn Python')
 
 
 
-In order to use two single quotes as string delimiter and one inside the string literal, we'll have the backslash character.
+To use two single quotes as string delimiter and one inside the string literal, we'll have the backslash character.
 
 
 ```python
@@ -1019,9 +1019,9 @@ lines""")
     ****
     If we want to break the string in a new line
     ****
-    There is a tab	character
+    There is a tab    character
     ****
-    This text have been splited
+    This text has been divided
     into
     different lines
     ****
@@ -1032,7 +1032,7 @@ lines""")
     lines
 
 
-We can tell python to handle the string as a raw string literal by adding an r or R at the beginning of the string. Python will ignore all the escape sequence found within the string
+We can tell python to handle the string as a raw string literal by adding an r or R at the beginning of the string. Python will ignore all the escape sequence found within the string.
 
 
 ```python
@@ -1056,7 +1056,7 @@ You can check out more about escape characters [here](https://docs.python.org/2.
 
 We can cut and get a substring from a string using Python slicing notation. Slicing works on all sequence data type but because we have not seen the rest of the sequence data types we are going to use it on the string only on this post.
 
-Because the string data type is a sequence of character, we can actually extract a specific character at a specific index starting from index 0 which represent the first character, index 1 represents the second character and so on. we will use this format: variable[index number]
+Because the string data type is a sequence of character, we can extract a specific character at a particular index starting from index 0 which represent the first character, index 1 represents the second character and so on. we will use this format: variable[index number]
 
 
 ```python
@@ -1081,7 +1081,7 @@ print(dog_breed[-1])
     r
 
 
-we can get a range of a world starting from the first character to a specific index using this format: variable[index_start: index_stop]. The character at the index_stop is not included
+We can get a range of a world starting from the first character to a specific index using this format: variable[index_start: index_stop]. The character at the index_stop is not included
 
 
 ```python
@@ -1091,7 +1091,7 @@ print(dog_breed[0:5])
     labra
 
 
-The character at index 5 which is character "d" is not printed
+The character at index 5, which is character "d" is not printed.
 
 This can be also be written like this.
 
@@ -1135,7 +1135,7 @@ print(dog_breed[0:8:2])
     lbao
 
 
-In this example,every second character(starting from 0) is printed
+In this example,every second character(starting from 0) is printed.
 
 
 ```python
@@ -1146,9 +1146,9 @@ print(spaced_number[0:25:3])
     123456789
 
 
-For this example, every third character is printed the rest is ignored
+For this example, every third character is printed; the rest is ignored.
 
-This can be rewritten like this
+This can be rewritten like this.
 
 
 ```python
@@ -1160,7 +1160,7 @@ print(spaced_number[::3])
 
 #### duplicate string
 
-We can use * to duplicate string
+We can use * to duplicate string.
 
 
 ```python
@@ -1183,7 +1183,7 @@ print(dupli_name)
 
 #### string formating using format( )
 
-As we have already seen, this example below will not run because of incompatibility of data type
+As we have already seen, this example below will not run because of the incompatibility of data type
 
 
 ```python
@@ -1246,7 +1246,7 @@ print("I am {0} years old and I live in the capital of {1}, {2}".format("89",cou
     I am 89 years old and I live in the capital of DRC, Kinshasa
 
 
-We can omit the indexes in the { } like this
+We can omit the indexes in the { } like this.
 
 
 ```python
@@ -1258,7 +1258,7 @@ print("I am {} years old and I live in the capital of {}, {}".format("89",countr
     I am 89 years old and I live in the capital of DRC, Kinshasa
 
 
-Python will automatically assign the placeholders to the matching variable(s)/value(s). always remember that the number of variables and values must be greater than the number of placeholders, else this will not run
+Python will automatically assign the placeholders to the matching variable(s)/value(s). always remember that the number of variables and values must be higher than the number of placeholders, else this will not run
 
 
 ```python
@@ -1281,7 +1281,7 @@ print("I am {} years old and I live in the capital of {}, {}".format("89",countr
     IndexError: tuple index out of range
 
 
-We can also have additional information beside the index
+We can also have additional information besides the index
 
 
 ```python
@@ -1302,7 +1302,7 @@ refer to this tableau to see the different formatting of numbers using format( )
 
 2. keyword arguments
 
-The keyword arguments work almost the same as positional parameters the difference is that instead of using the index position in the placeholder, we use the variable name.
+The keyword arguments work almost the same as positional parameters; the difference is that instead of using the index position in the placeholder, we use the variable name.
 
 
 ```python
@@ -1312,28 +1312,28 @@ print("My first name is {first_name} and my last name is {last_name} and I work 
     My first name is semasuka and my last name is stern and I work as a Software engineer
 
 
-The rest is exactly the same as the positional parameters.
+The rest is the same as the positional parameters.
 
 ##### more example
 
 
 ```python
-print("There is {0} days, in the month of {1}, {2}, {3}, {4}, {5}, {6} and {7}".format(31,"January","March","May","July","August","October","December"))
+print("There are {0} days, in the month of {1}, {2}, {3}, {4}, {5}, {6} and {7}".format(31,"January","March","May","July","August","October","December"))
 ```
 
-    There is 31 days, in the month of January, March, May, July, August, October and December
+    There are 31 days, in the month of January, March, May, July, August, October and December
 
 
 
 ```python
-print("There is {} days, in the month of {}, {}, {}, {}, {}, {} and {}".format(31,"January","March","May",
+print("There are {} days, in the month of {}, {}, {}, {}, {}, {} and {}".format(31,"January","March","May",
                                                                                       "July","August","October","December"))
 ```
 
-    There is 31 days, in the month of January, March, May, July, August, October and December
+    There are 31 days, in the month of January, March, May, July, August, October and December
 
 
-Depending on which order we want the value to be displayed, we can interchange the index in the placeholder
+Depending on which order we want the value to be displayed, we can interchange the index in the placeholder.
 
 
 ```python
@@ -1384,7 +1384,7 @@ print("{:5d}".format(12))
        12
 
 
-width will be ignored if used with numbers longer than the width
+the width will be ignored if used with numbers longer than the width
 
 
 ```python
@@ -1426,7 +1426,7 @@ print("{:08.3f}".format(12.2346))
 
 Explanations of the examples above,
 
-* in the first example, {:5d} takes an integer argument and assigns a minimum width of 5. Since no alignment is specified, it is aligned to the right.
+* In the first example, {:5d} takes an integer argument and assigns a minimum width of 5. Since no alignment is specified, it is aligned to the right.
 * In the second example, you can see the width (2) is less than the number (1234), so it doesn't take any space to the left but also doesn't truncate the number.
 * Unlike integers, floats has both integer and decimal parts. And, the minimum width defined to the number is for both parts as a whole including ".".
 * In the third statement, {:8.3f} truncates the decimal part into 3 places rounding off the last 2 digits. And, the number, now 12.235, takes a width of 8 as a whole leaving 2 places to the left.
@@ -1510,7 +1510,7 @@ print("{:<05d}".format(12))
 
 For the last example, Left alignment filled with zeros for integer numbers can cause problems as the 3rd example which returns 12000, rather than 12.
 
-For more information, refer to this table
+For more information, refer to this table.
 
 ![sign_format](/blog/assets/post_cont_image/si_format.png)
 
@@ -1518,21 +1518,21 @@ N.B: I did not talk about the % string literal formatting intentionally because 
 
 ### Challenge
 
-Challenges are problems that I will be giving you at the end of each tutorial post to solidify your understanding of what you just learned, for your first challenge, you will be to create a small program to calculate and print the Body Mass Index(BMI) and these are the rules to keep in mind:
+Challenges are problems that I will be giving you at the end of each tutorial post to solidify your understanding of what you just learned, for your first challenge, you will be to create a small program to calculate and print the Body Mass Index(BMI), and these are the rules to keep in mind:
 
 * The program should get value through the input ( ) function
 * Don't use the truncation division while calculating the BMI
 * Should display the BMI using format ( )
 * When displaying the BMI, use this format "The BMI of a person with XX kg and a height of X.XX m is XX.XXX"
-* BMI should a float and have 3 decimal digits with 6 as left alignment width
+* BMI should be a float and have 3 decimal digits with 6 as left alignment width
 
 NB: the formula of BMI is equal to the weight in kilogram divided by the square of the height expressed in meters.
 
-Now go away and attempt this challenge by your own, ONLY after you have finished or tried the challenge you should come back and compare your solution with mine.
+Now go away and attempt this challenge on your own, ONLY after you have finished or tried the challenge you should come back and compare your solution with mine.
 
 ### solution
 
-We first get the weight in kilogram of the person
+We first get the weight in kilogram.
 
 
 ```python
@@ -1552,7 +1552,7 @@ height_str = input("Please enter your height ")
     Please enter your height 1.88
 
 
-Since we know that any input is a string data type, we need to cast it in order to use it as numerical data type and do arithmetic operation on it. 
+Since we know that any input is a string data type, we need to cast it to use it as numerical data type and do arithmetic operation on it. 
 
 
 ```python
@@ -1560,7 +1560,7 @@ weight = float(weight_str)
 height = float(height_str)
 ```
 
-Now let's calculate the BMI
+Now let's calculate the BMI.
 
 
 ```python
@@ -1575,4 +1575,4 @@ print("The BMI of a person with {} kg and a height of {} m is {:6.3f}".format(we
     The BMI of a person with 77.0 kg and 1.88 m is 21.786
 
 
-Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.
