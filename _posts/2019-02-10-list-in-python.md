@@ -8,11 +8,11 @@ tags:
 - programming
 ---
 
-So far, we have seen one sequence data type which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will discuss 3 of them which are the lists, tuple and range and see their functions. In this post, we will focus on the list only<!-- more -->
+So far, we have seen one sequence data type, which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will be discussing 3 of them which are the lists, tuple and range and see their functions. In this post, we will focus on the list only<!-- more -->
 
-let's see how we can use a built-in function to a sequence data type to actually make our code more readable.
+let's see how we can use a built-in function to a sequence data type to make our code more readable.
 
-we will use the example of the valid IP address checker from the previous post, this time instead of having a counter of the dot character we can actually use a built-in operator that does the same.
+we will use the example of the valid IP address checker from the previous post, this time instead of having a counter of the dot character we can use a built-in operator that does the same.
 
 
 ```python
@@ -35,9 +35,9 @@ Count function returns the number of dots found in the ip_address variable. This
 
 ### List
 
-We have been introduced to list in the previous posts. Let's explain it in details, a list is a collection of objects like variables, functions and classes placed in a container. A list has a number of functions that act upon the elements of a list.
+We have been introduced to list in the previous posts. Let's explain it in details; a list is a collection of objects like variables, functions and classes placed in a container. A list has many functions that act upon the elements of a list.
 
-Remember in Python everything you write is an object and think of a list as a container of any type of object. Since a list can contain a string which is by itself a sequence data type this means that a list can also contain other lists, in other words, we can have a container of containers.
+Remember, in Python, everything you write is an object and think of a list as a container of any object. Since a list can contain a string which is by itself a sequence data type this means that a list can also contain other lists, in other words, we can have a container of containers.
 
 let's illustrate this
 
@@ -55,9 +55,9 @@ for province in burundi_provinces:
     Now we are in Ruyigi
 
 
-We have a sequence of provinces found in Burundi and are stored in a list. The for loop will traverse the list and print each element in the list one by one.
+We have a sequence of provinces found in Burundi and are stored in a list. The for loop traverses the list and print each element in the list one by one.
 
-Now let's see when we have a list of lists
+Now let's see when we have a list of lists.
 
 
 ```python
@@ -148,9 +148,9 @@ print(numbers.sort())
     None
 
 
-sort( ) function does not create a new list it performs an action on the current list permanently, therefore, it will return None. These kinds of functions are called in-place functions.
+sort( ) function does not create a new list; it acts on the current list permanently. Therefore, it will return None. These kinds of functions are called in-place functions.
 
-There is another function that sorts a list but instead of returning None, it will create a new sorted list and keep the original list untouched.
+There is another function that sorts a list, but instead of returning None, it will create a new sorted list and keep the original list untouched.
 
 
 ```python
@@ -168,7 +168,7 @@ print(numbers_2)
     [99, 22, 1, 3, 77, 3, 5, 23, 51, 35, 133]
 
 
-sorted( ) function will sort the list but the difference between the sort and the sorted function is that sorted function will create a new list that can be stored in a variable or directly printed. The original list(numbers_2 in this example) will remain unchanged.
+sorted( ) function will sort the list, but the difference between the sort and the sorted function is that sorted function will create a new list that can be stored in a variable or directly printed. The original list(numbers_2 in this example) will remain unchanged.
 
 We can compare the two lists using the two type of sorting and verify if they are equal.
 
@@ -280,7 +280,7 @@ print(burundi_provinces)
     ['Makamba', 'Karuzi', 'Rutana', ['Kirundo', 'Ngozi', 'Kayanza'], 'Cankuzo', 'Bururi', 'Makamba', 'Ruyigi', 'Cibitoke']
 
 
-We can see that the list of the northern provinces has been added to burundi_provinces. But now what if instead for adding the list, there was a merge between the two lists into one.
+We can see that the list of the northern provinces has been added to burundi_provinces. However, now what if instead for adding the list, there was a merge between the two lists into one.
 
 
 ```python
@@ -315,7 +315,7 @@ For this round, we have merged the elements from northern_provinces into burundi
 
 #### delete keyword
 
-Now that we have seen how to add an element to a list, let's how we can delete it from a list.
+Now that we have seen how to add an element to a list let's how we can delete it from a list.
 
 let's say we want to remove "Rutana" from the list which is at index 2
 
@@ -336,7 +336,7 @@ print(burundi_provinces)
 
 #### remove function
 
-Sometimes we might have an occurrence of element multiple times in a list. In order to delete the first occurrence of that element, we use the remove function.
+Sometimes we might have an occurrence of element multiple times in a list. To delete the first occurrence of that element, we use the remove function.
 
 let's append "Karuzi" again in the list.
 
@@ -353,7 +353,7 @@ print(burundi_provinces)
     ['Makamba', 'Karuzi', 'Cankuzo', 'Bururi', 'Makamba', 'Ruyigi', 'Cibitoke', 'Kirundo', 'Ngozi', 'Kayanza', 'Karuzi']
 
 
-"Karuzi" is at index 1 and at index 10, the remove function will delete the first occurrence of "Karuzi" in the list.
+"Karuzi" is at index 1 and index 10, then remove function will delete the first occurrence of "Karuzi" in the list.
 
 
 ```python
@@ -368,7 +368,7 @@ print(burundi_provinces)
     ['Makamba', 'Cankuzo', 'Bururi', 'Makamba', 'Ruyigi', 'Cibitoke', 'Kirundo', 'Ngozi', 'Kayanza', 'Karuzi']
 
 
-Now we can see that Karuzi at index 1 has been removed, and if we execute again the remove function with "Karuzi" as the parameter, it will search in the list from left to the right and delete any occurrence of the element in the list.
+Now we can see that Karuzi at index 1 has been removed, and if we execute the remove function again with "Karuzi" as the parameter, it will search in the list from left to right and delete any occurrence of the element in the list.
 
 #### pop function
 
@@ -395,7 +395,7 @@ print(burundi_provinces)
     ['Makamba', 'Cankuzo', 'Bururi', 'Makamba', 'Cibitoke', 'Kirundo', 'Ngozi', 'Kayanza', 'Karuzi']
 
 
-The element at index 4 which "Ruyigi" have been deleted from the list and was returned and stored in the province_deleted variable that we can print.
+The element at index 4, which is "Ruyigi", has been deleted from the list, returned and stored in the province_deleted variable that we can print.
 
 We could also print it straight away after deleting and returning the element.
 
@@ -444,7 +444,7 @@ else:
 
 Yep! they are equal
 
-We can either declare a list using [ ] or using list( ) which is called a constructor. A constructor basically means that we are initializing a list object in memory. We will go in details about constructor when we will learn about classes.
+We can either declare a list using [ ] or using list( ) which is called a constructor. A constructor means that we are initializing a list object in memory. We will go in details about constructor when we will learn about classes.
 
 Now let's check if the lists occupy the same spot in memory.
 
@@ -456,14 +456,14 @@ else:
     print("They are not located at the same place in memory")
 ```
 
-    They are not located at the same place in memory
+    They are not located at the same place in memory.
 
 
-Well using the "is" keyword, we can see that the two lists are stored into two different places in the computer memory.
+Well, using the "is" keyword, we can see that the two lists are stored into two different places in the computer memory.
 
-So now the question is when to use the constructor form or the bracket form. Well, choose any form you feel comfortable with since both forms do exactly the same thing.
+So now the question is when to use the constructor form or the bracket form. Well, choose any form you feel comfortable with since both forms do precisely the same thing.
 
-But there is one advantage of using the constructor form. This form helps us to traverse and print any sequential data type (also called iterable) without using a loop statement like this
+However, there is one advantage of using the constructor form. This form helps us to traverse and print any sequential data type (also called iterable) without using a loop statement like this
 
 
 ```python
@@ -475,7 +475,7 @@ print(list("This will print all the characters one by one"))
 
 Think of this notation as casting a string data type into a list data type.
 
-Let's see another example
+Let's see another example.
 
 
 ```python
@@ -494,9 +494,9 @@ print(random_num)
     [244, 66, 60, 55, 44, 44, 33, 23, 22, 17, 13, 6]
 
 
-Surprised? huh? let me explain what is happening here, we have assigned random_num to random_num_2 and then we have sorted random_num_2 in a reversed order by using reverse=True as a parameter in the sort function. Now comes the confusing part, when we print we print the random_num_2 we can see that the list is now reversed as expected, but when we print random_num we also found out that it is also reversed? but why?
+Surprised? Huh? Let me explain what is happening here, we have assigned random_num to random_num_2, and then we have sorted random_num_2 in a reversed order by using reverse=True as a parameter in the sort function. Now comes the confusing part, when we print we print the random_num_2 we can see that the list is now reversed as expected, but when we print random_num we also found out that it is also reversed? But why?
 
-well, the answer is that random_num and random_num_2 are pointing to the same list in a computer memory, so any function that is applied to the list affects random_num and random_num_2 since they basically refer to the same object. 
+well, the answer is that random_num and random_num_2 are pointing to the same list in computer memory, so any function that is applied to the list affects random_num and random_num_2 since they refer to the same object. 
 
 Let's test again using the "is" keyword to see they refer to the same list in memory.
 
@@ -508,7 +508,7 @@ else:
     print("The two variables do not refer to the same objects in memory")
 ```
 
-    The two variables refer to the same objects in memory
+    The two variables refer to the same objects in memory.
 
 
 Now lets test again the two lists but this time we will assign random_num_2 using a constructor.
@@ -530,20 +530,20 @@ else:
     print("The two variables do not refer to the same objects in memory")
 ```
 
-    The two variables do not refer to the same objects in memory
+    The two variables do not refer to the same objects in memory.
 
 
-Even though the two lists have the same elements arranged in the same reversed order, the two lists don't refer to the same list in memory. random_num_2 points to its own list and random_num points to another one.
+Even though the two lists have the same elements arranged in the same reversed order, the two lists don't refer to the same list in memory. random_num_2 points to its list and random_num points to another one.
 
 
 ```python
 if random_num == random_num_2:
-    print("The two variables have the same elemets and arranged in the same order")
+    print("The two variables have the same elements and arranged in the same order")
 else:
-    print("The two variables don't have the same elemets and are not arranged in the same order")
+    print("The two variables don't have the same elements and are not arranged in the same order")
 ```
 
-    The two variables have the same elemets and arranged in the same order
+    The two variables have the same elements and arranged in the same order
 
 
 The same thing will happen when using the sorted function.
@@ -561,25 +561,25 @@ else:
     print("The two variables do not refer to the same objects in memory")
 ```
 
-    The two variables do not refer to the same objects in memory
+    The two variables do not refer to the same objects in memory.
 
 
 
 ```python
 if random_num == random_num_2:
-    print("The two variables have the same elemets and arranged in the same order")
+    print("The two variables have the same elements and arranged in the same order")
 else:
-    print("The two variables don't have the same elemets and are not arranged in the same order")
+    print("The two variables don't have the same elements and are not arranged in the same order")
 ```
 
-    The two variables have the same elemets and arranged in the same order
+    The two variables have the same elements and arranged in the same order
 
 
 No surprise here since the two lists have the same elements arranged in the same manner.
 
 ### Challenge
 
-For this challenge, we will have a list that contains lists of ingredients. These lists of ingredients will be added to the list then print all the ingredients that doesn't contain a specific unwanted ingredient. for eg, let's say that we don't want "nuts" as ingredient, the program shall print all the list elements that does not have "nuts" in it. While printing, we shall have a count of each element.
+For this challenge, we will have a list that contains lists of ingredients. These lists of ingredients will be added to the list then print all the ingredients that don't contain a specific unwanted ingredient. For example, let's say that we don't want "nuts" as an ingredient; the program shall print all the list elements that do not have "nuts" in it. While printing, we shall have a count of each element.
 
 Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.
 
@@ -614,11 +614,11 @@ for meal in meals:
 
 We first append to the list all the ingredients and loop through the elements of each list and check if any the element is "nuts" if there is this list will be ignored until we get a list that does not contain "nuts". 
 
-After this finding,  we will loop through the list and enumerate all the elements using the enumerate function. There the second parameter in the enumerate function, this parameter corresponds to the starting count. By default, this parameter is not written and is set to 0, we can overwrite this by placing any number which will be the starting point of the count. There is be an empty space after all the elements in the list are done printing.
+After this finding,  we will loop through the list and enumerate all the elements using the enumerate function. There the second parameter in the enumerate function; this parameter corresponds to the starting count. By default, this parameter is not written and is set to 0; we can overwrite this by placing any number which will be the starting point of the count. There is an empty space after all the elements in the list are done printing.
 
 ### Conclusion
 
-A list is a clean way of storing data in a container that allow us to iterate over on its elements and perform useful operation on it like adding and removing new elements. We will be using lists a lot. In the upcoming post, we will discuss tuples and ranges.
+A list is a clean way of storing data in a container that allow us to iterate over on its elements and perform a useful operation on it like adding and removing new elements. We will be using lists a lot. In the upcoming post, we will discuss tuples and ranges.
 
-Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.
 

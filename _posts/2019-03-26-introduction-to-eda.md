@@ -8,9 +8,9 @@ tags:
 - data analysis
 ---
 
-There is this concept called exploratory data analysis (EDA) which is important in machine learning. In this beginner friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data in order to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.
+There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.
 
-The next question would be, how is it related to machine learning? As we have explained in [this post](https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html), for a machine learning model to make accurate predictions, it needs to be trained using clean data but since we ain't living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That's when libraries like pandas, matplotlib and seaborn come in handy.
+The next question would be, how is it related to machine learning? As we have explained in [this post](https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html), for a machine learning model to make accurate predictions, it needs to be trained using clean data, but since we ain't living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That's when libraries like pandas, matplotlib and seaborn come in handy.
 
 It is also true that most data scientists spend most of their time cleaning, organizing and visualizing data (unless when they are working in a team with data analysts and data engineers). This shows how EDA is a desirable skill for a machine learning engineer and data scientist.
 
@@ -19,7 +19,7 @@ It is also true that most data scientists spend most of their time cleaning, org
 
 picture credit: [forbes](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3927c8336f63)
 
-With no further delay, let's jump into code.
+With no further delay, let's jump into the code.
 
 
 ```python
@@ -32,14 +32,14 @@ import warnings
 warnings.filterwarnings('ignore')
 ```
 
-Fist we are importing the necessary libraries and let me explain what each library does:
-* Numpy is a library that applies scientific computation on arrays (think of an array as a list in python) and will be referring to it using the variable name np (There is also an upcoming post entirely dedicated to numpy).
-* Pandas for data manipulation and will be referring to it using the variable name pd (There is also an upcoming post entirely dedicated to pandas so stay tuned!).
+First, we are importing the necessary libraries and let me explain what each library does:
+* Numpy is a library that applies scientific computation on arrays (think of an array as a list in Python) and will be referring to it using the variable name np (There is also an upcoming post entirely dedicated to numpy).
+* Pandas for data manipulation and will be referring to it using the variable name pd (There is also a future post devoted entirely to pandas so stay tuned!).
 * Matplotlib.pyplot which is a data visualization library created after the popular  Matlab's visualizations.
 * Seaborn is based on matplotlib and its plots (graphs) are prettier than those in matplotlib.
-* We are also importing the warning module in order to turn off the warnings notification.
+* We are also importing the warning module to turn off the warnings notification.
 
-Note: Seaborn and Matplotlib complement each other and should be used together in order to come up with great plots because there are some functions present in Matplotlib that are not present in Seaborn and vice versa.
+Note: Seaborn and Matplotlib complement each other and should be used together to come up with great plots because there are some functions present in Matplotlib that are not present in Seaborn and vice versa.
 
 ### Data manipulation
 
@@ -49,7 +49,7 @@ Now it is time to start using the data in our code, we need to read the data and
 
 Go ahead and download the data [here](https://www.kaggle.com/fernandol/countries-of-the-world/downloads/countries-of-the-world.zip/1) from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists & ML engineers who come up with the best ML models win prizes).
 
-If the CSV (comma separated value) file is located in the same folder as the jupyter notebook (.ipynb) file, then we can just write the name of the CSV file without forgetting the .cvs extension like this
+If the CSV (comma-separated value) file is located in the same folder as the jupyter notebook (.ipynb) file, then we can just write the name of the CSV file without forgetting the .cvs extension like this.
 
 
 ```python
@@ -318,9 +318,9 @@ c_data.describe()
 
 Applying the describe function on the dataframe, it returns some of the most used proprieties in statistics like mean, standard deviation and three percentiles of all the numerical columns. This helps us to get an overview understanding of the numerical columns at once.
 
-But there is one problem with this dataset, have you seen it? if we look closely at some columns like pop density, coastline, net migration and 11 other columns we can see that the decimal numbers are written using a comma instead of a dot. This implies that Python wont consider these columns as numerical columns that is why they were not included in the first place when we called the describe function.
+But there is one problem with this dataset, have you seen it? If we look closely at some columns like pop density, coastline, net migration and 11 other columns, we can see that the decimal numbers are written using a comma instead of a dot. This implies that Python won't consider these columns as numerical columns, that is why they were not included in the first place when we called the describe function.
 
-This is definitely something that needs to be changed, we can easily fix this using a simple function that replaces commas with points.
+This is definitely something that needs to be changed, we can quickly fix this using a simple function that replaces commas with points.
 
 
 ```python
@@ -328,7 +328,7 @@ def convert_value(val):
     return float(val.replace(",","."))
 ```
 
-First, we create a function that takes as parameter each value of columns as a string and replace each occurrence of a comma with a point and return a float data type.
+First, we create a function that takes as a parameter each value of columns as a string and replaces each occurrence of a comma with a point and returns a float data type.
 
 
 ```python
@@ -338,9 +338,9 @@ for i in columns_to_be_changed:
     c_data[i] = c_data[i].astype(str).apply(convert_value)
 ```
 
-Alright so here is where the magic is happening, we first create a list that will store all the columns that we are planning to modify then loop through them. Using a pandas notation and a for loop, we can access to all the value in a column and each value is cast to a string using the function astype(str) and applied to it the function convert_value that we have written earlier on.
+Alright so here is where the magic is happening, we first create a list that will store all the columns that we are planning to modify then loop through them. Using a pandas notation and a for loop, we can access to all the value in a column, and each value is cast to a string using the function astype(str) and applied to it the function convert_value that we have written earlier on.
 
-The function will receive each value in each column as a string and replace the comma by a dot and return a float. The returned float value will be stored at the same place where was the original value in the column.
+The function will receive each value in each column as a string and replace the comma by a dot and return a float. The returned float value will be stored at the same place, where was the original value in the column.
 
 
 ```python
@@ -726,7 +726,7 @@ c_data.describe()
 
 
 
-Also the describe function shows a lot more columns than before.
+Also, the describe function shows a lot more columns than before.
 
 
 ```python
@@ -760,7 +760,7 @@ c_data.dtypes
 
 
 
-We can retrieve information about the data type of each column using the dtypes function on the dataframe and we can clearly see that the columns have floats as data type.
+We can retrieve information about the data type of each column using the dtypes function on the dataframe, and we can clearly see that the columns have floats as a data type.
 
 
 ```python
@@ -778,11 +778,11 @@ But in the case when we want to know only the number of rows and columns in a da
 
 ### Data visualization
 
-Data visualization is useful to understand our dataframe visually since we humans are visual beings. We use plots or graphs to do so and there are many types of plots.
+Data visualization is useful to understand our dataframe visually since we humans are visual beings. We use plots or graphs to do so, and there are many types of plots.
 
-We will see 10 different type of plots and explain them in details.
+We will see 10 different types of plots and explain them in details.
 
-But before we start with the plots, let's set some default parameters
+But before we start with the plots, let's set some default parameters.
 
 
 ```python
@@ -795,7 +795,7 @@ Here are default settings that will apply to all the plots, we use the set funct
 
 It is always advised to check the columns for missing values (written as NaN) to understand the completeness of our dataset.
 
-For this, we use the heatmap function
+For this, we use the heatmap function.
 
 
 ```python
@@ -849,7 +849,7 @@ country_per_reg
 
 
 
-By selecting the region columns, we can count different values found in that column grouped by region and store this in country_per_reg variable.
+By selecting the region columns, we can count different values found in that column grouped by region and store this in the country_per_reg variable.
 
 
 ```python
@@ -877,7 +877,7 @@ c_data.groupby("Region")["Country"].count()
 
 There is also an alternative way of getting the count by using the groupby function. This function will group the whole data table according to the different values found in the Region column, and since we are interested in the counting of countries, we extract only the Country columns and use the count function to give us the total count.
 
-Now that we crunch the numbers, let's put them in a plot.
+Now that we crunch the numbers let's put them in a plot.
 
 
 ```python
@@ -895,7 +895,7 @@ sns.barplot(x=country_per_reg.index,y=country_per_reg.values,palette="rocket")
 ![png](/blog/assets/post_cont_image/output_48_1.png)
 
 
-we will use sns to access to the imported Seaborn library, now we can use its bar plot function to create the plot. The arguments that we pass is x which is the column that goes to the X axis which in our case is the index of country_per_reg. The index is like a primary key in databases system and is located at the first column of any dataframe. On the Y axis, we will put the value of country_per_reg which is the count of countries since we only had two columns (one is the dataframe's index and the other is the dataframe's value). Finally, we specify the palette which is the color of the bars.
+We will use sns to access to the imported Seaborn library, now we can use its bar plot function to create the plot. The arguments that we pass is x which is the column that goes to the X axis, which in our case is the index of country_per_reg. The index is like a primary key in databases system and is located at the first column of any dataframe. On the Y axis, we will put the value of country_per_reg which is the count of countries since we only had two columns (one is the dataframe's index and the other is the dataframe's value). Finally, we specify the palette, which is the colour of the bars.
 
 Seaborn has a wide range of pre-defined palette and here is a list of all of them: 
 
@@ -919,27 +919,27 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_51_0.png)
 
 
-In our first plot, have you noticed that the names of the regions on the X axis overlap each other? making it difficult to read. A solution to that would be to rotate the label by 90° using the plt variable from matplotlib and call the xticks function on it then pass as argument rotation = 90.
+In our first plot, have you noticed that the names of the regions on the X axis overlap each other, making it difficult to read? A solution to that would be to rotate the label by 90° using the plt variable from matplotlib and call the xticks function on it then pass as argument rotation = 90.
 
 Then we gave labels to the X and Y axis by passing the names as arguments.
 
 After that, we give a title to the plot using the title function.
 
-Finally, we use plt.show() to display the plot
+Finally, we use plt.show() to display the plot.
 
 Now we can do the observation of the plot.
 
 #### What is an observation?
 
-Now comes my favorite part of data analysis which is the observation, but before we jump into it let's start by explaining what is an observation of a plot and why it is very crucial in data analysis.
+Now comes my favourite part of data analysis which is the observation, but before we jump into it let's start by explaining what observation of a plot is and why it is very crucial in data analysis.
 
-An observation of a plot is all the findings found from observing a plot and it is important because it is through this way we communicate these findings to other people who don't necessarily have the technical background to understand what is going on just by looking at a plot. In other words, an observation is a method of storytelling findings from a plot.
+An observation of a plot is all the findings found from observing a plot, and it is essential because it is through this way we communicate these findings to other people who don't necessarily have the technical background to understand what is going on just by looking at a plot. In other words, an observation is a method of storytelling findings from a plot.
 
 #### Observations
 
-Let's do the observation of the bar plot above. First, we notice that the Sub-Saharan Africa region has more than 50 countries which are almost double the countries in Western Europe and Asia. We can also observe that Latin America & Caribbean take a second place with around 45 countries.
+Let's do the observation of the bar plot above. First, we notice that the Sub-Saharan Africa region has more than 50 countries, which are almost double the countries in Western Europe and Asia. We can also observe that Latin America & Caribbean take a second place with around 45 countries.
 
-Oceania, near east, c.w. of ind. states and eastern Europe have an average of around 15 countries each and finally, Northern Africa, Northen America with Baltics have no more than 6 countries.
+Oceania, near east, c.w. of ind. states and eastern Europe have an average of around 15 countries each, and finally, Northern Africa, Northen America with Baltics have no more than 6 countries.
 
 With this observation, we can have a clear understanding of the number of countries per region around the world.
 
@@ -1509,11 +1509,11 @@ Now the fun part! All the code has been explained.
 
 We can see that Monaco and Macau are the most densely populated places on earth by far, followed by Singapore and Hong Kong.
 
-One thing to notice here is that the most densely populated places have a small area which makes sense since the population must live very close to each other in order to fit in a small country.
+One thing to notice here is that the most densely populated places have a small area which makes sense since the population must live very close to each other to fit in a small country.
 
 #### Example 3 : Least populated countries in the world
 
-Let's do another example because it is so much fun. isn't it?
+Let's do another example because it is so much fun. Isn't it?
 
 
 ```python
@@ -1679,7 +1679,7 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_77_0.png)
 
 
-This code plots the least populated countries in the world starting from the last moving forward. We were able to achieve this by inverting the order on the X axis using plt.gca().invert_xaxis().
+This code plots the least populated countries in the world, starting from the last moving forward. We were able to achieve this by inverting the order on the X axis using plt.gca().invert_xaxis().
 
 To find all the possible parameters of a bar plot, visit its documentation page [here](https://seaborn.pydata.org/generated/seaborn.barplot.html)
 
@@ -1794,7 +1794,7 @@ rand_country_inf_mortal
 
 
 
-Let's randomly select 10 rows from our c_data by using the sample function and pass to it n=10 as arguments to specify the number of rows to be selected from the country, region and infant mortality and store it in rand_country_inf_mortal variable.
+Let's randomly select 10 rows from our c_data by using the sample function and pass to it n=10 as arguments to specify the number of rows to be selected from the country, region and infant mortality and store it in the rand_country_inf_mortal variable.
 
 Now let's plot this.
 
@@ -1811,17 +1811,17 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_87_0.png)
 
 
-We are using the seaborn library to access to the scatter plot function. We pass to the X axis the countries and to the Y axis we give it the infant mortality, we increase the size of the marker by 90. Last, we change the size of the legend and set a title.
+We are using the seaborn library to access to the scatter plot function. We pass to the X axis the countries, and to the Y axis we give it the infant mortality, we increase the size of the marker by 90. Last, we change the size of the legend and set a title.
 
-There is this argument called hue in the scatter plot function to differentiate the markers using a condition. In our case, hue gives a different color to the markers depending on the region.
+There is this argument called hue in the scatters plot function to differentiate the markers using a condition. In our case, hue gives a different colour to the markers depending on the region.
 
 #### Observations
 
-We can clearly see that Laos from Asia has the highest infant mortality among all countries randomly selected followed by Burundi and Mauritania at around 70 child deaths. The rest of the countries have a relatively low child mortality with the Czech Republic having the lowest at around 4 child deaths.
+We can clearly see that Laos from Asia has the highest infant mortality among all countries randomly selected, followed by Burundi and Mauritania at around 70 child deaths. The rest of the countries have relatively low child mortality with the Czech Republic having the lowest at about 4 child deaths.
 
-From the previous observation, we can hypothetically say that Asia has the highest child mortality followed by Sub-Saharan Africa while Eastern and Western Europe have the lowest child mortality. but how can we prove that? keep on reading to find out.
+From the previous observation, we can hypothetically say that Asia has the highest child mortality, followed by Sub-Saharan Africa, while Eastern and Western Europe have the lowest child mortality. But how can we prove that? Keep on reading to find out.
 
-Note: By running the same code, there is a very small probability that the same countries would be selected.
+Note: By running the same code, there is a tiny probability that the same countries would be selected.
 
 #### Example 2 : Average infant mortality per region
 
@@ -1874,17 +1874,17 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_96_0.png)
 
 
-We set the X axis to be equal to the index which is the different regions and the Y axis to be equal to the values of av_child_mortal_region average and set the marker's size to 90.
+We set the X axis to be equal to the index, which is the different regions and the Y axis to be equal to the values of av_child_mortal_region average and set the marker's size to 90.
 
 Next, we set ylabel with the title and then rotate the xticks to 90.
 
 #### Observations
 
-Now after seeing this plot, we can confidently say that there is high child mortality in Sub-Saharan Africa than any other places in the world with an average of 80 children dying for every 1000 born.
+Now, after seeing this plot, we can confidently say that there is high child mortality in Sub-Saharan Africa than any other places in the world with an average of 80 children dying for every 1000 born.
 
 Asia and c.w. of ind. states register relatively high mortality with 42 and 45 respectively, this contradicts the hypothesis we made previously suggesting that we should look at the average values before making a generalized statement.
 
-The rest of the region have a low child death with Western Europe having the lowest among all the regions.
+The rest of the region have a low child death with Western Europe having the weakest among all the areas.
 
 To read more about the scatter plot, read its documentation[here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html).
 
@@ -1892,13 +1892,13 @@ To read more about the scatter plot, read its documentation[here](https://matplo
 
 Let's talk about a box plot, what is a box plot would you ask? A box plot is a plot that represents the 1st quantile, 2nd quantile(median), the 3rd quantile, the minimum, the maximum and the outliers.
 
-Now if you don't know what are those, worry not these are typically used in statistics and we will try to briefly explain them.
+Now if you don't know what those are, worry not these are typically used in statistics and we will try to explain them briefly.
 
-We will start with quantile, so to get the quantiles of a dataset we first sort the dataset and then we define the following:
+We will start with a quantile, so to get the quantiles of a dataset we first sort the dataset and then we define the following:
 
-* 1st percentile also called lower percentile or 25% percentile splits off the lowest 25% of a dataset from the highest 75%.
-* 2nd percentile also called median or 50% percentile cuts the dataset in half.
-* 3rd percentile also called higher percentile or 75% percentile splits off the highest 25% of a dataset from the lowest 75%.
+* 1st percentile also called lower percentile, or 25% percentile splits off the lowest 25% of a dataset from the highest 75%.
+* 2nd percentile also called median, or 50% percentile cuts the dataset in half.
+* 3rd percentile also called higher percentile, or 75% percentile splits off the highest 25% of a dataset from the lowest 75%.
 
 The 1st,2nd and 3rd percentile constitute the interquartile range of the box plot.
 
@@ -1906,7 +1906,7 @@ The minimum and the maximum represent the lowest and the highest value in the da
 
 Finally, the outliers are values that are distant apart from the rest of the values in the dataset.
 
-The general representation of a box plot is as follows
+The general representation of a box plot is as follows.
 
 ![percentile](/blog/assets/post_cont_image/percentile.png)
 
@@ -1929,7 +1929,7 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_109_0.png)
 
 
-In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn read the documentation [here](https://seaborn.pydata.org/tutorial/aesthetics.html).
+In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn, read the documentation [here](https://seaborn.pydata.org/tutorial/aesthetics.html).
 
 Now comes the box plot code, we set the X axis to the regions, the Y axis to the GDP and finally specify which data we are using in our case its c_data.
 
@@ -1937,13 +1937,13 @@ We set the X ticks to rotate 90 degrees, set the title of the plot and then disp
 
 #### Observation
 
-Northern America and Western Europe have the highest GDP than any other region. In Western Europe, We can also see that there is one outlier with a GDP of more than \$55000 which is most probably Luxembourg.
+Northern America and Western Europe have the highest GDP than any other region. In Western Europe, We can also see that there is one outlier with a GDP of more than \$55000, which is most probably Luxembourg.
 
-Some other interesting observation can be seen on the Near East region's plot, which registers the longest interquartile range which basically means that there is a big gap between the richest countries and poorest countries in that region than anywhere else.
+Some other exciting observation can be seen on the Near East region's plot, which registers the most extended interquartile range which basically means that there is a big gap between the wealthiest countries and most impoverished countries in that region than anywhere else.
 
-Another interesting observation is in the case of Asia, where we can see that only a small number of countries have a GDP less than \$5000 which is less than the average GDP worldwide and we also observe two outliers with a GDP greater than \$25000. Oceania has a similar plot to Asia.
+Another interesting observation is in the case of Asia, where we can see that only a small number of countries have a GDP less than \$5000 which is less than the average GDP worldwide and we also observe two outliers with a GDP higher than \$25000. Oceania has a similar plot to Asia.
 
-Finally, Sub-Saharan Africa has the lowest GPD on average with its maximum value less than \$5000 but register quite a number of outliers (eight in total) which is unseen in any other region.
+Finally, Sub-Saharan Africa has the lowest GPD on average with its maximum value less than \$5000 but register quite many outliers (eight in total) which is unseen in any other region.
 
 To read more about the box plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.boxplot.html).
 
@@ -1957,11 +1957,11 @@ picture credit: [mathworks](https://www.mathworks.com/help/matlab/ref/surfc.html
 
 Think of a joint plot in the same way as the image above.
 
-Let's analyze the image, the elements with a value from 0.1 to 5 on the vertical axis will be placed on a sort of hill where the peak will be 5 and the elements with a value from -0.1 to -5 will be placed on a valley where the bottom is -5. The values with 0 will be located on flat plane.
+Let's analyze the image, the elements with a value from 0.1 to 5 on the vertical axis will be placed on a sort of hill where the peak will be 5 and the elements with a value from -0.1 to -5 will be placed on a valley where the bottom is -5. The values with 0 will be located on the flat plane.
 
-To differentiate the values on the hill or valley, colors will be used which means that the elements around 5 will tend to be orange, those around 0 will be green and those around -5 will turn blue.
+The colours will be used to differentiate the values on the hill or valley which means that the elements around 5 will tend to be orange, those around 0 will be green and those around -5 will turn blue.
 
-With this, we can project the plot from above to a flat plane using the contour with colors to show the different elevations of the value on the plot. That's what exactly the join plot does.
+With this, we can project the plot from above to a flat plane using the contour with colours to show the different elevations of the value on the plot. That's what precisely the join plot does.
 
 #### Example : Birthrate and literacy
 
@@ -1977,7 +1977,7 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_121_0.png)
 
 
-The first argument in the joint plot is the birthrate placed on the X axis and the second is the literacy, we'll give to the plot a height of 8 and a green color.
+The first argument in the joint plot is the birthrate placed on the X axis and the second is the literacy, we'll give to the plot a height of 8 and a green colour.
 
 There is an argument called kind that determines the type of plots that are being intersected together (The small line at the top and the other one on the right of the main plot), here we have used "kde" which stand for kernel density estimates. The other type are "scatter", "reg", "resid" and "hex".
 
@@ -1993,13 +1993,13 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_124_0.png)
 
 
-It is the same plot as before just that this time we are using hexagon with lighter or darker color to represent the density of data. The darker the hexagon, the higher the concentration of data. 
+It is the same plot as before just that this time we are using hexagon with a lighter or darker colour to represent the density of data. The darker the hexagon, the higher the concentration of data. 
 
 #### Observation
 
-Let's use the first plot (kde) to do the observation. we see that the area near the coordinate (16,100) is very dark this tells us that in countries where nearly all the citizens are literate, the birthrate is around 16. If we could visualize this plot in 3D, the point at (16,100) would be on top of a hill.
+Let's use the first plot (kde) to do the observation. We see that the area near the coordinate (16,100) is very dark; this tells us that in countries where nearly all the citizens are literate, the birthrate is around 16. If we could visualize this plot in 3D, the point at (16,100) would be on top of a hill.
 
-We observe also that as the percentage of literate people drops, the percentage of births increases accordingly. This is illustrated in the countries where 80% of citizens are literate, the birthrate has almost double to 23.
+We also observe that as the percentage of literate people drops, the rate of births increases accordingly. This is illustrated in the countries where 80% of citizens are literate, the birthrate has almost double to 23.
 
 Finally, we can see that in the countries where the birthrate is 30 and above, only 60% to 40% of the population is literate.
 
@@ -2007,13 +2007,13 @@ To read more about the joint plot, read its documentation [here](https://seaborn
 
 ### Challenge
 
-For your first challenge, joint plot the birthrate and GDP using a kernel density estimates (kde) with a red color using a hexadecimal color code (do not confuse with the hex joint plot type ). Give a clear observation.
+For your first challenge, joint plot the birthrate and GDP using a kernel density estimates (kde) with a red colour using a hexadecimal colour code (do not confuse with the hex joint plot type ). Give a clear observation.
 
-Go ahead and try the challenge and after you have finished, come back to compare your solution with mine.
+Go ahead and try the challenge, and after you have finished, come back to compare your solution with mine.
 
 ### Challenge solution
 
-Alright, let's go through the solution which looks almost the same as the other plot. The only difference is how to set the color using a hex color code. You can generate a hex color code on this website [here](https://www.hexcolortool.com/).
+Alright, let's go through the solution which looks almost the same as the other plot. The only difference is how to set the colour using a hex colour code. You can generate a hex colour code on this website [here](https://www.hexcolortool.com/).
 
 
 ```python
@@ -2036,11 +2036,11 @@ On the contrary, the countries with the lowest GDP register the highest birthrat
 
 #### Example 1 : Distribution of the birthrate
 
-A distribution plot is very useful in the sense that it gives us an overview of how the values in a column are distributed.
+A distribution plot is handy in the sense that it gives us an overview of how the values in a column are distributed.
 
 A distribution plot is also called PDF (Probability Density Function). PDF will peak at a certain point if many values are squids around that point else it will flatten if no value is present.
 
-The best way to see this is through an example of course. In the example below, we want to see how the birthrate around the world is distributed.
+The best way to see this is through an example of course. In the case below, we want to know how the birthrate around the world is distributed.
 
 
 ```python
@@ -2056,13 +2056,13 @@ plt.show()
 
 We are using the distplot function from the seaborn, we pass the column that will be evaluated on the X axis, the Y axis is the amplitude. The X axis is divided into 20 equal parts also called bins that represent each the amplitude of the birthrate.
 
-We can see that we have two different plots inside one figure, the plot that looks like a bar plot is called histogram and the other that look like a smooth line is the kernel density estimates (kde).
+We can see that we have two different plots inside one figure, the plot that looks like a bar plot is called histogram, and the others that look like a smooth line is the kernel density estimates (kde).
 
-So what is the difference between the two, well they are the same just visualized differently, they all represent the amplitude of a value at a particular bin on the X axis. The histogram gives the precise amplitude while the kernel density estimates, as its name suggests draw a line that estimates the distribution of values using the edges of the histogram.
+So what is the difference between the two, well they are the same just visualized in another way, they all represent the amplitude of value at a particular bin on the X axis. The histogram gives the precise amplitude while the kernel density estimates, as its name suggests draw a line that approximates the distribution of values using the edges of the histogram.
 
 #### Observation
 
-Looking at the histogram, the amplitude is the highest at bin 12-13 and from there it decreases in amplitude till reaching bins 60. The kde plot shows the same just that this time this is represented using a smooth graph.
+When looking at the histogram, the amplitude is the highest at bin 12-13, and from there it decreases in amplitude till reaching bins 60. The kde plot shows the same just that this time, this is represented using a smooth graph.
 
 #### Example 2 : Distribution of the GDP
 
@@ -2084,19 +2084,19 @@ plt.show()
 
 We first set a white grid with font scale of 1, then start plotting.
 
-We passed GDP columns on the X axis, a bins of 20, set the color to green, set the histogram to False which basically means that we are hiding it and finally pass the dictionary {"shade": True} to the kde_kws which changes the propriety of the kde to shade the area under the plot to match the color. 
+We passed GDP columns on the X axis, a bins of 20, set the color to green, set the histogram to False which basically means that we are hiding it and finally pass the dictionary {"shade": True} to the kde_kws which changes the propriety of the kde to shade the area under the plot to match the colour. 
 
 Finally, we give it a title, grid, set the X axis to start from 0 because we can't technically have a negative GDP and show the plot.
 
 #### Observation
 
-Looking at the plot, we can see that the majority of countries have a GDP between \$3000 to \$4000 and from there the GDP decreases drastically to only stabilize between \$15000 to $30000 which mean that there is quite a number of countries in this range.
+Looking at the plot, we can see that the majority of countries have a GDP between \$3000 to \$4000 and from there the GDP decreases drastically to only stabilize between \$15000 to $30000 which mean that there are quite several countries in this range.
 
-Finally, the plot continues to fall rapidly which means fewer and fewer countries have a GDP greater than \$30000.
+Finally, the plot continues to fall quickly, which means fewer and fewer countries have a GDP higher than \$30000.
 
 #### Example 3 : Distribution of deathrate, birthrate, population and GDP in one figure
 
-There is this very useful matplotlib function called figure, think of a figure as a container of many the plots. We can create different type of plots and put them into one figure but since we are in the distribution plot section, let's create 4 distribution plots.
+There is this handy matplotlib function called figure, think of a figure as a container of many the plots. We can create a different type of plots and put them into one figure, but since we are in the distribution plot section, let's create 4 distribution plots.
 
 
 ```python
@@ -2113,19 +2113,19 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_153_0.png)
 
 
-We start first by setting the grid to dark with a font_scale of 1.5 and then use the subplots function pass to it 2 as the first argument to represent two rows then another 2 to represent two columns. Finally, the third argument is the figure's size as a tuple with 15 for the width and 10 for the height.
+We start first by setting the grid to dark with a font_scale of 1.5 and then use the subplots function pass to it 2 as the first argument to represent two rows and another 2 to describe two columns. Finally, the third argument is the figure's size as a tuple with 15 for the width and 10 for the height.
 
-The subplot function will return a figure and the axes variables. The axis helps us to select a specific plot in the figure for example if we want to select the birthrate plot, we set the axes to [0,1] : 0 for the index of the row and 1 for the index of the column in the figure.
+The subplot function will return a figure and the axes variables. The axis helps us to select a specific plot in the figure for example if we want to choose the birthrate plot, we set the axes to [0,1] : 0 for the index of the row and 1 for the index of the column in the figure.
 
-Finally, it is time to draw the distribution plots for each. we set ax parameter to the axes location and set rug to True, rug represents the distribution of values on small bars (called rugplot that strangely resemble barcodes) at the bottom of the X axis.
+Finally, it is time to draw the distribution plots for each. We set ax parameter to the axes location and set rug to True, rug represents the distribution of values on small bars (called rugplot that strangely resemble barcodes) at the bottom of the X axis.
 
 To know more about distribution plot, read the documentation [here](https://seaborn.pydata.org/generated/seaborn.distplot.html).
 
 #### Violin plot
 
-There is this very interesting plot called violin plot that combines a box plot and a distribution plot in a single plot.
+There is this fascinating plot called violin plot that combines a box plot and a distribution plot in a single plot.
 
-Its name comes from the fact that this plot has a form of a violin and its general structure is like this
+Its name comes from the fact that this plot has a form of a violin, and its general structure is like this.
 
 ![violin_plot](/blog/assets/post_cont_image/violin_plot.svg?sanitize=true)
 
@@ -2133,7 +2133,7 @@ picture credit: [datavizcatalogue](https://datavizcatalogue.com/methods/violin_p
 
 Let's explain the image above, the small black rectangle inside the purple area represents the interquartile range like the one in a box plot with the white dot in its middle representing the median. The two line (upper and lower adjacent value) extend to the minimum and the maximum.
 
-Now let's focus on the purple area, well this is the distribution plot placed in a vertical position and it is drawn symmetrically on the interquartile axes. The purple area expands to include all the outliers of the box plot.
+Now let's focus on the purple area, well this is the distribution plot placed in a vertical position, and it is drawn symmetrically on the interquartile axes. The purple area expands to include all the outliers of the box plot.
 
 We are going to plot GDP per region using the violin plot.
 
@@ -2157,9 +2157,9 @@ Finally, we rotate the X ticks, set the title and display the plots.
 
 If we compare the box plot that we plotted earlier on and the small back rectangle inside the violin plot, we can see that they are definitely the same just different sizes. It's like we have taken the box plots and shrink them down to fit in the violin plot. This means that the observation we did on the box plot is equally applicable here.
 
-Observing the distribution plot we can see that they largely vary depending on the region, for example, we can see in Sub-Saharan Africa that most of the countries have a GDP lower that \$5000 just by looking at the curve with a large width which shows a high concentration. Other regions that have a similar distribution are northern Africa and c.w of ind. states with both an average GDP less than \$10000.
+Observing the distribution plot we can see that they broadly vary depending on the region, for example, we can see in Sub-Saharan Africa that most of the countries have a GDP lower than \$5000 just by looking at the curve with a large width which shows a high concentration. Other regions that have a similar distribution are northern Africa and c.w of ind. states with both an average GDP less than \$10000.
 
-Northern American registers a very long and slim plot, this means that there is a huge gap between the countries with a higher GDP and those with a lower GDP.
+Northern American registers a very long and slim plot, this means that there is a considerable gap between the countries with a higher GDP and those with a lower GDP.
 
 Looking at Western Europe, there is no country with a GDP lower than \$10000. Western Europe also registers a very sharp top that corresponds to a country with an exceptional GDP (this is an outlier). Latin Amer & Carib also have outliers.
 
@@ -2169,7 +2169,7 @@ To read more about violin plot, read its documentation [here](https://seaborn.py
 
 We have already seen a pdf, now let's see a cdf (Cumulative Distribution Function). A cdf is a representation of cumulation of data on a 0 to 100% scale.
 
-Let's understand cdf through an example using the GDP. First, let's get the pdf and the cdf this time we are not going to use the seaborn library instead, we use numpy.
+Let's understand cdf through an example using the GDP. First, let's get the pdf and the cdf this time we are not going to use the seaborn library; instead, we use numpy.
 
 
 ```python
@@ -2190,7 +2190,7 @@ print(bins_edge)
 
 We use the histogram function from np variable used to import the numpy library, we pass to the function the GDP columns where the missing values have been ignored and set the density to True which means that the result is the value of the probability density function at the bin, normalized such that the integral over the range is 1. Finally, we set the bins to 20.
 
-Two lists (histogram and the bins edge) will be returned.
+Two lists (histogram and the bin's edge) will be returned.
 
 
 ```python
@@ -2242,7 +2242,7 @@ We are using the subplots function to get the axis (X ans Y axis) of the plot, t
 
 We will plot this one using matplotlib instead of seaborn since we want to do a simple line plot of X and Y axis. We will have 2 plots, one for the pdf and the other for cdf. We pass the bin_edge (which are the edges of the histogram of GDP) to the X axis starting from index 1 because the element at index 0 corresponds to -20% (on the Y axis), and we can not have a -20% of countries. We pass the pdf and cdf to the Y axis then stored them in pdf_line and cdf_line variable respectively.
 
-We set the X and Y label, a legend, give it a title and then set the minor grid to on (the small dot in-between the main grid) in order to see the intervals within the GDP's grid.
+We set the X and Y label, a legend, give it a title and then set the minor grid to on (the small dot in-between the primary grid) to see the intervals within the GDP's grid.
 
 Finally, we display the plot.
 
@@ -2252,15 +2252,15 @@ When it comes to the observation, the pdf line corresponds to the pdf already se
 
 Let's focus on the cdf, a cdf help us to understand the cumulation of values of a particular feature(columns). In this case, it is the cumulation of countries depending on their GDP on a scale of 0 to 100%.
 
-Looking at the cdf plot, we can conclude that only 50% of countries in the world have a GDP higher than \$6000 . We could also say that 80% of all countries in the world have a GDP less than \$19000. We can also conclude that only 2% of countries have a GDP higher than \$36000.
+Looking at the cdf plot, we can conclude that only 50% of countries in the world have a GDP higher than \$ 6000. We could also say that 80% of all countries in the world have a GDP less than \$19000. We can also conclude that only 2% of countries have a GDP higher than \$36000.
 
 #### Heat map
 
-As we have already seen at the beginning of this blog, heat map was used to visualize the missing values in our dataset but there are many use cases of heat map.
+As we have already seen at the beginning of this blog, a heat map was used to visualize the missing values in our dataset, but there are many use cases of the heat map.
 
-A heat map is a two-dimensional graphical representation of data where the individual values that are contained in a matrix are represented as colors.
+A heat map is a two-dimensional graphical representation of data where the individual values that are contained in a matrix are represented as colours.
 
-For this use case of heat map, we use it to see the correlation(relationship) between all the columns in the dataset.
+For this use case of the heat map, we use it to see the correlation(relationship) between all the columns in the dataset.
 
 
 ```python
@@ -2272,17 +2272,17 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_182_0.png)
 
 
-We call the corr() function on the dataframe to get a correlation of each column to each other column in the dataset and pass it to the heat map function. Then annotation to True so that each box of the matrix is given its corresponding value and set fmt to .1f which means that value is written with one decimal point.
+We call the corr() function on the dataframe to get a correlation of each column to each other column in the dataset and pass it to the heat map function. Then annotation to True so that each box of the matrix is given its corresponding value and set fmt to .1f, which means that value is written with one decimal point.
 
 #### Observation
 
-Very interesting things here, let's first look at the bar on the right side, there are gradient colors ranging from -0.8 (black color) to 0.8 (yellow color). 
+Exciting things going on here, let's first look at the bar on the right side, gradient colours are ranging from -0.8 (black colour) to 0.8 (yellow colour). 
 
-Now let's go to the matrix plot itself, we can observe a wide range of colors but most notably we can see a series of yellow cells that form a diagonal across the matrix, if you look closely at those cells you can see that the X and the Y axis is the same column that is why they are yellow which means that there is no correlation between the values in the same column because each value is compared with itself (that is also why those cells have a value of 1.0). 
+Now let's go to the matrix plot itself, we can observe a wide range of colours, but most notably, we can see a series of yellow cells that form a diagonal across the matrix. If you look closely at those cells you can see that the X and the Y axis is the same column that is why they are yellow which means that there is no correlation between the values in the same column because each value is compared with itself (that is also why those cells have a value of 1.0). 
 
 The cells of the matrix separated by the series of yellow diagonal cells are the same just that they are symmetric to each other. This means that we can focus on one part and still come up with the same conclusion.
 
-Focusing on the cells below the series of diagonal cells, there are cells that are darker than others, these show a high correlation between those two columns. For example, we can see that there is a high correlation between infant mortality and the GDP of a country.
+When we focus on the cells below the series of diagonal cells, some cells are darker than others, these show a high correlation between those two columns. For example, we can see that there is a high correlation between infant mortality and the GDP of a country.
 
 To read more about heat map, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
 
@@ -2301,34 +2301,34 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_188_0.png)
 
 
-the first argument we pass to the pair plot function is the dataset, then set the hue to region so that a different color is given to each marker depending on its region, vars will be a list of the columns that we want to plot and finally set a palette.
+the first argument we pass to the pair plot function is the dataset, then set the hue to region so that a different colour is given to each marker depending on its region, vars will be a list of the columns that we want to plot and finally set a palette.
 
 #### Observation
 
 We are using literacy, phones per 1000, GDP and birthrate since those have a correlation with each other and plot them in a two by two form (that is why it is called pair plot) where one column will be on the X axis and the other on the Y axis. Since we have 4 features, we'll have 6 possible combinations of plots.
 
-As it was on the heat map, looking at the figure we can see distribution plots arranged diagonally separating this figure into two symmetric parts. These distribution plots have the same X and Y axis, for now, let's just ignore these to only focus on the scatter plots below the diagonal distribution plots.
+As it was on the heat map, looking at the figure, we can see distribution plots arranged diagonally separating this figure into two symmetric parts. These distribution plots have the same X and Y axis, for now, let's just ignore these and only focus on the scatter plots below the diagonal distribution plots.
 
-Looking at the plot on the second row first column (the one with phones on the Y axis and literacy on the X axis), we can see that the markers from the same regions are located almost at the same location in the plot. For example, there is a lot of blue markers (looking at the legend these are countries from North America) around the same coordinates, suggesting that the population in this region is almost 100% literate with a high number of phones meanwhile at the bottom of the same plot we register a high number of brown markers (these are the countries from Sub-saharan Africa) suggesting that on average, people in this region don't have phones and that around 50% of them are literate. These grouping of markers show the correlation between features and the same thing can be observed on the other five plots.
+Looking at the plot on the second row first column (the one with phones on the Y axis and literacy on the X axis), we can see that the markers from the same regions are located almost at the same location in the plot. For example, there is a lot of blue markers (looking at the legend these are countries from North America) around the same coordinates, suggesting that the population in this region is almost 100% literate with a high number of phones. Meanwhile, at the bottom of the same plot, we register a high number of brown markers (these are the countries from Sub-saharan Africa) suggesting that on average, people in this region don't have phones and that around 50% of them are literate. These grouping of markers show the correlation between features and the same thing can be observed in the other five plots.
 
 
-Pair plot is very useful in EDA and you should take time and read more about it [here](https://seaborn.pydata.org/generated/seaborn.pairplot.html).
+Pair plot is handy in EDA, and you should take time and read more about it [here](https://seaborn.pydata.org/generated/seaborn.pairplot.html).
 
 ### Conclusion
 
-Have you noticed how we have by now a good understanding of our dataset? Now you understand why every ML/data scientists should have basic data manipulation and visualization skills.
+Have you noticed how we have by now a good understanding of our dataset? Now you understand why every ML/data scientists should have fundamental data manipulation and visualization skills.
 
-Exploratory data analysis is a whole field of study by its own. Seaborn, matplotlib, pandas and numpy are the most popular libraries for EDA in Python as of March 2019 and are quite easy to understand. There are many other libraries like Dash by plotly (based on the popular D3.js framework) or Bokeh that helps in the creation of interactive plots which are very fun to play with and give a whole new understanding of a dataset. I'll do a blog on one of the two in the near future.
+Exploratory data analysis is a whole field of study by its own. Seaborn, matplotlib, pandas and numpy are the most popular libraries for EDA in Python as of March 2019 and are quite easy to understand. There are many other libraries like Dash by plotly (based on the popular D3.js framework) or Bokeh that helps in the creation of interactive plots which are very fun to play with and give a full understanding of a dataset. I'll do a blog on one of the two soon.
 
-There are many other libraries but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem this means that solving the problem is our priority no matter the tools used.
+There are many other libraries, but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem; this means that solving the problem is our priority no matter the tools used.
 
 Lastly, you should choose the tool(s) to use based upon:
 
 * The type of project
 * The type of dataset you are working with (for example it should not be appropriate to use pandas if you are working with big data)
 * How important it is to communicate the findings from a dataset to non-technical persons
-* Its documentation and community (If you choose a badly documented library you gonna have a hard time working with it)
+* Its documentation and community (If you choose a poorly documented library you gonna have a hard time working with it)
 
-I know this post was kinda long but because it's essential to have a good basic foundation of EDA, we had to emphasize on it.
+I know this post was kinda long, but because it's essential to have a good foundation of EDA, we had to emphasize it.
 
-Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.
