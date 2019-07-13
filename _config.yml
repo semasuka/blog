@@ -86,7 +86,7 @@ plugins:
 #theme: jekyll-theme-basically-basic
 
 #github page for custom theme
-emote_theme: "mmistakes/jekyll-theme-basically-basic"
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
