@@ -15,7 +15,7 @@ This one is different. This blog helps ANYONE who is interested in Machine Learn
 
 This blog is built with [Jekyll](https://jekyllrb.com "Jekyll") and customized using [this](https://github.com/mmistakes/jekyll-theme-basically-basic) theme, I have tweaked it with my styling. If you wish to use this blog as a template to create your blog or contribute to this project, fork it on my GitHub profile [here](https://github.com/semasuka/blog).
 
-All of the content on this site is FREE with no ads for the benefit of the community. Please do not reproduce the entire content (or very substantial portions) of any article without asking first.
+All of the content on this site is FREE with no ads for the benefit of the community. Do not reproduce the entire content (or very substantial portions) of any article without asking first!
 
 # Contact the author
 
