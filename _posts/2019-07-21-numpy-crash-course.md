@@ -78,7 +78,7 @@ NumPy has several built-in methods to create or change arrays.
 
 #### Arange
 
-The arange method is used to create a new NumPy array if you want an array that has consecutive elements. We have to pass in as parameters the start number, the stop number, and optionally the step number. This method is very similar to the range Python built-in function.
+The arange method is used to create a new NumPy array if you want an array that has consecutive elements. We have to pass in as arguments the start number, the stop number, and optionally the step number. This method is very similar to the range Python built-in function.
 
 
 ```python
@@ -101,7 +101,7 @@ print(type(seq_array))
     <class 'numpy.ndarray'>
 
 
-We have passed as the first parameter 3, which is the starting point of our array, then the stopping point. Remember, the stopping number is not included so for example if the stopping number is 8, the array counts up to 7.
+We have passed as the first argument 3, which is the starting point of our array, then the stopping point. Remember, the stopping number is not included so for example if the stopping number is 8, the array counts up to 7.
 
 We can also use the step to skip every number at a specific step.
 
@@ -173,7 +173,7 @@ print(ones_arr)
 
 #### Full
 
-The same way we did with zeros and ones, we can generate an array of any number using the full method. This time we use two parameters, the first parameter is how many times we want to generate the number, and the second parameter is the actual number.
+The same way we did with zeros and ones, we can generate an array of any number using the full method. This time we use two arguments, the first argument is how many times we want to generate the number, and the second argument is the actual number.
 
 
 ```python
@@ -190,7 +190,7 @@ print(fives_arr)
 
 #### Linspace
 
-There is this useful method called linspace. Linspace is very similar to arrange in the sense that they both have a start and a stop number, the only difference is that linspace's thrid parameter corresponds to the number of elements evenly spaced in the array.
+There is this useful method called linspace. Linspace is very similar to arrange in the sense that they both have a start and a stop number, the only difference is that linspace's thrid argument corresponds to the number of elements evenly spaced in the array.
 
 
 ```python
@@ -304,7 +304,7 @@ print(snd_arr_multi)
      [-1.12503957 -1.38798392  0.78566072]]
 
 
-We can generate integers and pass as parameters low, high, and the size of the array to generate.
+We can generate integers and pass as arguments low, high, and the size of the array to generate.
 
 
 ```python
@@ -609,7 +609,7 @@ print(new_array)
     [30 32 34 36 38 40 42 44]
 
 
-We used the [ ] and passed as the first parameter the starting point and the last parameter the stopping point(remember that the stopping point is not included).
+We used the [ ] and passed as the first argument the starting point and the last argument the stopping point(remember that the stopping point is not included).
 
 If we want to start from the first number, the start will be 0.
 
@@ -781,7 +781,7 @@ print(nD_array)
 
 We created a random multidimensional array of 300 numbers with 0 as the lowest number, 501 as the highest number then reshaped it into 30 arrays with 10 numbers each.
 
-If we want to only print, for example, the 10th array, we can pass 9 as the parameter which is the index of the 10th array in the multidimensional array.
+If we want to only print, for example, the 10th array, we can pass 9 as the argument which is the index of the 10th array in the multidimensional array.
 
 
 ```python
