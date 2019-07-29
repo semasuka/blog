@@ -13,7 +13,7 @@ This one is different. This blog helps ANYONE who is interested in Machine Learn
 
 # About the blog
 
-This blog is built with [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, fork it on my GitHub profile [here](https://github.com/semasuka/blog).
+This blog is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, fork it on my GitHub profile [here](https://github.com/semasuka/blog).
 
 All of the content on this site is FREE with no ads for the benefit of the community. Do not reproduce the entire content (or very substantial portions) of any article without asking first!
 
