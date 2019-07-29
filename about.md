@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About the author
 
-Hi there! I'm Semasuka Stern, and I'm a passionate software engineer with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm focusing more on machine intelligence (or machine learning) and its real world-application to solve humankind challenges. I am learning Machine Learning, and the act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts). I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve a cause and make earth a better place.
+Hi there! I'm Semasuka Stern, and I'm a passionate software engineer with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm focusing more on machine intelligence (or machine learning) and its real world-application to solve humankind challenges. I am learning Machine Learning, and the act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts). I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
 
 # Why another ML/coding blog?
 
