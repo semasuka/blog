@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About the author
 
-Hi there! I'm Semasuka Stern, and I'm a passionate software engineer with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine intelligence (or machine learning) and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts). I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
+Hi there and Welcome to Machine Intelligence Blog! I'm Semasuka Stern, and I'm a passionate software engineer with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine intelligence (or machine learning) and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts). I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
 
 # Why another ML/coding blog?
 
@@ -20,3 +20,14 @@ All of the content on this site is FREE with no ads for the benefit of the commu
 # Contact the author
 
 Do you want to share a comment, a constructive critic, a correction, or a question related to machine learning or this blog? Do not hesitate, get in touch with me through e-mail or LinkedIn.
+
+# Donate
+
+If you enjoy the content, Kindly consider supporting me :)
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="CD3F4HSWGRUH2" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
+</form>

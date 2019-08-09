@@ -1,6 +1,6 @@
 /* ========================================================================== Default theme skin ========================================================================== */
 /*!
- * Basically Basic Jekyll Theme 1.4.1
+ * Basically Basic Jekyll Theme 1.4.2
  * Copyright 2017-2018 Michael Rose - mademistakes | @mmistakes
  * Free for personal and commercial use under the MIT license
  * https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE
@@ -806,6 +806,8 @@ a:hover { color: #539F30; }
 .entry-excerpt .ais-Highlight { color: #539F30; }
 
 .entry-meta .icon { fill: #539F30; }
+
+.canvas { overflow: visible; }
 
 .entries-list .entry-title a:hover { color: #539F30; }
 

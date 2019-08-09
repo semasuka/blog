@@ -15,8 +15,8 @@
 <meta property="og:title" content="Iterators and range in Python" />
 <meta name="author" content="Semasuka Stern" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this post, we will mainly discuss iterator and range function. we have been using them previously this time we’ll go in depth. Let’s first talk about iterator and iterable object in Python." />
-<meta property="og:description" content="In this post, we will mainly discuss iterator and range function. we have been using them previously this time we’ll go in depth. Let’s first talk about iterator and iterable object in Python." />
+<meta name="description" content="In this post, we will mainly discuss iterator and range function. We have been using iterator and range function; however, this time, we’ll go in-depth. Let’s first talk about iterator and iterable object in Python." />
+<meta property="og:description" content="In this post, we will mainly discuss iterator and range function. We have been using iterator and range function; however, this time, we’ll go in-depth. Let’s first talk about iterator and iterable object in Python." />
 <link rel="canonical" href="http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html" />
 <meta property="og:url" content="http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html" />
 <meta property="og:site_name" content="MIB" />
@@ -24,7 +24,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-02-16T00:00:00-07:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html"},"image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html","author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this post, we will mainly discuss iterator and range function. we have been using them previously this time we’ll go in depth. Let’s first talk about iterator and iterable object in Python.","headline":"Iterators and range in Python","dateModified":"2019-02-16T00:00:00-07:00","datePublished":"2019-02-16T00:00:00-07:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html"},"image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html","author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this post, we will mainly discuss iterator and range function. We have been using iterator and range function; however, this time, we’ll go in-depth. Let’s first talk about iterator and iterable object in Python.","headline":"Iterators and range in Python","dateModified":"2019-02-16T00:00:00-07:00","datePublished":"2019-02-16T00:00:00-07:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -133,7 +133,7 @@
   
 
   
-    <li><a href="https://www.linkedin.com/in/semasuka-stern-437096150">
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
   <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
   <span class="label">Linkedin</span>
 </a>
@@ -268,11 +268,11 @@
   <div class="inner">
     <article class="entry-wrap">
       <div id="entry" class="entry-content">
-        <p>In this post, we will mainly discuss iterator and range function. we have been using them previously this time we’ll go in depth. Let’s first talk about iterator and iterable object in Python.<!-- more --></p>
+        <p>In this post, we will mainly discuss iterator and range function. We have been using iterator and range function; however, this time, we’ll go in-depth. Let’s first talk about iterator and iterable object in Python.<!-- more --></p>
 
 <h3>Iterator and Iterable object</h3>
 
-<p>An iterator is an object that represents a stream of data in order words an iterator is an object that you can traverse one element at a time. Any object that supports iteration is called iterable and so far we have seen some iterable objects like string and list.</p>
+<p>An iterator is an object that represents a stream of data in order words an iterator is an object that you can traverse one element at a time. Any object that supports iteration is called iterable, and so far, we have seen some iterable objects like string and list.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">some_string</span> <span class="o">=</span> <span class="s">"0123456789"</span>
 <span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">"burundi"</span><span class="p">,</span><span class="s">"kenya"</span><span class="p">,</span><span class="s">"rwanda"</span><span class="p">,</span><span class="s">"uganda"</span><span class="p">]</span>
@@ -304,9 +304,9 @@ rwanda
 uganda
 </code></pre></div></div>
 
-<p>As we have already seen this, in these examples above we are going through all the elements in the string and in the list one-by-one. What is actually happening is that there is an iterator that is created behind the scene by the for loop and uses it to return each element in the string or list (iterable) and when there is no more element left. An error will be raised and handled by the for loop and the loop will terminate.</p>
+<p>As we have already seen this, in these examples above we are going through all the elements in the string and in the list one-by-one. What is actually happening is that there is an iterator that is created behind the scene by the for loop and uses it to return each element in the string or list (iterable) and when there is no more element left. An error will be raised and handled by the for loop, and the loop will terminate.</p>
 
-<p>To see clearly what is going on here, let’s create our own iterable using the iter( ) function.</p>
+<p>To see what is going on here, let’s create our own iterable using the iter( ) function.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interable_string</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">some_string</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">interable_string</span><span class="p">)</span>
@@ -373,7 +373,7 @@ StopIteration:
 
 <p>After exhausting all the elements in the string will cause the following use of the next function to result in an error, StopIteration error will be raised which means that we have reached the end of the string, there is no more element in the iterable object.</p>
 
-<p>When we were using the for loop to iterate, StopIteration error was raised behind the scene and the for loop took care of it for us and exited the loop.</p>
+<p>When we were using the for loop to iterate, StopIteration error was raised behind the scene, and the for loop took care of it for us and exited the loop.</p>
 
 <h3>Challenge</h3>
 
@@ -383,7 +383,7 @@ StopIteration:
 
 <p>hit: use the len( ) function to get “n”.</p>
 
-<p>Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.</p>
+<p>Now go ahead and try this challenge on your own and only after you have attempted to, come back and compare your solution with mine.</p>
 
 <h3>Challenge Solution</h3>
 
@@ -408,7 +408,7 @@ Random forest
 
 <p>Now comes the for loop that will loop as long as we have not exceeded the number of elements found in the list using the len( ) and the range( ) function. We will print each element of the list one by one using the next( ) function. No StopIteration error will be raised(encountered) because we have not gone beyond the number of elements found in the list thanks to the range function.</p>
 
-<p>Another thing here to mention is the use if _ as count variable of the for the loop. As a convention in Python, we use _ instead of “i” or “j” when we ain’t using this variable inside the loop. the _ variable acts like a placeholder.</p>
+<p>Another thing here to mention is the use if _ as count variable of the for the loop. As a convention in Python, we use _ instead of “i” or “j” when we ain’t using this variable inside the loop. The _ variable acts like a placeholder.</p>
 
 <p>Note: the point here is to show you how iterator works and what is really going on behind the scene when we are using. This is by no mean “the” way of writing a for loop, you should write it without the iter( ) and next( ) as we did before since everything is being taken care for us. We will see how iterator are useful when we will be creating our own iterator classes and using generators in Python.</p>
 
@@ -416,7 +416,7 @@ Random forest
 
 <p>We have been using range in the for loop, let’s take a deep dive into it.</p>
 
-<p>As we have already seen, a range function has a start, stop and step value as parameters in this format: range(start, stop, step). If only one value is passed as a parameter, it will be considered as the stop value. Remember the range function is an exclusive function this means that if we write range(21), the count will stop at value 20.</p>
+<p>As we have already seen, a range function has a start, stop and step value as parameters in this format: range(start, stop, step). If only one value is passed as a parameter, it will be considered as the stop value. Remember the range function is an exclusive function; this means that if we write range(21), the count will stop at value 20.</p>
 
 <p>We can use a list constructor to generate a range of elements like this.</p>
 
@@ -442,11 +442,11 @@ Random forest
 the odd numbers are: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 </code></pre></div></div>
 
-<p>Here we are creating two lists here, one that contains all the even numbers from 0 to 20 with 2 as step and another one that contains odd numbers starting from 1, stepping by 2 up to 20.</p>
+<p>Here we are creating two lists, one that contains all the even numbers from 0 to 20 with 2 as step and another one that contains odd numbers starting from 1, stepping by 2 up to 20.</p>
 
 <h4>index and slicing with range function</h4>
 
-<p>To get an index of a particular character and a character at a particular index in a string/list, we use slicing and index function.</p>
+<p>To get an index of a particular character and a character at a specific index in a string/list, we use slicing an index function.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alpha</span> <span class="o">=</span> <span class="s">"abcdefghijklmnopqrstuvwxyz"</span>
 </code></pre></div></div>
@@ -481,7 +481,7 @@ ValueError: substring not found
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
 </code></pre></div></div>
 
-<p>So now, what if we have an index but we want to get the character found at that index. We will use slicing.</p>
+<p>So now, what if we have an index, but we want to get the character found at that index. We will use slicing.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </code></pre></div></div>
@@ -508,7 +508,7 @@ ValueError: substring not found
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>range(1, 1000)
 </code></pre></div></div>
 
-<p>Not what you expected? some might expect to return all elements for 1 to 1000 but remember, we have not cast the range to a list. This is just a range class.</p>
+<p>Not what you expected? Some might expect to return all elements for 1 to 1000 but remember, we have not cast the range to a list. This is just a range class.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_nums</span><span class="p">))</span>
 </code></pre></div></div>
@@ -518,7 +518,7 @@ ValueError: substring not found
 
 <p>Now let’s use the index and the slicing on range.</p>
 
-<p>we can access to an index of a certain element.</p>
+<p>we can access to an index of a particular element.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
@@ -534,7 +534,7 @@ ValueError: substring not found
 
 <p>In the examples above, we check at what position(index) the value 3 and 20 are found in the range.</p>
 
-<p>we can access to an element at a certain index.</p>
+<p>we can access an element at a particular index.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div></div>
@@ -604,7 +604,7 @@ Please enter a number between 7 and 1000: 44
     <span class="k">print</span><span class="p">(</span><span class="s">"The two range are equal"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal.
 </code></pre></div></div>
 
 <p>Now let’s compare the two ranges.</p>
@@ -614,7 +614,7 @@ Please enter a number between 7 and 1000: 44
     <span class="k">print</span><span class="p">(</span><span class="s">"The two range are equal"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal.
 </code></pre></div></div>
 
 <p>The two ranges are equal because the two range will return 0,2,4. In the second range, 6 will not be included because as we have already seen the range function is an exclusive function.</p>
@@ -652,7 +652,7 @@ Please enter a number between 7 and 1000: 44
 0
 </code></pre></div></div>
 
-<p>To print in reverse order the range function, the start will be higher than the end and the step will be a negative number.</p>
+<p>To print in reverse order using the range function, the start will be higher than the end, and the step will be a negative number.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span>
 </code></pre></div></div>
@@ -674,9 +674,9 @@ Please enter a number between 7 and 1000: 44
 0
 </code></pre></div></div>
 
-<p>In the first example, we have reversed the order starting from 20 and ending at 0 (that is why we use -1 as stop) and used -2 as step which countdown by 2.</p>
+<p>In the first example, we have reversed the order starting from 20 and ending at 0 (that is why we use -1 as stop) and used -2 as a step which countdown by 2.</p>
 
-<p>In the second example, we exactly doing the same thing just that this time we are using slicing at the same time with the range function.</p>
+<p>In the second example, we are doing the same thing just that this time we are using slicing at the same time with the range function.</p>
 
 <p>Let’s compare the two notation.</p>
 
@@ -684,10 +684,10 @@ Please enter a number between 7 and 1000: 44
     <span class="k">print</span><span class="p">(</span><span class="s">"The two range are equal"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The two range are equal.
 </code></pre></div></div>
 
-<p>we can clearly see that the two ranges are equal, but pay attention to how we wrote the second expression, we started by writing the range function using only the start and the end parameters and then we add a step using slicing.</p>
+<p>we can clearly see that the two ranges are equal, but pay attention to how we wrote the following expression, we started by writing the range function using only the start and the end parameters, and then we add a step using slicing.</p>
 
 <p>Now the question that comes next would be when do we need to use slicing in reversed order?</p>
 
@@ -702,7 +702,7 @@ Please enter a number between 7 and 1000: 44
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bujumbura is the capital of Burundi
 </code></pre></div></div>
 
-<p>Using slicing we have managed to write a reversed ordered string into its correct order by using -1 as step.</p>
+<p>Using slicing, we have managed to write a reversed ordered string into its correct order by using -1 as a step.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">the_nums</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
@@ -732,7 +732,7 @@ Please enter a number between 7 and 1000: 44
   <li>The second part should ask the user to input a number and check if that number is a multiple of 11</li>
 </ul>
 
-<p>Now go ahead and try this challenge on your own and only after you have tried, come back and compare your solution with mine.</p>
+<p>Now go ahead and try this challenge on your own and only after you have attempted to, come back and compare your solution with mine.</p>
 
 <h3>Challenge Solution</h3>
 
@@ -745,14 +745,14 @@ Please enter a number between 7 and 1000: 44
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Second part</span>
-<span class="n">user_in</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Please enter a number betwee 11 and 100: "</span><span class="p">))</span>
+<span class="n">user_in</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Please enter a number between 11 and 100: "</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">user_in</span> <span class="ow">in</span> <span class="n">multi_eleven_count</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"The number inputted is a multiple of 11"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"The number inputted is not a multiple of 11"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a number betwee 11 and 100: 22
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a number between 11 and 100: 22
 The number inputted is a multiple of 11
 </code></pre></div></div>
 
@@ -762,15 +762,15 @@ The number inputted is a multiple of 11
 
 <h3>Conclusion</h3>
 
-<p>Iterable objects are very crucial parts of Python because they are the ones that make a for and while loop through a sequential data type possible. Understanding how they work behind the scene is also important because this will help us to understand how to create our own iterable class in the upcoming post.</p>
+<p>Iterable objects are very crucial parts of Python because they are the ones that make a for and while loop through a sequential data type possible. Understanding how they work behind the scene is also essential because this will help us to understand how to create our own iterable class in the upcoming post.</p>
 
 <p>The range function generates a range of number between a given interval, we can use this range without casting it to a list to save up memory.</p>
 
-<p>Thank you for reading this tutorial. Hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts and if you have a thought or a question, I would love to hear it by commenting below.</p>
+<p>Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.</p>
 
         <div class="share-page">
     Share this post on
-    <a href="https://twitter.com/intent/tweet?text=Iterators and range in Python&url=http://localhost:4000/2019/02/16/iterators-and-range-in-python.html&via=semasuka&related=semasuka" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Iterators and range in Python&url=http://localhost:4000/2019/02/16/iterators-and-range-in-python.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
     <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/02/16/iterators-and-range-in-python.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
     <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html&title=Iterators%20and%20range%20in%20Python" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
     <a href="mailto:?subject=Iterators and range in Python&amp;body=Check out this post http://localhost:4000/blog/2019/02/16/iterators-and-range-in-python.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
