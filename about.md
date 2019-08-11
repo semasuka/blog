@@ -19,11 +19,11 @@ All of the content on this site is FREE with no ads for the benefit of the commu
 
 # Contact the author
 
-Do you want to share a comment, a constructive critic, a correction, or a question related to machine learning or this blog? Do not hesitate, get in touch with me through e-mail or LinkedIn.
+Do you want to share a comment, a constructive critic, a correction, or a question related to machine learning or this blog? or work with me on an interesting project? Do not hesitate, get in touch with me through e-mail or LinkedIn.
 
 # Donate
 
-If you enjoy the content, Kindly consider supporting me :)
+If you enjoy the content, kindly consider supporting the blog :)
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick" />

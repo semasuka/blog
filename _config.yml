@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: MIB
 email: ssemasuka@gmail.com
-description: "Up & running with machine learning | semasuka stern machine learning blog"
+description: "Learn Machine Learning from scratch"
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://semasuka.github.io/blog" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  semasuka
