@@ -1,5 +1,5 @@
 ---
-title:  "NumPy Exercises Part 1"
+title:  "NumPy Exercises Part 2"
 image: /assets/post_images/numpy.png
 excerpt_separator: <!-- more -->
 tags:
