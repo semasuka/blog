@@ -973,7 +973,7 @@ the_data_2d[:10]
 
 We used the isnan method again to get back all the instances of nan, then replace each of these instances by assigning 0 to the indexed array.
 
-#### Conclusion
+#### Conclusion 
 
 By now, you should have a great understanding of NumPy and most importantly, how you can use Google and the NumPy's documentation to see how to perform a specific task in NumPy.
 
