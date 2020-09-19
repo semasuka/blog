@@ -58,7 +58,7 @@ defaults:
     values:
       layout: "post"
       comments: true
-      author: "Semasuka Stern"
+      author: "Stern Semasuka"
       read_time: true
 
 #pagination
