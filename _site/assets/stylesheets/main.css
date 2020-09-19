@@ -898,7 +898,7 @@ a:hover { color: #539F30; }
 
 .search-toggle .icon { -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; }
 
-@media (min-width: 64em) { .site-title { padding-left: 5vw; } }
+/* @media (min-width: 64em) { .site-title { padding-left: 5vw; } } */
 .site-title span { display: hide; width: 0; height: 0; visibility: hidden; position: absolute; top: -9999px; left: -9999px; display: none; }
 
 @media (max-width: 31em) { .site-logo { width: 245px; height: 100px; margin-right: 0.5rem; border-radius: 0%; }
