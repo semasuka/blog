@@ -8,7 +8,7 @@ tags:
 - numpy
 ---
 
-One of the most used scientific computing library for python is without a doubt NumPy, Numpy is very fast at computing arrays since it is mostly written in C programming. NumPy adds support for large, multi-dimensional arrays and matrices, along with an extensive collection of high-level mathematical functions (for linear algebra) to operate on these arrays.<!-- more --> Pandas, which is a library for data manipulation, is written based on NumPy. In this post, we will discuss NumPy and how to use it, and by the end of the post, you will see why it is one of the most famous Python libraries for data science and machine learning.
+One of the most used scientific computing library for python is without a doubt NumPy, Numpy, which is an abbreviation of Numerical Python, is very fast at computing arrays since it is mostly written in C programming. NumPy adds support for large, multi-dimensional arrays and matrices, along with an extensive collection of high-level mathematical functions (for linear algebra) to operate on these arrays.<!-- more --> Pandas, which is a library for data manipulation, is written based on NumPy. In this post, we will discuss NumPy and how to use it, and by the end of the post, you will see why it is one of the most famous Python libraries for data science and machine learning.
 
 Let's jump into Anaconda and import the NumPy library.
 

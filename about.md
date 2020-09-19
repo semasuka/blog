@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About the author
 
-Hi there and Welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine intelligence (or machine learning) and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
+Hi there and Welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer based in Calgary with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine intelligence (or machine learning) and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
 
 I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
 
@@ -19,9 +19,9 @@ You will learn concepts ranging from programming, maths, data analysis to algori
 
 # About the blog
 
-This blog is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
+This blog is ranked among [the top 40 blogs on Machine Learning to follow in 2019](https://blog.feedspot.com/machine_learning_blogs/).The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
 
-All of the content on this site is FREE with no ads for the benefit of the community. Do not reproduce the entire content (or very substantial portions) of any article without asking first!
+Knowledge should be given without a cost that is why all of the content on this blog is FREE with no ads for the benefit of the community. Do not reproduce the entire content (or very substantial portions) of any article without asking first!
 
 # Contact the author
 
