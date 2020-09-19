@@ -10,7 +10,7 @@ tags:
 
 
 
-Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects.
+Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects.<!-- more -->
 
 Let's now start by importing the NumPy as usual.
 
