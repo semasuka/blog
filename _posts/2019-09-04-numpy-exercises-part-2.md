@@ -35,7 +35,7 @@ Q: Let's create a two-dimensional array with a shape of 5x3 that contain random 
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -59,7 +59,7 @@ We use the uniform method on the random NumPy method and pass the lowest number,
 
 Then use the reshape method to change it from a one-dimensional array to a two-dimensional array.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -107,7 +107,7 @@ print(my_array)
 
 #### Solution
 
-#### 1st Way
+#### 1st Method
 
 
 ```python
@@ -124,7 +124,7 @@ print(my_array_decimal_place)
 
 We use the around method, pass as arguments the array itself and the decimal place. In our case, it is 1.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -311,7 +311,7 @@ Q: We are going to import [this](https://archive.ics.uci.edu/ml/machine-learning
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -330,7 +330,7 @@ print(the_data_1[:3])
 
 So we can store the data in an array using the loadtxt method, the first argument is the path (online URL or path on a local machine) to the dataset, then a dictionary that will hold the name and the data type of each column and finally, we set the delimiter to be a comma since we are importing from a CSV file.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -540,7 +540,7 @@ Q: Compute the softmax score of the sepal length column and print only the first
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -553,7 +553,7 @@ print(softmax_score[:5])
 
 The softmax score is obtained by getting the exponential of each element in the sepal length column then dividing it with the sum of all exponentials of elements in the sepal length column.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -826,7 +826,7 @@ For this exercise, we are asked to calculate the correlation. But what is a corr
 Strictly speaking, Pearson's correlation requires a normally distributed dataset and not necessarily zero-mean. Like other correlation coefficients, this one varies between -1 and +1 with 0 implying no correlation. Correlations of -1 or +1 imply an exact linear relationship. Positive correlations indicate that as x increases, so
 does y. Negative correlations suggest that as x increases, y decreases. 
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -854,7 +854,7 @@ The first way, we can get the correlation in any row or column is by using the c
 
 We get back a two-dimensional array of all possible combination of the sepal length and petal length column including correlation of each column with itself (which is +1). Now we only have to extract the correlation of sepal length and petal length located in the first row (position 0), the second column (1).
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -979,4 +979,4 @@ By now, you should have a great understanding of NumPy and most importantly, how
 
 If you were able to do half of these exercises from these two posts, congratulation!! I am confident to tell you that you can start using NumPy into your ML projects. Most ML projects won't require advanced NumPy knowledge than this. The last post from these series is coming soon. It has some advanced NumPy exercises for those who want to master NumPy.
 
-Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!

@@ -205,7 +205,7 @@ print(my_arr)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -236,7 +236,7 @@ print(my_arr)
 
 This example is very similar to the previous one, the only difference is that instead of using the indexing on the original array, we are using a copy of the original array which won't be affected at all by the changes.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -282,7 +282,7 @@ print(my_arr)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -302,7 +302,7 @@ We have applied the reshape method to the original array, pass in as argument a 
 
 Note: Remember that the number of elements must fit in the rows. Here is a formula that can help you reshape an array and avoid errors. The number of elements in 1D = number of row in nD X number of elements in each row.
 
-#### 2nd way
+#### 2nd Method
 
 We can avoid all the hustle of figuring out how to fit the elements in the row with the correct numbers of row and column, we can use just -1 as the second argument in the tuple. Using -1, NumPy will figure out how many elements need to be placed in each array depending on the number of rows.
 
@@ -362,7 +362,7 @@ my_arr_2 = np.arange(21,41).reshape(2,-1)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -425,7 +425,7 @@ my_arr_5 = np.vstack((my_arr_1,my_arr_4))
 
 my_arr_4 with 5 columns can not be concatenated with my_arr_1 which has 10 columns.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -465,7 +465,7 @@ my_arr_2 = np.arange(21,41).reshape(2,-1)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -483,7 +483,7 @@ print(my_arr_3)
 
 Same as we did with the vstack method, we can do the same using the hstack method this time to stack horizontally.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -685,7 +685,7 @@ array_2 = np.arange(115,151)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -711,7 +711,7 @@ The first method is in1d, which will return a boolean array where True on the po
 
 The second method is the where method which takes the boolean array as an argument and then returns the index position of the True values.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -771,7 +771,7 @@ print(my_arr)
 
 #### Solution
 
-#### 1st way
+#### 1st Method
 
 
 ```python
@@ -792,7 +792,7 @@ print(extract_arr)
 
 We use indexing on the array and pass in the condition which will only return elements greater or equal to 50.
 
-#### 2nd way
+#### 2nd Method
 
 
 ```python
@@ -813,7 +813,7 @@ print(my_arr[extract_arr])
 
 Where method will evaluate the condition given to it and then return all the position place where the conditions are met, we stored these positions into a variable then use indexing technique to retrieve the numbers in my_arr.
 
-#### 3rd way
+#### 3rd Method
 
 
 ```python
@@ -1077,4 +1077,4 @@ Same as the previous exercise, the only difference is that we have set the axis 
 
 Hope by now you are starting to gain confidence in your NumPy skills, this is was the first part in a series of three posts entirely dedicated to exercise in NumPy. I am pretty sure that at the end of these series, you will have a strong understanding of NumPy and you start using it in your projects. Stay tuned for part 2!!
 
-Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.
+Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
