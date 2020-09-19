@@ -620,5 +620,5 @@ After this finding,  we will loop through the list and enumerate all the element
 
 A list is a clean way of storing data in a container that allow us to iterate over on its elements and perform a useful operation on it like adding and removing new elements. We will be using lists a lot. In the upcoming post, we will discuss tuples and ranges.
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
 

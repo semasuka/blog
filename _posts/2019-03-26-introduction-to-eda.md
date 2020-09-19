@@ -2331,4 +2331,4 @@ Lastly, you should choose the tool(s) to use based upon:
 
 I know this post was kinda long, but because it's essential to have a good foundation of EDA, we had to emphasize it.
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

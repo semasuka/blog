@@ -940,4 +940,4 @@ This is two of the many ways to approach this challenge; we could have checked f
 In this tutorial post, we have seen the conditional statement with the pass statement, which makes it possible to execute a statement or block of code based on the result of an evaluation. All control flow structures are crucial to write complex Python code. In the upcoming post, 
 we will discuss loops in python.
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

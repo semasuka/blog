@@ -246,4 +246,4 @@ Jupyter notebook is a pretty useful tool, especially if you are a researcher who
 
 I hope now you have a basic understanding of how Jupyter works, and it's main features. If you want to learn more, you can read the full documentation [here](https://jupyter-notebook.readthedocs.io/en/stable/index.html).
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

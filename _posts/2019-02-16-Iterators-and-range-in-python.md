@@ -599,4 +599,4 @@ Iterable objects are very crucial parts of Python because they are the ones that
 
 The range function generates a range of number between a given interval, we can use this range without casting it to a list to save up memory.
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

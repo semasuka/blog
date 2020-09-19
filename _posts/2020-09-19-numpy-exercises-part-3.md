@@ -1358,7 +1358,7 @@ the_image
 
 
 
-![png](output_221_0.png)
+![image](/blog/assets/post_cont_image/output_numpy_ex_61.png)
 
 
 
@@ -1440,7 +1440,7 @@ the_image_2
 
 
 
-![png](output_225_0.png)
+![image](/blog/assets/post_cont_image/output_numpy_ex_61.png)
 
 
 
@@ -2026,4 +2026,4 @@ There you go! 72 exercise on NumPy to solidify your understanding of NumPy. I ca
 
 The next post will be an introduction to one of my favorite Machine learning libraries, pandas Library for tabular data manipulation. Stay tuned and don't forget to subscribe to get notified for the next post.
 
-Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep on learning!
+Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
