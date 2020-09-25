@@ -2026,4 +2026,6 @@ There you go! 72 exercise on NumPy to solidify your understanding of NumPy. I ca
 
 The next post will be an introduction to one of my favorite Machine learning libraries, pandas Library for tabular data manipulation. Stay tuned and don't forget to subscribe to get notified for the next post.
 
-Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
+Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%203.ipynb)
+
+Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

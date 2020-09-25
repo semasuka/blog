@@ -1574,5 +1574,6 @@ print("The BMI of a person with {} kg and a height of {} m is {:6.3f}".format(we
 
     The BMI of a person with 77.0 kg and 1.88 m is 21.786
 
+Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/introduction%20to%20python%20data%20types%2C%20operators%20and%20variables.ipynb)
 
-Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
+Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

@@ -19,9 +19,9 @@ You will learn concepts ranging from programming, maths, data analysis to algori
 
 # About the blog
 
-This blog is ranked among [the top 40 blogs on Machine Learning to follow in 2019](https://blog.feedspot.com/machine_learning_blogs/).The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
+This blog is ranked among [the top 40 Machine Learning Blogs](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
 
-Knowledge should be shared at no cost that is why all of the content on this blog is FREE with no ads for the benefit of the community. Please do not reproduce the entire content (or very substantial portions) of any article without asking first!
+Knowledge should be shared at no cost that is why all of the content on this blog is FREE with no ads for the benefit of the community.
 
 # Contact the author
 
