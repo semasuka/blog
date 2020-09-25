@@ -1,6 +1,6 @@
 ---
 title:  "Pandas Exercises Part 1"
-image: /assets/post_images/pandas,jpg
+image: /assets/post_images/pandas.jpg
 excerpt_separator: <!-- more -->
 tags:
 - python
@@ -1570,6 +1570,6 @@ This exercise is similar to the previous one. This time, we use the match functi
 
 Have you noticed how easy Pandas is? That is why it is my favorite libraries. It is easy to grasp, and there are a plethora of resources online if you are stuck. Do not forget to visit StackOverflow too, and ask questions. There is always someone ready to help. 
 
-This post is exclusively focused on series, the primary data structure of Pandas. In the next two posts, we will explore the dataframe which is the most popular Pandas data structure. Find the jupyter notebook version of this post at my GitHub profile [here.]()
+This post is exclusively focused on series, the primary data structure of Pandas. In the next two posts, we will explore the dataframe which is the most popular Pandas data structure. Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20exercise%20Part%201.ipynb)
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
