@@ -9,9 +9,9 @@ tags:
 ---
 
 
-Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise.
+Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise.<!-- more -->
 
-Pandas is a powerful open-source library for data analysis and data manipulation. The library is packed with a ton of feature, well supported and documented by the community. It is built on top of NumPy and integrate well with all the main machine learning libraries like Scikit-learn and Matplotlib.<!-- more -->
+Pandas is a powerful open-source library for data analysis and data manipulation. The library is packed with a ton of feature, well supported and documented by the community. It is built on top of NumPy and integrate well with all the main machine learning libraries like Scikit-learn and Matplotlib.
 
 Pandas already come bundles in the Anaconda distribution. If you don't have it installed already, please refer to my other blog [here](https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html) to get you started.
 
