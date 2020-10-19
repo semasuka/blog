@@ -2331,6 +2331,6 @@ Lastly, you should choose the tool(s) to use based upon:
 
 I know this post was kinda long, but because it's essential to have a good foundation of EDA, we had to emphasize it.
 
-Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Countries_EDA.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Countries_EDA.ipynb)
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

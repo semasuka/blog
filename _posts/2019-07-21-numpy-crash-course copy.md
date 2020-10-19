@@ -1136,6 +1136,6 @@ NumPy is one of those libraries in Machine Learning you can not ignore. It is pr
 
 This post was a quick introduction to NumPy. In an upcoming post, we will work on some exciting exercises using NumPy to sharpen your skills, so stay tuned by subscribing to our mailing list.
 
-Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Crash%20Course.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Crash%20Course.ipynb)
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

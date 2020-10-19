@@ -1077,6 +1077,6 @@ Same as the previous exercise, the only difference is that we have set the axis 
 
 Hope by now you are starting to gain confidence in your NumPy skills, this is was the first part in a series of three posts entirely dedicated to exercise in NumPy. I am pretty sure that at the end of these series, you will have a strong understanding of NumPy and you start using it in your projects. Stay tuned for part 2!!
 
-Find the jupyter notebook version of this post at my GitHub profile [here.](Find the jupyter notebook version of this post at my GitHub profile [here.]())
+Find the jupyter notebook version of this post on my GitHub profile [here.](Find the jupyter notebook version of this post on my GitHub profile [here.]())
 
 Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

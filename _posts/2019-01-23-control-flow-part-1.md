@@ -940,6 +940,6 @@ This is two of the many ways to approach this challenge; we could have checked f
 In this tutorial post, we have seen the conditional statement with the pass statement, which makes it possible to execute a statement or block of code based on the result of an evaluation. All control flow structures are crucial to write complex Python code. In the upcoming post, 
 we will discuss loops in python.
 
-Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Control%20Flow%20in%20Python%20Part%201%20-%20conditional%20statement%20and%20pass%20statement.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Control%20Flow%20in%20Python%20Part%201%20-%20conditional%20statement%20and%20pass%20statement.ipynb)
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

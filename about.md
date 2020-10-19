@@ -5,11 +5,11 @@ permalink: /about/
 ---
 # About the author
 
-Hi there and Welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer based in Calgary with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine intelligence (or machine learning) and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
+Hi there and Welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer based in Calgary with more than three years of coding experience. I code in Python, Java, Javascript, HTML, and CSS. Now, I'm learning machine learning and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
 
 I firmly believe that ANYONE, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
 
-# Why another ML/coding blog?
+# Why another machine learning blog?
 
 This one is different. This blog helps ANYONE who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already have some knowledge.
 

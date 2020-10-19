@@ -979,6 +979,6 @@ By now, you should have a great understanding of NumPy and most importantly, how
 
 If you were able to do half of these exercises from these two posts, congratulation!! I am confident to tell you that you can start using NumPy into your ML projects. Most ML projects won't require advanced NumPy knowledge than this. The last post from these series is coming soon. It has some advanced NumPy exercises for those who want to master NumPy.
 
-Find the jupyter notebook version of this post at my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%202.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%202.ipynb)
 
 Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!
