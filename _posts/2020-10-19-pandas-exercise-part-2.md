@@ -3953,13 +3953,9 @@ We call the ```set_index``` function on that dataframe to give it a new index co
 
 In this part 2 of the pandas series, we have introduced the dataframe data structure which is the main data structure of Pandas. We have discovered how to import data from a CSV file, different ways to manipulate the data and many more techniques that you will be using on a daily basis if you will be working as a machine learning engineer or data scientist. 
 
-Remember that 60% of the time spent on end-to-end machine learning project is dedicated to data cleaning and visualization. So Pandas, NumPy and Matplotlib (and Seaborn) are fantastic tools to learn and master. Practice makes perfect. 
+Remember that 60% of the time spent on end-to-end machine learning project is dedicated to data cleaning and visualization. So Pandas, NumPy and Matplotlib (and Seaborn) are fantastic tools to learn and master. Practice makes perfect.
 
 In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post at my GitHub profile [here]("https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%202.ipynb").
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
 
-
-```python
-
-```
