@@ -2406,7 +2406,7 @@ We first create a dictionary with ```Min.Price``` column as the key and value as
 
 We select the ```Min.Price``` and ```Max.Price``` columns, apply the lambda expression, and replace in each instance of ```nan``` in ```x```(representing the columns) by the mean or median of that column using the ```fillna``` function and pass in the dictionary's value.
 
-Refer to [this]("https://stackoverflow.com/questions/32437435/passing-additional-arguments-to-python-pandas-dataframe-apply") StackOverflow question to learn more.
+__Note:__ Refer to [this]("https://stackoverflow.com/questions/32437435/passing-additional-arguments-to-python-pandas-dataframe-apply") StackOverflow question to learn more.
 
 ### 44: How to select a specific column from a dataframe as a dataframe instead of a series?
 
@@ -3955,7 +3955,7 @@ In this part 2 of the pandas series, we have introduced the dataframe data struc
 
 Remember that 60% of the time spent on end-to-end machine learning project is dedicated to data cleaning and visualization. So Pandas, NumPy and Matplotlib (and Seaborn) are fantastic tools to learn and master. Practice makes perfect. 
 
-In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post at my GitHub profile [here](..).
+In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post at my GitHub profile [here]("https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%202.ipynb").
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
 
