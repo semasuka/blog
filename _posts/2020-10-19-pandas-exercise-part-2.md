@@ -1,5 +1,5 @@
 ---
-title:  "Pandas Exercises Part 1"
+title:  "Pandas Exercises Part 2"
 image: /assets/post_images/pandas.jpg
 excerpt_separator: <!-- more -->
 tags:
