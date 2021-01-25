@@ -10,7 +10,7 @@ tags:
 
 
 
-Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don't be shy! Read its documentation throughout if you get stuck [here]("https://pandas.pydata.org/pandas-docs/stable/index.html").<!-- more -->
+Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don't be shy! Read its documentation throughout if you get stuck [here](https://pandas.pydata.org/pandas-docs/stable/index.html).<!-- more -->
 
 Let's get started by importing NumPy and Pandas.
 
