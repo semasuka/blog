@@ -19,7 +19,7 @@ You will learn concepts ranging from programming, maths, data analysis to algori
 
 # About the blog
 
-This blog is ranked among [the top 40 Machine Learning Blogs](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
+This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your blog or contribute to this project, pull request on my GitHub profile [here](https://github.com/semasuka/blog).
 
 Knowledge should be shared at no cost that is why all of the content on this blog is FREE with no ads for the benefit of the community.
 
@@ -29,7 +29,7 @@ Do you want to share a comment, a constructive critic, a correction, or a questi
 
 # Donate
 
-If you enjoy the content, kindly consider supporting the blog :)
+Do you enjoy the content of this blog? kindly consider supporting the blog :)
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick" />
