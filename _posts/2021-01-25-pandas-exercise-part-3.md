@@ -4860,8 +4860,3 @@ Yaaayy! We made it finally. In the last posts, we have explored more than 150 ex
 In the next post, we will introduce the common jargon used in Machine Learning and after we will start working on machine learning projects finally. I am super duper excited for the upcoming post. Remember, practice makes perfect! Find the jupyter notebook version of this post at my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb).
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
-
-
-```python
-
-```
