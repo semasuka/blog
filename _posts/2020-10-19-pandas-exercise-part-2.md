@@ -13,7 +13,7 @@ Welcome back, guys! We will continue with part 2 in this series of Pandas exerci
 
 With no further due, let's get started.
 
-We will start by importing Pandas and NumPy
+We will start by importing Pandas and NumPy 
 
 
 ```python
