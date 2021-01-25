@@ -4854,6 +4854,8 @@ the_dataframe[the_dataframe.columns[::-1]]
 
 This exercise is similar to exercise 57 the difference is that this time we are reversing columns instead of rows. To do the reversal, we first extract the columns and reverse them using indexing ```[::-1]``` and place it into the original dataframe using again indexing.
 
+### Conclusion
+
 Yaaayy! We made it finally. In the last posts, we have explored more than 150 exercises on NumPy and Pandas. I am very confident that after going through all these exercises, you are ready to tackle the next step: Machine Learning with Scikit-learn. We will continue using NumPy in end-to-end Machine Learning projects coming in the next blog posts.ls
 
 
