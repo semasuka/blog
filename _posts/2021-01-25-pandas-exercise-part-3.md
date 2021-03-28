@@ -266,9 +266,9 @@ print("The mean is {} and the row of the second largest number is {}".format(the
     The mean is 55.0 and the row of the second largest number is 3
 
 
-We start by calculating the mean of the values in the series using ```np.mean``` and round it. Then we use ```where``` to get all rows with the values superior to the mean. 
+We start by calculating the mean of the values in the series using ```np.mean``` and round it. Then we use ```where``` to get all rows with the values superior to the mean.
 
-We drop NaN values (which are values inferior to the mean) and sort the remaining values to finally get the second value in the sorted series using ```.index[1]``` which correction to the second largest number superior to the mean.
+We drop NaN values (which are values inferior to the mean) and sort the remaining values to finally get the second value in the sorted series using ```.index[1]``` which correspond to the second largest number superior to the mean.
 
 ### Ex 53: How to get the last n rows of a DataFrame with row sum > 100?
 
@@ -4856,9 +4856,9 @@ This exercise is similar to exercise 57 the difference is that this time we are 
 
 ### Conclusion
 
-Yaaayy! We made it finally. In the last posts, we have explored more than 150 exercises on NumPy and Pandas. I am very confident that after going through all these exercises, you are ready to tackle the next step: Machine Learning with Scikit-learn. We will continue using NumPy in end-to-end Machine Learning projects coming in the next blog posts.ls
+Yaaayy! We made it finally. In the last posts, we have explored more than 150 exercises on NumPy and Pandas. I am very confident that after going through all these exercises, you are ready to tackle the next step: Machine Learning with Scikit-learn. We will continue using NumPy in end-to-end Machine Learning projects coming in the next blog posts.
 
 
-In the next post, we will introduce the common jargon used in Machine Learning and after we will start working on machine learning projects finally. I am super duper excited for the upcoming post. Remember, practice makes perfect! Find the jupyter notebook version of this post at my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb).
+In the next post, we will introduce the common jargon used in Machine Learning and after we will start working on machine learning projects finally. I am super duper excited for the upcoming posts. Remember, practice makes perfect! Find the jupyter notebook version of this post at my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb).
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

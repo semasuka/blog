@@ -35,7 +35,7 @@ algolia:
   application_id: 2G0E5ME37Q
   index_name: Machine Learning Blog
   search_only_api_key: afde2e91a28f543ce7c4afdefa8ecfbf
-  powered_by: false
+  powered_by: true
   files_to_exclude:
     - archive.md
     - index.html
@@ -46,7 +46,7 @@ algolia:
 
 #author
 author:
-  name: Stern Semasuka 
+  name: Stern Semasuka
   picture: /assets/profile/profile.jpg
 
 #default front matter
