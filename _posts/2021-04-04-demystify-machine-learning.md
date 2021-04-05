@@ -64,10 +64,11 @@ Here are some questions to ask yourself when deciding to use whether machine lea
 
 * Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
 	
-     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: 
- - those transactions are orchestrated from overseas.
- - they are below one thousand dollars.
- - the account holders are mostly seniors (65 years old and above).
+     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them:
+
+             1. those transactions are orchestrated from overseas.
+             2. they are below one thousand dollars.
+             3. the account holders are mostly seniors (65 years old and above).
  
    After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
 
@@ -796,11 +797,11 @@ Finally, here is a recap of the main points we have discovered in this post:
  
 * There are different types of machine learning systems grouped as:
  
- - Supervised, unsupervised, semisupervised or reinforcement learning.
+         1. Supervised, unsupervised, semisupervised or reinforcement learning.
    
- - Batch or online learning.
+         2. Batch or online learning.
    
- - Instance-based or model-based learning.
+         3. Instance-based or model-based learning.
    
    Most machine learning projects follow this blueprint:
 > Gather data -> clean data -> Split the dataset into training and testing data -> feed the training dataset -> test using the testing dataset -> find the generalization error of the model -> improve the generalization error
@@ -808,17 +809,17 @@ Finally, here is a recap of the main points we have discovered in this post:
  
 * Machine learning faces some challenges caused by:
   
- - Not having enough data
+       1. Not having enough data
   
- - Train on nonrepresentative data
+       2. Train on nonrepresentative data
   
- - Train on inaccurate data
+       3. Train on inaccurate data
   
- - Irrelevant features
+       4. Irrelevant features
   
- - Overfitting the training set
+       5. Overfitting the training set
   
- - Underfitting the training set
+       6. Underfitting the training set
    
  
 * To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
