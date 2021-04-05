@@ -404,7 +404,7 @@ plt.show()
 
 
     
-![png](output_58_0.png)
+![png](/blog/assets/post_cont_image/output_58_0.png)
     
 
 
@@ -521,7 +521,7 @@ plt.show()
 
 
     
-![png](output_82_0.png)
+![png](/blog/assets/post_cont_image/output_82_0.png)
     
 
 
@@ -551,7 +551,7 @@ plt.show()
 
 
     
-![png](output_85_0.png)
+![png](/blog/assets/post_cont_image/output_85_0.png)
     
 
 
@@ -617,7 +617,7 @@ plt.show()
 
 
     
-![png](output_99_0.png)
+![png](/blog/assets/post_cont_image/output_99_0.png)
     
 
 
