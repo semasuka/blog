@@ -1039,6 +1039,6 @@ The last else statement will be True only if the number inputted is between 1 an
 
 In this tutorial post, we have seen the loops in Python. The loops, in general, are handy in a way that they help us execute the same code multiple times without writing more codes. They also can be used with a conditional statement to create complex codes. In the upcoming post, we will discuss lists, tuples and ranges in Python. Stay tuned!
 
-Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Control%20Flow%20in%20Python%20Part%202%20-%20for%20and%20while%20loop.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Control%20Flow%20in%20Python%20Part%202%20-%20for%20and%20while%20loop.ipynb){:target="_blank"}
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

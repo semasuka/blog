@@ -13,9 +13,9 @@ Welcome back, folks! In this series of 3 blog post, we will be discussing pandas
 
 Pandas is a powerful open-source library for data analysis and data manipulation. The library is packed with a ton of feature, well supported and documented by the community. It is built on top of NumPy and integrate well with all the main machine learning libraries like Scikit-learn and Matplotlib.
 
-Pandas already come bundles in the Anaconda distribution. If you don't have it installed already, please refer to my other blog [here](https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html) to get you started.
+Pandas already come bundles in the Anaconda distribution. If you don't have it installed already, please refer to my other blog [here](https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html){:target="_blank"} to get you started.
 
-These exercises are inspired from [this](https://www.machinelearningplus.com/python/101-pandas-exercises-python/) amazing blog post.
+These exercises are inspired from [this](https://www.machinelearningplus.com/python/101-pandas-exercises-python/){:target="_blank"} amazing blog post.
 
 Remember there is always different ways we can achieve the same result, so if your code does not look like mine. No worries! if you got the same result, then you are good to go.
 
@@ -1127,7 +1127,7 @@ np.mean((truth-pred)**2)
 
 The two notation is the same, to find the mean squared error we use its formula which pretty much translates into the code above.
 
-Visit the [Wikipedia page](https://en.wikipedia.org/wiki/Mean_squared_error) to learn more about the mean squared error.
+Visit the [Wikipedia page](https://en.wikipedia.org/wiki/Mean_squared_error){:target="_blank"} to learn more about the mean squared error.
 
 ### Ex 18: How to convert the first character of each element in a series to uppercase?
 
@@ -1570,6 +1570,6 @@ This exercise is similar to the previous one. This time, we use the match functi
 
 Pandas is such a wonderful library that is why it is my favorite libraries. It is easy to grasp, and there are a plethora of resources online if you are stuck. Do not forget to visit StackOverflow too, and ask questions. There is always someone ready to help. 
 
-This post is exclusively focused on series, the primary data structure of Pandas. In the next two posts, we will explore the dataframe which is the most popular Pandas data structure. Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20exercise%20Part%201.ipynb)
+This post is exclusively focused on series, the primary data structure of Pandas. In the next two posts, we will explore the dataframe which is the most popular Pandas data structure. Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20exercise%20Part%201.ipynb){:target="_blank"}
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!

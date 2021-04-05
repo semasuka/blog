@@ -9,7 +9,7 @@ tags:
 As a refresh from my previous blog, deep learning is a subset of machine learning which learns by using layers of neurons like the ones found in our brain to output an expected result. The layers are organized in a way that can break down the input into different layers of abstraction. The more the layers we have, the deeper the neural network.<!-- more -->
 
 ![neural net](/blog/assets/post_cont_image/nn.jpeg)
-picture credit: [medium](https://medium.com/xanaduai/making-a-neural-network-quantum-34069e284bcf)
+picture credit: [medium](https://medium.com/xanaduai/making-a-neural-network-quantum-34069e284bcf){:target="_blank"}
 
 ### Quick example
 
@@ -19,10 +19,10 @@ Let's say we give it a 2. The character two will be divided into many small piec
 
 ### why now?
 
-Now let's answer the pertinent question. Why has deep learning gain popularity in recent past years? Indeed from 2010, deep learning has been massively used in the tech community as well as in other sectors. Even though this is true, artificial intelligence was not invented yesterday, nor last week. Surprisingly, it has been around since the 50's early 60's, but from then it has evolved steadily in the '70s. They were self-driving cars in the '80s. Don't believe me? watch [this](https://www.youtube.com/watch?v=_HbVWm7wdmE) video. Something worth mentioning is that by then AI with its sub-field was a very young academic subject and was mostly studied at the ivy league university.
+Now let's answer the pertinent question. Why has deep learning gain popularity in recent past years? Indeed from 2010, deep learning has been massively used in the tech community as well as in other sectors. Even though this is true, artificial intelligence was not invented yesterday, nor last week. Surprisingly, it has been around since the 50's early 60's, but from then it has evolved steadily in the '70s. They were self-driving cars in the '80s. Don't believe me? watch [this](https://www.youtube.com/watch?v=_HbVWm7wdmE){:target="_blank"} video. Something worth mentioning is that by then AI with its sub-field was a very young academic subject and was mostly studied at the ivy league university.
 
 ![usage_of_dp](/blog/assets/post_cont_image/usage-dp.png)
-picture credit: [medium](https://blog.ai-academy.com/six-graphs-to-understand-the-state-of-ai-academic-research-3a79cac4c9c2)
+picture credit: [medium](https://blog.ai-academy.com/six-graphs-to-understand-the-state-of-ai-academic-research-3a79cac4c9c2){:target="_blank"}
 
 So what happened? You may ask, well two important factors happened — processing power and data.
 
@@ -31,14 +31,14 @@ Since the launch of the Intel 4004 in 1971 which was composed of 2300 transistor
 ### Moore's law
 
 ![Moore_law](/blog/assets/post_cont_image/mlaw.jpg)
-picture credit: [wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
+picture credit: [wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law){:target="_blank"}
 
 Since the introduction of the world wide web in 1994, the amount of data on the web, which proportionally correlated to the number of internet users (bots and humans), has skyrocketed. More people, especially from developing countries, are discovering the internet dues to a decrease in the price of smartphones and internet bundles. There is more and more tweets, shares, and clicks on the web each year. Adding to this, online retailers services, schools to hospitals need to store data from their customers.
 
 > "Data is the new oil."
 
 ![use_of_internet](/blog/assets/post_cont_image/web-per-min.jpg)
-picture credit: [visualcapitalist](https://www.visualcapitalist.com/internet-minute-2018/)
+picture credit: [visualcapitalist](https://www.visualcapitalist.com/internet-minute-2018/){:target="_blank"}
 
 ### the 3 VS
 
@@ -52,7 +52,7 @@ Start with its volume. Big data needs to be analyzed with specialized tools like
 
 ### Conclusion
 
-The perfect marriage between big data and the increased processing power has allowed the training of complex algorithms on super-computers, thus leading to an increased usage of deep learning since 2010. Some exciting advancement in technology has been enabled by deep learning like changing a low-resolution image to a high definition using GANs (Generative adversarial network)(YouTube video [here](https://www.youtube.com/watch?v=HvH0b9K_Iro)) or [this](https://lyrebird.ai/) website that let you create your vocal avatar using celebrities' voices like Trump. Another one called "everybody can dance now" (YouTube video [here](https://www.youtube.com/watch?v=WzRonX_bs34)) uses a video from a professional dancer and apply to another video where there is a person who does not dance. After the training on those two videos, the person on the second video now bounces like a pro. Very cool!
+The perfect marriage between big data and the increased processing power has allowed the training of complex algorithms on super-computers, thus leading to an increased usage of deep learning since 2010. Some exciting advancement in technology has been enabled by deep learning like changing a low-resolution image to a high definition using GANs (Generative adversarial network)(YouTube video [here](https://www.youtube.com/watch?v=HvH0b9K_Iro){:target="_blank"}) or [this](https://lyrebird.ai/){:target="_blank"} website that let you create your vocal avatar using celebrities' voices like Trump. Another one called "everybody can dance now" (YouTube video [here](https://www.youtube.com/watch?v=WzRonX_bs34){:target="_blank"}) uses a video from a professional dancer and apply to another video where there is a person who does not dance. After the training on those two videos, the person on the second video now bounces like a pro. Very cool!
 
 We can't deny that deep learning has a bright future ahead, but also we should be concerned about its drawbacks like fake news.
 

@@ -1528,7 +1528,7 @@ print(euclidean_dist)
     6.708203932499369
 
 
-Theory Behind this exercise is from [Introduction to Data Mining](https://www.amazon.com/dp/0321321367/)
+Theory Behind this exercise is from [Introduction to Data Mining](https://www.amazon.com/dp/0321321367/){:target="_blank"}
 
 ![title](/blog/assets/post_cont_image/ex63.png)
 
@@ -1722,7 +1722,7 @@ tuple_pos_repeated[5][0]
 
 
 
-The second way to approach this problem is by using list comprehension. We use the for loop and enumerate function to traverse the array and then use an if statement to only extract elements equal to 1. if you want to refresh your mind about loops and list comprehension, please read more [here](https://semasuka.github.io/blog/2019/02/03/control-flow-part-2.html).
+The second way to approach this problem is by using list comprehension. We use the for loop and enumerate function to traverse the array and then use an if statement to only extract elements equal to 1. if you want to refresh your mind about loops and list comprehension, please read more [here](https://semasuka.github.io/blog/2019/02/03/control-flow-part-2.html){:target="_blank"}.
 
 Now that we have a tuple of all the positions of number 1 in the array, we can proceed by using indexing on tuple by using[5] to get the 5th repetition of 1 and then indexing again by adding [0] to get only the position we are looking for.
 
@@ -1817,7 +1817,7 @@ Now comes the fun part! we subtract each element in the accum_arr starting from 
 
 Finally, we take the previous array this time starting from index 3(w-1) and we divide all the elements in that array by the window 3 to finally get the moving average of window 3 of that array.
 
-These steps above are from the formula to compute the moving average of a NumPy. Please refer [this Wikipedia page](https://en.wikipedia.org/wiki/Moving_average) for more information. Refer [to this link](https://stackoverflow.com/questions/14313510/how-to-calculate-moving-average-using-numpy) on StackOverflow where this exercise is inspired from.
+These steps above are from the formula to compute the moving average of a NumPy. Please refer [this Wikipedia page](https://en.wikipedia.org/wiki/Moving_average){:target="_blank"} for more information. Refer [to this link](https://stackoverflow.com/questions/14313510/how-to-calculate-moving-average-using-numpy){:target="_blank"} on StackOverflow where this exercise is inspired from.
 
 ### Ex 70: How to create a NumPy array sequence given only the starting point, length and the step?
 
@@ -2026,6 +2026,6 @@ There you go! 72 exercise on NumPy to solidify your understanding of NumPy. I ca
 
 The next post will be an introduction to one of my favorite Machine learning libraries, pandas Library for tabular data manipulation. Stay tuned and don't forget to subscribe to get notified for the next post.
 
-Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%203.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%203.ipynb){:target="_blank"}
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

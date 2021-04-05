@@ -12,14 +12,14 @@ tags:
 
 There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.
 
-The next question would be, how is it related to machine learning? As we have explained in [this post](https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html), for a machine learning model to make accurate predictions, it needs to be trained using clean data, but since we ain't living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That's when libraries like pandas, matplotlib and seaborn come in handy.
+The next question would be, how is it related to machine learning? As we have explained in [this post](https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html){:target="_blank"}, for a machine learning model to make accurate predictions, it needs to be trained using clean data, but since we ain't living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That's when libraries like pandas, matplotlib and seaborn come in handy.
 
 It is also true that most data scientists spend most of their time cleaning, organizing and visualizing data (unless when they are working in a team with data analysts and data engineers). This shows how EDA is a desirable skill for a machine learning engineer and data scientist.
 
 
 ![data scientist time](/blog/assets/post_cont_image/ds_time.jpg)
 
-picture credit: [forbes](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3927c8336f63)
+picture credit: [forbes](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3927c8336f63){:target="_blank"}
 
 With no further delay, let's jump into the code.
 
@@ -49,7 +49,7 @@ The dataset we are going to use in this post is about different statistics of al
 
 Now it is time to start using the data in our code, we need to read the data and store it in a dataframe (primary data structure of the pandas library) either from a URL when the data is stored online or download it and use the path where the data is stored on your local drive.
 
-Go ahead and sign in and download the data [here](https://www.kaggle.com/fernandol/countries-of-the-world/download) from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists & ML engineers who come up with the best ML models win prizes).
+Go ahead and sign in and download the data [here](https://www.kaggle.com/fernandol/countries-of-the-world/download){:target="_blank"} from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists & ML engineers who come up with the best ML models win prizes).
 
 If the CSV (comma-separated value) file is located in the same folder as the jupyter notebook (.ipynb) file, then we can just write the name of the CSV file without forgetting the .cvs extension like this.
 
@@ -1683,7 +1683,7 @@ plt.show()
 
 This code plots the least populated countries in the world, starting from the last moving forward. We were able to achieve this by inverting the order on the X axis using plt.gca().invert_xaxis().
 
-To find all the possible parameters of a bar plot, visit its documentation page [here](https://seaborn.pydata.org/generated/seaborn.barplot.html)
+To find all the possible parameters of a bar plot, visit its documentation page [here](https://seaborn.pydata.org/generated/seaborn.barplot.html){:target="_blank"}
 
 #### Scatter plot
 
@@ -1888,7 +1888,7 @@ Asia and c.w. of ind. states register relatively high mortality with 42 and 45 r
 
 The rest of the region have a low child death with Western Europe having the weakest among all the areas.
 
-To read more about the scatter plot, read its documentation[here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html).
+To read more about the scatter plot, read its documentation[here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html){:target="_blank"}.
 
 #### Boxplot
 
@@ -1912,7 +1912,7 @@ The general representation of a box plot is as follows.
 
 ![percentile](/blog/assets/post_cont_image/percentile.png)
 
-picture credit: [arcgis](https://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/charts/box-plot.htm)
+picture credit: [arcgis](https://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/charts/box-plot.htm){:target="_blank"}
 
 #### Example : GDP per region
 
@@ -1931,7 +1931,7 @@ plt.show()
 ![png](/blog/assets/post_cont_image/output_109_0.png)
 
 
-In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn, read the documentation [here](https://seaborn.pydata.org/tutorial/aesthetics.html).
+In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn, read the documentation [here](https://seaborn.pydata.org/tutorial/aesthetics.html){:target="_blank"}.
 
 Now comes the box plot code, we set the X axis to the regions, the Y axis to the GDP and finally specify which data we are using in our case its c_data.
 
@@ -1947,7 +1947,7 @@ Another interesting observation is in the case of Asia, where we can see that on
 
 Finally, Sub-Saharan Africa has the lowest GPD on average with its maximum value less than \$5000 but register quite many outliers (eight in total) which is unseen in any other region.
 
-To read more about the box plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.boxplot.html).
+To read more about the box plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.boxplot.html){:target="_blank"}.
 
 #### Joint plot (kde and hex)
 
@@ -1955,7 +1955,7 @@ The joint plot is used to show the density of values from two different columns 
 
 ![joint_plot](/blog/assets/post_cont_image/joint_plot.png)
 
-picture credit: [mathworks](https://www.mathworks.com/help/matlab/ref/surfc.html)
+picture credit: [mathworks](https://www.mathworks.com/help/matlab/ref/surfc.html){:target="_blank"}
 
 Think of a joint plot in the same way as the image above.
 
@@ -2005,7 +2005,7 @@ We also observe that as the percentage of literate people drops, the rate of bir
 
 Finally, we can see that in the countries where the birthrate is 30 and above, only 60% to 40% of the population is literate.
 
-To read more about the joint plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.jointplot.html)
+To read more about the joint plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.jointplot.html){:target="_blank"}
 
 ### Challenge
 
@@ -2015,7 +2015,7 @@ Go ahead and try the challenge, and after you have finished, come back to compar
 
 ### Challenge solution
 
-Alright, let's go through the solution which looks almost the same as the other plot. The only difference is how to set the colour using a hex colour code. You can generate a hex colour code on this website [here](https://www.hexcolortool.com/).
+Alright, let's go through the solution which looks almost the same as the other plot. The only difference is how to set the colour using a hex colour code. You can generate a hex colour code on this website [here](https://www.hexcolortool.com/){:target="_blank"}.
 
 
 ```python
@@ -2121,7 +2121,7 @@ The subplot function will return a figure and the axes variables. The axis helps
 
 Finally, it is time to draw the distribution plots for each. We set ax parameter to the axes location and set rug to True, rug represents the distribution of values on small bars (called rugplot that strangely resemble barcodes) at the bottom of the X axis.
 
-To know more about distribution plot, read the documentation [here](https://seaborn.pydata.org/generated/seaborn.distplot.html).
+To know more about distribution plot, read the documentation [here](https://seaborn.pydata.org/generated/seaborn.distplot.html){:target="_blank"}.
 
 #### Violin plot
 
@@ -2131,7 +2131,7 @@ Its name comes from the fact that this plot has a form of a violin, and its gene
 
 ![violin_plot](/blog/assets/post_cont_image/violin_plot.svg?sanitize=true)
 
-picture credit: [datavizcatalogue](https://datavizcatalogue.com/methods/violin_plot.html)
+picture credit: [datavizcatalogue](https://datavizcatalogue.com/methods/violin_plot.html){:target="_blank"}
 
 Let's explain the image above, the small black rectangle inside the purple area represents the interquartile range like the one in a box plot with the white dot in its middle representing the median. The two line (upper and lower adjacent value) extend to the minimum and the maximum.
 
@@ -2165,7 +2165,7 @@ Northern American registers a very long and slim plot, this means that there is 
 
 Looking at Western Europe, there is no country with a GDP lower than \$10000. Western Europe also registers a very sharp top that corresponds to a country with an exceptional GDP (this is an outlier). Latin Amer & Carib also have outliers.
 
-To read more about violin plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.violinplot.html)
+To read more about violin plot, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.violinplot.html){:target="_blank"}
 
 #### pdf and cdf
 
@@ -2286,7 +2286,7 @@ The cells of the matrix separated by the series of yellow diagonal cells are the
 
 When we focus on the cells below the series of diagonal cells, some cells are darker than others, these show a high correlation between those two columns. For example, we can see that there is a high correlation between infant mortality and the GDP of a country.
 
-To read more about heat map, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
+To read more about heat map, read its documentation [here](https://seaborn.pydata.org/generated/seaborn.heatmap.html){:target="_blank"}.
 
 #### pairplot
 
@@ -2314,7 +2314,7 @@ As it was on the heat map, looking at the figure, we can see distribution plots 
 Looking at the plot on the second row first column (the one with phones on the Y axis and literacy on the X axis), we can see that the markers from the same regions are located almost at the same location in the plot. For example, there is a lot of blue markers (looking at the legend these are countries from North America) around the same coordinates, suggesting that the population in this region is almost 100% literate with a high number of phones. Meanwhile, at the bottom of the same plot, we register a high number of brown markers (these are the countries from Sub-saharan Africa) suggesting that on average, people in this region don't have phones and that around 50% of them are literate. These grouping of markers show the correlation between features and the same thing can be observed in the other five plots.
 
 
-Pair plot is handy in EDA, and you should take time and read more about it [here](https://seaborn.pydata.org/generated/seaborn.pairplot.html).
+Pair plot is handy in EDA, and you should take time and read more about it [here](https://seaborn.pydata.org/generated/seaborn.pairplot.html){:target="_blank"}.
 
 ### Conclusion
 
@@ -2322,7 +2322,7 @@ Have you noticed how we have by now a good understanding of our dataset? Now you
 
 Exploratory data analysis is a whole field of study by its own. Seaborn, matplotlib, pandas and numpy are the most popular libraries for EDA in Python as of March 2019 and are quite easy to understand. There are many other libraries like Dash by plotly (based on the popular D3.js framework) or Bokeh that helps in the creation of interactive plots which are very fun to play with and give a full understanding of a dataset. I'll do a blog on one of the two soon.
 
-There are many other libraries, but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html), you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem; this means that solving the problem is our priority no matter the tools used.
+There are many other libraries, but as we said before in [this post](https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html){:target="_blank"}, you don't need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem; this means that solving the problem is our priority no matter the tools used.
 
 Lastly, you should choose the tool(s) to use based upon:
 
@@ -2333,6 +2333,6 @@ Lastly, you should choose the tool(s) to use based upon:
 
 I know this post was kinda long, but because it's essential to have a good foundation of EDA, we had to emphasize it.
 
-Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Countries_EDA.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Countries_EDA.ipynb){:target="_blank"}
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

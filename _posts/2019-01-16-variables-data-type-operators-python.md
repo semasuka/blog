@@ -125,7 +125,7 @@ print(0x10)
     16
 
 
-you can learn more about binary [here](https://en.wikipedia.org/wiki/Binary_number), octal [here](https://en.wikipedia.org/wiki/Octal) and hexadecimal [here](https://en.wikipedia.org/wiki/Hexadecimal)
+you can learn more about binary [here](https://en.wikipedia.org/wiki/Binary_number){:target="_blank"}, octal [here](https://en.wikipedia.org/wiki/Octal){:target="_blank"} and hexadecimal [here](https://en.wikipedia.org/wiki/Hexadecimal){:target="_blank"}
 
 ##### float
 
@@ -635,7 +635,7 @@ print((((6+15)/3)-4)*12)
     36.0
 
 
-To learn more about operator precedence in Python, visit [this](https://www.tutorialspoint.com/python/operators_precedence_example.htm) link.
+To learn more about operator precedence in Python, visit [this](https://www.tutorialspoint.com/python/operators_precedence_example.htm){:target="_blank"} link.
 
 #### assignment operator
 
@@ -1050,7 +1050,7 @@ print(R"This text will not be splited\ninto\ndifferent lines")
     This text will not be splited\ninto\ndifferent lines
 
 
-You can check out more about escape characters [here](https://docs.python.org/2.0/ref/strings.html).
+You can check out more about escape characters [here](https://docs.python.org/2.0/ref/strings.html){:target="_blank"}.
 
 #### slicing a string
 
@@ -1574,6 +1574,6 @@ print("The BMI of a person with {} kg and a height of {} m is {:6.3f}".format(we
 
     The BMI of a person with 77.0 kg and 1.88 m is 21.786
 
-Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/introduction%20to%20python%20data%20types%2C%20operators%20and%20variables.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/introduction%20to%20python%20data%20types%2C%20operators%20and%20variables.ipynb){:target="_blank"}
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

@@ -103,7 +103,7 @@ We concatenate horizontally (by setting the axis = 1) the two series into a data
 
 ### Ex 27: How to compute the euclidean distance between two series?
 
-Q: Compute the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) between series (points) p and q, using a packaged formula and another solution without.
+Q: Compute the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance){:target="_blank"} between series (points) p and q, using a packaged formula and another solution without.
 
 Euclidean distance formular:
 
@@ -341,7 +341,7 @@ pd.Series(np.random.randint(1,high=10,size=10),pd.date_range(start="2000-01-01",
 
 
 
-We create as the values of the series, the ten random numbers from 1 to 10 and as indexes, we create a date_range function which returns a date rage starting from 2000-01-01 and set the number of periods to generate to 10 with the frequency set to Saturday weekly. To get the list of all the frequencies, visit [this link.](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases)
+We create as the values of the series, the ten random numbers from 1 to 10 and as indexes, we create a date_range function which returns a date rage starting from 2000-01-01 and set the number of periods to generate to 10 with the frequency set to Saturday weekly. To get the list of all the frequencies, visit [this link.](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases){:target="_blank"}
 
 ### 31: How to fill an intermittent time series so all missing dates show up with values of previous non-missing date?
 
@@ -467,7 +467,7 @@ After finding all the correlation, it is time to find the position of the larges
 
 ### Ex 33: How to import only every nth row from a csv file to create a dataframe?
 
-Q: Import every 50th row of [BostonHousing dataset]("https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv") as a dataframe.
+Q: Import every 50th row of [BostonHousing dataset]("https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"){:target="_blank"} as a dataframe.
 
 #### Desired output
 
@@ -856,7 +856,7 @@ To get every 50th row in the dataset, we use indexing with a step of 50.
 
 ### Ex 34: How to change column values when importing csv to a dataframe?
 
-Q: Import [the  BostonHousing dataset]("https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv") dataset, but while importing change the 'medv' (median house value) column so that values < 25 becomes ‘Low’ and > 25 becomes ‘High’.
+Q: Import [the  BostonHousing dataset]("https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"){:target="_blank"} dataset, but while importing change the 'medv' (median house value) column so that values < 25 becomes ‘Low’ and > 25 becomes ‘High’.
 
 #### Desired output
 
@@ -1051,7 +1051,7 @@ Now it is time to populate the rows, for each row we use the original series and
 
 ### Ex 36: How to import only specified columns from a csv file?
 
-Q: Import ```crim``` and ```medv``` columns of the [BostonHousing dataset](https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv) as a dataframe.
+Q: Import ```crim``` and ```medv``` columns of the [BostonHousing dataset](https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv){:target="_blank"} as a dataframe.
 
 #### Desired output
 
@@ -1125,7 +1125,7 @@ To import only the ```crim``` and the ```medv``` column, we pass a list of the n
 
 ### Ex 37: How to get the nrows, ncolumns, datatype, summary stats of each column of a dataframe? Also, get the array and list equivalent.
 
-Q: Get the number of rows, columns, datatype, columns for  each datatype and statistical summary of each column of the [Cars93]("https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv") dataset. Also, get the numpy array and list equivalent of the dataframe.
+Q: Get the number of rows, columns, datatype, columns for  each datatype and statistical summary of each column of the [Cars93]("https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv"){:target="_blank"} dataset. Also, get the numpy array and list equivalent of the dataframe.
 
 #### Desired output
 
@@ -2406,7 +2406,7 @@ We first create a dictionary with ```Min.Price``` column as the key and value as
 
 We select the ```Min.Price``` and ```Max.Price``` columns, apply the lambda expression, and replace in each instance of ```nan``` in ```x```(representing the columns) by the mean or median of that column using the ```fillna``` function and pass in the dictionary's value.
 
-__Note:__ Refer to [this]("https://stackoverflow.com/questions/32437435/passing-additional-arguments-to-python-pandas-dataframe-apply") StackOverflow question to learn more.
+__Note:__ Refer to [this]("https://stackoverflow.com/questions/32437435/passing-additional-arguments-to-python-pandas-dataframe-apply"){:target="_blank"} StackOverflow question to learn more.
 
 ### 44: How to select a specific column from a dataframe as a dataframe instead of a series?
 
@@ -2494,7 +2494,7 @@ type(the_dataframe.iloc[:, [0]])
 
 Same as ```iloc```.
 
-__Note:__ If you want to understand the difference between ```loc``` and ```iloc```, read [this page from StackOverflow](https://stackoverflow.com/questions/31593201/how-are-iloc-and-loc-different)
+__Note:__ If you want to understand the difference between ```loc``` and ```iloc```, read [this page from StackOverflow](https://stackoverflow.com/questions/31593201/how-are-iloc-and-loc-different){:target="_blank"}
 
 ### Ex 45: How to change the order of columns of a Dataframe?
 
@@ -3955,7 +3955,7 @@ In this part 2 of the pandas series, we have introduced the dataframe data struc
 
 Remember that 60% of the time spent on end-to-end machine learning project is dedicated to data cleaning and visualization. So Pandas, NumPy and Matplotlib (and Seaborn) are fantastic tools to learn and master. Practice makes perfect.
 
-In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%202.ipynb).
+In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%202.ipynb){:target="_blank"}.
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
 

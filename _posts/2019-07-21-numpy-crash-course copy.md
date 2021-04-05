@@ -17,7 +17,7 @@ Let's jump into Anaconda and import the NumPy library.
 import numpy as np
 ```
 
-Note: if you do not have NumPy installed on your anaconda environment, read [this](https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html) post where I explain how to install NumPy.
+Note: if you do not have NumPy installed on your anaconda environment, read [this](https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html){:target="_blank"} post where I explain how to install NumPy.
 
 Now that we all set let's start.
 
@@ -1132,10 +1132,10 @@ We can also get the logarithm of each element, except the first element, which i
 
 ### Conclusion
 
-NumPy is one of those libraries in Machine Learning you can not ignore. It is pretty easy to get started with especially if you understand lists in Python, and we have seen some of its most used methods. However, this is just the tips of the iceberg because there is so much to learn NumPy that I can not cover it all. That is why I invite you to visit its documentation, which is pretty well written [here](https://numpy.org/devdocs/). You will find all the references, methods, and tricks of NumPy.
+NumPy is one of those libraries in Machine Learning you can not ignore. It is pretty easy to get started with especially if you understand lists in Python, and we have seen some of its most used methods. However, this is just the tips of the iceberg because there is so much to learn NumPy that I can not cover it all. That is why I invite you to visit its documentation, which is pretty well written [here](https://numpy.org/devdocs/){:target="_blank"}. You will find all the references, methods, and tricks of NumPy.
 
 This post was a quick introduction to NumPy. In an upcoming post, we will work on some exciting exercises using NumPy to sharpen your skills, so stay tuned by subscribing to our mailing list.
 
-Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Crash%20Course.ipynb)
+Find the jupyter notebook version of this post on my GitHub profile [here.](https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Crash%20Course.ipynb){:target="_blank"}
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

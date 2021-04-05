@@ -12,7 +12,7 @@ When I say python folk will think that I am talking about the snake. No, ain't t
 ### The most popular programming language
 
 ![fastest growing language](/blog/assets/post_cont_image/fastest-prg-lang.png)
-picture credit: [stackoverflow](https://insights.stackoverflow.com/survey/2018)
+picture credit: [stackoverflow](https://insights.stackoverflow.com/survey/2018){:target="_blank"}
 
 
 As the time of writing this blog, Python is the fastest-growing language, and this trend is just starting thanks to its readability as we can read it from its core philosophy called zen of Python. You can see the entire list if you have Python installed by running this command in the python interpreter.
@@ -36,7 +36,7 @@ I am hoping that now you understand why Python is the language to use when it co
 
 Let's install Python, but before we start, I have to mention one thing about Python, Python comes into two different versions Python 2 and Python 3. They are not compatible, and there are some minor differences in syntax between the two. I suggest always to use version 3 since version 2 will be discontinued by 2020. I will only be using Python 3 on this blog.
 
-Go to the official python organization [here](https:https://www.python.org/downloads/) and download the latest version of Python for your platform (windows, mac os or Linux)and install it.
+Go to the official python organization [here](https://www.python.org/downloads/){:target="_blank"} and download the latest version of Python for your platform (windows, mac os or Linux)and install it.
 
 ![python download](/blog/assets/post_cont_image/py-web.png)
 

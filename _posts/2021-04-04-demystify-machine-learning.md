@@ -8,9 +8,7 @@ tags:
 - tutorial
 - linear regression
 ---
-
-
-Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far. <!-- more -->
+Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.
 
 With no further due, let's get started.
 
@@ -63,7 +61,7 @@ Note: it is crucial to feed the model accurate and clean data (without outliers 
 
 Here are some questions to ask yourself when deciding to use whether machine learning or traditional programming for a project:
 
-* Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
+1. Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
 	
      To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: 
      
@@ -71,22 +69,22 @@ Here are some questions to ask yourself when deciding to use whether machine lea
  - they are below one thousand dollars.
  - the account holders are mostly seniors (65 years old and above).
  
- After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
+   After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
 
    After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below on thousand dollars all the time. The scammers have found a way to bypass the script that you have put in place.
 
    Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.
 
-   The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention. 
+   The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.
+   
+
+2. Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
 
 
-* Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
+3. Does this project try to solve a complex problem in a constantly changing environment? Then use machine learning as it can adapt to a constantly changing environment as it receives more and more data. Example: Robots that sort trash on a recycling line depending on the type of materials using computer vision.
 
 
-* Does this project try to solve a complex problem in a constantly changing environment? Then use machine learning as it can adapt to a constantly changing environment as it receives more and more data. Example: Robots that sort trash on a recycling line depending on the type of materials using computer vision.
-
-
-* Does this project try to solve a complex problem with a large amount of data? Then use machine learning. Example: Self-driving cars in a busy street.
+4. Does this project try to solve a complex problem with a large amount of data? Then use machine learning. Example: Self-driving cars in a busy street.
 
 I firmly believe that machine learning and traditional programming will continue to co-exist as they solve problems differently. Therefore one can't replace the other.
 
@@ -110,19 +108,19 @@ The labels can also be numerical. In this case, we are dealing with a ***regress
 
 For this type of machine learning, we train the model without labels. With your help, the model will try to figure out the correlations within the datasets. Listed below are the unsupervised tasks we could perform:  
 
-1. ***clustering*** to discover similar data points within the dataset and ***hierarchical clustering*** to group similar data points into smaller groups. Each group is called ***cluster***
+* ***clustering*** to discover similar data points within the dataset and ***hierarchical clustering*** to group similar data points into smaller groups. Each group is called ***cluster***
 
 ![hierarchical_clustering](/blog/assets/post_cont_image/clustering.jpg)
-*Credit: [Kdnuggets](https://www.kdnuggets.com/2019/09/hierarchical-clustering.html)*
+*Credit: [Kdnuggets](https://www.kdnuggets.com/2019/09/hierarchical-clustering.html){:target="_blank"}*
 
-2. ***dimensionality reduction*** to merge similar features into one feature. For example, we could combine the smartphone's age with its battery health as those two are strongly correlated. We call it ***feature extraction***
+* ***dimensionality reduction*** to merge similar features into one feature. For example, we could combine the smartphone's age with its battery health as those two are strongly correlated. We call it ***feature extraction***
 
 
-3. ***anomaly detection*** by detecting automatically and removing *outliers* (a data point that differs significantly from the rest of data points) and ***novelty detection*** by detecting but not flagging as outliers incoming data point that looks different from the rest of data points in the dataset.
+* ***anomaly detection*** by detecting automatically and removing *outliers* (a data point that differs significantly from the rest of data points) and ***novelty detection*** by detecting but not flagging as outliers incoming data point that looks different from the rest of data points in the dataset.
 
 ![anomaly](/blog/assets/post_cont_image/anomaly.jpg)
 
-4. ***association rule learning*** to discover underlying relations between data points in a large dataset. For example, through data, we have found out that clients in the supermarket who bought chicken will most likely buy the barbeque sauce. It makes sense to give a bundle pricing discount or place those two products close together on the shelves to incentivize the purchase.
+* ***association rule learning*** to discover underlying relations between data points in a large dataset. For example, through data, we have found out that clients in the supermarket who bought chicken will most likely buy the barbeque sauce. It makes sense to give a bundle pricing discount or place those two products close together on the shelves to incentivize the purchase.
 
 #### 3.1.3 Semisupervised learning
 
@@ -170,7 +168,7 @@ We all have heard the expression: "Money does not buy happiness". As an avid res
 
 So you decide to survey your friends, family members and internet users, asking them their incomes and then rank their happiness in life on a scale of 1 to 10.
 
-You got a total of 498 responses, which is not a large dataset, but for this experiment, it is a good population sample. Download the dataset [here](https://cdn.scribbr.com/wp-content/uploads//2020/02/income.data_.zip).
+You got a total of 498 responses, which is not a large dataset, but for this experiment, it is a good population sample. Download the dataset [here](https://cdn.scribbr.com/wp-content/uploads//2020/02/income.data_.zip){:target="_blank"}.
 
 Let's first start by importing Numpy, Pandas, Matplotlib and the CSV file. 
 
@@ -410,7 +408,7 @@ plt.show()
 
 
     
-![png](output_59_0.png)
+![png](/blog/assets/post_cont_image/output_58_0.png)
     
 
 
@@ -436,13 +434,13 @@ To keep it simple, we will rewrite the equation as follow:
 
 *happiness scale* = $\theta_{0}$ + $\theta_{1}$ $\times$ income
 
-Note: if you have taken a high school algebra course, you might have recognized this formula as the [equation of a straight line](https://en.wikipedia.org/wiki/Linear_equation) ```y = mx + b```  where ```x``` and ```y``` are the x and y axis coordinates, ```m``` is the slope of the line and ```b``` is the y intercept. 
+Note: if you have taken a high school algebra course, you might have recognized this formula as the [equation of a straight line](https://en.wikipedia.org/wiki/Linear_equation){:target="_blank"} ```y = mx + b```  where ```x``` and ```y``` are the x and y axis coordinates, ```m``` is the slope of the line and ```b``` is the y intercept. 
 
 This model has two **parameters** $\theta_{0}$ and $\theta_{1}$. We need to find those two parameters value to define a line that follows the best data points. How do we find that? We have the choice between two functions. The ***utility function***(also called ***fitness function***) and the ***cost function***. So what is the difference and which one should we use? The short answer is it depends.
 
 The utility function measures how good the model is, and the cost function calculates how bad the model is. Since we are dealing with linear regression, it is best to use the cost function to compare the distance between the predicted data point coordinate and the linear regression line. We need to reduce that distance as much as possible. The shorter that distance, the more ***accurate*** is our model.
 
-So how do we get that linear regression line to best align with the data points? We use the [scikit-learn](https://scikit-learn.org/) functions to find the two parameters $\theta_{0}$ and $\theta_{1}$. This is what's called ***training*** the model.
+So how do we get that linear regression line to best align with the data points? We use the [scikit-learn](https://scikit-learn.org/){:target="_blank"} functions to find the two parameters $\theta_{0}$ and $\theta_{1}$. This is what's called ***training*** the model.
 
 We import directly the function from the scikit-learn library. 
 
@@ -525,17 +523,17 @@ plt.show()
 
 
     
-![png](output_82_0.png)
+![png](/blog/assets/post_cont_image/output_81_0.png)
     
 
 
 We plot the dataset's features using a scatter plot and set the plot axis limits. We then create an interval ```X``` that represents the axis limit of the linear regression line and set it to range from 15000 to 75000 (we don't need the steps because drawing a line requires only two coordinate in a 2D dimension). 
 
-We then plot ```X_coordinate``` on the X and Y axis using the [linear equation](https://en.wikipedia.org/wiki/Linear_equation) and change the color of the line to red using the character ```"r"```.
+We then plot ```X_coordinate``` on the X and Y axis using the [linear equation](https://en.wikipedia.org/wiki/Linear_equation){:target="_blank"} and change the color of the line to red using the character ```"r"```.
 
 Finally, we place the text of $\theta_{0}$ and $\theta_{1}$ in the plot with the axis labels and title.
 
-If we don't need the values of $\theta_{0}$ and $\theta_{1}$ and only want to plot the linear regression line [seaborn](https://seaborn.pydata.org/) has a function for that.
+If we don't need the values of $\theta_{0}$ and $\theta_{1}$ and only want to plot the linear regression line [seaborn](https://seaborn.pydata.org/){:target="_blank"} has a function for that.
 
 
 ```python
@@ -555,7 +553,7 @@ plt.show()
 
 
     
-![png](output_85_0.png)
+![png](/blog/assets/post_cont_image/output_84_0.png)
     
 
 
@@ -567,6 +565,8 @@ We have 2 ways of predicting the happiness scale:
    2. Using the model's ```predict``` function (most recommended).
 
 #### 1. Using the formula
+
+𝛼  =  𝜃0  +  𝜃1   ×   𝜆  +  𝜖
 
 Using the equation that we previously saw:
 
@@ -621,7 +621,7 @@ plt.show()
 
 
     
-![png](output_99_0.png)
+![png](/blog/assets/post_cont_image/output_98_0.png)
     
 
 
@@ -718,7 +718,7 @@ Solution: Gather more representative data
 
 #### 4.1.3 Train on inaccurate data
 
-It makes sense that a model fed with a dataset full of errors and outliers will not find patterns and generalize on new data. That is why it is always wise to do an [exploratory data analysis](https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html) and data preparation before training the model. 
+It makes sense that a model fed with a dataset full of errors and outliers will not find patterns and generalize on new data. That is why it is always wise to do an [exploratory data analysis](https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html){:target="_blank"} and data preparation before training the model. 
 
 Solution: 
     
@@ -790,20 +790,11 @@ Wow! You have to have made it until the end! Congratulation! You have learned a 
 
 Finally, here is a recap of the main points we have discovered in this post: 
 
- 1. Machine learning is the computer's ability to learn through data and make predictions on new data without being explicitly hardcoded.
+1. Machine learning is the computer's ability to learn through data and make predictions on new data without being explicitly hardcoded.
  
- 2. If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
-
+2. If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
  
- Note: Try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
- 
- ![cutting-sword](/blog/assets/post_cont_image/cut_dl.jpg)
- 
- 
-Image credit: [cutting-sword-credit](https://www.google.com/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fcutting-food-with-a-sword&psig=AOvVaw2CMnmX3rcg63eawO9zq6bl&ust=1617641348297000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCa_ueF5e8CFQAAAAAdAAAAABAD)
-
-
- 3. There are different types of machine learning systems grouped as:
+3. There are different types of machine learning systems grouped as:
  
    * Supervised, unsupervised, semisupervised or reinforcement learning.
    
@@ -825,8 +816,16 @@ Image credit: [cutting-sword-credit](https://www.google.com/url?sa=i&url=https%3
   * Underfitting the training set
    
  
-  5. To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
+5. To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
 
-In the next post, we will work on an end-to-end machine learning project. I hope you enjoyed this post as much as I did. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Demystify%20Machine%20Learning.ipynb).
+ Note: Try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
+ 
+ ![cutting-sword](/blog/assets/post_cont_image/cut_dl.jpg)
+ 
+ 
+Image credit: [cutting-sword-credit](https://www.google.com/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fcutting-food-with-a-sword&psig=AOvVaw2CMnmX3rcg63eawO9zq6bl&ust=1617641348297000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCa_ueF5e8CFQAAAAAdAAAAABAD){:target="_blank"}
+
+
+In the next post, we will work on an end-to-end machine learning project. I hope you enjoyed this post as much as I did. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Demystify%20Machine%20Learning.ipynb){:target="_blank"}.
 
 Thank you again for going through this tutorial with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember, practice makes perfect! Keep on learning!

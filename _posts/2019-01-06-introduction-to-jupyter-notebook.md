@@ -33,11 +33,11 @@ The good thing with Jupyter it is the fact that you can easily integrate and imp
 
 10. Interactive code and data exploration: The ipywidgets package provides many common user-interface controls for exploring code and data interactively.
 
-source: [Packt](https://hub.packtpub.com/10-reasons-data-scientists-love-jupyter-notebooks/)
+source: [Packt](https://hub.packtpub.com/10-reasons-data-scientists-love-jupyter-notebooks/){:target="_blank"}
 
 ### Installation
 
-Jupyter comes bundled in Anaconda navigator, so logically you will need first to download Anaconda [here](https://www.anaconda.com/download/). A quick mention, you will be asked to download between python 2 or python 3, and as I have already said in my other post I will be using python 3 on this blog, so I suggest to download Python 3 as well.
+Jupyter comes bundled in Anaconda navigator, so logically you will need first to download Anaconda [here](https://www.anaconda.com/download/){:target="_blank"}. A quick mention, you will be asked to download between python 2 or python 3, and as I have already said in my other post I will be using python 3 on this blog, so I suggest to download Python 3 as well.
 
 After the downloading and installing the anaconda executable file, you check if anaconda is correctly installed by using the following command.
 
@@ -207,7 +207,7 @@ To change the cell to markdown, you press the drop-down menu and select markdown
 
 ![Jupyter_markdown](/blog/assets/post_cont_image/j_markdown.png)
 
-You can insert images and text using markdown and then hit `ENTER` to display the markdown. There is an excellent guide on markdown [here](https://www.markdownguide.org/basic-syntax/).
+You can insert images and text using markdown and then hit `ENTER` to display the markdown. There is an excellent guide on markdown [here](https://www.markdownguide.org/basic-syntax/){:target="_blank"}.
 
 ### Magic commands
 
@@ -244,7 +244,7 @@ I will be writing all my tutorial post in Jupyter notebook and export it as a ma
 
 Jupyter notebook is a pretty useful tool, especially if you are a researcher who writes codes that need to be explained deeply. Yes, you can use a standard text editor with comments, but you can't compare comments and markdown. Plus all the features that Jupyter has to offer I would say that it is hands down the go-to "text editor" for Machine Learning in 2019. I will be using Jupyter notebook to write code in Python on this blog. One downside of jupyter I can think of would be its lack of code auto-suggestion.
 
-I hope now you have a basic understanding of how Jupyter works, and it's main features. If you want to learn more, you can read the full documentation [here](https://jupyter-notebook.readthedocs.io/en/stable/index.html).
+I hope now you have a basic understanding of how Jupyter works, and it's main features. If you want to learn more, you can read the full documentation [here](https://jupyter-notebook.readthedocs.io/en/stable/index.html){:target="_blank"}.
 
 
 Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!

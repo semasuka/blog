@@ -10,7 +10,7 @@ tags:
 
 
 
-Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don't be shy! Read its documentation throughout if you get stuck [here](https://pandas.pydata.org/pandas-docs/stable/index.html).<!-- more -->
+Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don't be shy! Read its documentation throughout if you get stuck [here](https://pandas.pydata.org/pandas-docs/stable/index.html){:target="_blank"}.<!-- more -->
 
 Let's get started by importing NumPy and Pandas.
 
@@ -4859,6 +4859,6 @@ This exercise is similar to exercise 57 the difference is that this time we are 
 Yaaayy! We made it finally. In the last posts, we have explored more than 150 exercises on NumPy and Pandas. I am very confident that after going through all these exercises, you are ready to tackle the next step: Machine Learning with Scikit-learn. We will continue using NumPy in end-to-end Machine Learning projects coming in the next blog posts.
 
 
-In the next post, we will introduce the common jargon used in Machine Learning, code our first Machine Learning algorithm and after that post we will start working on machine learning projects finally. I am super duper excited for the upcoming posts. Remember, practice makes perfect! Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb).
+In the next post, we will introduce the common jargon used in Machine Learning, code our first Machine Learning algorithm and after that post we will start working on machine learning projects finally. I am super duper excited for the upcoming posts. Remember, practice makes perfect! Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb){:target="_blank"}.
 
 Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!
