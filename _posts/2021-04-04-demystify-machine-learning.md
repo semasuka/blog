@@ -8,7 +8,8 @@ tags:
 - tutorial
 - linear regression
 ---
-Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.
+
+Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far. <!-- more -->
 
 With no further due, let's get started.
 
@@ -55,16 +56,15 @@ We evaluate the model and see if it has learned well. If the result is satisfyin
 
 ![ML-process](/blog/assets/post_cont_image/ML_process.jpg)
 
-Note: it is crucial to feed the model accurate and clean data (without outliers or missing data) because if you don't, then the predictions will be off, and its accuracy won't be reliable. That is why modeling (the process of training the model) is the least consuming task in an end-to-end machine learning project compare to data cleaning. I wrote in [this post](https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html) that data scientists spend 60% of their time cleaning the training data and only 4% modeling and training the model.  
+Note: it is crucial to feed the model accurate and clean data (without outliers or missing data) because if you don't, then the predictions will be off, and its accuracy won't be reliable. That is why modeling (the process of training the model) is the least consuming task in an end-to-end machine learning project compare to data cleaning. I wrote in [this post](https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html){:target="_blank"} that data scientists spend 60% of their time cleaning the training data and only 4% modeling and training the model.  
 
 #### 2.2 When shall we use machine learning or traditional programming? 
 
 Here are some questions to ask yourself when deciding to use whether machine learning or traditional programming for a project:
 
-1. Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
+* Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
 	
      To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: 
-     
  - those transactions are orchestrated from overseas.
  - they are below one thousand dollars.
  - the account holders are mostly seniors (65 years old and above).
@@ -76,15 +76,15 @@ Here are some questions to ask yourself when deciding to use whether machine lea
    Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.
 
    The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.
-   
-
-2. Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
 
 
-3. Does this project try to solve a complex problem in a constantly changing environment? Then use machine learning as it can adapt to a constantly changing environment as it receives more and more data. Example: Robots that sort trash on a recycling line depending on the type of materials using computer vision.
+* Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
 
 
-4. Does this project try to solve a complex problem with a large amount of data? Then use machine learning. Example: Self-driving cars in a busy street.
+* Does this project try to solve a complex problem in a constantly changing environment? Then use machine learning as it can adapt to a constantly changing environment as it receives more and more data. Example: Robots that sort trash on a recycling line depending on the type of materials using computer vision.
+
+
+* Does this project try to solve a complex problem with a large amount of data? Then use machine learning. Example: Self-driving cars in a busy street.
 
 I firmly believe that machine learning and traditional programming will continue to co-exist as they solve problems differently. Therefore one can't replace the other.
 
@@ -412,11 +412,13 @@ plt.show()
     
 
 
-Yeah seems like the more money we make, the happier we become! On average, someone making over \$70000 is likely to be happier than someone making \\$20000. Shocking right?  
+Yeah seems like the more money we make, the happier we become! On average, someone making over \$70000 is likely to be happier than someone making \$20000. Shocking right?  
 
 We can see that the data points follow an upward direction. Now let's try to create a ***model*** that follows best those data points. This step is called a ***model selection***, and in this example, it will be a ***linear model*** also called ***linear regression*** since there are no curves in the upward direction.
 
 The formula is as follow: 
+
+$\alpha$ = $\theta_{0}$ + $\theta_{1}$ $\times$ $\lambda$ + $\epsilon$
 
 where
 
@@ -523,7 +525,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_81_0.png)
+![png](/blog/assets/post_cont_image/output_82_0.png)
     
 
 
@@ -553,7 +555,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_84_0.png)
+![png](/blog/assets/post_cont_image/output_85_0.png)
     
 
 
@@ -565,8 +567,6 @@ We have 2 ways of predicting the happiness scale:
    2. Using the model's ```predict``` function (most recommended).
 
 #### 1. Using the formula
-
-𝛼  =  𝜃0  +  𝜃1   ×   𝜆  +  𝜖
 
 Using the equation that we previously saw:
 
@@ -621,7 +621,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_98_0.png)
+![png](/blog/assets/post_cont_image/output_99_0.png)
     
 
 
@@ -635,7 +635,7 @@ To emphasize the projected point where the income and the happiness scale meet o
 
 How about we use instance-based learning instead of model-based learning? For this, we could use a simple model called ***K-nearest neighbors***. We will look at this estimator in the upcoming post but for now, what you need to know is that it uses the features of the nearest data points(the neighboring points)to make predictions, thus the name. 
 
-The code is almost the same as model-based learning. The difference is that we are using a different estimator. Instead of using ```linear_model``` we use```KNeighborsRegressor```. 
+The code is almost the same as model-based learning. The difference is that we are using a different estimator. Instead of using ```linear_model``` we use ```KNeighborsRegressor```. 
 
 Note: we are importing a regressor model and not a classifier because we are predicting a number.
 
@@ -790,33 +790,38 @@ Wow! You have to have made it until the end! Congratulation! You have learned a 
 
 Finally, here is a recap of the main points we have discovered in this post: 
 
-1. Machine learning is the computer's ability to learn through data and make predictions on new data without being explicitly hardcoded.
+* Machine learning is the computer's ability to learn through data and make predictions on new data without being explicitly hardcoded.
  
-2. If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
+* If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
  
-3. There are different types of machine learning systems grouped as:
+* There are different types of machine learning systems grouped as:
  
-   * Supervised, unsupervised, semisupervised or reinforcement learning.
+ - Supervised, unsupervised, semisupervised or reinforcement learning.
    
-   * Batch or online learning.
+ - Batch or online learning.
    
-   * Instance-based or model-based learning.
+ - Instance-based or model-based learning.
    
-        Most machine learning projects follow this blueprint:
+   Most machine learning projects follow this blueprint:
 > Gather data -> clean data -> Split the dataset into training and testing data -> feed the training dataset -> test using the testing dataset -> find the generalization error of the model -> improve the generalization error
      
  
-4. Machine learning faces some challenges caused by:
- 
-  * Not having enough data
-  * Train on nonrepresentative data
-  * Train on inaccurate data
-  * Irrelevant features
-  * Overfitting the training set
-  * Underfitting the training set
+* Machine learning faces some challenges caused by:
+  
+ - Not having enough data
+  
+ - Train on nonrepresentative data
+  
+ - Train on inaccurate data
+  
+ - Irrelevant features
+  
+ - Overfitting the training set
+  
+ - Underfitting the training set
    
  
-5. To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
+* To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
 
  Note: Try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
  
