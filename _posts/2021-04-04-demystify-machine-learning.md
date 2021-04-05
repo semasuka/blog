@@ -10,9 +10,7 @@ tags:
 ---
 
 
-
-
-Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far. <!-- more -->
+Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.
 
 With no further due, let's get started.
 
@@ -28,7 +26,7 @@ As we have previously said, computers learn through data. The more the data, the
 
 Going back to our question, how can machines learn? one way is by breaking the dataset into two datasets. A ***training dataset*** and a ***testing dataset***. As a good rule of thumb, the training dataset should account for 80% of the dataset, and the test dataset should be 20% (more on this later in the post). Each unit of information in the dataset is a ***datapoint*** represented as the entire row in a tabular dataset.
 
-![dataset_split]((/blog/assets/post_cont_image/dml_dataset_split.jpg)
+![dataset_split](/blog/assets/post_cont_image/dml_dataset_split.jpg)
 
 A training dataset is a dataset used to train(teach) ***the model*** (also called ***estimators*** in Scikit-learn library, and I'll be using those two words interchangeably). We use the testing dataset to evaluate the model and see how well it has learned (also called measuring its ***accuracy***).
 
@@ -45,11 +43,11 @@ To understand when shall we use machine learning, we need first to understand ho
 
 Let's start with traditional programming. It includes all the backends development, front-end development, mobile development, dev-ops, systems architecture, etc. All these computer science subfields share the same fundamentals of using a set of instructions called ***Algorithms*** written by a programmer that takes an input and produces an output. Think of it as a more complex "if and else statement" for example, if a user presses this button, then change the webpage to this new page.
 
-![traditional_programming_process]((/blog/assets/post_cont_image/trad_programming.jpg)
+![traditional_programming_process](/blog/assets/post_cont_image/trad_programming.jpg)
 
 If an unexpected event occurs (not coded), the algorithm will not execute, and the software/app will crash. Now you know what is happening when you see a blue screen in Windows or your mobile app has unexpectedly stopped working. The algorithm can't troubleshoot itself without the intervention of the programmer. That is why you always have to upgrade your software or app to fix the "bugs".
 
-![unexpected_input]((/blog/assets/post_cont_image/unexpected_input.jpg)
+![unexpected_input](/blog/assets/post_cont_image/unexpected_input.jpg)
 
 #### 2.1.1 Machine learning
 
@@ -67,20 +65,19 @@ Here are some questions to ask yourself when deciding to use whether machine lea
 
 * Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
 	
-     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them:  
-      1. those transactions are orchestrated from overseas.
-      2. they are below $1000.
-      3. the account holders are mostly seniors (65 years old and above).
+     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: 
+     
+ - those transactions are orchestrated from overseas.
+ - they are below one thousand dollars.
+ - the account holders are mostly seniors (65 years old and above).
+ 
+ After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
 
-   After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
+   After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below on thousand dollars all the time. The scammers have found a way to bypass the script that you have put in place.
 
-     After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below $1000 all the time. The scammers have found a way to bypass the script that you have put in place.
+   Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.
 
-   Now, you are thinking about two options:
-    - Option 1, rewrite a new script taking into consideration the new rules.
-    - Option 2, come up with a script that can adapt to new rules without being explicitly coded.
-
-  The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.  
+   The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention. 
 
 
 * Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
@@ -143,7 +140,7 @@ Of course, this is a simple explanation of reinforcement learning as it is a bit
 
 Jabril has a video where he did a great job at explaining reinforcement learning in details. By the way, I highly advise watching his entire AI crash course series.
 
-[![Jabril_reinforcement_learning](/blog/assets/post_cont_image/clustering.jpg)](https://www.youtube.com/watch?v=nIgIv4IfJ6s)
+[![Jabril_reinforcement_learning](/blog/assets/post_cont_image/jabril_rl.jpg)](https://www.youtube.com/watch?v=nIgIv4IfJ6s){:target="_blank"}
 
 ### 3.2 Types of machine learning system classified on how they learn
 
@@ -413,7 +410,7 @@ plt.show()
 
 
     
-![png](output_58_0.png)
+![png](output_59_0.png)
     
 
 
@@ -528,7 +525,7 @@ plt.show()
 
 
     
-![png](output_81_0.png)
+![png](output_82_0.png)
     
 
 
@@ -558,7 +555,7 @@ plt.show()
 
 
     
-![png](output_84_0.png)
+![png](output_85_0.png)
     
 
 
@@ -624,7 +621,7 @@ plt.show()
 
 
     
-![png](output_98_0.png)
+![png](output_99_0.png)
     
 
 
@@ -693,7 +690,7 @@ The examples above are basic machine learning projects, but it gives us a climbs
 
 Since there are so many models, how do we choose the right one for our project? Well, the amazing team from the Scikit-learn organization came up with this chart below.  
 
-![ML-map](/blog/assets/post_cont_image/ml_map.jpg)
+![ML-map](/blog/assets/post_cont_image/ml_map.png)
 
 We will be working with some of these models in the upcoming posts, and we will be referring to this diagram frequently.
 
@@ -796,6 +793,7 @@ Finally, here is a recap of the main points we have discovered in this post:
  1. Machine learning is the computer's ability to learn through data and make predictions on new data without being explicitly hardcoded.
  
  2. If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
+
  
  Note: Try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
  
@@ -803,6 +801,7 @@ Finally, here is a recap of the main points we have discovered in this post:
  
  
 Image credit: [cutting-sword-credit](https://www.google.com/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fcutting-food-with-a-sword&psig=AOvVaw2CMnmX3rcg63eawO9zq6bl&ust=1617641348297000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCa_ueF5e8CFQAAAAAdAAAAABAD)
+
 
  3. There are different types of machine learning systems grouped as:
  
@@ -828,6 +827,6 @@ Image credit: [cutting-sword-credit](https://www.google.com/url?sa=i&url=https%3
  
   5. To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
 
-In the next post, we will work on an end-to-end machine learning project. I hope you enjoyed this post as much as I did. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb).
+In the next post, we will work on an end-to-end machine learning project. I hope you enjoyed this post as much as I did. Find the jupyter notebook version of this post on my GitHub profile [here](https://github.com/semasuka/blog/blob/gh-pages/ipynb/Demystify%20Machine%20Learning.ipynb).
 
 Thank you again for going through this tutorial with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember, practice makes perfect! Keep on learning!
