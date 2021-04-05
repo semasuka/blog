@@ -4,4 +4,4 @@ title: donate
 permalink: /donate/
 ---
 
-If you enjoy the content, Kindly consider supporting me :-)
+Do you enjoy the content of this blog? kindly consider supporting the blog :)

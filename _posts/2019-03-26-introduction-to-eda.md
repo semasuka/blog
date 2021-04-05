@@ -6,6 +6,8 @@ tags:
 - python
 - tutorial
 - data analysis
+- seaborn
+- matplotlib
 ---
 
 There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.
@@ -45,9 +47,9 @@ Note: Seaborn and Matplotlib complement each other and should be used together t
 
 The dataset we are going to use in this post is about different statistics of all the countries in the world, the reason why we choose this dataset among all is that it is easy to understand and doesn't require any domain knowledge at all. This makes this dataset perfect for both beginners and seasoned programmer.
 
-Now it is time to start using the data in our code, we need to read the data and store it in a dataframe (primary data structure of the pandas library) either from a URL when the data is stored online or download it and use the path where the data is stored on your local drive. 
+Now it is time to start using the data in our code, we need to read the data and store it in a dataframe (primary data structure of the pandas library) either from a URL when the data is stored online or download it and use the path where the data is stored on your local drive.
 
-Go ahead and download the data [here](https://www.kaggle.com/fernandol/countries-of-the-world/downloads/countries-of-the-world.zip/1) from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists & ML engineers who come up with the best ML models win prizes).
+Go ahead and sign in and download the data [here](https://www.kaggle.com/fernandol/countries-of-the-world/download) from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists & ML engineers who come up with the best ML models win prizes).
 
 If the CSV (comma-separated value) file is located in the same folder as the jupyter notebook (.ipynb) file, then we can just write the name of the CSV file without forgetting the .cvs extension like this.
 
