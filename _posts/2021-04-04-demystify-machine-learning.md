@@ -8,8 +8,7 @@ tags:
 - tutorial
 - linear regression
 ---
-
-Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far. <!-- more -->
+Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.
 
 With no further due, let's get started.
 
@@ -64,19 +63,15 @@ Here are some questions to ask yourself when deciding to use whether machine lea
 
 * Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.
 	
-     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them:
+     To clarify the point above, let's say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: First, those transactions are orchestrated from overseas. Second, they are below one thousand dollars. Third, the account holders are mostly seniors (65 years old and above).
+     
+     After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
 
-             1. those transactions are orchestrated from overseas.
-             2. they are below one thousand dollars.
-             3. the account holders are mostly seniors (65 years old and above).
- 
-   After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.
+     After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below on thousand dollars all the time. The scammers have found a way to bypass the script that you have put in place.
 
-   After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below on thousand dollars all the time. The scammers have found a way to bypass the script that you have put in place.
+     Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.
 
-   Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.
-
-   The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.
+     The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.
 
 
 * Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.
@@ -409,7 +404,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_58_0.png)
+![png](output_58_0.png)
     
 
 
@@ -526,7 +521,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_82_0.png)
+![png](output_82_0.png)
     
 
 
@@ -556,7 +551,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_85_0.png)
+![png](output_85_0.png)
     
 
 
@@ -622,7 +617,7 @@ plt.show()
 
 
     
-![png](/blog/assets/post_cont_image/output_99_0.png)
+![png](output_99_0.png)
     
 
 
@@ -795,32 +790,12 @@ Finally, here is a recap of the main points we have discovered in this post:
  
 * If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning
  
-* There are different types of machine learning systems grouped as:
- 
-         1. Supervised, unsupervised, semisupervised or reinforcement learning.
-   
-         2. Batch or online learning.
-   
-         3. Instance-based or model-based learning.
+* There are different types of machine learning systems grouped b, first how they train (supervised, unsupervised, semisupervised or reinforcement learning). Second, how they learn (batch or online learning). Third, how they generalize (instance-based or model-based learning).  
    
    Most machine learning projects follow this blueprint:
 > Gather data -> clean data -> Split the dataset into training and testing data -> feed the training dataset -> test using the testing dataset -> find the generalization error of the model -> improve the generalization error
-     
  
-* Machine learning faces some challenges caused by:
-  
-       1. Not having enough data
-  
-       2. Train on nonrepresentative data
-  
-       3. Train on inaccurate data
-  
-       4. Irrelevant features
-  
-       5. Overfitting the training set
-  
-       6. Underfitting the training set
-   
+* Machine learning faces some challenges caused by the data and the model
  
 * To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
 
