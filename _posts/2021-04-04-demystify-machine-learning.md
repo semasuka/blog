@@ -408,7 +408,7 @@ plt.show()
     
 
 
-Yeah seems like the more money we make, the happier we become! On average, someone making over \$70000 is likely to be happier than someone making \$20000. Shocking right?  
+Yeah seems like the more money we make, the happier we become! On average, someone making over \$70000 is likely to be happier than someone making \\$20000. Shocking right?  
 
 We can see that the data points follow an upward direction. Now let's try to create a ***model*** that follows best those data points. This step is called a ***model selection***, and in this example, it will be a ***linear model*** also called ***linear regression*** since there are no curves in the upward direction.
 
@@ -799,7 +799,7 @@ Finally, here is a recap of the main points we have discovered in this post:
  
 * To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation. 
 
- Note: Try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
+ Note: Always try to first use traditional programming before using machine learning (or deep learning).  Don't be like this guy below :) 
  
  ![cutting-sword](/blog/assets/post_cont_image/cut_dl.jpg)
  
