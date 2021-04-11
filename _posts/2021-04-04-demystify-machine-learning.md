@@ -412,7 +412,7 @@ Yeah seems like the more money we make, the happier we become! On average, someo
 
 We can see that the data points follow an upward direction. Now let's try to create a ***model*** that follows best those data points. This step is called a ***model selection***, and in this example, it will be a ***linear model*** also called ***linear regression*** since there are no curves in the upward direction.
 
-The formula is as follow: 
+The formula is as follow called the *population regression function*: 
 
 $\alpha$ = $\theta_{0}$ + $\theta_{1}$ $\times$ $\lambda$ + $\epsilon$
 
@@ -426,7 +426,7 @@ $\theta_{1}$ is the second **parameter** called **regression coefficient**.
 
 $\lambda$ is the independent variable. In this case, it is the income.
 
-$\epsilon$ is the **error**, also called margin error in our prediction of the regression coefficient. In our case, we assume that there is no error implying that $\epsilon$ = 0
+$\epsilon$ is the **error**(different from the sample error **e**), also called margin error in our prediction of the regression coefficient. In our case, we assume that there is no error implying that $\epsilon$ = 0
 
 To keep it simple, we will rewrite the equation as follow:
 

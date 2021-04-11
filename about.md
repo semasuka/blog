@@ -5,30 +5,30 @@ permalink: /about/
 ---
 # About the author
 
-Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer based in Calgary. I code in Python, Java, Javascript, HTML and CSS. Now, I'm learning machine learning and its real world-application to solve humankind challenges. The act of writing posts pushes me to explain complex topics in simple words, helping you, and I gain a better understanding of Machine Learning using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
+Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a passionate software engineer based in Calgary. I code in Python, Java, Javascript, HTML and CSS. Now, I'm learning machine learning and its real world-application to solve humankind challenges. The act of writing posts helps to explain complex topics in simple words using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
 
-I firmly believe that ***anyone***, with enough commitment and perseverance, can learn and understand Machine Learning and start using it right away to solve challenges and make earth a better place.
+I firmly believe that ***anyone***, with enough commitment and perseverance (gonna need a lot of it!), can learn and understand machine learning and start using it right away to solve challenges and make earth a better place.
 
 # Why another machine learning blog?
 
-This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already have some knowledge. A resource I wish I had when I was starting out.
+This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already a bad*ss data scientist. I said to myself why not create the resource that I wish I had when I was starting out learning ML.
 
-If this sound like you, then you are at the right place, this blog starts from the beginner level of Machine Learning to more advanced level. If you have some experience, you will also gain new knowledge.
-
-You will learn topics ranging from programming, maths, data analysis to algorithm optimization and models used in Machine Learning. You will learn these concepts through easy to understand examples.
+I write on topics ranging from programming, maths, data analysis to algorithm optimization and models used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced deep learning.
 
 # About the blog
 
-This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge and code should be shared for free), do a pull request on GitHub [here](https://github.com/semasuka/blog).
+This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll") on a customized theme. 
+
+If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge and code should always be shared for free), do a pull request on GitHub [here](https://github.com/semasuka/blog).
 
 
 # Contact the author
 
-Do you want to share a comment, a constructive critic, a correction, or a question related to machine learning or this blog? or work with me on an interesting project? Do not hesitate, get in touch with me through e-mail or LinkedIn.
+Do you want to share a comment, a constructive critic, a correction, or a question related to machine learning? or work with me on an interesting project? Do not hesitate, get in touch with me through e-mail or LinkedIn.
 
 # Donate
 
-Do you enjoy the content of this blog? kindly consider supporting the blog :)
+Do you enjoy the content of this blog? kindly consider supporting the blog 😃
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick" />
