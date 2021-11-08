@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About the author
 
-Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm an aspiring machine learning engineer based in Calgary. I'm learning machine learning to solve humankind challenges through using AI. The act of writing posts helps to explain complex topics in simple words using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
+Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm an aspiring machine learning engineer based in Calgary. I'm learning machine learning to solve humankind challenges. The act of writing posts helps to explain complex topics in simple words using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
 
 I firmly believe that ***anyone***, with enough commitment and perseverance (gonna need a lot of it!), can learn and understand machine learning and start using it right away to solve challenges and make earth a better place.
 
@@ -13,14 +13,13 @@ I firmly believe that ***anyone***, with enough commitment and perseverance (gon
 
 This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already a bad*ss data scientist. I said to myself why not create a resource that show case what I am learning.
 
-I write on topics ranging from programming, a little bit of maths used in machine learning, SQL, data analysis to algorithm optimization and models used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced deep learning.
+I write on topics ranging from programming, a little bit of maths used in machine learning, SQL, data analysis to model optimization used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced topic.
 
 # About the blog
 
-This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll") on a customized theme. 
+This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll").
 
-If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge and code should always be shared for free), do a pull request on GitHub [here](https://github.com/semasuka/blog).
-
+If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge should be shared), do a pull request on GitHub [here](https://github.com/semasuka/blog).
 
 # Contact the author
 
