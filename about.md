@@ -11,7 +11,7 @@ I firmly believe that ***anyone***, with enough commitment and perseverance (gon
 
 # Why another machine learning blog?
 
-This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already a bad*ss data scientist. I said to myself why not create the resource that I wish I had when I was starting out learning ML.
+This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already a bad*ss data scientist. I said to myself why not create a resource that show case what I am learning.
 
 I write on topics ranging from programming, a little bit of maths used in machine learning, SQL, data analysis to algorithm optimization and models used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced deep learning.
 
