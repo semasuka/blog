@@ -9,11 +9,11 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Data types, variables and operators in Python | MIB</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Data types, variables and operators in Python" />
-<meta name="author" content="Semasuka Stern" />
+<meta name="author" content="Stern Semasuka" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="In this post, we are going to discover all you need to know about data types, operators, and variables in python. I’ll be using jupyter notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll." />
 <meta property="og:description" content="In this post, we are going to discover all you need to know about data types, operators, and variables in python. I’ll be using jupyter notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll." />
@@ -23,8 +23,11 @@
 <meta property="og:image" content="http://localhost:4000/blog/assets/post_images/py_tuto.jpeg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-16T00:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/py_tuto.jpeg" />
+<meta property="twitter:title" content="Data types, variables and operators in Python" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html"},"image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html","author":{"@type":"Person","name":"Semasuka Stern"},"description":"In this post, we are going to discover all you need to know about data types, operators, and variables in python. I’ll be using jupyter notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.","headline":"Data types, variables and operators in Python","dateModified":"2019-01-16T00:00:00-07:00","datePublished":"2019-01-16T00:00:00-07:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/py_tuto.jpeg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html","@type":"BlogPosting","description":"In this post, we are going to discover all you need to know about data types, operators, and variables in python. I’ll be using jupyter notebook, feel free to use any text editor or IDE of your choice but I do highly recommend to use jupyter especially if you are interested in data science. I also suggest to type the codes and run it on your system and see your results. This tutorial post is entirely written in Jupyter and exported as a markdown file to Jekyll.","headline":"Data types, variables and operators in Python","dateModified":"2019-01-16T00:00:00-07:00","datePublished":"2019-01-16T00:00:00-07:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -45,7 +48,15 @@
     <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
   
 </head>
-
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
   <body class="layout--post data-types-variables-and-operators-in-python">
 
@@ -246,7 +257,7 @@
 
         <p class="entry-meta">
           
-            <span class="byline-item">by Semasuka Stern</span>
+            <span class="byline-item">by Stern Semasuka</span>
           
           <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</span>
           <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-01-16T00:00:00-07:00">Wed January 16, 2019</time></span>
@@ -278,7 +289,7 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>34
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>34
 </code></pre></div></div>
 
 <p>To print text, we have to add double or single quotes.</p>
@@ -286,21 +297,21 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Hello world'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world
 </code></pre></div></div>
 
 <p>We can also print a special character.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"$</span><span class="si">%#</span><span class="s">@"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"$%#@"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$%#@
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$%#@
 </code></pre></div></div>
 
 <p>The print function can be empty; in this instance, nothing will be displayed.</p>
@@ -321,34 +332,34 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">1234222</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1234222
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1234222
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
 </code></pre></div></div>
 
 <p>integers can be written in binary, octal, and hexadecimal form.</p>
 
 <p>octal</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="n">o10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="n">o23</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mo">0o10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mo">0o23</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
 19
 </code></pre></div></div>
 
 <p>binary</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="n">b10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="n">b011110</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mb">0b10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="mb">0b011110</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
 30
 </code></pre></div></div>
 
@@ -358,11 +369,11 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <span class="k">print</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>73
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>73
 16
 </code></pre></div></div>
 
-<p>you can learn more about binary <a href="https://en.wikipedia.org/wiki/Binary_number">here</a>, octal <a href="https://en.wikipedia.org/wiki/Octal">here</a> and hexadecimal <a href="https://en.wikipedia.org/wiki/Hexadecimal">here</a></p>
+<p>you can learn more about binary <a href="https://en.wikipedia.org/wiki/Binary_number" target="_blank">here</a>, octal <a href="https://en.wikipedia.org/wiki/Octal" target="_blank">here</a> and hexadecimal <a href="https://en.wikipedia.org/wiki/Hexadecimal" target="_blank">here</a></p>
 
 <h5>float</h5>
 
@@ -371,29 +382,29 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.4
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.4
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mf">5.1e4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>51000.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>51000.0
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mf">4.2e-4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.00042
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.00042
 </code></pre></div></div>
 
 <h5>complex</h5>
 
 <p>Complex numbers are written as “real part”+”imaginary part”.j</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mf">2j</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3+2j)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3+2j)
 </code></pre></div></div>
 
 <h4>string data type</h4>
@@ -407,7 +418,7 @@ notebook, feel free to use any text editor or IDE of your choice but I do highly
 <span class="k">print</span><span class="p">(</span><span class="s">"""I am delimited by triple quotes"""</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a
 This a sequence of characters
 I am a delimited by single quotes
 I am a delimited by double quotes
@@ -416,10 +427,10 @@ I am a delimited by single quotes
 
 <p>But we should not use single quote and double quotes delimiter at the same time this will result in an error.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'This is wrong")</span><span class="err">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'This is wrong")
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  File "&lt;ipython-input-31-327641873bad&gt;", line 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  File "&lt;ipython-input-31-327641873bad&gt;", line 1
     print('This is wrong")
                           ^
 SyntaxError: EOL while scanning string literal
@@ -435,7 +446,7 @@ SyntaxError: EOL while scanning string literal
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"this is kevin</span><span class="se">\'</span><span class="s">s house"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is Kevin's house
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is Kevin's house
 </code></pre></div></div>
 
 <p>I explain in detail about the escape sequences in python toward the end of the blog.</p>
@@ -448,7 +459,7 @@ SyntaxError: EOL while scanning string literal
 <span class="k">print</span><span class="p">(</span><span class="s">'Marcus said: "freedom to the people"'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is Kevin's house
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is Kevin's house
 Marcus said: "freedom to the people"
 </code></pre></div></div>
 
@@ -460,7 +471,7 @@ Marcus said: "freedom to the people"
 <span class="k">print</span><span class="p">(</span><span class="s">''' The chief said:"No, this is Bob's house" '''</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The chief said:"No, this is Bob's house" 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The chief said:"No, this is Bob's house" 
 The chief said:"No, this is Bob's house" 
 </code></pre></div></div>
 
@@ -490,12 +501,12 @@ is said to be “falsy.” (You may also see “falsy” spelled “falsey.”)<
 <p>The type function in python returns the data type of a given value is. This function is handy when we don’t know or when we are in doubt of the data type of a given value. We are using the print( ) function to display the data type which was returned by the type( ) function.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">44</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">0</span><span class="n">o10</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">0</span><span class="n">b10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mo">0o10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mb">0b10</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mh">0x10</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
 &lt;class 'int'&gt;
 &lt;class 'int'&gt;
 &lt;class 'int'&gt;
@@ -505,21 +516,21 @@ is said to be “falsy.” (You may also see “falsy” spelled “falsey.”)<
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">8.9e-4</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'float'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'float'&gt;
 &lt;class 'float'&gt;
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mf">2j</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'complex'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'complex'&gt;
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">False</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'bool'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'bool'&gt;
 &lt;class 'bool'&gt;
 </code></pre></div></div>
 
@@ -527,7 +538,7 @@ is said to be “falsy.” (You may also see “falsy” spelled “falsey.”)<
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s">"I am delimited by double quotes"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'str'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'str'&gt;
 &lt;class 'str'&gt;
 </code></pre></div></div>
 
@@ -536,13 +547,13 @@ is said to be “falsy.” (You may also see “falsy” spelled “falsey.”)<
 <p>Comments in Python are part of the code that will be ignored while running(executing) the code. The comments can be useful when giving some explanation to code or when we want to ignore codes without deleting them.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"This will print"</span><span class="p">)</span>
-<span class="c">#comment start with # character. all the text after # will be ignored</span>
-<span class="c">#this will be not print</span>
-<span class="c">#print("hello word")</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"This will also print"</span><span class="p">)</span>
+<span class="c1">#comment start with # character. all the text after # will be ignored
+#this will be not print
+#print("hello word")
+</span><span class="k">print</span><span class="p">(</span><span class="s">"This will also print"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This will print
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This will print
 This will also print
 </code></pre></div></div>
 
@@ -554,7 +565,7 @@ This will also print
 <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>semasuka
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>semasuka
 </code></pre></div></div>
 
 <p>Here “name” is the variable name; the value is “semasuka”, we can print the value stored in the variable by calling
@@ -569,16 +580,16 @@ the name in this case and the value of the name will be printed.</p>
   <li>Python is case-sensitive, for example naming a variable greeting and another one named Greeting, these variables will be considered as two different variables</li>
 </ol>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#The following code will not run, you should avoid declare variable like this</span>
-<span class="n">number</span><span class="o">%</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#The following code will not run, you should avoid declare variable like this
+</span><span class="n">number</span><span class="o">%</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="mi">1</span><span class="n">_number</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">this_name_is_too_long_to_be_used</span> <span class="o">=</span> <span class="s">"Not to be used"</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">34</span>
 <span class="n">weshouldputspacebetween</span> <span class="o">=</span> <span class="s">"Not to be used"</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#the pythonic way to name a variable</span>
-<span class="n">number_8</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#the pythonic way to name a variable
+</span><span class="n">number_8</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">my_name</span> <span class="o">=</span> <span class="s">"semasuka"</span>
 <span class="n">the_total</span> <span class="o">=</span> <span class="mi">34</span>
 <span class="n">first_second_name</span> <span class="o">=</span> <span class="s">"Semasuka Stern"</span>
@@ -588,8 +599,8 @@ the name in this case and the value of the name will be printed.</p>
 <span class="n">Greeting</span> <span class="o">=</span> <span class="s">"hi!"</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#now we can print the varibles</span>
-<span class="k">print</span><span class="p">(</span><span class="n">number_8</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#now we can print the varibles
+</span><span class="k">print</span><span class="p">(</span><span class="n">number_8</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">the_total</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">first_second_name</span><span class="p">)</span>
@@ -597,7 +608,7 @@ the name in this case and the value of the name will be printed.</p>
 <span class="k">print</span><span class="p">(</span><span class="n">Greeting</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
 semasuka
 34
 Semasuka Stern
@@ -609,14 +620,14 @@ hi!
 <span class="k">print</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Porsche
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Porsche
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="o">=</span> <span class="s">"Benz"</span>
 <span class="k">print</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Benz
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Benz
 </code></pre></div></div>
 
 <p>Also, another thing to mention is the fact that car has been assigned to a new value (Benz), so the old value (Porsche) will no longer be considered.</p>
@@ -628,7 +639,7 @@ hi!
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="o">+</span><span class="s">"world"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helloworld
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helloworld
 </code></pre></div></div>
 
 <p>we can add spacing for a better readability</p>
@@ -636,7 +647,7 @@ hi!
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="s">"world"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">greetings</span> <span class="o">=</span> <span class="s">"hello"</span>
@@ -646,7 +657,7 @@ hi!
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello stern
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello stern
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">city</span> <span class="o">=</span> <span class="s">"Bujumbura"</span>
@@ -656,7 +667,7 @@ hi!
 <span class="k">print</span><span class="p">(</span><span class="s">"country + city: "</span><span class="o">+</span><span class="n">country_city</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The capital city of Burundi is Bujumbura
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The capital city of Burundi is Bujumbura
 country + city: Burundi Bujumbura
 </code></pre></div></div>
 
@@ -668,14 +679,14 @@ country + city: Burundi Bujumbura
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_name</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
 &lt;class 'str'&gt;
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"My name is "</span><span class="o">+</span><span class="n">my_name</span><span class="o">+</span><span class="s">" and I am "</span><span class="o">+</span><span class="n">age</span><span class="o">+</span><span class="s">" years old"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -695,7 +706,7 @@ TypeError: can only concatenate str (not "int") to str
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"My name is "</span><span class="o">+</span><span class="n">my_name</span><span class="o">+</span><span class="s">" and I am "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">+</span><span class="s">" years old"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is semasuka, and I am 55 years old
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is semasuka, and I am 55 years old
 </code></pre></div></div>
 
 <p>So what I did there was to change(cast) the age data type from integer to a string data type using the str( ) function.</p>
@@ -706,7 +717,7 @@ TypeError: can only concatenate str (not "int") to str
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">some_age</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
 &lt;class 'str'&gt;
 </code></pre></div></div>
 
@@ -722,25 +733,25 @@ TypeError: can only concatenate str (not "int") to str
 <span class="n">greetings</span> <span class="o">=</span> <span class="s">"hello"</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your nameyve
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your nameyve
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello yve
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello yve
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter you your weight in kilogram "</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter you your weight in kilogram 74
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter you your weight in kilogram 74
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Your weight is "</span><span class="o">+</span><span class="n">weight</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your weight is 74
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your weight is 74
 </code></pre></div></div>
 
 <p>N.B: Remember all the input are stored as string even though they are numerical input</p>
@@ -748,7 +759,7 @@ TypeError: can only concatenate str (not "int") to str
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'str'&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'str'&gt;
 </code></pre></div></div>
 
 <h3>operator</h3>
@@ -768,7 +779,7 @@ TypeError: can only concatenate str (not "int") to str
 <span class="k">print</span><span class="p">(</span><span class="s">"modulus of 12 and 3 is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="o">%</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Addition of 12 and 3 is 15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Addition of 12 and 3 is 15
 Subtraction of 12 and 3 is 9
 Multiplication of 12 and 3 is 36
 division of 12 and 3 is 4.0
@@ -786,7 +797,7 @@ modulus of 12 and 3 is 0
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">15</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-37.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-37.0
 </code></pre></div></div>
 
 <p>Here we might think that the answer would 6 plus 15 which is 21 then divide it by 3 then minus 4 and multiply by 12 to give a result of 36 but the answer is -37. Why? Well in Python, the operators with the highest precedence will be calculated first (in this case division and multiplication will be evaluated first) and then the operators with the lowest precedence. So 15 divided by 3 will be executed first at the same time as 4 times 12, the result from 15 divided by 3 will be then added to 6 which is 11 then substrate 48(4 times 12) to give the final result of -37.</p>
@@ -796,10 +807,10 @@ modulus of 12 and 3 is 0
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">((((</span><span class="mi">6</span><span class="o">+</span><span class="mi">15</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>36.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>36.0
 </code></pre></div></div>
 
-<p>To learn more about operator precedence in Python, visit <a href="https://www.tutorialspoint.com/python/operators_precedence_example.htm">this</a> link.</p>
+<p>To learn more about operator precedence in Python, visit <a href="https://www.tutorialspoint.com/python/operators_precedence_example.htm" target="_blank">this</a> link.</p>
 
 <h4>assignment operator</h4>
 
@@ -821,7 +832,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>49.99
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>49.99
 </code></pre></div></div>
 
 <p>There is a shorthand form of writing this called augmented assignment, which is much more efficient.</p>
@@ -831,7 +842,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>49.99
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>49.99
 </code></pre></div></div>
 
 <p>we can do subtraction</p>
@@ -841,7 +852,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>29.990000000000002
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>29.990000000000002
 </code></pre></div></div>
 
 <p>division</p>
@@ -851,7 +862,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.999
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.999
 </code></pre></div></div>
 
 <p>truncation division</p>
@@ -861,7 +872,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.0
 </code></pre></div></div>
 
 <p>multiplication</p>
@@ -871,7 +882,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>79.98
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>79.98
 </code></pre></div></div>
 
 <p>power of</p>
@@ -881,7 +892,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1599.2001000000002
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1599.2001000000002
 </code></pre></div></div>
 
 <p>modulus</p>
@@ -891,7 +902,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9.990000000000002
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9.990000000000002
 </code></pre></div></div>
 
 <h4>comparison operator</h4>
@@ -915,7 +926,7 @@ modulus of 12 and 3 is 0
 <span class="k">print</span><span class="p">(</span><span class="n">num_2</span> <span class="o">&lt;=</span> <span class="n">num_2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
 True
 False
 True
@@ -927,7 +938,7 @@ True
 <span class="k">print</span><span class="p">(</span><span class="n">num_3</span> <span class="o">!=</span> <span class="n">num_4</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 False
 </code></pre></div></div>
 
@@ -941,15 +952,15 @@ False
   <li>“not” return True if the operand is False (complements the operand)</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#let's use this qualification to define a person</span>
-<span class="n">is_boy</span> <span class="o">=</span> <span class="bp">False</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#let's use this qualification to define a person
+</span><span class="n">is_boy</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">is_girl</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="n">is_teen</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="k">print</span><span class="p">(</span><span class="n">is_boy</span> <span class="ow">and</span> <span class="n">is_girl</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">is_girl</span> <span class="ow">and</span> <span class="n">is_teen</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
 True
 </code></pre></div></div>
 
@@ -958,7 +969,7 @@ True
 <span class="k">print</span><span class="p">(</span><span class="n">is_refugee</span> <span class="ow">or</span> <span class="n">is_unemployed</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_refugee</span> <span class="o">=</span> <span class="bp">True</span>
@@ -966,14 +977,14 @@ True
 <span class="k">print</span><span class="p">(</span><span class="n">is_refugee</span> <span class="ow">or</span> <span class="n">is_unemployed</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">girl</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="k">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">girl</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
 </code></pre></div></div>
 
 <h4>membership operator</h4>
@@ -993,7 +1004,7 @@ True
 <span class="k">print</span><span class="p">(</span><span class="n">string_1</span> <span class="ow">is</span> <span class="n">string_2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 True
 </code></pre></div></div>
 
@@ -1006,7 +1017,7 @@ True
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">the_list_1</span> <span class="ow">in</span> <span class="n">the_list_2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
 </code></pre></div></div>
 
 <p>As we can see, False was returned. This means that Python stores the_list_1 in a different part of memory as the_list_2 even though the values are the same. We can conclude that Python stores some data type differently.</p>
@@ -1030,31 +1041,31 @@ True
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">word_1_to_search</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">word_2_to_search</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">word_3_to_search</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">word_4_to_search</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">word_4_to_search</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 </code></pre></div></div>
 
 <p>N.B: Remember that Python is case sensitive</p>
@@ -1069,7 +1080,7 @@ True
 <span class="k">print</span><span class="p">(</span><span class="n">uppercase_word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">the_sentence</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
 False
 True
 </code></pre></div></div>
@@ -1080,10 +1091,10 @@ True
 
 <p>String literals can be enclosed(delimited) by single quote(‘), double quotes(“) or triple quotes(“””). if we use a single quote to delimit a string character and use at the same time another single quote in the string literal, this will result in an error.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'let'</span><span class="n">s</span> <span class="n">learn</span> <span class="n">Python</span><span class="s">')</span><span class="err">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'let'</span><span class="n">s</span> <span class="n">learn</span> <span class="n">Python</span><span class="s">')
 </span></code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  File "&lt;ipython-input-51-05f322a64dab&gt;", line 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  File "&lt;ipython-input-51-05f322a64dab&gt;", line 1
     print('let's learn Python')
                ^
 SyntaxError: invalid syntax
@@ -1094,14 +1105,14 @@ SyntaxError: invalid syntax
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'let</span><span class="se">\'</span><span class="s">s learn Python'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let's learn Python
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let's learn Python
 </code></pre></div></div>
 
 <p>The backslash ( \ ) character is used to escape characters that otherwise have a special meaning, such as newline, backslash itself, the quote character, or tab.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'this is kevin</span><span class="se">\'</span><span class="s">s house'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span> <span class="c">#these stars are used to separate the output</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Your coach said:</span><span class="se">\"</span><span class="s">You need to exercise more often</span><span class="se">\"</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span> <span class="c1">#these stars are used to separate the output
+</span><span class="k">print</span><span class="p">(</span><span class="s">"Your coach said:</span><span class="se">\"</span><span class="s">You need to exercise more often</span><span class="se">\"</span><span class="s">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"You will send this letter via DHL</span><span class="se">\\</span><span class="s">FEDEX"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"****"</span><span class="p">)</span>
@@ -1121,7 +1132,7 @@ several
 lines"""</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is kevin's house
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is kevin's house
 ****
 Your coach said:"You need to exercise more often"
 ****
@@ -1144,21 +1155,21 @@ lines
 
 <p>We can tell python to handle the string as a raw string literal by adding an r or R at the beginning of the string. Python will ignore all the escape sequence found within the string.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">r"this is kevin\ house"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">r'this is kevin\'s house'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">r"""this should have been\t a tab space"""</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">r"You will send this letter via DHL\\FEDEX"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">R"This text will not be splited\ninto\ndifferent lines"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s">"this is kevin\ house"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s">'this is kevin\'s house'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s">"""this should have been\t a tab space"""</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s">"You will send this letter via DHL\\FEDEX"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">R</span><span class="s">"This text will not be splited\ninto\ndifferent lines"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is kevin\ house
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this is kevin\ house
 this is kevin\'s house
 this should have been\t a tab space
 You will send this letter via DHL\\FEDEX
 This text will not be splited\ninto\ndifferent lines
 </code></pre></div></div>
 
-<p>You can check out more about escape characters <a href="https://docs.python.org/2.0/ref/strings.html">here</a>.</p>
+<p>You can check out more about escape characters <a href="https://docs.python.org/2.0/ref/strings.html" target="_blank">here</a>.</p>
 
 <h4>slicing a string</h4>
 
@@ -1172,7 +1183,7 @@ This text will not be splited\ninto\ndifferent lines
 <span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r
 l
 o
 </code></pre></div></div>
@@ -1182,7 +1193,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r
 </code></pre></div></div>
 
 <p>We can get a range of a world starting from the first character to a specific index using this format: variable[index_start: index_stop]. The character at the index_stop is not included</p>
@@ -1190,7 +1201,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labra
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labra
 </code></pre></div></div>
 
 <p>The character at index 5, which is character “d” is not printed.</p>
@@ -1200,7 +1211,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labra
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labra
 </code></pre></div></div>
 
 <p>we can also start from a specific index to the last character</p>
@@ -1208,7 +1219,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rador
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rador
 </code></pre></div></div>
 
 <p>we can also print using negative indexes</p>
@@ -1216,7 +1227,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ado
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ado
 </code></pre></div></div>
 
 <p>In the example above counting from the last character, we will print the character number 4 to number 1 which is the last character</p>
@@ -1226,7 +1237,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lbao
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lbao
 </code></pre></div></div>
 
 <p>In this example,every second character(starting from 0) is printed.</p>
@@ -1235,7 +1246,7 @@ o
 <span class="k">print</span><span class="p">(</span><span class="n">spaced_number</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123456789
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123456789
 </code></pre></div></div>
 
 <p>For this example, every third character is printed; the rest is ignored.</p>
@@ -1245,7 +1256,7 @@ o
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">spaced_number</span><span class="p">[::</span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123456789
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123456789
 </code></pre></div></div>
 
 <h4>duplicate string</h4>
@@ -1256,7 +1267,7 @@ o
 <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YvanYvanYvanYvanYvan
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YvanYvanYvanYvanYvan
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="s">"Yvan"</span>
@@ -1264,7 +1275,7 @@ o
 <span class="k">print</span><span class="p">(</span><span class="n">dupli_name</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YvanYvanYvanYvanYvan
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YvanYvanYvanYvanYvan
 </code></pre></div></div>
 
 <h4>string formating using format( )</h4>
@@ -1275,7 +1286,7 @@ o
 <span class="k">print</span><span class="p">(</span><span class="s">"I am "</span><span class="o">+</span><span class="n">age</span><span class="o">+</span><span class="s">" years old"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -1300,11 +1311,11 @@ TypeError: can only concatenate str (not "int") to str
 </ol>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">84</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"I am {0} years old"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"I live in {0}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">"Africa"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"I am {0} years old"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"I live in {0}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">"Africa"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 84 years old
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 84 years old
 I live in Africa
 </code></pre></div></div>
 
@@ -1312,38 +1323,38 @@ I live in Africa
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">husband_car</span> <span class="o">=</span> <span class="s">"benz"</span>
 <span class="n">wife_car</span> <span class="o">=</span> <span class="s">"porshe"</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"the husband drives a {0} and the wife drives a {1}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">husband_car</span><span class="p">,</span><span class="n">wife_car</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"the husband drives a {0} and the wife drives a {1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">husband_car</span><span class="p">,</span><span class="n">wife_car</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the husband drives a benz and the wife drives a porshe
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the husband drives a benz and the wife drives a porshe
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">city</span> <span class="o">=</span> <span class="s">"Kinshasa"</span>
 <span class="n">country</span> <span class="o">=</span> <span class="s">"DRC"</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"I am {0} years old and I live in the capital of {1}, {2}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">city</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"I am {0} years old and I live in the capital of {1}, {2}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">city</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 89 years old and I live in the capital of DRC, Kinshasa
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 89 years old and I live in the capital of DRC, Kinshasa
 </code></pre></div></div>
 
 <p>We can omit the indexes in the { } like this.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">city</span> <span class="o">=</span> <span class="s">"Kinshasa"</span>
 <span class="n">country</span> <span class="o">=</span> <span class="s">"DRC"</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"I am {} years old and I live in the capital of {}, {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">city</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"I am {} years old and I live in the capital of {}, {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">,</span><span class="n">city</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 89 years old and I live in the capital of DRC, Kinshasa
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am 89 years old and I live in the capital of DRC, Kinshasa
 </code></pre></div></div>
 
 <p>Python will automatically assign the placeholders to the matching variable(s)/value(s). always remember that the number of variables and values must be higher than the number of placeholders, else this will not run</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">city</span> <span class="o">=</span> <span class="s">"Kinshasa"</span>
 <span class="n">country</span> <span class="o">=</span> <span class="s">"DRC"</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"I am {} years old and I live in the capital of {}, {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"I am {} years old and I live in the capital of {}, {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">"89"</span><span class="p">,</span><span class="n">country</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
 
 IndexError                                Traceback (most recent call last)
 
@@ -1358,10 +1369,10 @@ IndexError: tuple index out of range
 
 <p>We can also have additional information besides the index</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Hello {}!, your account balance is ${:9.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span><span class="mf">230.8926</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Hello {}!, your account balance is ${:9.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span><span class="mf">230.8926</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello John!, your account balance is $  230.893
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello John!, your account balance is $  230.893
 </code></pre></div></div>
 
 <p>in the second placeholder, we can see {:9.3f}.</p>
@@ -1381,100 +1392,100 @@ IndexError: tuple index out of range
 
 <p>The keyword arguments work almost the same as positional parameters; the difference is that instead of using the index position in the placeholder, we use the variable name.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"My first name is {first_name} and my last name is {last_name} and I work as a {profession}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s">"semasuka"</span><span class="p">,</span><span class="n">last_name</span><span class="o">=</span><span class="s">"stern"</span><span class="p">,</span><span class="n">profession</span><span class="o">=</span><span class="s">"software engineer"</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"My first name is {first_name} and my last name is {last_name} and I work as a {profession}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s">"semasuka"</span><span class="p">,</span><span class="n">last_name</span><span class="o">=</span><span class="s">"stern"</span><span class="p">,</span><span class="n">profession</span><span class="o">=</span><span class="s">"software engineer"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My first name is semasuka and my last name is stern and I work as a Software engineer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My first name is semasuka and my last name is stern and I work as a Software engineer
 </code></pre></div></div>
 
 <p>The rest is the same as the positional parameters.</p>
 
 <h5>more example</h5>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"There are {0} days, in the month of {1}, {2}, {3}, {4}, {5}, {6} and {7}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span><span class="s">"July"</span><span class="p">,</span><span class="s">"August"</span><span class="p">,</span><span class="s">"October"</span><span class="p">,</span><span class="s">"December"</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"There are {0} days, in the month of {1}, {2}, {3}, {4}, {5}, {6} and {7}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span><span class="s">"July"</span><span class="p">,</span><span class="s">"August"</span><span class="p">,</span><span class="s">"October"</span><span class="p">,</span><span class="s">"December"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are 31 days, in the month of January, March, May, July, August, October and December
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are 31 days, in the month of January, March, May, July, August, October and December
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"There are {} days, in the month of {}, {}, {}, {}, {}, {} and {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"There are {} days, in the month of {}, {}, {}, {}, {}, {} and {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span>
                                                                                       <span class="s">"July"</span><span class="p">,</span><span class="s">"August"</span><span class="p">,</span><span class="s">"October"</span><span class="p">,</span><span class="s">"December"</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are 31 days, in the month of January, March, May, July, August, October and December
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are 31 days, in the month of January, March, May, July, August, October and December
 </code></pre></div></div>
 
 <p>Depending on which order we want the value to be displayed, we can interchange the index in the placeholder.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"During the month of {2}, {1}, {3}, {5}, {6}, {7} and {4}. there is {0} days, "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span><span class="s">"July"</span><span class="p">,</span><span class="s">"August"</span><span class="p">,</span><span class="s">"October"</span><span class="p">,</span><span class="s">"December"</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"During the month of {2}, {1}, {3}, {5}, {6}, {7} and {4}. there is {0} days, "</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span><span class="s">"January"</span><span class="p">,</span><span class="s">"March"</span><span class="p">,</span><span class="s">"May"</span><span class="p">,</span><span class="s">"July"</span><span class="p">,</span><span class="s">"August"</span><span class="p">,</span><span class="s">"October"</span><span class="p">,</span><span class="s">"December"</span><span class="p">))</span>
 
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>During the month of March, January, May, August, October, December and July. there is 31 days, 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>During the month of March, January, May, August, October, December and July. there is 31 days, 
 </code></pre></div></div>
 
 <p>integer arguments</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The number is: {:d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">443</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The number is: {:d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">443</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 443
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 443
 </code></pre></div></div>
 
 <p>float arguments</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The float number is: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">123.4567898</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The float number is: {:f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">123.4567898</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The float number is: 123.456790
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The float number is: 123.456790
 </code></pre></div></div>
 
 <p>octal, binary and hexadecimal format</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"bin form of 30: {0:b}, oct form of 30: {0:o}, hex form of 30: {0:x}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"bin form of 30: {0:b}, oct form of 30: {0:o}, hex form of 30: {0:x}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin form of 30: 11110, oct form of 30: 36, hex form of 30: 1e
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin form of 30: 11110, oct form of 30: 36, hex form of 30: 1e
 </code></pre></div></div>
 
 <p>integer numbers with a minimum width</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:5d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   12
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   12
 </code></pre></div></div>
 
 <p>the width will be ignored if used with numbers longer than the width</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:2d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1234</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:2d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">1234</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1234
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1234
 </code></pre></div></div>
 
 <p>padding for float numbers</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:8.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:8.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  12.235
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  12.235
 </code></pre></div></div>
 
 <p>integer numbers with minimum width filled with zeros</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:05d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:05d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>00012
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>00012
 </code></pre></div></div>
 
 <p>padding for float numbers filled with zeros</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:08.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:08.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0012.235
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0012.235
 </code></pre></div></div>
 
 <p>Explanations of the examples above,</p>
@@ -1491,26 +1502,26 @@ IndexError: tuple index out of range
 
 <p>show the + sign</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:+f} {:+f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:+f} {:+f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+12.230000 -12.230000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+12.230000 -12.230000
 </code></pre></div></div>
 
 <p>show the - sign only</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:-f} {:-f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:-f} {:-f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12.230000 -12.230000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12.230000 -12.230000
 </code></pre></div></div>
 
 <p>show space for + sign</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{: f} {: f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{: f} {: f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.23</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 12.230000 -12.230000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 12.230000 -12.230000
 </code></pre></div></div>
 
 <h5>The operators “&lt;”, “^”, “&gt;” and “=”</h5>
@@ -1519,34 +1530,34 @@ IndexError: tuple index out of range
 
 <p>integer numbers with right alignment</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:5d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   12
-</code></pre></div></div>
-
-<p>float numbers with center alignment</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:^10.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
-</code></pre></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  12.235  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   12
 </code></pre></div></div>
 
 <p>float numbers with center alignment</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:=8.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mf">12.2346</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:^10.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">12.2346</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 12.235
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  12.235  
+</code></pre></div></div>
+
+<p>float numbers with center alignment</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:=8.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="o">-</span><span class="mf">12.2346</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 12.235
 </code></pre></div></div>
 
 <p>integer left alignment filled with zeros</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:&lt;05d}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"{:&lt;05d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12000
 </code></pre></div></div>
 
 <p>For the last example, Left alignment filled with zeros for integer numbers can cause problems as the 3rd example which returns 12000, rather than 12.</p>
@@ -1580,7 +1591,7 @@ IndexError: tuple index out of range
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter your weight "</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your weight 77
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your weight 77
 </code></pre></div></div>
 
 <p>Then the height</p>
@@ -1588,7 +1599,7 @@ IndexError: tuple index out of range
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">height_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter your height "</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your height 1.88
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your height 1.88
 </code></pre></div></div>
 
 <p>Since we know that any input is a string data type, we need to cast it to use it as numerical data type and do arithmetic operation on it.</p>
@@ -1602,19 +1613,24 @@ IndexError: tuple index out of range
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BMI</span> <span class="o">=</span> <span class="n">weight</span><span class="o">/</span><span class="p">(</span><span class="n">height</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The BMI of a person with {} kg and a height of {} m is {:6.3f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">BMI</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The BMI of a person with {} kg and a height of {} m is {:6.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">BMI</span><span class="p">))</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The BMI of a person with 77.0 kg and 1.88 m is 21.786
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The BMI of a person with 77.0 kg and 1.88 m is 21.786
 </code></pre></div></div>
 
-<p>Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.</p>
+<p>Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/introduction%20to%20python%20data%20types%2C%20operators%20and%20variables.ipynb" target="_blank">here.</a></p>
+
+<p>Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!</p>
 
         <div class="share-page">
     Share this post on
-    <a href="https://twitter.com/intent/tweet?text=Data types, variables and operators in Python&url=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html&title=Data%20types,%20variables%20and%20operators%20in%20Python" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Data types, variables and operators in Python&url=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html&title=Data types, variables and operators in Python&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2019/01/16/variables-data-type-operators-python.html&title=Data types, variables and operators in Python" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
     <a href="mailto:?subject=Data types, variables and operators in Python&amp;body=Check out this post http://localhost:4000/blog/2019/01/16/variables-data-type-operators-python.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
 </div>
 
@@ -1716,7 +1732,7 @@ const hitTemplate = function(hit) {
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '.search-searchbar',
-    
+    poweredBy: true,
     placeholder: 'Enter your search term...'
   })
 );

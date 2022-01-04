@@ -9,21 +9,24 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>MIB | Learn Machine Learning from scratch</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>MIB | Learn Machine Learning with projects</title>
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="MIB" />
-<meta name="author" content="Semasuka Stern" />
+<meta name="author" content="Stern Semasuka" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Learn Machine Learning from scratch" />
-<meta property="og:description" content="Learn Machine Learning from scratch" />
+<meta name="description" content="Learn Machine Learning with projects" />
+<meta property="og:description" content="Learn Machine Learning with projects" />
 <link rel="canonical" href="http://localhost:4000/blog/" />
 <meta property="og:url" content="http://localhost:4000/blog/" />
 <meta property="og:site_name" content="MIB" />
 <meta property="og:image" content="http://localhost:4000/blog/assets/post_images/intro-image.jpg" />
 <link rel="next" href="http://localhost:4000/blog/page2/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/intro-image.jpg" />
+<meta property="twitter:title" content="MIB" />
 <script type="application/ld+json">
-{"image":"http://localhost:4000/blog/assets/post_images/intro-image.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/","author":{"@type":"Person","name":"Semasuka Stern"},"name":"MIB","description":"Learn Machine Learning from scratch","headline":"MIB","@type":"WebSite","@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/intro-image.jpg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/","@type":"WebSite","description":"Learn Machine Learning with projects","headline":"MIB","name":"MIB","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -44,7 +47,15 @@
     <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
   
 </head>
-
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
   <body class="layout--home ">
 
@@ -267,7 +278,7 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
-      <a href="/blog/2019/07/21/numpy-crash-course.html" rel="bookmark">NumPy Crash Course
+      <a href="/blog/2021/04/04/demystify-machine-learning.html" rel="bookmark">Demystify Machine Learning
 </a>
     </h3>
     
@@ -275,22 +286,22 @@
   <footer class="entry-meta">
     <ul>
       
-        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, numpy</li>
+        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, machine learning, tutorial, linear regression</li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2019-07-21T00:00:00-06:00">July 21, 2019</time></li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2021-04-04T00:00:00-06:00">April 4, 2021</time></li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>23 min read</li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>27 min read</li>
       
     </ul>
   </footer>
   <div class="entry-excerpt">
     
-      <p>One of the most used scientific computing library for python is without a doubt NumPy, Numpy is very fast at computing arrays since it is mostly written in C programming. NumPy adds support for large, multi-dimensional arrays and matrices, along with an extensive collection of high-level mathematical functions (for linear algebra) to operate on these arrays.</p>
+      <p>Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.</p>
 
 
-      <p><a href="/blog/2019/07/21/numpy-crash-course.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
+      <p><a href="/blog/2021/04/04/demystify-machine-learning.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
     
   </div>
 </article>
@@ -301,7 +312,7 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
-      <a href="/blog/2019/03/26/introduction-to-eda.html" rel="bookmark">A step-by-step introduction to exploratory data analysis
+      <a href="/blog/2021/01/25/pandas-exercise-part-3.html" rel="bookmark">Pandas Exercises Part 3
 </a>
     </h3>
     
@@ -309,22 +320,22 @@
   <footer class="entry-meta">
     <ul>
       
-        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, data analysis</li>
+        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2019-03-26T00:00:00-06:00">March 26, 2019</time></li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2021-01-25T00:00:00-07:00">January 25, 2021</time></li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>40 min read</li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>32 min read</li>
       
     </ul>
   </footer>
   <div class="entry-excerpt">
     
-      <p>There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.</p>
+      <p>Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don’t be shy! Read its documentation throughout if you get stuck <a href="https://pandas.pydata.org/pandas-docs/stable/index.html" target="_blank">here</a>.</p>
 
 
-      <p><a href="/blog/2019/03/26/introduction-to-eda.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
+      <p><a href="/blog/2021/01/25/pandas-exercise-part-3.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
     
   </div>
 </article>
@@ -335,7 +346,7 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
-      <a href="/blog/2019/02/16/iterators-and-range-in-python.html" rel="bookmark">Iterators and range in Python
+      <a href="/blog/2020/10/19/pandas-exercise-part-2.html" rel="bookmark">Pandas Exercises Part 2
 </a>
     </h3>
     
@@ -343,22 +354,22 @@
   <footer class="entry-meta">
     <ul>
       
-        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</li>
+        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2019-02-16T00:00:00-07:00">February 16, 2019</time></li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2020-10-19T00:00:00-06:00">October 19, 2020</time></li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>11 min read</li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>30 min read</li>
       
     </ul>
   </footer>
   <div class="entry-excerpt">
     
-      <p>In this post, we will mainly discuss iterator and range function. We have been using iterator and range function; however, this time, we’ll go in-depth. Let’s first talk about iterator and iterable object in Python.</p>
+      <p>Welcome back, guys! We will continue with part 2 in this series of Pandas exercise. I am very excited about this post because we will introducing DataFrame, the most used Pandas data structure. I hope you guys will enjoy this post.</p>
 
 
-      <p><a href="/blog/2019/02/16/iterators-and-range-in-python.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
+      <p><a href="/blog/2020/10/19/pandas-exercise-part-2.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
     
   </div>
 </article>
@@ -369,7 +380,7 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
-      <a href="/blog/2019/02/10/list-in-python.html" rel="bookmark">List in Python
+      <a href="/blog/2020/09/24/pandas-exercises-part-1.html" rel="bookmark">Pandas Exercises Part 1
 </a>
     </h3>
     
@@ -377,22 +388,22 @@
   <footer class="entry-meta">
     <ul>
       
-        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</li>
+        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2019-02-10T00:00:00-07:00">February 10, 2019</time></li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2020-09-24T00:00:00-06:00">September 24, 2020</time></li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>13 min read</li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>20 min read</li>
       
     </ul>
   </footer>
   <div class="entry-excerpt">
     
-      <p>So far, we have seen one sequence data type, which is the string data type. Python has 6 additional built-in sequence data type. In this and the upcoming posts, we will be discussing 3 of them which are the lists, tuple and range and see their functions. In this post, we will focus on the list only</p>
+      <p>Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise.</p>
 
 
-      <p><a href="/blog/2019/02/10/list-in-python.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
+      <p><a href="/blog/2020/09/24/pandas-exercises-part-1.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
     
   </div>
 </article>
@@ -403,7 +414,7 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
-      <a href="/blog/2019/02/03/control-flow-part-2.html" rel="bookmark">Control flow part 2 - loop statement
+      <a href="/blog/2020/09/19/numpy-exercises-part-3.html" rel="bookmark">NumPy Exercises Part 3
 </a>
     </h3>
     
@@ -411,22 +422,22 @@
   <footer class="entry-meta">
     <ul>
       
-        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, programming</li>
+        <li><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, numpy</li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2019-02-03T00:00:00-07:00">February 3, 2019</time></li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time class="entry-time" datetime="2020-09-19T00:00:00-06:00">September 19, 2020</time></li>
       
       
-        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>31 min read</li>
+        <li><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>39 min read</li>
       
     </ul>
   </footer>
   <div class="entry-excerpt">
     
-      <p>In this second part of the control flow series, we will discuss the for and while loop statement, which is one of the most important concepts in programming. This allows repetition of a particular block of code without rewriting the code multiple times; this is the reasons why computer are so efficient. They can repeat an operation so many times, very quickly by removing the need for a human to code the same repetitive task.</p>
+      <p>Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects.</p>
 
 
-      <p><a href="/blog/2019/02/03/control-flow-part-2.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
+      <p><a href="/blog/2020/09/19/numpy-exercises-part-3.html" class="more-link">Read More <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></p>
     
   </div>
 </article>
@@ -436,7 +447,7 @@
 <!-- Pagination links -->
 <nav class="pager">
   <ul>
-    <!-- Page: 1 of 3 -->
+    <!-- Page: 1 of 4 -->
     
     
       <li><a href="/blog/page2/" class="next">Older <span class="icon icon--arrow-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50.4 -114.8 16 16"><path d="M63.1-107.7l-6.7-6.7c-.2-.3-.6-.4-.9-.4-.4 0-.7.1-.9.4l-.8.8c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l5 5-5 5c-.3.3-.4.6-.4.9 0 .4.1.7.4.9l.8.8c.3.3.6.4.9.4.4 0 .7-.1.9-.4l6.7-6.7c.3-.3.4-.6.4-.9 0-.4-.2-.7-.4-.9z"/></svg></span></a></li>
@@ -510,7 +521,7 @@ const hitTemplate = function(hit) {
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '.search-searchbar',
-    
+    poweredBy: true,
     placeholder: 'Enter your search term...'
   })
 );

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>NumPy Exercises Part 2 | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="NumPy Exercises Part 2" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="For this second post of NumPy exercises series, we will be doing intermediate level exercises in NumPy and will go through the solution together as we did in the first part. Try to solve the exercises on your own then compare your answer with mine. Let’s get started." />
+<meta property="og:description" content="For this second post of NumPy exercises series, we will be doing intermediate level exercises in NumPy and will go through the solution together as we did in the first part. Try to solve the exercises on your own then compare your answer with mine. Let’s get started." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/numpy.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-04T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/numpy.png" />
+<meta property="twitter:title" content="NumPy Exercises Part 2" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/numpy.png","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html","@type":"BlogPosting","description":"For this second post of NumPy exercises series, we will be doing intermediate level exercises in NumPy and will go through the solution together as we did in the first part. Try to solve the exercises on your own then compare your answer with mine. Let’s get started.","headline":"NumPy Exercises Part 2","dateModified":"2019-09-04T00:00:00-06:00","datePublished":"2019-09-04T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post numpy-exercises-part-2">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/numpy.png" alt="NumPy Exercises Part 2">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">NumPy Exercises Part 2
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, numpy</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-09-04T00:00:00-06:00">Wed September 4, 2019</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>20 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>For this second post of NumPy exercises series, we will be doing intermediate level exercises in NumPy and will go through the solution together as we did in the first part. Try to solve the exercises on your own then compare your answer with mine. Let’s get started.<!-- more --></p>
+
+<p>We first import the NumPy.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h3>Ex 21: Create a two-dimensional array containing random floats between 5 and 10</h3>
+
+<p>Q: Let’s create a two-dimensional array with a shape of 5x3 that contain random decimal between 5 and 10.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Of course the numbers in the array will not be the same as mine, but your solution should have a similar format.
+# [[9.60743436 9.93159453 5.13512998]
+#  [9.12587012 9.52496391 5.38363015]
+#  [6.78095565 9.78322155 8.06633546]
+#  [6.52216894 9.34490397 7.42139115]
+#  [7.22697926 8.63126859 7.72817642]]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">resh_array</span> <span class="o">=</span> <span class="n">my_array</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">resh_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[9.60743436 9.93159453 5.13512998]
+ [9.12587012 9.52496391 5.38363015]
+ [6.78095565 9.78322155 8.06633546]
+ [6.52216894 9.34490397 7.42139115]
+ [7.22697926 8.63126859 7.72817642]]
+</code></pre></div></div>
+
+<p>We use the uniform method on the random NumPy method and pass the lowest number, then the highest and finally the size.</p>
+
+<p>Then use the reshape method to change it from a one-dimensional array to a two-dimensional array.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[9.60743436 9.93159453 5.13512998 9.12587012 9.52496391 5.38363015
+ 6.78095565 9.78322155 8.06633546 6.52216894 9.34490397 7.42139115
+ 7.22697926 8.63126859 7.72817642]
+</code></pre></div></div>
+
+<p>We can achieve the same result by randomly generating integers using the randint method then concatenate (using addition) with randomly generated decimal parts to finally get a number (formed from the random integer and decimal) which is placed in a variable.</p>
+
+<p>Note: The shape of the two arrays concatenated must be the same.</p>
+
+<h3>Ex 22: Print only one decimal place in an array</h3>
+
+<p>Q: Print the numbers in the array with only one decimal places.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.42306537 0.2529142  0.57457565]
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Of course the numbers in the array will not be the same as mine, but your solution should have a similar format.
+#[0.4 0.3 0.6]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array_decimal_place</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">around</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span><span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array_decimal_place</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.4 0.3 0.6]
+</code></pre></div></div>
+
+<p>We use the around method, pass as arguments the array itself and the decimal place. In our case, it is 1.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.4 0.3 0.6]
+</code></pre></div></div>
+
+<p>We can also set to 1 the precision argument in the set_printoptions method to the same results.</p>
+
+<p>Note: changing any argument in the set_printoption method affect all the notebook, which means that in our case, all the decimals in all the remaining cells will be printed with one decimal place.  It is crucial to keep this in mind.</p>
+
+<h3>Ex 23: Remove the exponential notation in an array</h3>
+
+<p>Q: In this exercise, we want to change the elements written using the exponential scientific notation, to decimal notation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">/</span><span class="mf">1.34e4</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[5.315786434e-05 6.261432178e-05 1.816219472e-05 6.605228344e-05
+ 5.613819546e-05 6.026712672e-05 1.729978859e-05 8.851793521e-06
+ 1.456005418e-05 5.940398704e-05 3.211098305e-05 7.301915937e-05
+ 3.377834308e-05 6.710361776e-05 4.399697976e-05 1.909041117e-06]
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Of course the numbers in the array will not be the same as mine, but your solution should have a similar format.
+# array([0.000053158, 0.000062614, 0.000018162, 0.000066052, 0.000056138,
+#        0.000060267, 0.0000173  , 0.000008852, 0.00001456 , 0.000059404,
+#        0.000032111, 0.000073019, 0.000033778, 0.000067104, 0.000043997,
+#        0.000001909])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">precision</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">my_array</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.000053158, 0.000062614, 0.000018162, 0.000066052, 0.000056138,
+       0.000060267, 0.0000173  , 0.000008852, 0.00001456 , 0.000059404,
+       0.000032111, 0.000073019, 0.000033778, 0.000067104, 0.000043997,
+       0.000001909])
+</code></pre></div></div>
+
+<p>We remove the exponential scientific by setting the suppress argument to True inside the set_printoptions method and set the precision to 9 because the numbers are too small to be printed using the default precision (which is 1) and it will make the whole array to be composed of 0.0.</p>
+
+<h3>Ex 24: Generate the same random array using the random method</h3>
+
+<p>Q: Keep on generating the same random array composed of elements under 30, even on a different system using the random method.</p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.435994902 0.025926232 0.549662478 0.435322393 0.420367802 0.330334821
+ 0.204648634 0.619270966 0.299654674 0.266827275 0.621133833 0.529142094
+ 0.134579945 0.513578121 0.184439866 0.785335148 0.853975293 0.494236837
+ 0.846561485 0.079645477 0.50524609  0.065286504 0.428122328 0.096530916
+ 0.127159972 0.596745309 0.226012001 0.106945684 0.220306207 0.349826285]
+</code></pre></div></div>
+
+<p>We can generate the same array each time by using the seed method. The numbers passed in will determine the array that will be created. In other words, if the number passed in the seed method remain the same, we will keep on generating the exact array.</p>
+
+<h3>Ex 25: Limit the number of elements printed in an array</h3>
+
+<p>Q: Limit the number of items printed in an array to a maximum of 6 elements (The first 3 elements and the last 3).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71
+ 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95
+ 96 97 98 99]
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [ 0  1  2 ... 97 98 99]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 0  1  2 ... 97 98 99]
+</code></pre></div></div>
+
+<p>Setting threshold argument to 6, we telling NumPy only to print the first three and last three elements in an array.</p>
+
+<h3>Ex 26: Print the full array</h3>
+
+<p>Q: This time, we are going to do the opposite of what we did in the previous exercise.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+#  24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+#  48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71
+#  72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95
+#  96 97 98 99]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71
+ 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95
+ 96 97 98 99]
+</code></pre></div></div>
+
+<p>We set back the threshold to the default value, which is 1000. NumPy will print up to 1000 elements in an array before starting hiding the elements in the middle of the array.</p>
+
+<h3>Ex 27: Import the text from a dataset without changing the text</h3>
+
+<p>Q: We are going to import <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data" target="_blank">this</a> dataset and place it in NumPy array then print only the first three rows.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [(5.1, 3.5, 1.4, 0.2, b'Iris-setosa') (4.9, 3. , 1.4, 0.2, b'Iris-setosa')
+#  (4.7, 3.2, 1.3, 0.2, b'Iris-setosa')]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">'names'</span><span class="p">:</span> <span class="p">(</span><span class="s">'sepal length'</span><span class="p">,</span> <span class="s">'sepal width'</span><span class="p">,</span> <span class="s">'petal length'</span><span class="p">,</span> <span class="s">'petal width'</span><span class="p">,</span> <span class="s">'species'</span><span class="p">),</span>
+          <span class="s">'formats'</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="s">'|S15'</span><span class="p">)},</span><span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(5.1, 3.5, 1.4, 0.2, b'Iris-setosa') (4.9, 3. , 1.4, 0.2, b'Iris-setosa')
+ (4.7, 3.2, 1.3, 0.2, b'Iris-setosa')]
+</code></pre></div></div>
+
+<p>So we can store the data in an array using the loadtxt method, the first argument is the path (online URL or path on a local machine) to the dataset, then a dictionary that will hold the name and the data type of each column and finally, we set the delimiter to be a comma since we are importing from a CSV file.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s">"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">'names'</span><span class="p">:</span> <span class="p">(</span><span class="s">'sepal length'</span><span class="p">,</span> <span class="s">'sepal width'</span><span class="p">,</span> <span class="s">'petal length'</span><span class="p">,</span> <span class="s">'petal width'</span><span class="p">,</span> <span class="s">'species'</span><span class="p">),</span>
+          <span class="s">'formats'</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nb">float</span><span class="p">,</span> <span class="s">'|S15'</span><span class="p">)},</span><span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">the_data_2</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(5.1, 3.5, 1.4, 0.2, b'Iris-setosa') (4.9, 3. , 1.4, 0.2, b'Iris-setosa')
+ (4.7, 3.2, 1.3, 0.2, b'Iris-setosa')]
+</code></pre></div></div>
+
+<p>We can achieve the same result by using the genfromtxt method, which does also takes the path (online or local) to the dataset, then the name and data type of each column in a key-value pair format (dictionaries) and finally the delimiter.</p>
+
+<h3>Ex 28: Extract a specific column from the previous dataset</h3>
+
+<p>Q: get the sepal width column from the previous dataset.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#array([b'Iris-setosa', b'Iris-setosa', b'Iris-setosa', b'Iris-setosa',
+#       b'Iris-setosa'], dtype='|S15')
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_1</span><span class="p">[</span><span class="s">'species'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([b'Iris-setosa', b'Iris-setosa', b'Iris-setosa', b'Iris-setosa',
+       b'Iris-setosa'], dtype='|S15')
+</code></pre></div></div>
+
+<p>We are using the indexing on the_data_1 array to get back the specified name of the column then print the first five rows.</p>
+
+<h3>Ex 29: Import specific columns in the dataset as a two-dimensional array</h3>
+
+<p>Q: Import only the columns that contain numbers (as float) in the dataset as a two-dimensional array by omitting the species column. Then print the first five rows.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[5.1, 3.5, 1.4, 0.2],
+#        [4.9, 3. , 1.4, 0.2],
+#        [4.7, 3.2, 1.3, 0.2],
+#        [4.6, 3.1, 1.5, 0.2],
+#        [5. , 3.6, 1.4, 0.2]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s">"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">"float"</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2]])
+</code></pre></div></div>
+
+<p>We can use the genfromtxt or loadtxt method, pass in the path to the dataset, the delimiter, set the data type of all the columns to be float and finally select the desired columns (column 0 to 3) which will exclude the species column. The returned array will be a two-dimensional array.</p>
+
+<h3>Ex 30: Compute the mean, median, standard deviation of a NumPy column</h3>
+
+<p>Q: Find the mean, median, standard deviation of iris’s sepal length (1st column).</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The mean is 5.84, the median is 5.80, the std is 0.8253012917851409
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sepal_lenght_mean</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sepal_lenght_std</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sepal_lenght_median</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">median</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The mean is {:.2f}, the median is {:.2f}, the std is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sepal_lenght_mean</span><span class="p">,</span><span class="n">sepal_lenght_median</span><span class="p">,</span><span class="n">sepal_lenght_std</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The mean is 5.84, the median is 5.80, the std is 0.8253012917851409
+</code></pre></div></div>
+
+<p>We first used indexing to get the specified column and passed it as an argument to the NumPy mean, std and the median method.</p>
+
+<h3>Ex 31: Normalize an array so that all the values range between 0 and 1?</h3>
+
+<p>Q: Create a normalized form of iris’s sepal length on a scale of 0 and 1, where 0 is the lowest number, and 1 the highest number.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0.22222 0.16667 0.11111 0.08333 0.19444 0.30556 0.08333 0.19444 0.02778
+#  0.16667 0.30556 0.13889 0.13889 0.      0.41667 0.38889 0.30556 0.22222
+#  0.38889 0.22222 0.30556 0.22222 0.08333 0.22222 0.13889 0.19444 0.19444
+#  0.25    0.25    0.11111 0.13889 0.30556 0.25    0.33333 0.16667 0.19444
+#  0.33333 0.16667 0.02778 0.22222 0.19444 0.05556 0.02778 0.19444 0.22222
+#  0.13889 0.22222 0.08333 0.27778 0.19444 0.75    0.58333 0.72222 0.33333
+#  0.61111 0.38889 0.55556 0.16667 0.63889 0.25    0.19444 0.44444 0.47222
+#  0.5     0.36111 0.66667 0.36111 0.41667 0.52778 0.36111 0.44444 0.5
+#  0.55556 0.5     0.58333 0.63889 0.69444 0.66667 0.47222 0.38889 0.33333
+#  0.33333 0.41667 0.47222 0.30556 0.47222 0.66667 0.55556 0.36111 0.33333
+#  0.33333 0.5     0.41667 0.19444 0.36111 0.38889 0.38889 0.52778 0.22222
+#  0.38889 0.55556 0.41667 0.77778 0.55556 0.61111 0.91667 0.16667 0.83333
+#  0.66667 0.80556 0.61111 0.58333 0.69444 0.38889 0.41667 0.58333 0.61111
+#  0.94444 0.94444 0.47222 0.72222 0.36111 0.94444 0.55556 0.66667 0.80556
+#  0.52778 0.5     0.58333 0.80556 0.86111 1.      0.58333 0.55556 0.5
+#  0.94444 0.55556 0.58333 0.47222 0.72222 0.66667 0.72222 0.41667 0.69444
+#  0.66667 0.66667 0.55556 0.61111 0.52778 0.44444]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_min</span> <span class="o">=</span> <span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">].</span><span class="nb">min</span><span class="p">()</span>
+<span class="n">the_max</span> <span class="o">=</span> <span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">].</span><span class="nb">max</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">norm_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">]</span> <span class="o">-</span> <span class="n">the_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">the_max</span> <span class="o">-</span> <span class="n">the_min</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">norm_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.22222 0.16667 0.11111 0.08333 0.19444 0.30556 0.08333 0.19444 0.02778
+ 0.16667 0.30556 0.13889 0.13889 0.      0.41667 0.38889 0.30556 0.22222
+ 0.38889 0.22222 0.30556 0.22222 0.08333 0.22222 0.13889 0.19444 0.19444
+ 0.25    0.25    0.11111 0.13889 0.30556 0.25    0.33333 0.16667 0.19444
+ 0.33333 0.16667 0.02778 0.22222 0.19444 0.05556 0.02778 0.19444 0.22222
+ 0.13889 0.22222 0.08333 0.27778 0.19444 0.75    0.58333 0.72222 0.33333
+ 0.61111 0.38889 0.55556 0.16667 0.63889 0.25    0.19444 0.44444 0.47222
+ 0.5     0.36111 0.66667 0.36111 0.41667 0.52778 0.36111 0.44444 0.5
+ 0.55556 0.5     0.58333 0.63889 0.69444 0.66667 0.47222 0.38889 0.33333
+ 0.33333 0.41667 0.47222 0.30556 0.47222 0.66667 0.55556 0.36111 0.33333
+ 0.33333 0.5     0.41667 0.19444 0.36111 0.38889 0.38889 0.52778 0.22222
+ 0.38889 0.55556 0.41667 0.77778 0.55556 0.61111 0.91667 0.16667 0.83333
+ 0.66667 0.80556 0.61111 0.58333 0.69444 0.38889 0.41667 0.58333 0.61111
+ 0.94444 0.94444 0.47222 0.72222 0.36111 0.94444 0.55556 0.66667 0.80556
+ 0.52778 0.5     0.58333 0.80556 0.86111 1.      0.58333 0.55556 0.5
+ 0.94444 0.55556 0.58333 0.47222 0.72222 0.66667 0.72222 0.41667 0.69444
+ 0.66667 0.66667 0.55556 0.61111 0.52778 0.44444]
+</code></pre></div></div>
+
+<p>We first get the lowest and the highest number in the sepal length column.</p>
+
+<p>Then calculate the norm by subtracting each element in the column by the minimum and dividing it by the maximum minus the minimum.</p>
+
+<p>Finally, we set the precision to 5.</p>
+
+<h3>Ex 32: Find the softmax score</h3>
+
+<p>Q: Compute the softmax score of the sepal length column and print only the first five values.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0.002219585 0.001817243 0.001487833 0.001346247 0.002008364]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">softmax_score</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">])</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">softmax_score</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.002219585 0.001817243 0.001487833 0.001346247 0.002008364]
+</code></pre></div></div>
+
+<p>The softmax score is obtained by getting the exponential of each element in the sepal length column then dividing it with the sum of all exponentials of elements in the sepal length column.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">softmax</span>
+
+<span class="n">softmax_score</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">softmax_score</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.002219585 0.001817243 0.001487833 0.001346247 0.002008364]
+</code></pre></div></div>
+
+<p>We can avoid hardcoding the softmax by importing the softmax method from SciPy library.</p>
+
+<h3>Ex 33: Find different percentile scores of a column</h3>
+
+<p>Q: Find the 5th and 95th percentile of iris’s sepal length column.</p>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The 5th percentile of iris's sepal length column 4.6 and the 95th percentile is 7.25
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percentile_5</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">],</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">percentile_95</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">the_data_1</span><span class="p">[</span><span class="s">"sepal length"</span><span class="p">],</span><span class="mi">95</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The 5th percentile of iris's sepal length column {} and the 95th percentile is {:.2f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">percentile_5</span><span class="p">,</span><span class="n">percentile_95</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The 5th percentile of iris's sepal length column 4.6 and the 95th percentile is 7.25
+</code></pre></div></div>
+
+<p>We are using the percentile method from NumPy, pass in the sepal length column then we specify the percentile number as a second argument.</p>
+
+<h3>Ex 34: Insert a nan value at a random position in an array</h3>
+
+<p>Q: Insert np.nan values at 20 random positions in dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">"object"</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use random.seed(100) to choose the number so that you can compare your answer with mine
+# array([[b'5.1', b'3.5', b'1.4', b'0.2', nan],
+#        [b'4.9', b'3.0', b'1.4', b'0.2', b'Iris-setosa'],
+#        [b'4.7', b'3.2', b'1.3', b'0.2', b'Iris-setosa'],
+#        [b'4.6', b'3.1', b'1.5', b'0.2', b'Iris-setosa'],
+#        [b'5.0', b'3.6', b'1.4', b'0.2', b'Iris-setosa'],
+#        [b'5.4', b'3.9', b'1.7', b'0.4', b'Iris-setosa'],
+#        [b'4.6', b'3.4', b'1.4', b'0.3', b'Iris-setosa'],
+#        [b'5.0', b'3.4', b'1.5', b'0.2', b'Iris-setosa'],
+#        [nan, b'2.9', b'1.4', b'0.2', b'Iris-setosa'],
+#        [b'4.9', b'3.1', b'1.5', b'0.1', b'Iris-setosa']], dtype=object)
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[b'5.1', b'3.5', b'1.4', b'0.2', b'Iris-setosa'],
+       [b'4.9', b'3.0', b'1.4', b'0.2', b'Iris-setosa'],
+       [b'4.7', b'3.2', b'1.3', b'0.2', b'Iris-setosa'],
+       [b'4.6', b'3.1', b'1.5', b'0.2', b'Iris-setosa'],
+       [b'5.0', b'3.6', b'1.4', b'0.2', b'Iris-setosa'],
+       [b'5.4', b'3.9', b'1.7', b'0.4', b'Iris-setosa'],
+       [b'4.6', b'3.4', b'1.4', b'0.3', b'Iris-setosa'],
+       [b'5.0', b'3.4', b'1.5', b'0.2', b'Iris-setosa'],
+       [b'4.4', b'2.9', nan, b'0.2', b'Iris-setosa'],
+       [b'4.9', b'3.1', b'1.5', b'0.1', b'Iris-setosa']], dtype=object)
+</code></pre></div></div>
+
+<p>We have used indexing on this data set to insert np.nan randomly. The first part of indexing, we are randomly selecting 20 positions from 0 to 149, which correspond to the number of rows.</p>
+
+<p>Then the second part, we have also randomly chosen 20 positions between 0 to 4. In the end, we will have 20 pairs (rows and columns) of positions randomly generated. Nan will replace the element at those positions.</p>
+
+<p>Finally, we print the first ten rows.</p>
+
+<h3>Ex 35: Find the position of missing values (nan) in NumPy array</h3>
+
+<p>Q: Find the number of times nan occurs and which row is it in the sepal length column (1st column).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'float'</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The total number of nan in the sepal length column is 4 and the position of nan is [14 34 79 87]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nan_total</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]).</span><span class="nb">sum</span><span class="p">()</span>
+<span class="n">nan_position</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The total number of nan in the sepal length column is {} and the position of nan is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">nan_total</span><span class="p">,</span><span class="n">nan_position</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The total number of nan in the sepal length column is 4 and the position of nan is [14 34 79 87]
+</code></pre></div></div>
+
+<p>To get the total number of nan in the first column, we use indexing to get all the elements in the first column and apply isnan method only to get back all the occurrence of nan in the column, then use the sum to get the total number of nan.</p>
+
+<p>To get the position, we start by extracting the column and apply the isnan method again, but this time we are using the where method to get back a boolean array composed where True is the position nan is found, and False is the position of any value other than nan.</p>
+
+<p>The where method returns a tuple, but we are only interested in the first element that is why we used [0] at the end.</p>
+
+<h3>Ex 36: Filter a NumPy array based on two or more conditions</h3>
+
+<p>Q: Filter the rows of the_data_2d dataset that have a petal length (3rd column) &gt; 1.5 and sepal length (1st column) &lt; 5.0.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'float'</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[4.8, 3.4, 1.6, 0.2],
+#        [4.8, 3.4, 1.9, 0.2],
+#        [4.7, 3.2, 1.6, 0.2],
+#        [4.8, 3.1, 1.6, 0.2],
+#        [4.9, 2.4, 3.3, 1. ],
+#        [4.9, 2.5, 4.5, 1.7]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_condition</span> <span class="o">=</span> <span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">1.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="n">the_data_2d</span><span class="p">[</span><span class="n">the_condition</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[4.8, 3.4, 1.6, 0.2],
+       [4.8, 3.4, 1.9, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [4.9, 2.4, 3.3, 1. ],
+       [4.9, 2.5, 4.5, 1.7]])
+</code></pre></div></div>
+
+<p>We get the rows where the elements are greater than 1.5  in the third column and bigger than five the in the first column.</p>
+
+<p>We are using indexing with the and operator (&amp;) to get the elements that meet those two conditions in the two columns and store them in a variable.</p>
+
+<p>Finally, we use the variable with indexing to get back all the rows that meet the two conditions.</p>
+
+<h3>Ex 37: Drop rows that contain a missing value</h3>
+
+<p>Q: Select only the rows in the_data_2d that does not have any nan value.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s">"float"</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">#injecting nan value in the dataset
+</span><span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The output should be the same by using the seed method with 
+# array([[5.1, 3.5, 1.4, 0.2],
+#        [4.9, 3. , 1.4, 0.2],
+#        [4.7, 3.2, 1.3, 0.2],
+#        [4.6, 3.1, 1.5, 0.2],
+#        [5. , 3.6, 1.4, 0.2]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_condition</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">the_data_2d</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">the_condition</span><span class="p">)][:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2]])
+</code></pre></div></div>
+
+<p>We use the isnan method to get all the occurrences of nan in the whole dataset. We get back a boolean array where True is a nan value and False represents any other value. This boolean is then placed in a sum method which will sum up all the occurrences of True value row-wise because we have set the axis to 1.</p>
+
+<p>After getting the total counts for each row, we compare it to 0 to get back a boolean array where True represents the rows that don’t contain any nan value.</p>
+
+<p>Now that we have this array, we can use indexing on the original array to get back the first five rows which don’t contain any nan value.</p>
+
+<h3>Ex 38: Find the correlation between two columns of a NumPy array?</h3>
+
+<p>Q: Find the correlation between sepal length(1st column) and petal length(3rd column) in the_data_2d dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'float'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0.8717541573048718
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<p>For this exercise, we are asked to calculate the correlation. But what is a correlation in the first place? Well, it is a dependence or association is any statistical relationship, whether causal or not, between two random variables or bivariate data. In simple words, correlation indicates the degree of a linear relationship between two numeric variables. Remember, correlation does not imply causation. Sometimes, a correlation is also called Pearson’s correlation</p>
+
+<p>Strictly speaking, Pearson’s correlation requires a normally distributed dataset and not necessarily zero-mean. Like other correlation coefficients, this one varies between -1 and +1 with 0 implying no correlation. Correlations of -1 or +1 imply an exact linear relationship. Positive correlations indicate that as x increases, so
+does y. Negative correlations suggest that as x increases, y decreases.</p>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_correlation</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">corrcoef</span><span class="p">((</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">all_correlation</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[1.         , 0.871754157],
+       [0.871754157, 1.         ]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">all_correlation</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8717541573048718
+</code></pre></div></div>
+
+<p>The first way, we can get the correlation in any row or column is by using the corrcoef method. We pass in a tuple composed of sepal length column (which is the first column) and petal length column (which is the second column).</p>
+
+<p>We get back a two-dimensional array of all possible combination of the sepal length and petal length column including correlation of each column with itself (which is +1). Now we only have to extract the correlation of sepal length and petal length located in the first row (position 0), the second column (1).</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy.stats.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">corr</span><span class="p">,</span><span class="n">p_value</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The correlation is {} and the p value is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="n">p_value</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The correlation is 0.8717541573048712 and the p value is 1.0384540627941809e-47
+</code></pre></div></div>
+
+<p>We can import the Pearson’s correlation method from SciPy and pass in the two columns. We get back two values, correlation and p-value.</p>
+
+<p>The p-value roughly indicates the probability of an uncorrelated system producing datasets that correlate at least as extreme as the one computed. The lower the p-value (&lt;0.01), the stronger is the significance of the relationship. It is not an indicator of strength. The p-values are not entirely reliable but are probably reasonable for datasets larger than 500 or so.</p>
+
+<h3>Ex 39: Find out if a given array has any null or nan values</h3>
+
+<p>Q: Find out if the_data_2d has any missing values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'float'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#True
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">).</span><span class="nb">any</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
+
+<p>We use the isnan method to get back an array of boolean where True is a nan value, and False is any other value other than nan. We apply the any method to the boolean array which will return True because there is at least one True value in the boolean array.</p>
+
+<h3>Ex 40: Replace all nan values by 0 in the array</h3>
+
+<p>Q: Replace all the occurrences of nan by 0 in the array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'float'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">#injecting nan values
+</span><span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#the_data_2d[:10]
+# array([[5.1, 3.5, 1.4, 0.2],
+#        [4.9, 3. , 1.4, 0.2],
+#        [4.7, 3.2, 1.3, 0.2],
+#        [4.6, 3.1, 1.5, 0.2],
+#        [5. , 3.6, 1.4, 0.2],
+#        [5.4, 3.9, 1.7, 0.4],
+#        [4.6, 3.4, 1.4, 0.3],
+#        [5. , 3.4, 1.5, 0.2],
+#        [4.4, 0. , 1.4, 0.2],
+#        [4.9, 3.1, 1.5, 0.1]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 0. , 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1]])
+</code></pre></div></div>
+
+<p>We used the isnan method again to get back all the instances of nan, then replace each of these instances by assigning 0 to the indexed array.</p>
+
+<h3>Conclusion</h3>
+
+<p>By now, you should have a great understanding of NumPy and most importantly, how you can use Google and the NumPy’s documentation to see how to perform a specific task in NumPy.</p>
+
+<p>If you were able to do half of these exercises from these two posts, congratulation!! I am confident to tell you that you can start using NumPy into your ML projects. Most ML projects won’t require advanced NumPy knowledge than this. The last post from these series is coming soon. It has some advanced NumPy exercises for those who want to master NumPy.</p>
+
+<p>Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%202.ipynb" target="_blank">here.</a></p>
+
+<p>Thank you for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=NumPy Exercises Part 2&url=http://localhost:4000/2019/09/04/numpy-exercises-part-2.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/09/04/numpy-exercises-part-2.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2019/09/04/numpy-exercises-part-2.html&title=NumPy Exercises Part 2&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2019/09/04/numpy-exercises-part-2.html&title=NumPy Exercises Part 2" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=NumPy Exercises Part 2&amp;body=Check out this post http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html';
+      this.page.identifier = 'http://localhost:4000/blog/2019/09/04/numpy-exercises-part-2.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

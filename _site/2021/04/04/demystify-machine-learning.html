@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Demystify Machine Learning | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Demystify Machine Learning" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far." />
+<meta property="og:description" content="Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far." />
+<link rel="canonical" href="http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/demystify.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-04T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/demystify.jpg" />
+<meta property="twitter:title" content="Demystify Machine Learning" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/demystify.jpg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html","@type":"BlogPosting","description":"Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.","headline":"Demystify Machine Learning","dateModified":"2021-04-04T00:00:00-06:00","datePublished":"2021-04-04T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post demystify-machine-learning">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/demystify.jpg" alt="Demystify Machine Learning">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">Demystify Machine Learning
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, machine learning, tutorial, linear regression</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2021-04-04T00:00:00-06:00">Sun April 4, 2021</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>27 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>Welcome back! I am very excited about this post as we are introducing machine learning and its commonly used jargon. You will have a broad overview of machine learning, how it works, and even write our first machine learning code at the end of the post. To understand advanced machine learning, we first need to have a good grasp of the fundamentals. That is why I think this is the most important post on this blog so far.<!-- more --></p>
+
+<p>With no further due, let’s get started.</p>
+
+<h3>1. What is machine learning, and how can a machine learn?</h3>
+
+<h4>1.1 What is machine learning</h4>
+
+<p><strong><em>Machine learning</em></strong> is a subfield of computer science that studies the ability of a computer to learn and exhibit cognitive abilities without being explicitly programmed.</p>
+
+<h4>1.2 How do computers learn?</h4>
+
+<p>As we have previously said, computers learn through data. The more the data, the better. Computers are very good at discovering not immediately apparent patterns within a large dataset (tabular or non-tabular) than humans. It is called <strong><em>data mining</em></strong>. Data mining is a whole separate computer science field on its own.</p>
+
+<p>Going back to our question, how can machines learn? one way is by breaking the dataset into two datasets. A <strong><em>training dataset</em></strong> and a <strong><em>testing dataset</em></strong>. As a good rule of thumb, the training dataset should account for 80% of the dataset, and the test dataset should be 20% (more on this later in the post). Each unit of information in the dataset is a <strong><em>datapoint</em></strong> represented as the entire row in a tabular dataset.</p>
+
+<p><img src="/blog/assets/post_cont_image/dml_dataset_split.jpg" alt="dataset_split" /></p>
+
+<p>A training dataset is a dataset used to train(teach) <strong><em>the model</em></strong> (also called <strong><em>estimators</em></strong> in Scikit-learn library, and I’ll be using those two words interchangeably). We use the testing dataset to evaluate the model and see how well it has learned (also called measuring its <strong><em>accuracy</em></strong>).</p>
+
+<p>Note: we should never train a model on the testing dataset, or else it defeats the whole purpose of evaluating the model.</p>
+
+<p>Let me explain this statement further. Let’s say you are a student enrolled in a math course. To pass the exam, you have to practice by doing many exercises to become good at it. If the lecture decides to give you the exam paper for practice,  probably during the exam time, you will score close to 100%. But does that mean that you have mastered the course? Of course not! You have just memorized the whole exam without really understanding anything. The same happens to a machine learning model trained and tested on a testing dataset. It is called <strong><em>overfitting</em></strong> (more on this later in the post). That is why we need to hide the model from the testing dataset and only train on the training dataset.</p>
+
+<h3>2. Use of machine learning VS traditional programming?</h3>
+
+<p>To understand when shall we use machine learning, we need first to understand how machine learning and traditional programming work under the hood.</p>
+
+<h4>2.1 How machine learning works VS traditional programming?</h4>
+<h4>2.1.1 Traditional programming</h4>
+
+<p>Let’s start with traditional programming. It includes all the backends development, front-end development, mobile development, dev-ops, systems architecture, etc. All these computer science subfields share the same fundamentals of using a set of instructions called <strong><em>Algorithms</em></strong> written by a programmer that takes an input and produces an output. Think of it as a more complex “if and else statement” for example, if a user presses this button, then change the webpage to this new page.</p>
+
+<p><img src="/blog/assets/post_cont_image/trad_programming.jpg" alt="traditional_programming_process" /></p>
+
+<p>If an unexpected event occurs (not coded), the algorithm will not execute, and the software/app will crash. Now you know what is happening when you see a blue screen in Windows or your mobile app has unexpectedly stopped working. The algorithm can’t troubleshoot itself without the intervention of the programmer. That is why you always have to upgrade your software or app to fix the “bugs”.</p>
+
+<p><img src="/blog/assets/post_cont_image/unexpected_input.jpg" alt="unexpected_input" /></p>
+
+<h4>2.1.1 Machine learning</h4>
+
+<p>On the other hand, machine learning works differently than traditional programming. We feed (train) the machine learning model datasets as input and let the model predict the best output. We, the programmers, don’t explicitly write those instructions. We help the model fine-tune its parameters (more on this later) to find the best predictions. Consequently, the more the data we feed to the model, the better the predictions become overtime.</p>
+
+<p>We evaluate the model and see if it has learned well. If the result is satisfying, then we lunch the model into production. If not, we then analyze the model, fine-tune its parameter, and retraining the model is required.</p>
+
+<p><img src="/blog/assets/post_cont_image/ML_process.jpg" alt="ML-process" /></p>
+
+<p>Note: it is crucial to feed the model accurate and clean data (without outliers or missing data) because if you don’t, then the predictions will be off, and its accuracy won’t be reliable. That is why modeling (the process of training the model) is the least consuming task in an end-to-end machine learning project compare to data cleaning. I wrote in <a href="https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html" target="_blank">this post</a> that data scientists spend 60% of their time cleaning the training data and only 4% modeling and training the model.</p>
+
+<h4>2.2 When shall we use machine learning or traditional programming?</h4>
+
+<p>Here are some questions to ask yourself when deciding to use whether machine learning or traditional programming for a project:</p>
+
+<ul>
+  <li>
+    <p>Does this project try to solve a problem that requires a lot of fine-tuning and rules? If you answered yes, then use machine learning.</p>
+
+    <p>To clarify the point above, let’s say that you work at a bank as a fraud expert analyst, and your boss tells you that there has been a sharp increase in credit card frauds this month. As a fraud expert with programming skills, you need to find a solution to this as soon as possible. You first analyze the transactions reported as fraudulent. You notice interesting similarities among 80% of them: First, those transactions are orchestrated from overseas. Second, they are below one thousand dollars. Third, the account holders are mostly seniors (65 years old and above).</p>
+
+    <p>After gathering these pieces of information, you decided to create a script to detect and block automatically similar transactions that will occur in the future. The code is not perfect, as there are false positives, but after deploying the script for a week, there is a drop in the number of fraudulent transactions reported. Yes! We did.</p>
+
+    <p>After two months, your boss comes back to you and tells you that the number of fraud has gone up again. It seems like the scammers now use a VPN as the transactions appear to be from within the country. Secondly, in the new fraudulent transactions, the amount transacted is not below on thousand dollars all the time. The scammers have found a way to bypass the script that you have put in place.</p>
+
+    <p>Now, you are thinking about two options: Option 1, rewrite a new script with the new rules and option 2, come up with a script that can adapt to new rules without being explicitly coded.</p>
+
+    <p>The first option is tedious, and it is a matter of time until the scammers find another way of going around it. So the best option would be option 2, to let the script adapt and block the fraudulent transactions with minimal intervention.</p>
+  </li>
+  <li>
+    <p>Does this project try to solve a complex problem where using traditional programming has failed? Then use machine learning. Example: Detection of a cancer cell in an image.</p>
+  </li>
+  <li>
+    <p>Does this project try to solve a complex problem in a constantly changing environment? Then use machine learning as it can adapt to a constantly changing environment as it receives more and more data. Example: Robots that sort trash on a recycling line depending on the type of materials using computer vision.</p>
+  </li>
+  <li>
+    <p>Does this project try to solve a complex problem with a large amount of data? Then use machine learning. Example: Self-driving cars in a busy street.</p>
+  </li>
+</ul>
+
+<p>I firmly believe that machine learning and traditional programming will continue to co-exist as they solve problems differently. Therefore one can’t replace the other.</p>
+
+<h3>3. Types of machine learning</h3>
+
+<p>There are different types of machine learning systems depending on how we train them, how they learn, and how they generalize.</p>
+
+<h3>3.1 Types of machine learning system classified on how we train them</h3>
+
+<h4>3.1.1 Supervised learning</h4>
+
+<p>We train these types of machine learning using <strong><em>labels</em></strong>. It means that in the training dataset, we have the desired outputs. We use different datapoints attributes called <strong><em>features</em></strong> or <strong><em>predictor</em></strong> to train the model and predict the labels.</p>
+
+<p>For example, given a dataset with features like age, gender, weight, height, family history and blood pressure, we are trying to predict if someone has diabetes or not. The last column in the training dataset is the label. This type of training is called <strong><em>classification model</em></strong> because we are classifying the data points into two groups (has diabetes or does not have diabetes).</p>
+
+<p><img src="/blog/assets/post_cont_image/datasplit_sup.jpg" alt="supervised_train" /></p>
+
+<p>The labels can also be numerical. In this case, we are dealing with a <strong><em>regression model</em></strong>. An example of this would be predicting the houses price depending on different features like the size, the location, the mortgage interest rate, etc.</p>
+
+<h4>3.1.2 Unsupervised learning</h4>
+
+<p>For this type of machine learning, we train the model without labels. With your help, the model will try to figure out the correlations within the datasets. Listed below are the unsupervised tasks we could perform:</p>
+
+<ul>
+  <li><strong><em>clustering</em></strong> to discover similar data points within the dataset and <strong><em>hierarchical clustering</em></strong> to group similar data points into smaller groups. Each group is called <strong><em>cluster</em></strong></li>
+</ul>
+
+<p><img src="/blog/assets/post_cont_image/clustering.jpg" alt="hierarchical_clustering" />
+<em>Credit: <a href="https://www.kdnuggets.com/2019/09/hierarchical-clustering.html" target="_blank">Kdnuggets</a></em></p>
+
+<ul>
+  <li>
+    <p><strong><em>dimensionality reduction</em></strong> to merge similar features into one feature. For example, we could combine the smartphone’s age with its battery health as those two are strongly correlated. We call it <strong><em>feature extraction</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>anomaly detection</em></strong> by detecting automatically and removing <em>outliers</em> (a data point that differs significantly from the rest of data points) and <strong><em>novelty detection</em></strong> by detecting but not flagging as outliers incoming data point that looks different from the rest of data points in the dataset.</p>
+  </li>
+</ul>
+
+<p><img src="/blog/assets/post_cont_image/anomaly.jpg" alt="anomaly" /></p>
+
+<ul>
+  <li><strong><em>association rule learning</em></strong> to discover underlying relations between data points in a large dataset. For example, through data, we have found out that clients in the supermarket who bought chicken will most likely buy the barbeque sauce. It makes sense to give a bundle pricing discount or place those two products close together on the shelves to incentivize the purchase.</li>
+</ul>
+
+<h4>3.1.3 Semisupervised learning</h4>
+
+<p>We can combine a small labelled dataset and an unlabeled dataset to get a semi labelled dataset. Now you might ask why can we just label the whole dataset? well because labelling a dataset is time-consuming and very expensive as it does require a skilled person.</p>
+
+<p>Semisupervised learning is a great alternative from supervised learning because some machine learning models are able to train using a partially labelled dataset.</p>
+
+<h4>3.1.4 Reinforcement learning</h4>
+
+<p>Reinforcement learning works differently than the previous types. It involves an “agent” taking action to perform tasks using a strategy called “policy”. We want him to do one specific task and avoid the others. Each time the agent accomplishes the desired task, he gets rewarded. If not, he gets penalized.</p>
+
+<p>The more the rewards, the more the agents understand that it needs to perform the desired task (just like the Pavlov’s dogs conditioning). Through trials and errors with the feedback (in terms of rewards and penalties), the agent learns and becomes good at the task we require him to perform.</p>
+
+<p>Of course, this is a simple explanation of reinforcement learning as it is a bit more complex, but you have at least a basic understanding. Deepmind’s AlphaGo used reinforcement learning to beat the professional Go player Lee Sedol in 2016.</p>
+
+<p>Jabril has a video where he did a great job at explaining reinforcement learning in details. By the way, I highly advise watching his entire AI crash course series.</p>
+
+<p><a href="https://www.youtube.com/watch?v=nIgIv4IfJ6s" target="_blank"><img src="/blog/assets/post_cont_image/jabril_rl.jpg" alt="Jabril_reinforcement_learning" /></a></p>
+
+<h3>3.2 Types of machine learning system classified on how they learn</h3>
+
+<h4>3.2.1 Batch learning</h4>
+
+<p>For this type of learning, the model has to be trained one step at a time. It means that the model can’t learn continuously on the fly. It needs first to train with all the available data before the initial deployment into production. Once into production, it will only predict using the training dataset we had previously used.</p>
+
+<p>To retrain the model on new data, we need to take down the model, train a new version of the model with the full dataset (old and new) offline, then replace the old model and deploy the new version. That is why it is called <strong><em>offline learning</em></strong>. The con of this method is that it is time and resource consuming.</p>
+
+<h4>3.2.2 Online learning</h4>
+
+<p>Here, the model is train gradually, meaning that we can feed the model new data in small groups (called <strong><em>mini-batches</em></strong>) on the fly while the model is in production. This method is way cheaper than batch learning. The disadvantage is when the new data quality deteriorates, it also affects the model’s performance. Thus, constant monitoring of the quality of new data is required.</p>
+
+<h3>3.3 Types of machine learning system classified on how they generalize (making a prediction on new data)</h3>
+
+<h4>3.3.3 Instance-based learning</h4>
+
+<p>This type of learning is comparable to the script used for spotting the fraudulent transactions seen above. That script looked at the similarities (overseas transactions below $1000 and senior account holder) among the reported fraudulent transactions and new transactions, then flagged the very similar ones.</p>
+
+<p>This script learnt by examples, by memorizing the similarities and made predictions on new data it has never seen before.</p>
+
+<h4>3.3.4 Model-based learning</h4>
+
+<p>As the name implies, model-based learning means that we build and use a model to make predictions. Let’s illustrate this with a concrete example.</p>
+
+<p>We all have heard the expression: “Money does not buy happiness”. As an avid researcher, you want to prove that with numbers, and as we know: “Numbers don’t lie”. Right?</p>
+
+<p>So you decide to survey your friends, family members and internet users, asking them their incomes and then rank their happiness in life on a scale of 1 to 10.</p>
+
+<p>You got a total of 498 responses, which is not a large dataset, but for this experiment, it is a good population sample. Download the dataset <a href="https://cdn.scribbr.com/wp-content/uploads//2020/02/income.data_.zip" target="_blank">here</a>.</p>
+
+<p>Let’s first start by importing Numpy, Pandas, Matplotlib and the CSV file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">income_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"income_data.csv"</span><span class="p">)</span>
+<span class="n">income_data</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>income</th>
+      <th>happiness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>3.862647</td>
+      <td>2.314489</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.979381</td>
+      <td>3.433490</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.923957</td>
+      <td>4.599373</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3.214372</td>
+      <td>2.791114</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>7.196409</td>
+      <td>5.596398</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>494</td>
+      <td>5.249209</td>
+      <td>4.568705</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>495</td>
+      <td>3.471799</td>
+      <td>2.535002</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>496</td>
+      <td>6.087610</td>
+      <td>4.397451</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>497</td>
+      <td>3.440847</td>
+      <td>2.070664</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>498</td>
+      <td>4.530545</td>
+      <td>3.710193</td>
+    </tr>
+  </tbody>
+</table>
+<p>498 rows × 3 columns</p>
+</div>
+
+<p>Now, let’s drop the <code class="language-plaintext highlighter-rouge">Unnamed: 0</code> column because it is a duplicate column since we already have the index column automatically added by pandas. Let’s also scale up the income column to 10000 to make it more realistic and round the numbers in the dataset by two decimal places.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">income_data</span> <span class="o">=</span> <span class="n">income_data</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Unnamed: 0"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">]</span> <span class="o">=</span> <span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10000</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">income_data</span> <span class="o">=</span> <span class="n">income_data</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">income_data</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>income</th>
+      <th>happiness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>38626.47</td>
+      <td>2.31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>49793.81</td>
+      <td>3.43</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>49239.57</td>
+      <td>4.60</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>32143.72</td>
+      <td>2.79</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>71964.09</td>
+      <td>5.60</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>52492.09</td>
+      <td>4.57</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>34717.99</td>
+      <td>2.54</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>60876.10</td>
+      <td>4.40</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>34408.47</td>
+      <td>2.07</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>45305.45</td>
+      <td>3.71</td>
+    </tr>
+  </tbody>
+</table>
+<p>498 rows × 2 columns</p>
+</div>
+
+<p>Then, let’s plot the dataset on a scatterplot.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">],</span><span class="n">income_data</span><span class="p">[</span><span class="s">"happiness"</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s">"black"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Hapiness scale"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_58_0.png" alt="png" /></p>
+
+<p>Yeah seems like the more money we make, the happier we become! On average, someone making over 70000 dollars is likely to be happier than someone making 20000 dollars. Shocking right?</p>
+
+<p>We can see that the data points follow an upward direction. Now let’s try to create a <strong><em>model</em></strong> that follows best those data points. This step is called a <strong><em>model selection</em></strong>, and in this example, it will be a <strong><em>linear model</em></strong> also called <strong><em>linear regression</em></strong> since there are no curves in the upward direction.</p>
+
+<p>The formula is as follow called the <em>population regression function</em>:</p>
+
+<p>$\alpha$ = $\theta_{0}$ + $\theta_{1}$ $\times$ $\lambda$ + $\epsilon$</p>
+
+<p>where</p>
+
+<p>$\alpha$ is the predicted value. In this case, the happiness scale.</p>
+
+<p>$\theta_{0}$ is the first <strong>parameter</strong> called <strong>intercept</strong> of the predicted values $\alpha$ (happiness scale).</p>
+
+<p>$\theta_{1}$ is the second <strong>parameter</strong> called <strong>regression coefficient</strong>.</p>
+
+<p>$\lambda$ is the independent variable. In this case, it is the income.</p>
+
+<p>$\epsilon$ is the <strong>error</strong>(different from the sample error <strong>e</strong>), also called margin error in our prediction of the regression coefficient. In our case, we assume that there is no error implying that $\epsilon$ = 0</p>
+
+<p>To keep it simple, we will rewrite the equation as follow:</p>
+
+<p><em>happiness scale</em> = $\theta_{0}$ + $\theta_{1}$ $\times$ income</p>
+
+<p>Note: if you have taken a high school algebra course, you might have recognized this formula as the <a href="https://en.wikipedia.org/wiki/Linear_equation" target="_blank">equation of a straight line</a> <code class="language-plaintext highlighter-rouge">y = mx + b</code>  where <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> are the x and y axis coordinates, <code class="language-plaintext highlighter-rouge">m</code> is the slope of the line and <code class="language-plaintext highlighter-rouge">b</code> is the y intercept.</p>
+
+<p>This model has two <strong>parameters</strong> $\theta_{0}$ and $\theta_{1}$. We need to find those two parameters value to define a line that follows the best data points. How do we find that? We have the choice between two functions. The <strong><em>utility function</em></strong>(also called <strong><em>fitness function</em></strong>) and the <strong><em>cost function</em></strong>. So what is the difference and which one should we use? The short answer is it depends.</p>
+
+<p>The utility function measures how good the model is, and the cost function calculates how bad the model is. Since we are dealing with linear regression, it is best to use the cost function to compare the distance between the predicted data point coordinate and the linear regression line. We need to reduce that distance as much as possible. The shorter that distance, the more <strong><em>accurate</em></strong> is our model.</p>
+
+<p>So how do we get that linear regression line to best align with the data points? We use the <a href="https://scikit-learn.org/" target="_blank">scikit-learn</a> functions to find the two parameters $\theta_{0}$ and $\theta_{1}$. This is what’s called <strong><em>training</em></strong> the model.</p>
+
+<p>We import directly the function from the scikit-learn library.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+</code></pre></div></div>
+
+<p>Then, we store the estimator (this is how we call a model in the scikit-learn library) in the <code class="language-plaintext highlighter-rouge">est</code> variable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">est</span> <span class="o">=</span> <span class="n">linear_model</span><span class="p">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Now we store the features as a one-dimensional array in <code class="language-plaintext highlighter-rouge">Xsample_inc</code> and <code class="language-plaintext highlighter-rouge">Ysample_hap</code> using the <code class="language-plaintext highlighter-rouge">c_</code> Numpy function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Xsample_inc</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">]]</span>
+<span class="n">Ysample_hap</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">c_</span><span class="p">[</span><span class="n">income_data</span><span class="p">[</span><span class="s">"happiness"</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p>the linear model estimator learn from those data points using the <code class="language-plaintext highlighter-rouge">fit</code> function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">est</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xsample_inc</span><span class="p">,</span><span class="n">Ysample_hap</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LinearRegression()
+</code></pre></div></div>
+
+<p>Finally, we access the values of $\theta_{0}$ (the intercept) and $\theta_{1}$ (regression coefficient) by calling the <code class="language-plaintext highlighter-rouge">intercept_</code> and <code class="language-plaintext highlighter-rouge">coef_</code> functions on the estimator.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">est</span><span class="p">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7.137623851143422e-05
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">o0</span><span class="p">,</span><span class="n">o1</span> <span class="o">=</span> <span class="n">est</span><span class="p">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">est</span><span class="p">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"the intercept 𝜃0 is {} and the regression coefficient 𝜃1 is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">o0</span><span class="p">,</span><span class="n">o1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the intercept 𝜃0 is 0.20472523776933782 and the regression coefficient 𝜃1 is 7.137623851143422e-05
+</code></pre></div></div>
+
+<p>With these two values, we can plot the linear regression line.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">],</span><span class="n">income_data</span><span class="p">[</span><span class="s">"happiness"</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s">"black"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">15000</span><span class="p">,</span><span class="mi">75000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">7.2</span><span class="p">])</span>
+<span class="n">X_coordinate</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span><span class="mi">75000</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_coordinate</span><span class="p">,</span> <span class="n">o0</span> <span class="o">+</span> <span class="n">o1</span><span class="o">*</span><span class="n">X_coordinate</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">6.5</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{0} = 0.20$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{1} = 7.13 \times 10^{-5}$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Hapiness scale"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear regression of Hapiness VS income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_82_0.png" alt="png" /></p>
+
+<p>We plot the dataset’s features using a scatter plot and set the plot axis limits. We then create an interval <code class="language-plaintext highlighter-rouge">X</code> that represents the axis limit of the linear regression line and set it to range from 15000 to 75000 (we don’t need the steps because drawing a line requires only two coordinate in a 2D dimension).</p>
+
+<p>We then plot <code class="language-plaintext highlighter-rouge">X_coordinate</code> on the X and Y axis using the <a href="https://en.wikipedia.org/wiki/Linear_equation" target="_blank">linear equation</a> and change the color of the line to red using the character <code class="language-plaintext highlighter-rouge">"r"</code>.</p>
+
+<p>Finally, we place the text of $\theta_{0}$ and $\theta_{1}$ in the plot with the axis labels and title.</p>
+
+<p>If we don’t need the values of $\theta_{0}$ and $\theta_{1}$ and only want to plot the linear regression line <a href="https://seaborn.pydata.org/" target="_blank">seaborn</a> has a function for that.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">income_data</span><span class="p">[</span><span class="s">"happiness"</span><span class="p">],</span><span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"color"</span><span class="p">:</span><span class="s">"red"</span><span class="p">,</span><span class="s">"linewidth"</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span><span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"alpha"</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span><span class="s">"edgecolor"</span><span class="p">:</span><span class="s">"black"</span><span class="p">})</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">6.5</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{0} = 0.20$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{1} = 7.13 \times 10^{-5}$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear regression of Hapiness VS income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Hapiness scale"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_85_0.png" alt="png" /></p>
+
+<p>Now comes the fun part, prediction time! Let’s predict the happiness scale of a new person (not from our survey) given his income.  Let’s say person A makes per year $61200.</p>
+
+<p>We have 2 ways of predicting the happiness scale:</p>
+
+<ol>
+  <li>Using the formula <em>happiness scale</em> = $\theta_{0}$ + $\theta_{1}$ $\times$ income.</li>
+  <li>Using the model’s <code class="language-plaintext highlighter-rouge">predict</code> function (most recommended).</li>
+</ol>
+
+<h4>1. Using the formula</h4>
+
+<p>Using the equation that we previously saw:</p>
+
+<p><em>happiness scale</em> = $\theta_{0}$ + $\theta_{1}$ $\times$ income</p>
+
+<p>After replacement with the numerical values, we get:</p>
+
+<p><em>happiness scale</em> = 0.2047 + 7.13 $\times$ $10^{-5}$ $\times$ 61200</p>
+
+<p>happiness scale ~ 4.56</p>
+
+<h4>2. Using the model’s function</h4>
+
+<p>Now let’s calculate this in codes, shall we?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">personA_inc</span> <span class="o">=</span> <span class="mi">61200</span>
+
+<span class="n">personA_hap</span> <span class="o">=</span> <span class="n">est</span><span class="p">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">personA_inc</span><span class="p">]])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The estimated happiness scale of person A with an income of ${} is {:.2f} using linear regression."</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">personA_inc</span><span class="p">,</span><span class="n">personA_hap</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The estimated happiness scale of person A with an income of $61200 is 4.57 using linear regression
+</code></pre></div></div>
+
+<p>We call the <code class="language-plaintext highlighter-rouge">predict</code> function on the estimator then pass as an argument the person A’s income. Note that we add the indexes selection <code class="language-plaintext highlighter-rouge">[0][0]</code> because the <code class="language-plaintext highlighter-rouge">predict</code> function accepts only an array-like or matrix as an argument.</p>
+
+<p>Now, let’s plot this.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">income_data</span><span class="p">[</span><span class="s">"income"</span><span class="p">],</span><span class="n">income_data</span><span class="p">[</span><span class="s">"happiness"</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s">"black"</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">15000</span><span class="p">,</span><span class="mi">75000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">7.2</span><span class="p">])</span>
+<span class="n">X_coordinate</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span><span class="mi">75000</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_coordinate</span><span class="p">,</span> <span class="n">o0</span> <span class="o">+</span> <span class="n">o1</span><span class="o">*</span><span class="n">X_coordinate</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">6.5</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{0} = 0.20$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mf">6.0</span><span class="p">,</span> <span class="sa">r</span><span class="s">"$\theta_{1} = 7.13 \times 10^{-5}$"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Income"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Hapiness scale"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Linear regression of Happiness VS income"</span><span class="p">)</span>
+
+<span class="c1"># Prediction data point
+</span><span class="n">plt</span><span class="p">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">personA_inc</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">personA_hap</span><span class="p">,</span><span class="n">linestyles</span><span class="o">=</span><span class="s">"dashed"</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s">"k"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">personA_hap</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">personA_inc</span><span class="p">,</span><span class="n">linestyles</span><span class="o">=</span><span class="s">"dashed"</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s">"k"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">personA_inc</span><span class="p">,</span> <span class="n">personA_hap</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s">"k"</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s">"o"</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">15500</span><span class="p">,</span><span class="mf">4.7</span><span class="p">,</span> <span class="s">"prediction = 4.57"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"k"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">62000</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span> <span class="s">"$61200"</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"k"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_99_0.png" alt="png" /></p>
+
+<p>We can predict the happiness scale using the plot by drawing a perpendicular line (also called the projection of a point to a line) from the X-axis coordinate (61200) to a point belonging to the linear regression line. From that point, we draw another parallel to the X-axis projected to the Y-axis. That point on the Y-axis is our prediction.</p>
+
+<p>Sweet! Now that we understand how we drew the dashed lines, let’s go back to the codes.</p>
+
+<p>We have already seen the first nine lines of codes, and we will focus on the following lines of code. We use the Matplotlib’s <code class="language-plaintext highlighter-rouge">vline</code> function to project <code class="language-plaintext highlighter-rouge">personA_inc</code> value to the linear regression line passing as argument the <code class="language-plaintext highlighter-rouge">personA_inc</code> value as X, <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">personA_hap</code> to draw a line parallel to the Y-axis starting from the value of <code class="language-plaintext highlighter-rouge">personA_hap</code> on the X-axis. We set the <code class="language-plaintext highlighter-rouge">linestyles</code> to <code class="language-plaintext highlighter-rouge">dashed</code> to draw a dashed line, increase its width by three and finally change the color to black using <code class="language-plaintext highlighter-rouge">k</code>. Vice versa for the <code class="language-plaintext highlighter-rouge">hline</code>.</p>
+
+<p>To emphasize the projected point where the income and the happiness scale meet on the linear regression line, we increase its size, setting the color to black and <code class="language-plaintext highlighter-rouge">zorder</code> to 5 (because we want that point to be on the top of the linear regression line).</p>
+
+<p>How about we use instance-based learning instead of model-based learning? For this, we could use a simple model called <strong><em>K-nearest neighbors</em></strong>. We will look at this estimator in the upcoming post but for now, what you need to know is that it uses the features of the nearest data points(the neighboring points)to make predictions, thus the name.</p>
+
+<p>The code is almost the same as model-based learning. The difference is that we are using a different estimator. Instead of using <code class="language-plaintext highlighter-rouge">linear_model</code> we use <code class="language-plaintext highlighter-rouge">KNeighborsRegressor</code>.</p>
+
+<p>Note: we are importing a regressor model and not a classifier because we are predicting a number.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">est_reg</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">n_neighbors</code> is set to three because we want to predict the scale using the three nearest data points.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">est_reg</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">Xsample_inc</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Ysample_hap</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KNeighborsRegressor(n_neighbors=3)
+</code></pre></div></div>
+
+<p>Now let’s predict and see what we get.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">personA_hap</span> <span class="o">=</span> <span class="n">est_reg</span><span class="p">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">personA_inc</span><span class="p">]])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The estimated happiness scale of person A with an income of ${} is {:.2f} using KNN"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">personA_inc</span><span class="p">,</span><span class="n">personA_hap</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The estimated happiness scale of person A with an income of $61200 is 4.53 using KNN
+</code></pre></div></div>
+
+<p>We got a result very close to what we got while using model-based learning. Hopefully, you were able to get predictions closed to these results.</p>
+
+<p>If these models are deployed into production and don’t perform well, we can do the following:</p>
+<ul>
+  <li>add more features like heath status, community vitality, city of residence, life purpose.</li>
+  <li>get better quality training data.</li>
+  <li>select more advanced and powerful models.</li>
+</ul>
+
+<p>The examples above are basic machine learning projects, but it gives us a climbs into the steps taken for every machine learning projects:</p>
+
+<ol>
+  <li>We import and clean the data.</li>
+  <li>We select the appropriate model (estimator).</li>
+  <li>We train the model on the training dataset.</li>
+  <li>Finally, use the newly trained model to make predictions on data it has never seen before.</li>
+</ol>
+
+<p>Since there are so many models, how do we choose the right one for our project? Well, the amazing team from the Scikit-learn organization came up with this chart below.</p>
+
+<p><img src="/blog/assets/post_cont_image/ml_map.png" alt="ML-map" /></p>
+
+<p>We will be working with some of these models in the upcoming posts, and we will be referring to this diagram frequently.</p>
+
+<h3>4. Main challenges of machine learning and how to overcome them</h3>
+
+<p>Since we don’t live in a perfect world, machine learning has its own set of challenges caused by the data and the model.</p>
+
+<h4>4.1 Challenges related to data</h4>
+
+<h4>4.1.1 Not enough data</h4>
+
+<p>Machine learning requires a lot of data to generalize well on unseen data. Typical machine learning projects require thousands of data points, but more complex projects like self-driving cars will require millions or even billions of data points.</p>
+
+<p>That is why it is challenging and expensive for startups to compete with unicorns like Google, Amazon or Telsa, as those companies already have petabytes of data.</p>
+
+<p>Solution: To get more data</p>
+
+<h4>4.1.2 Train on nonrepresentative data</h4>
+
+<p>If a model is training on nonrepresentative data, it will come up with biased predictions. Think of this as training on a sample of similar data points, which don’t reflect the whole population. We are training on a small dataset not inclusive of all the possible data points in the population. We call this <strong><em>sampling noise</em></strong>.</p>
+
+<p>The opposite can also true when we have a large dataset, but the sampling methodology used is flawed and inclusive of all the possible data points. We call it <strong><em>sampling bias</em></strong>. It applies to both instance-based and model-based learning.</p>
+
+<p>Solution: Gather more representative data</p>
+
+<h4>4.1.3 Train on inaccurate data</h4>
+
+<p>It makes sense that a model fed with a dataset full of errors and outliers will not find patterns and generalize on new data. That is why it is always wise to do an <a href="https://semasuka.github.io/blog/2019/03/26/introduction-to-eda.html" target="_blank">exploratory data analysis</a> and data preparation before training the model.</p>
+
+<p>Solution:</p>
+
+<ol>
+  <li>Identify and remove outliers from the dataset</li>
+  <li>For missing data, we can remove the feature, the data points, replace the missing data with the median or train one model with the feature and one model without it.</li>
+</ol>
+
+<h4>4.1.4 Irrelevant features</h4>
+
+<p>Not all the features in a dataset are useful for generalization. For example, predicting if someone has diabetes with features like age, gender, daily calory intake, height, weight and if the patient has a smartphone or not. Most probably, the last feature is irrelevant to this prediction, and we should drop it. We call this process <strong><em>feature selection</em></strong>.</p>
+
+<p>Solution: Discard irrelevant feature.</p>
+
+<p>Training a model requires a lot of computing power. For that reason, it is best to combine similar features (for example, the smartphone age and its battery health) into one useful feature (smartphone condition). We call this process <strong><em>feature extraction</em></strong>.</p>
+
+<h4>4.2 Challenges related to the model</h4>
+
+<h4>4.2.1 Overfitting</h4>
+
+<p>Overfitting means that the model has learned so well on the training dataset but failed to generalize on a new dataset. It does happen when we train a complex model (like a deep neural network) on a small dataset. It can also happen when we train a model on the dataset then test on that same dataset (That is why it is always crucial to hide the testing dataset by splitting the dataset into a training and testing dataset).</p>
+
+<p>Solution:</p>
+
+<ol>
+  <li>Use a simplified model by selecting fewer parameters or constraining the model ( also called <strong><em>regularization</em></strong>).</li>
+  <li>Gather more training data.</li>
+  <li>Discard outliers and fix missing data.</li>
+</ol>
+
+<p>The amount of constrain or regularization applied to a model is called <strong><em>hyperparameters</em></strong>. Think of hyperparameters as a model’s settings set before training to help generalize well. We discuss further <strong><em>hyperparameters</em></strong> when we will be doing an end-to-end project in the next post.</p>
+
+<h4>4.2.2 Underfitting</h4>
+
+<p>Underfitting is the opposite of overfitting which means that the model is too simple and can’t discover the patterns within the data.</p>
+
+<p>Solution:</p>
+
+<ol>
+  <li>Use a powerful model.</li>
+  <li>Use better features for training.</li>
+  <li>Reduce the value of the hyperparameter.</li>
+</ol>
+
+<h3>5. Testing and validating the model</h3>
+
+<h4>5.1 Testing</h4>
+
+<p>Now that we have trained our model, how do we know that the model is ready to generalize new data? There must be a sort of metrics used to measure how well it has generalized, right?</p>
+
+<p>We perform a test in the dataset by splitting the dataset into 80% training data and 20% testing data and then calculate the <strong><em>generalization error</em></strong>. The generalization error is the measurement of error the model makes when tested on data it has never seen before. A low training error with a high generalization error implies that the model is overfitting.</p>
+
+<h4>5.2 Model selection and hyperparameter tuning</h4>
+
+<p>Choosing which model to use is quite simple. We train different algorithms and compare their generalization error and pick the one with the lowest generalization error, but how do we choose its hyperparameter values to avoid overfitting?</p>
+
+<p>One solution would be to train using different hyperparameter values and select the value that produces the lowest generalization error on the test dataset. Let’s say that the generalization error is 6% on the training dataset, but when we lunch it into production, we have a generalization error is 14%. Now you are wondering what is going on?</p>
+
+<p>What just happened is that we have found the best hyperparameters for the test dataset, but those hyperparameters don’t perform well on new data.</p>
+
+<p>To solve this issue, we extract a part of the training dataset to find the best model and parameters. This extracted training dataset is called <strong><em>validation set</em></strong>( also called <strong><em>development set</em></strong> or <strong><em>dev set</em></strong>). After finding the best model and parameters values, we use them for training the full training dataset (including the validation set) to get our final model. Then we will use this final model to come up with a generalization error on the testing dataset.</p>
+
+<p><img src="/blog/assets/post_cont_image/val_set.jpg" alt="Validation-set" /></p>
+
+<p>However, the main challenge here will be to know how big (or small) is the validation set compare to the training set. Why would this be a challenge, may you ask?</p>
+
+<p>Because we will train the final model on the whole training dataset, so we must avoid as much as possible selecting a model that is not representative of the entire training set. So how can we overcome this?</p>
+
+<p>We can use <strong><em>cross-validation</em></strong> to divide the training set into small validation sets called <strong><em>k-fold blocks</em></strong> where <strong><em>k</em></strong> represents the number of small validation sets. For example, if we divide the training set into ten smaller validation sets, we will have ten-fold cross-validation. Each model is tested on one small validation set after being trained on the other sets (for the previously mentioned ten-fold cross-validation, the model will be tested on one set and trained on the remaining nine sets). The only disadvantage of using cross-validation is that it requires a lot of computing power because the training time is multiply by the number of validation sets <strong><em>k</em></strong>.</p>
+
+<h3>6. Conclusion</h3>
+
+<p>Wow! You have to have made it until the end! Congratulation! You have learned a lot about machine learning in this post. It is okay to go through this post twice or thrice to grasp everything. But don’t worry! You will strengthen your understanding more when we start doing end-to-end machine learning projects. We will practice most of the theoretical concepts that we have discussed in this post in future posts.</p>
+
+<p>Finally, here is a recap of the main points we have discovered in this post:</p>
+
+<ul>
+  <li>
+    <p>Machine learning is the computer’s ability to learn through data and make predictions on new data without being explicitly hardcoded.</p>
+  </li>
+  <li>
+    <p>If the problem you are trying to solve requires a lot of fine-tuning, or is complex, or requires a large amount of data, only then use machine learning</p>
+  </li>
+  <li>
+    <p>There are different types of machine learning systems grouped b, first how they train (supervised, unsupervised, semisupervised or reinforcement learning). Second, how they learn (batch or online learning). Third, how they generalize (instance-based or model-based learning).</p>
+
+    <p>Most machine learning projects follow this blueprint:</p>
+    <blockquote>
+      <p>Gather data -&gt; clean data -&gt; Split the dataset into training and testing data -&gt; feed the training dataset -&gt; test using the testing dataset -&gt; find the generalization error of the model -&gt; improve the generalization error</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Machine learning faces some challenges caused by the data and the model</p>
+  </li>
+  <li>
+    <p>To know the accuracy of a machine learning model, we have to test it to find the generalization error. If satisfied with it, we select the best model and its hyperparameters using the validation set and the cross-validation.</p>
+  </li>
+</ul>
+
+<p>Note: Always try to first use traditional programming before using machine learning (or deep learning).  Don’t be like this guy below :)</p>
+
+<p><img src="/blog/assets/post_cont_image/cut_dl.jpg" alt="cutting-sword" /></p>
+
+<p>Image credit: <a href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fcutting-food-with-a-sword&amp;psig=AOvVaw2CMnmX3rcg63eawO9zq6bl&amp;ust=1617641348297000&amp;source=images&amp;cd=vfe&amp;ved=0CAIQjRxqFwoTCJCa_ueF5e8CFQAAAAAdAAAAABAD" target="_blank">cutting-sword-credit</a></p>
+
+<p>In the next post, we will work on an end-to-end machine learning project. I hope you enjoyed this post as much as I did. Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/Demystify%20Machine%20Learning.ipynb" target="_blank">here</a>.</p>
+
+<p>Thank you again for going through this tutorial with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember, practice makes perfect! Keep on learning!</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=Demystify Machine Learning&url=http://localhost:4000/2021/04/04/demystify-machine-learning.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2021/04/04/demystify-machine-learning.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/04/04/demystify-machine-learning.html&title=Demystify Machine Learning&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2021/04/04/demystify-machine-learning.html&title=Demystify Machine Learning" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=Demystify Machine Learning&amp;body=Check out this post http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html';
+      this.page.identifier = 'http://localhost:4000/blog/2021/04/04/demystify-machine-learning.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

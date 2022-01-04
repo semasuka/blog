@@ -9,11 +9,11 @@
 
   
     
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>A step-by-step introduction to exploratory data analysis | MIB</title>
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="A step-by-step introduction to exploratory data analysis" />
-<meta name="author" content="Semasuka Stern" />
+<meta name="author" content="Stern Semasuka" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization." />
 <meta property="og:description" content="There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization." />
@@ -23,8 +23,11 @@
 <meta property="og:image" content="http://localhost:4000/blog/assets/post_images/eda.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-26T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/eda.png" />
+<meta property="twitter:title" content="A step-by-step introduction to exploratory data analysis" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/03/26/introduction-to-eda.html"},"image":"http://localhost:4000/blog/assets/post_images/eda.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Semasuka Stern"},"url":"http://localhost:4000/blog/2019/03/26/introduction-to-eda.html","author":{"@type":"Person","name":"Semasuka Stern"},"description":"There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.","headline":"A step-by-step introduction to exploratory data analysis","dateModified":"2019-03-26T00:00:00-06:00","datePublished":"2019-03-26T00:00:00-06:00","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/03/26/introduction-to-eda.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/eda.png","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2019/03/26/introduction-to-eda.html","@type":"BlogPosting","description":"There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.","headline":"A step-by-step introduction to exploratory data analysis","dateModified":"2019-03-26T00:00:00-06:00","datePublished":"2019-03-26T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -45,7 +48,15 @@
     <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
   
 </head>
-
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
   <body class="layout--post a-step-by-step-introduction-to-exploratory-data-analysis">
 
@@ -246,9 +257,9 @@
 
         <p class="entry-meta">
           
-            <span class="byline-item">by Semasuka Stern</span>
+            <span class="byline-item">by Stern Semasuka</span>
           
-          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, data analysis</span>
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, tutorial, data analysis, seaborn, matplotlib</span>
           <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-03-26T00:00:00-06:00">Tue March 26, 2019</time></span>
           
             <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>40 min read</span>
@@ -270,13 +281,13 @@
       <div id="entry" class="entry-content">
         <p>There is this concept called exploratory data analysis (EDA), which is essential in machine learning. In this beginner-friendly blog, we will solely discuss EDA. So what is exploratory data analysis or EDA? Well, it is the process of analyzing data to make sense of it and come up with a summary that describes the data using different methods like data manipulation and visualization.<!-- more --> In other words, EDA is a way of describing and understanding the data beyond the values in rows and columns in the tables.</p>
 
-<p>The next question would be, how is it related to machine learning? As we have explained in <a href="https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html">this post</a>, for a machine learning model to make accurate predictions, it needs to be trained using clean data, but since we ain’t living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That’s when libraries like pandas, matplotlib and seaborn come in handy.</p>
+<p>The next question would be, how is it related to machine learning? As we have explained in <a href="https://semasuka.github.io/blog/2018/12/17/why-deep-learning-now.html" target="_blank">this post</a>, for a machine learning model to make accurate predictions, it needs to be trained using clean data, but since we ain’t living in a perfect world, most of the datasets are dirty/incomplete and need to be prepared before being used. That’s when libraries like pandas, matplotlib and seaborn come in handy.</p>
 
 <p>It is also true that most data scientists spend most of their time cleaning, organizing and visualizing data (unless when they are working in a team with data analysts and data engineers). This shows how EDA is a desirable skill for a machine learning engineer and data scientist.</p>
 
 <p><img src="/blog/assets/post_cont_image/ds_time.jpg" alt="data scientist time" /></p>
 
-<p>picture credit: <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3927c8336f63">forbes</a></p>
+<p>picture credit: <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3927c8336f63" target="_blank">forbes</a></p>
 
 <p>With no further delay, let’s jump into the code.</p>
 
@@ -286,7 +297,7 @@
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>First, we are importing the necessary libraries and let me explain what each library does:</p>
@@ -306,16 +317,16 @@
 
 <p>Now it is time to start using the data in our code, we need to read the data and store it in a dataframe (primary data structure of the pandas library) either from a URL when the data is stored online or download it and use the path where the data is stored on your local drive.</p>
 
-<p>Go ahead and download the data <a href="https://www.kaggle.com/fernandol/countries-of-the-world/downloads/countries-of-the-world.zip/1">here</a> from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists &amp; ML engineers who come up with the best ML models win prizes).</p>
+<p>Go ahead and sign in and download the data <a href="https://www.kaggle.com/fernandol/countries-of-the-world/download" target="_blank">here</a> from  Kaggle (Kaggle is a website where competitions are hosted by various companies then data scientists &amp; ML engineers who come up with the best ML models win prizes).</p>
 
 <p>If the CSV (comma-separated value) file is located in the same folder as the jupyter notebook (.ipynb) file, then we can just write the name of the CSV file without forgetting the .cvs extension like this.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"countries of the world.csv"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"countries of the world.csv"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>now that we have read the CSV file and stored it in the c_data dataframe variable, we can now proceed to the next steps of our analysis.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -480,7 +491,7 @@
 
 <p>with the head function applied on the dataframe, we can have a peek at the first 5 rows in the table of our freshly imported dataframe.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -566,22 +577,22 @@
 <p>This is definitely something that needs to be changed, we can quickly fix this using a simple function that replaces commas with points.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert_value</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">","</span><span class="p">,</span><span class="s">"."</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">","</span><span class="p">,</span><span class="s">"."</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>First, we create a function that takes as a parameter each value of columns as a string and replaces each occurrence of a comma with a point and returns a float data type.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">columns_to_be_changed</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Pop. Density (per sq. mi.)"</span><span class="p">,</span><span class="s">"Coastline (coast/area ratio)"</span><span class="p">,</span><span class="s">"Net migration"</span><span class="p">,</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">,</span>
-                         <span class="s">"Literacy (</span><span class="si">%</span><span class="s">)"</span><span class="p">,</span><span class="s">"Phones (per 1000)"</span><span class="p">,</span><span class="s">"Arable (</span><span class="si">%</span><span class="s">)"</span><span class="p">,</span><span class="s">"Crops (</span><span class="si">%</span><span class="s">)"</span><span class="p">,</span><span class="s">"Other (</span><span class="si">%</span><span class="s">)"</span><span class="p">,</span><span class="s">"Birthrate"</span><span class="p">,</span><span class="s">"Deathrate"</span><span class="p">,</span><span class="s">"Agriculture"</span><span class="p">,</span><span class="s">"Industry"</span><span class="p">,</span><span class="s">"Service"</span><span class="p">]</span>
+                         <span class="s">"Literacy (%)"</span><span class="p">,</span><span class="s">"Phones (per 1000)"</span><span class="p">,</span><span class="s">"Arable (%)"</span><span class="p">,</span><span class="s">"Crops (%)"</span><span class="p">,</span><span class="s">"Other (%)"</span><span class="p">,</span><span class="s">"Birthrate"</span><span class="p">,</span><span class="s">"Deathrate"</span><span class="p">,</span><span class="s">"Agriculture"</span><span class="p">,</span><span class="s">"Industry"</span><span class="p">,</span><span class="s">"Service"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">columns_to_be_changed</span><span class="p">:</span>
-    <span class="n">c_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">convert_value</span><span class="p">)</span>
+    <span class="n">c_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">).</span><span class="nb">apply</span><span class="p">(</span><span class="n">convert_value</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Alright so here is where the magic is happening, we first create a list that will store all the columns that we are planning to modify then loop through them. Using a pandas notation and a for loop, we can access to all the value in a column, and each value is cast to a string using the function astype(str) and applied to it the function convert_value that we have written earlier on.</p>
 
 <p>The function will receive each value in each column as a string and replace the comma by a dot and return a float. The returned float value will be stored at the same place, where was the original value in the column.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -746,7 +757,7 @@
 
 <p>now we can see that the commas are no longer there.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -953,10 +964,10 @@
 
 <p>Also, the describe function shows a lot more columns than before.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">dtypes</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">dtypes</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Country                                object
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Country                                object
 Region                                 object
 Population                              int64
 Area (sq. mi.)                          int64
@@ -981,10 +992,10 @@ dtype: object
 
 <p>We can retrieve information about the data type of each column using the dtypes function on the dataframe, and we can clearly see that the columns have floats as a data type.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">shape</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">shape</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(227, 20)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(227, 20)
 </code></pre></div></div>
 
 <p>But in the case when we want to know only the number of rows and columns in a dataset, we can use the shape function which will return a tuple of the number of columns and rows which is 227 rows and 20 columns in our case.</p>
@@ -997,7 +1008,7 @@ dtype: object
 
 <p>But before we start with the plots, let’s set some default parameters.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">'figure.figsize'</span><span class="p">:(</span><span class="mi">17</span><span class="p">,</span><span class="mi">10</span><span class="p">)},</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">'figure.figsize'</span><span class="p">:(</span><span class="mi">17</span><span class="p">,</span><span class="mi">10</span><span class="p">)},</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Here are default settings that will apply to all the plots, we use the set function on the Seaborn variable and pass into the rc a dictionary to increase the size of the plot by 17 on the width and 10 on the height and a font scale of 2 in order to clearly see the plots ticks on the axis.</p>
@@ -1008,8 +1019,8 @@ dtype: object
 
 <p>For this, we use the heatmap function.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">c_data</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span><span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">yticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">c_data</span><span class="p">.</span><span class="n">isna</span><span class="p">(),</span><span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">yticklabels</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_34_0.png" alt="png" /></p>
@@ -1028,13 +1039,13 @@ dtype: object
 
 <p>Let’s represent the number of countries by region using a bar plot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">country_per_reg</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">[</span><span class="s">"Region"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">country_per_reg</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">[</span><span class="s">"Region"</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">country_per_reg</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUB-SAHARAN AFRICA                     51
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUB-SAHARAN AFRICA                     51
 LATIN AMER. &amp; CARIB                    45
 ASIA (EX. NEAR EAST)                   28
 WESTERN EUROPE                         28
@@ -1050,10 +1061,10 @@ Name: Region, dtype: int64
 
 <p>By selecting the region columns, we can count different values found in that column grouped by region and store this in the country_per_reg variable.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)[</span><span class="s">"Country"</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c_data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)[</span><span class="s">"Country"</span><span class="p">].</span><span class="n">count</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Region
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Region
 ASIA (EX. NEAR EAST)                   28
 BALTICS                                 3
 C.W. OF IND. STATES                    12
@@ -1072,10 +1083,10 @@ Name: Country, dtype: int64
 
 <p>Now that we crunch the numbers let’s put them in a plot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">country_per_reg</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">country_per_reg</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s">"rocket"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">country_per_reg</span><span class="p">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">country_per_reg</span><span class="p">.</span><span class="n">values</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s">"rocket"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a2118c198&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a2118c198&gt;
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_48_1.png" alt="png" /></p>
@@ -1090,12 +1101,12 @@ Name: Country, dtype: int64
 
 <p>Let’s add some few things to our plot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">country_per_reg</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">country_per_reg</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s">"rocket"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Countries"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Number of countries per region"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">country_per_reg</span><span class="p">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">country_per_reg</span><span class="p">.</span><span class="n">values</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s">"rocket"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Countries"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Number of countries per region"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_51_0.png" alt="png" /></p>
@@ -1469,7 +1480,7 @@ Name: Country, dtype: int64
 
 <p>We first select only the country and population density columns and store it in the c_density variable.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_30_density</span> <span class="o">=</span> <span class="n">c_density</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"Pop. Density (per sq. mi.)"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_30_density</span> <span class="o">=</span> <span class="n">c_density</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"Pop. Density (per sq. mi.)"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Now we sort the dataframe and keep only the top 30 countries using the head function by passing 30 as the argument.</p>
@@ -1654,10 +1665,10 @@ Name: Country, dtype: int64
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">top_30_density</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">top_30_density</span><span class="p">[</span><span class="s">"Pop. Density (per sq. mi.)"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"winter_r"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Top 30 countries with the most population density"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">top_30_density</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">top_30_density</span><span class="p">[</span><span class="s">"Pop. Density (per sq. mi.)"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"winter_r"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Top 30 countries with the most population density"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_65_0.png" alt="png" /></p>
@@ -1679,7 +1690,7 @@ Name: Country, dtype: int64
 
 <p>We get the country with population columns and store it in a variable called c_pop</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">less_pop_country</span> <span class="o">=</span> <span class="n">c_pop</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"Population"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">less_pop_country</span> <span class="o">=</span> <span class="n">c_pop</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"Population"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="n">tail</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">less_pop_country</span>
@@ -1814,18 +1825,18 @@ Name: Country, dtype: int64
 
 <p>We sort the dataframe using the population number and only select 20 countries from the bottom using the tail function.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">less_pop_country</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">less_pop_country</span><span class="p">[</span><span class="s">"Population"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"gnuplot"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Countries with the smallest population"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">less_pop_country</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">less_pop_country</span><span class="p">[</span><span class="s">"Population"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"gnuplot"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">invert_xaxis</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Countries with the smallest population"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_77_0.png" alt="png" /></p>
 
 <p>This code plots the least populated countries in the world, starting from the last moving forward. We were able to achieve this by inverting the order on the X axis using plt.gca().invert_xaxis().</p>
 
-<p>To find all the possible parameters of a bar plot, visit its documentation page <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">here</a></p>
+<p>To find all the possible parameters of a bar plot, visit its documentation page <a href="https://seaborn.pydata.org/generated/seaborn.barplot.html" target="_blank">here</a></p>
 
 <h4>Scatter plot</h4>
 
@@ -1835,7 +1846,7 @@ Name: Country, dtype: int64
 
 <p>let’s illustrate this using an example.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rand_country_inf_mortal</span> <span class="o">=</span> <span class="n">c_data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)[[</span><span class="s">"Country"</span><span class="p">,</span><span class="s">"Region"</span><span class="p">,</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">]]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rand_country_inf_mortal</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)[[</span><span class="s">"Country"</span><span class="p">,</span><span class="s">"Region"</span><span class="p">,</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">]]</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rand_country_inf_mortal</span>
@@ -1933,11 +1944,11 @@ Name: Country, dtype: int64
 
 <p>Now let’s plot this.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">],</span><span class="n">hue</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Region"</span><span class="p">],</span><span class="n">s</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s">'size'</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Infant mortality in 10 randomly selected countries"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Country"</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">],</span><span class="n">hue</span><span class="o">=</span><span class="n">rand_country_inf_mortal</span><span class="p">[</span><span class="s">"Region"</span><span class="p">],</span><span class="n">s</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s">'size'</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Infant mortality in 10 randomly selected countries"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_87_0.png" alt="png" /></p>
@@ -1960,13 +1971,13 @@ Name: Country, dtype: int64
 
 <p>But we can easily verify this by getting the mean of infant mortality per region and plot it.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">av_child_mortal_region</span> <span class="o">=</span> <span class="n">c_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)[</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">av_child_mortal_region</span> <span class="o">=</span> <span class="n">c_data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"Region"</span><span class="p">)[</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">av_child_mortal_region</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Region
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Region
 ASIA (EX. NEAR EAST)                   41.780000
 BALTICS                                 8.103333
 C.W. OF IND. STATES                    44.410000
@@ -1983,12 +1994,12 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>We get back the mean of infant mortality column grouped by region then store it in a variable.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">av_child_mortal_region</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">av_child_mortal_region</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Infant mortality per region"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">av_child_mortal_region</span><span class="p">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">av_child_mortal_region</span><span class="p">.</span><span class="n">values</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Infant mortality (per 1000 births)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Infant mortality per region"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_96_0.png" alt="png" /></p>
@@ -2005,7 +2016,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>The rest of the region have a low child death with Western Europe having the weakest among all the areas.</p>
 
-<p>To read more about the scatter plot, read its documentation<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html">here</a>.</p>
+<p>To read more about the scatter plot, read its documentation<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">here</a>.</p>
 
 <h4>Boxplot</h4>
 
@@ -2031,22 +2042,22 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p><img src="/blog/assets/post_cont_image/percentile.png" alt="percentile" /></p>
 
-<p>picture credit: <a href="https://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/charts/box-plot.htm">arcgis</a></p>
+<p>picture credit: <a href="https://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/charts/box-plot.htm" target="_blank">arcgis</a></p>
 
 <h4>Example : GDP per region</h4>
 
 <p>Now, let’s quickly look at an example of the box plot. We will plot the GDP of each region.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"whitegrid"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">c_data</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Box plot of GDP per region"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"whitegrid"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">c_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Box plot of GDP per region"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_109_0.png" alt="png" /></p>
 
-<p>In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn, read the documentation <a href="https://seaborn.pydata.org/tutorial/aesthetics.html">here</a>.</p>
+<p>In the code above, we are starting by setting the aesthetics (style) of the grid as a white grid. To read more about the style of grids in seaborn, read the documentation <a href="https://seaborn.pydata.org/tutorial/aesthetics.html" target="_blank">here</a>.</p>
 
 <p>Now comes the box plot code, we set the X axis to the regions, the Y axis to the GDP and finally specify which data we are using in our case its c_data.</p>
 
@@ -2062,7 +2073,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Finally, Sub-Saharan Africa has the lowest GPD on average with its maximum value less than $5000 but register quite many outliers (eight in total) which is unseen in any other region.</p>
 
-<p>To read more about the box plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html">here</a>.</p>
+<p>To read more about the box plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html" target="_blank">here</a>.</p>
 
 <h4>Joint plot (kde and hex)</h4>
 
@@ -2070,7 +2081,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p><img src="/blog/assets/post_cont_image/joint_plot.png" alt="joint_plot" /></p>
 
-<p>picture credit: <a href="https://www.mathworks.com/help/matlab/ref/surfc.html">mathworks</a></p>
+<p>picture credit: <a href="https://www.mathworks.com/help/matlab/ref/surfc.html" target="_blank">mathworks</a></p>
 
 <p>Think of a joint plot in the same way as the image above.</p>
 
@@ -2084,8 +2095,8 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Coming back to our dataset, let’s joint plot the birthrate and the literacy rate.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Literacy (</span><span class="si">%</span><span class="s">)"</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"kde"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Literacy (%)"</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"kde"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_121_0.png" alt="png" /></p>
@@ -2096,8 +2107,8 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Let’s see what happen when we use “hex”.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Literacy (</span><span class="si">%</span><span class="s">)"</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"hex"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Literacy (%)"</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"hex"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_124_0.png" alt="png" /></p>
@@ -2112,7 +2123,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Finally, we can see that in the countries where the birthrate is 30 and above, only 60% to 40% of the population is literate.</p>
 
-<p>To read more about the joint plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.jointplot.html">here</a></p>
+<p>To read more about the joint plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.jointplot.html" target="_blank">here</a></p>
 
 <h3>Challenge</h3>
 
@@ -2122,11 +2133,11 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <h3>Challenge solution</h3>
 
-<p>Alright, let’s go through the solution which looks almost the same as the other plot. The only difference is how to set the colour using a hex colour code. You can generate a hex colour code on this website <a href="https://www.hexcolortool.com/">here</a>.</p>
+<p>Alright, let’s go through the solution which looks almost the same as the other plot. The only difference is how to set the colour using a hex colour code. You can generate a hex colour code on this website <a href="https://www.hexcolortool.com/" target="_blank">here</a>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s">"kde"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"#f50f0f"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s">"kde"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"#f50f0f"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_134_0.png" alt="png" /></p>
@@ -2147,10 +2158,10 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>The best way to see this is through an example of course. In the case below, we want to know how the birthrate around the world is distributed.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"#ac6691"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Distribution of birthrate"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">"#ac6691"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Distribution of birthrate"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_141_0.png" alt="png" /></p>
@@ -2169,12 +2180,12 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>For the second example, let’s see the distribution of GDP around the world.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"white"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">hist</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"shade"</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Distribution of GDP"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"white"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">hist</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"shade"</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Distribution of GDP"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_147_0.png" alt="png" /></p>
@@ -2195,13 +2206,13 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>There is this handy matplotlib function called figure, think of a figure as a container of many the plots. We can create a different type of plots and put them into one figure, but since we are in the distribution plot section, let’s create 4 distribution plots.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"darkgrid"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-<span class="n">f</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Deathrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"y"</span><span class="p">,</span><span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"shade"</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Population"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">"darkgrid"</span><span class="p">,</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Deathrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"y"</span><span class="p">,</span><span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s">"shade"</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"Population"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_153_0.png" alt="png" /></p>
@@ -2212,7 +2223,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Finally, it is time to draw the distribution plots for each. We set ax parameter to the axes location and set rug to True, rug represents the distribution of values on small bars (called rugplot that strangely resemble barcodes) at the bottom of the X axis.</p>
 
-<p>To know more about distribution plot, read the documentation <a href="https://seaborn.pydata.org/generated/seaborn.distplot.html">here</a>.</p>
+<p>To know more about distribution plot, read the documentation <a href="https://seaborn.pydata.org/generated/seaborn.distplot.html" target="_blank">here</a>.</p>
 
 <h4>Violin plot</h4>
 
@@ -2222,7 +2233,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p><img src="/blog/assets/post_cont_image/violin_plot.svg?sanitize=true" alt="violin_plot" /></p>
 
-<p>picture credit: <a href="https://datavizcatalogue.com/methods/violin_plot.html">datavizcatalogue</a></p>
+<p>picture credit: <a href="https://datavizcatalogue.com/methods/violin_plot.html" target="_blank">datavizcatalogue</a></p>
 
 <p>Let’s explain the image above, the small black rectangle inside the purple area represents the interquartile range like the one in a box plot with the white dot in its middle representing the median. The two line (upper and lower adjacent value) extend to the minimum and the maximum.</p>
 
@@ -2230,10 +2241,10 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>We are going to plot GDP per region using the violin plot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">c_data</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Violin Plot of GDP"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">c_data</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Violin Plot of GDP"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_163_0.png" alt="png" /></p>
@@ -2252,7 +2263,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Looking at Western Europe, there is no country with a GDP lower than $10000. Western Europe also registers a very sharp top that corresponds to a country with an exceptional GDP (this is an outlier). Latin Amer &amp; Carib also have outliers.</p>
 
-<p>To read more about violin plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html">here</a></p>
+<p>To read more about violin plot, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html" target="_blank">here</a></p>
 
 <h4>pdf and cdf</h4>
 
@@ -2260,12 +2271,12 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Let’s understand cdf through an example using the GDP. First, let’s get the pdf and the cdf this time we are not going to use the seaborn library; instead, we use numpy.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hist</span><span class="p">,</span> <span class="n">bins_edge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span><span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hist</span><span class="p">,</span> <span class="n">bins_edge</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">c_data</span><span class="p">[</span><span class="s">"GDP ($ per capita)"</span><span class="p">].</span><span class="n">dropna</span><span class="p">(),</span><span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">bins_edge</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.31284645e-04 5.83487309e-05 3.72783559e-05 3.07951635e-05
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.31284645e-04 5.83487309e-05 3.72783559e-05 3.07951635e-05
  1.13455866e-05 1.13455866e-05 2.10703751e-05 1.62079808e-05
  8.10399040e-06 1.13455866e-05 1.45871827e-05 4.86239424e-06
  3.24159616e-06 4.86239424e-06 0.00000000e+00 0.00000000e+00
@@ -2280,12 +2291,12 @@ Name: Infant mortality (per 1000 births), dtype: float64
 <p>Two lists (histogram and the bin’s edge) will be returned.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pdf</span> <span class="o">=</span> <span class="n">hist</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
-<span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">cdf</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.35840708 0.15929204 0.10176991 0.0840708  0.03097345 0.03097345
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.35840708 0.15929204 0.10176991 0.0840708  0.03097345 0.03097345
  0.05752212 0.04424779 0.02212389 0.03097345 0.03982301 0.01327434
  0.00884956 0.01327434 0.         0.         0.         0.
  0.         0.00442478]
@@ -2301,18 +2312,18 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Now that we have the pdf and the cdf, time to plot.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s">"-20</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"0</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"20</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"40</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"60</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"80</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">"100</span><span class="si">%</span><span class="s">"</span><span class="p">])</span>
-<span class="n">pdf_line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_edge</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">pdf</span><span class="p">)</span>
-<span class="n">cdf_line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_edge</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">cdf</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"GDP"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Countries"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"CDF and PDF of the countries's GDP"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s">"pdf"</span><span class="p">,</span> <span class="s">"cdf"</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s">'major'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'w'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s">'minor'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">':'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'w'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s">"-20%"</span><span class="p">,</span><span class="s">"0%"</span><span class="p">,</span><span class="s">"20%"</span><span class="p">,</span><span class="s">"40%"</span><span class="p">,</span><span class="s">"60%"</span><span class="p">,</span><span class="s">"80%"</span><span class="p">,</span><span class="s">"100%"</span><span class="p">])</span>
+<span class="n">pdf_line</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_edge</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">pdf</span><span class="p">)</span>
+<span class="n">cdf_line</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_edge</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">cdf</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"GDP"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Countries"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"CDF and PDF of the countries's GDP"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">legend</span><span class="p">((</span><span class="s">"pdf"</span><span class="p">,</span> <span class="s">"cdf"</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s">'major'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'w'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s">'minor'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">':'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'w'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
 
 </code></pre></div></div>
@@ -2343,8 +2354,8 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>For this use case of the heat map, we use it to see the correlation(relationship) between all the columns in the dataset.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">c_data</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s">'.1f'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">c_data</span><span class="p">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s">'.1f'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_182_0.png" alt="png" /></p>
@@ -2361,15 +2372,15 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>When we focus on the cells below the series of diagonal cells, some cells are darker than others, these show a high correlation between those two columns. For example, we can see that there is a high correlation between infant mortality and the GDP of a country.</p>
 
-<p>To read more about heat map, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">here</a>.</p>
+<p>To read more about heat map, read its documentation <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html" target="_blank">here</a>.</p>
 
 <h4>pairplot</h4>
 
 <p>Now that we can have seen which columns (features) correlate to which, we can utilize the power of pair plotting to visualize these correlations using scatter plot on one figure.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s">"Literacy (</span><span class="si">%</span><span class="s">)"</span><span class="p">,</span><span class="s">"Phones (per 1000)"</span><span class="p">,</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"deep"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">c_data</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"Region"</span><span class="p">,</span><span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s">"Literacy (%)"</span><span class="p">,</span><span class="s">"Phones (per 1000)"</span><span class="p">,</span><span class="s">"GDP ($ per capita)"</span><span class="p">,</span><span class="s">"Birthrate"</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s">"deep"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/blog/assets/post_cont_image/output_188_0.png" alt="png" /></p>
@@ -2384,7 +2395,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Looking at the plot on the second row first column (the one with phones on the Y axis and literacy on the X axis), we can see that the markers from the same regions are located almost at the same location in the plot. For example, there is a lot of blue markers (looking at the legend these are countries from North America) around the same coordinates, suggesting that the population in this region is almost 100% literate with a high number of phones. Meanwhile, at the bottom of the same plot, we register a high number of brown markers (these are the countries from Sub-saharan Africa) suggesting that on average, people in this region don’t have phones and that around 50% of them are literate. These grouping of markers show the correlation between features and the same thing can be observed in the other five plots.</p>
 
-<p>Pair plot is handy in EDA, and you should take time and read more about it <a href="https://seaborn.pydata.org/generated/seaborn.pairplot.html">here</a>.</p>
+<p>Pair plot is handy in EDA, and you should take time and read more about it <a href="https://seaborn.pydata.org/generated/seaborn.pairplot.html" target="_blank">here</a>.</p>
 
 <h3>Conclusion</h3>
 
@@ -2392,7 +2403,7 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>Exploratory data analysis is a whole field of study by its own. Seaborn, matplotlib, pandas and numpy are the most popular libraries for EDA in Python as of March 2019 and are quite easy to understand. There are many other libraries like Dash by plotly (based on the popular D3.js framework) or Bokeh that helps in the creation of interactive plots which are very fun to play with and give a full understanding of a dataset. I’ll do a blog on one of the two soon.</p>
 
-<p>There are many other libraries, but as we said before in <a href="https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html">this post</a>, you don’t need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem; this means that solving the problem is our priority no matter the tools used.</p>
+<p>There are many other libraries, but as we said before in <a href="https://semasuka.github.io/blog/2018/12/18/what-are-the-requirements-for-ML.html" target="_blank">this post</a>, you don’t need to be a master at every library (no one is actually) you only need a basic understanding of the libraries you want to work with and then learn them well as time goes on. Remember programming languages, libraries or frameworks are just tools to help us solve a problem; this means that solving the problem is our priority no matter the tools used.</p>
 
 <p>Lastly, you should choose the tool(s) to use based upon:</p>
 
@@ -2405,13 +2416,18 @@ Name: Infant mortality (per 1000 births), dtype: float64
 
 <p>I know this post was kinda long, but because it’s essential to have a good foundation of EDA, we had to emphasize it.</p>
 
-<p>Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below.</p>
+<p>Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/Countries_EDA.ipynb" target="_blank">here.</a></p>
+
+<p>Thank you for reading this tutorial. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!</p>
 
         <div class="share-page">
     Share this post on
-    <a href="https://twitter.com/intent/tweet?text=A step-by-step introduction to exploratory data analysis&url=http://localhost:4000/2019/03/26/introduction-to-eda.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/03/26/introduction-to-eda.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg></span></a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/2019/03/26/introduction-to-eda.html&title=A%20step-by-step%20introduction%20to%20exploratory%20data%20analysis" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://twitter.com/intent/tweet?text=A step-by-step introduction to exploratory data analysis&url=http://localhost:4000/2019/03/26/introduction-to-eda.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2019/03/26/introduction-to-eda.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2019/03/26/introduction-to-eda.html&title=A step-by-step introduction to exploratory data analysis&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2019/03/26/introduction-to-eda.html&title=A step-by-step introduction to exploratory data analysis" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
     <a href="mailto:?subject=A step-by-step introduction to exploratory data analysis&amp;body=Check out this post http://localhost:4000/blog/2019/03/26/introduction-to-eda.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
 </div>
 
@@ -2513,7 +2529,7 @@ const hitTemplate = function(hit) {
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '.search-searchbar',
-    
+    poweredBy: true,
     placeholder: 'Enter your search term...'
   })
 );

@@ -1,0 +1,4702 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pandas Exercises Part 3 | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Pandas Exercises Part 3" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don’t be shy! Read its documentation throughout if you get stuck here." />
+<meta property="og:description" content="Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don’t be shy! Read its documentation throughout if you get stuck here." />
+<link rel="canonical" href="http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-25T00:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="twitter:title" content="Pandas Exercises Part 3" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/pandas.jpg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html","@type":"BlogPosting","description":"Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don’t be shy! Read its documentation throughout if you get stuck here.","headline":"Pandas Exercises Part 3","dateModified":"2021-01-25T00:00:00-07:00","datePublished":"2021-01-25T00:00:00-07:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post pandas-exercises-part-3">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/pandas.jpg" alt="Pandas Exercises Part 3">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">Pandas Exercises Part 3
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2021-01-25T00:00:00-07:00">Mon January 25, 2021</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>32 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>Great to see you again here! In this last post of the Pandas series, we will continue exploring advanced DataFrame exercises. Pandas is easer to learn than NumPy, in my opinion. Its documentation is well written, so don’t be shy! Read its documentation throughout if you get stuck <a href="https://pandas.pydata.org/pandas-docs/stable/index.html" target="_blank">here</a>.<!-- more --></p>
+
+<p>Let’s get started by importing NumPy and Pandas.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
+</code></pre></div></div>
+
+<h3>Ex 51: How to get the row number of the nth largest value in a column?</h3>
+
+<p>Q: Find the row position of the 5th largest value of column <code class="language-plaintext highlighter-rouge">a</code> of <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rng</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'abc'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>11</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25</td>
+      <td>22</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>18</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>27</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>19</td>
+      <td>17</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>24</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>23</td>
+      <td>13</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>29</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>7</td>
+      <td>10</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>14</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Note: We import and use <code class="language-plaintext highlighter-rouge">default_rng</code> to generated no duplicate values in the DataFrame and use <code class="language-plaintext highlighter-rouge">random.seed</code> to always generate the same numbers even on a different computer.</p>
+
+<h4>Desired out</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The row with the 5th largest number is 6
+</span></code></pre></div></div>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_fifth_largest_num</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">].</span><span class="n">sort_values</span><span class="p">(</span><span class="nb">reversed</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">index</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The row with the 5th largest number is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">row_fifth_largest_num</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The row with the 5th largest number is 6
+</code></pre></div></div>
+
+<p>We first sort the values in column <code class="language-plaintext highlighter-rouge">a</code>, and then reverse it. To get the index(the row number) of the 5th position, we pass in 4 in the <code class="language-plaintext highlighter-rouge">index</code> (indexes start from 0).</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_fifth_largest_num</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">].</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The row with the 5th largest number is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">row_fifth_largest_num</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The row with the 5th largest number is 6
+</code></pre></div></div>
+
+<p>Another way is by using <code class="language-plaintext highlighter-rouge">argsort</code> which will return sorted indexes according to the values in those indexes. Then we reverse those indexes using <code class="language-plaintext highlighter-rouge">[::1]</code> and get the fifth element using <code class="language-plaintext highlighter-rouge">[5]</code>.</p>
+
+<h3>Ex 52: How to find the position of the nth largest value greater than a given value?</h3>
+
+<p>Q: In <code class="language-plaintext highlighter-rouge">the_serie</code> find the position of the 2nd largest value greater than the mean.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_serie</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_serie</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     52
+1     93
+2     15
+3     72
+4     61
+5     21
+6     83
+7     87
+8     75
+9     75
+10    88
+11    24
+12     3
+13    22
+14    53
+dtype: int64
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The mean is 55.0 and the row of the second largest number is 3
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_mean</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">the_serie</span><span class="p">.</span><span class="n">values</span><span class="p">).</span><span class="nb">round</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_mean</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>55.0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">greater_than_mean_arr</span> <span class="o">=</span> <span class="n">the_serie</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_serie</span> <span class="o">&gt;</span> <span class="n">the_mean</span><span class="p">).</span><span class="n">dropna</span><span class="p">().</span><span class="n">sort_values</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_second_largest_num</span> <span class="o">=</span> <span class="n">greater_than_mean_arr</span><span class="p">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_second_largest_num</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The mean is {} and the row of the second largest number is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">the_mean</span><span class="p">,</span> <span class="n">row_second_largest_num</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The mean is 55.0 and the row of the second largest number is 3
+</code></pre></div></div>
+
+<p>We start by calculating the mean of the values in the series using <code class="language-plaintext highlighter-rouge">np.mean</code> and round it. Then we use <code class="language-plaintext highlighter-rouge">where</code> to get all rows with the values superior to the mean.</p>
+
+<p>We drop NaN values (which are values inferior to the mean) and sort the remaining values to finally get the second value in the sorted series using <code class="language-plaintext highlighter-rouge">.index[1]</code> which correspond to the second largest number superior to the mean.</p>
+
+<h3>Ex 53: How to get the last n rows of a DataFrame with row sum &gt; 100?</h3>
+
+<p>Q: Get the last two rows of <code class="language-plaintext highlighter-rouge">the_dataframe</code> whose row sum is superior to 100.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>29</td>
+      <td>38</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20</td>
+      <td>17</td>
+      <td>38</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>16</td>
+      <td>35</td>
+      <td>28</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>20</td>
+      <td>20</td>
+      <td>33</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13</td>
+      <td>17</td>
+      <td>33</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>31</td>
+      <td>30</td>
+      <td>11</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>21</td>
+      <td>39</td>
+      <td>15</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>37</td>
+      <td>30</td>
+      <td>10</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>35</td>
+      <td>31</td>
+      <td>38</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>34</td>
+      <td>26</td>
+      <td>36</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>19</td>
+      <td>37</td>
+      <td>37</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>24</td>
+      <td>39</td>
+      <td>39</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>39</td>
+      <td>28</td>
+      <td>21</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>29</td>
+      <td>34</td>
+      <td>12</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28</td>
+      <td>16</td>
+      <td>30</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex53.png" alt="Pandas_ex53" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows_sum</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="n">sort_values</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows_sum</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4      75
+6      86
+13     89
+14     92
+7      98
+3     103
+1     105
+5     105
+0     107
+2     111
+10    118
+12    120
+8     125
+11    126
+9     132
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows_sum_greater_100</span> <span class="o">=</span> <span class="n">rows_sum</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">rows_sum</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">).</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">rows_sum_greater_100</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3     103.0
+1     105.0
+5     105.0
+0     107.0
+2     111.0
+10    118.0
+12    120.0
+8     125.0
+11    126.0
+9     132.0
+dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">rows_sum_greater_100</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">].</span><span class="n">index</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>34</td>
+      <td>26</td>
+      <td>36</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>24</td>
+      <td>39</td>
+      <td>39</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We calculate a series with of the sum of all the elements row-wise and sort it. We then use <code class="language-plaintext highlighter-rouge">where</code> function to get only the row with element greater than 100 and drop the rest using <code class="language-plaintext highlighter-rouge">dropna</code> function.</p>
+
+<p>Finally, we reverse that row using <code class="language-plaintext highlighter-rouge">[::-1]</code> and get the indexes first two rows using indexing from 0 to 2 (exclusive). We replace those indexes in the original dataframe to get the two rows using <code class="language-plaintext highlighter-rouge">iloc</code>.</p>
+
+<h3>Ex 54: How to find and cap outliers from a series or DataFrame column?</h3>
+
+<p>Q: Replace all values of <code class="language-plaintext highlighter-rouge">the_serie</code> lower to the 5th percentile and greater than 95th percentile respectively with the 5th and 95th percentile value.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_serie</span> <span class="o">=</span> <span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0      0.016049
+# 1      0.016049
+# 2      0.018874
+# 3      0.025929
+# 4      0.035622
+# 5      0.048939
+# 6      0.067234
+# 7      0.092367
+# 8      0.126896
+# 9      0.174333
+# 10     0.239503
+# 11     0.329034
+# 12     0.452035
+# 13     0.621017
+# 14     0.853168
+# 15     1.172102
+# 16     1.610262
+# 17     2.212216
+# 18     3.039195
+# 19     4.175319
+# 20     5.736153
+# 21     7.880463
+# 22    10.826367
+# 23    14.873521
+# 24    20.433597
+# 25    28.072162
+# 26    38.566204
+# 27    52.983169
+# 28    63.876672
+# 29    63.876672
+# dtype: float64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">low_perc</span> <span class="o">=</span> <span class="n">the_serie</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">low_perc</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.016049294076965887
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">high_perc</span> <span class="o">=</span> <span class="n">the_serie</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">high_perc</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>63.876672220183934
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_serie</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_serie</span> <span class="o">&gt;</span> <span class="n">low_perc</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="n">low_perc</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_serie</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_serie</span> <span class="o">&lt;</span> <span class="n">high_perc</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="n">high_perc</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_serie</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0      0.016049
+1      0.016049
+2      0.018874
+3      0.025929
+4      0.035622
+5      0.048939
+6      0.067234
+7      0.092367
+8      0.126896
+9      0.174333
+10     0.239503
+11     0.329034
+12     0.452035
+13     0.621017
+14     0.853168
+15     1.172102
+16     1.610262
+17     2.212216
+18     3.039195
+19     4.175319
+20     5.736153
+21     7.880463
+22    10.826367
+23    14.873521
+24    20.433597
+25    28.072162
+26    38.566204
+27    52.983169
+28    63.876672
+29    63.876672
+dtype: float64
+</code></pre></div></div>
+
+<p>We first calculate the 5th and the 95th percentile using the <code class="language-plaintext highlighter-rouge">quantile</code> function and pass in <code class="language-plaintext highlighter-rouge">q</code> the number 0.05 and 0.95 respectively. Then we call the <code class="language-plaintext highlighter-rouge">where</code> function on the original series, pass in the condition as <code class="language-plaintext highlighter-rouge">the_serie &gt; low_perc</code>.</p>
+
+<p>This condition will target the elements superior to the 5th percentile and set <code class="language-plaintext highlighter-rouge">other</code> which is the remaining element (inferior to the 5th percentile) to be the 5th percentile. The assignment will replace all the values in the series lower than the 5th percentile by the 5th percentile value. Finally, we set <code class="language-plaintext highlighter-rouge">inplace</code> to <code class="language-plaintext highlighter-rouge">True</code>.</p>
+
+<p>We do the same for the 95th percentile, just that this time we are targeting elements inferior to the 95th percentile and set <code class="language-plaintext highlighter-rouge">other</code> to the value of the 95th percentile.</p>
+
+<h3>Ex 55: How to reshape a DataFrame to the largest possible square after removing the negative values?</h3>
+
+<p>Q: Reshape <code class="language-plaintext highlighter-rouge">the_dataframe</code> to the largest possible square with negative values removed. Drop the smallest values if need be. The order of the positive numbers in the result should remain the same as the original.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>31</td>
+      <td>-6</td>
+      <td>40</td>
+      <td>0</td>
+      <td>3</td>
+      <td>-18</td>
+      <td>1</td>
+      <td>32</td>
+      <td>-19</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>17</td>
+      <td>-19</td>
+      <td>43</td>
+      <td>39</td>
+      <td>0</td>
+      <td>12</td>
+      <td>37</td>
+      <td>1</td>
+      <td>28</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21</td>
+      <td>39</td>
+      <td>-6</td>
+      <td>41</td>
+      <td>41</td>
+      <td>26</td>
+      <td>41</td>
+      <td>30</td>
+      <td>34</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-18</td>
+      <td>30</td>
+      <td>-14</td>
+      <td>0</td>
+      <td>18</td>
+      <td>-3</td>
+      <td>-17</td>
+      <td>39</td>
+      <td>-7</td>
+      <td>-12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>32</td>
+      <td>-19</td>
+      <td>39</td>
+      <td>23</td>
+      <td>-13</td>
+      <td>26</td>
+      <td>14</td>
+      <td>15</td>
+      <td>29</td>
+      <td>-17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-19</td>
+      <td>-15</td>
+      <td>33</td>
+      <td>-17</td>
+      <td>33</td>
+      <td>42</td>
+      <td>-3</td>
+      <td>23</td>
+      <td>13</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-7</td>
+      <td>27</td>
+      <td>-6</td>
+      <td>41</td>
+      <td>19</td>
+      <td>32</td>
+      <td>3</td>
+      <td>5</td>
+      <td>39</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>-6</td>
+      <td>24</td>
+      <td>44</td>
+      <td>-12</td>
+      <td>-20</td>
+      <td>-13</td>
+      <td>42</td>
+      <td>-10</td>
+      <td>-13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>14</td>
+      <td>14</td>
+      <td>12</td>
+      <td>-16</td>
+      <td>20</td>
+      <td>7</td>
+      <td>-14</td>
+      <td>-9</td>
+      <td>13</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27</td>
+      <td>2</td>
+      <td>41</td>
+      <td>16</td>
+      <td>23</td>
+      <td>14</td>
+      <td>44</td>
+      <td>26</td>
+      <td>-18</td>
+      <td>-20</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[31., 40.,  3., 32.,  9., 17., 43., 39.],
+#        [12., 37., 28., 38., 21., 39., 41., 41.],
+#        [26., 41., 30., 34., 43., 30., 18., 39.],
+#        [32., 39., 23., 26., 14., 15., 29., 33.],
+#        [33., 42., 23., 13., 41., 27., 41., 19.],
+#        [32.,  3.,  5., 39., 20.,  8., 24., 44.],
+#        [42., 14., 14., 12., 20.,  7., 13., 12.],
+#        [27.,  2., 41., 16., 23., 14., 44., 26.]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>Step 1: Remove the negatives</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_arr</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="n">the_dataframe</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">the_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([31., nan, 40., nan,  3., nan,  1., 32., nan,  9., 17., nan, 43.,
+       39., nan, 12., 37.,  1., 28., 38., 21., 39., nan, 41., 41., 26.,
+       41., 30., 34., 43., nan, 30., nan, nan, 18., nan, nan, 39., nan,
+       nan, 32., nan, 39., 23., nan, 26., 14., 15., 29., nan, nan, nan,
+       33., nan, 33., 42., nan, 23., 13., 41., nan, 27., nan, 41., 19.,
+       32.,  3.,  5., 39., 20.,  8., nan, 24., 44., nan, nan, nan, 42.,
+       nan, nan, 14., 14., 12., nan, 20.,  7., nan, nan, 13., 12., 27.,
+        2., 41., 16., 23., 14., 44., 26., nan, nan])
+</code></pre></div></div>
+
+<p>We use indexing with <code class="language-plaintext highlighter-rouge">[]</code> to get all the positive elements in <code class="language-plaintext highlighter-rouge">the_dataframe</code> and reshaped them into a 1D array using <code class="language-plaintext highlighter-rouge">flatten()</code> function to finally store it into <code class="language-plaintext highlighter-rouge">the_arr</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pos_arr</span> <span class="o">=</span> <span class="n">the_arr</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_arr</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([False,  True, False,  True, False,  True, False, False,  True,
+       False, False,  True, False, False,  True, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False, False, False,  True, False,  True,  True, False,  True,
+        True, False,  True,  True, False,  True, False, False,  True,
+       False, False, False, False,  True,  True,  True, False,  True,
+       False, False,  True, False, False, False,  True, False,  True,
+       False, False, False, False, False, False, False, False,  True,
+       False, False,  True,  True,  True, False,  True,  True, False,
+       False, False,  True, False, False,  True,  True, False, False,
+       False, False, False, False, False, False, False, False,  True,
+        True])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pos_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([31., 40.,  3.,  1., 32.,  9., 17., 43., 39., 12., 37.,  1., 28.,
+       38., 21., 39., 41., 41., 26., 41., 30., 34., 43., 30., 18., 39.,
+       32., 39., 23., 26., 14., 15., 29., 33., 33., 42., 23., 13., 41.,
+       27., 41., 19., 32.,  3.,  5., 39., 20.,  8., 24., 44., 42., 14.,
+       14., 12., 20.,  7., 13., 12., 27.,  2., 41., 16., 23., 14., 44.,
+       26.])
+</code></pre></div></div>
+
+<p>To drop the <code class="language-plaintext highlighter-rouge">nan</code> in the array, we use indexing and <code class="language-plaintext highlighter-rouge">isnan</code> function to return a boolean array where <code class="language-plaintext highlighter-rouge">False</code> represent a non <code class="language-plaintext highlighter-rouge">nan</code> value and <code class="language-plaintext highlighter-rouge">True</code> is a position of a <code class="language-plaintext highlighter-rouge">nan</code> value. We then <code class="language-plaintext highlighter-rouge">~</code> sign to inverse the boolean to get <code class="language-plaintext highlighter-rouge">True</code> in where there is non <code class="language-plaintext highlighter-rouge">nan</code> value. Now we get a new array with no <code class="language-plaintext highlighter-rouge">nan</code> values.</p>
+
+<h4>Step 2: Find side-length of largest possible square</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">pos_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>66
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pos_arr</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+</code></pre></div></div>
+
+<p>To search for the largest possible square, we get first the length of the array using <code class="language-plaintext highlighter-rouge">shape</code> function (we could also use <code class="language-plaintext highlighter-rouge">len()</code> function). We then find the square root of the number of elements in the array and remove the decimal using <code class="language-plaintext highlighter-rouge">floor</code> function cast it to an integer.</p>
+
+<h4>Step 3: Take top n^2 items without changing positions</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_indexes</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">pos_arr</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">top_indexes</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([64, 49, 22,  7, 50, 35, 16, 40, 19, 17, 60, 38,  1, 15, 27,  8, 25,
+       45, 13, 10, 21, 33, 34, 42, 26,  4,  0, 23, 20, 32, 12, 39, 58, 65,
+       29, 18, 48, 62, 36, 28, 14, 54, 46, 41, 24,  6, 61, 31, 63, 51, 52,
+       30, 37, 56,  9, 57, 53,  5, 47, 55, 44, 43,  2, 59, 11,  3])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">take</span><span class="p">(</span><span class="n">pos_arr</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">top_indexes</span><span class="p">[:</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">])).</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[31., 40.,  3., 32.,  9., 17., 43., 39.],
+       [12., 37., 28., 38., 21., 39., 41., 41.],
+       [26., 41., 30., 34., 43., 30., 18., 39.],
+       [32., 39., 23., 26., 14., 15., 29., 33.],
+       [33., 42., 23., 13., 41., 27., 41., 19.],
+       [32.,  3.,  5., 39., 20.,  8., 24., 44.],
+       [42., 14., 14., 12., 20.,  7., 13., 12.],
+       [27.,  2., 41., 16., 23., 14., 44., 26.]])
+</code></pre></div></div>
+
+<p>We then sort the element indexes using <code class="language-plaintext highlighter-rouge">argsort</code> and reverse the order into a descending order using slicing <code class="language-plaintext highlighter-rouge">[::-1]</code> and store it in <code class="language-plaintext highlighter-rouge">top_indexes</code>.</p>
+
+<p>Finally, we use <code class="language-plaintext highlighter-rouge">take</code> NumPy function that takes the <code class="language-plaintext highlighter-rouge">pos_arr</code> and as indices the sorted <code class="language-plaintext highlighter-rouge">top_indexes</code> (from the first indices up to <code class="language-plaintext highlighter-rouge">n</code> raised to the power of 2). Then we reshape the array using <code class="language-plaintext highlighter-rouge">(n,-1)</code> to let Pandas figure out the best reshape argument to use depending on <code class="language-plaintext highlighter-rouge">n</code> value.</p>
+
+<h3>Ex 56: How to swap two rows of a DataFrame?</h3>
+
+<p>Q: Swap rows 1 and 2 in <code class="language-plaintext highlighter-rouge">the_dataframe</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired solution</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex56.png" alt="Pandas_ex56" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">row_swap</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">,</span><span class="n">row_index_1</span><span class="p">,</span><span class="n">row_index_2</span><span class="p">):</span>
+    <span class="n">row_1</span><span class="p">,</span> <span class="n">row_2</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index_1</span><span class="p">,:].</span><span class="n">copy</span><span class="p">(),</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index_2</span><span class="p">,:].</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index_1</span><span class="p">,:],</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index_2</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">row_2</span><span class="p">,</span> <span class="n">row_1</span>
+    <span class="k">return</span> <span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_swap</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We create a function that performs the swap it takes in the dataframe and the two indexes of the rows that need to be swap. We then copy the rows using <code class="language-plaintext highlighter-rouge">iloc</code> and store them in <code class="language-plaintext highlighter-rouge">row_1</code> and <code class="language-plaintext highlighter-rouge">row_2</code>.</p>
+
+<p>To do the swap, we do the opposite of what we did by assigning <code class="language-plaintext highlighter-rouge">row_1</code> and <code class="language-plaintext highlighter-rouge">row_2</code> to the equivalent row index we want to change to occur. So <code class="language-plaintext highlighter-rouge">row_2</code> will be assigned to <code class="language-plaintext highlighter-rouge">row_index_1</code> and <code class="language-plaintext highlighter-rouge">row_1</code> will be assigned to <code class="language-plaintext highlighter-rouge">row_index_2</code>. Finally, we return <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<h3>Ex 57: How to reverse the rows of a DataFrame?</h3>
+
+<p>Q: Reverse all the rows of a DataFrame.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex57.png" alt="Pandas_ex57" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>2nd method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To reverse the dataframe row-wise, we use indexing with <code class="language-plaintext highlighter-rouge">[::-1]</code>. The second method is the short form of the first method we used <code class="language-plaintext highlighter-rouge">iloc</code>.</p>
+
+<p>Note: In Exercise 75, we will see how to achieve the same result column-wise.</p>
+
+<h3>Ex 58: How to create one-hot encodings of a categorical variable (dummy variables)?</h3>
+
+<p>Q: Get one-hot encodings for column <code class="language-plaintext highlighter-rouge">a</code> in the dataframe <code class="language-plaintext highlighter-rouge">the_dataframe</code> and append it as columns.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">))</span>
+<span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>e</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex58.png" alt="Pandas_ex58" /></p>
+
+<h4>Desired output</h4>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">one_hot</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">one_hot</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>5</th>
+      <th>10</th>
+      <th>15</th>
+      <th>20</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">one_hot</span><span class="p">,</span> <span class="n">the_dataframe</span><span class="p">[[</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">,</span><span class="s">"e"</span><span class="p">]]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>5</th>
+      <th>10</th>
+      <th>15</th>
+      <th>20</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>e</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We get the one-hot encoding of column <code class="language-plaintext highlighter-rouge">a</code> by using the <code class="language-plaintext highlighter-rouge">get_dummies</code> function and pass in the column <code class="language-plaintext highlighter-rouge">a</code>.</p>
+
+<p>To append the newly created <code class="language-plaintext highlighter-rouge">one_hot</code>, we use <code class="language-plaintext highlighter-rouge">concat</code> and pass in <code class="language-plaintext highlighter-rouge">one_hot</code> and the remaining columns of <code class="language-plaintext highlighter-rouge">dataframe</code> (except column <code class="language-plaintext highlighter-rouge">a</code>). Finally, we set the axis to 1 since we want to concatenate column-wise.</p>
+
+<h3>Ex 59: Which column contains the highest number of row-wise maximum values?</h3>
+
+<p>Q: Obtain the column name with the highest number of row-wise in <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The column name with the highest number of row-wise is 0
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row_high_num</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="n">argmax</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The column name with the highest number of row-wise is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">row_high_num</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The column name with the highest number of row-wise is 0
+</code></pre></div></div>
+
+<p>To get the row with the largest sum row-wise, we use the <code class="language-plaintext highlighter-rouge">sum</code> function and pass in the axis argument set to 0 (telling Pandas to calculate the sum of elements row-wise) and then use <code class="language-plaintext highlighter-rouge">argmax</code> to get the index with the highest value in the series.</p>
+
+<h3>Ex 60: How to know the maximum possible correlation value of each column against other columns?</h3>
+
+<p>Q: Compute the maximum possible absolute correlation value of each column against other columns in <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'pqrstuvwxy'</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcdefgh'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([0.81941445, 0.84466639, 0.44944264, 0.44872809, 0.81941445,
+#        0.80618428, 0.44944264, 0.5434561 , 0.84466639, 0.80618428])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abs_corr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">corr</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">abs_corr</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>p</th>
+      <th>q</th>
+      <th>r</th>
+      <th>s</th>
+      <th>t</th>
+      <th>u</th>
+      <th>v</th>
+      <th>w</th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>p</th>
+      <td>1.000000</td>
+      <td>0.019359</td>
+      <td>0.088207</td>
+      <td>0.087366</td>
+      <td>0.819414</td>
+      <td>0.736955</td>
+      <td>0.070727</td>
+      <td>0.338139</td>
+      <td>0.163112</td>
+      <td>0.665627</td>
+    </tr>
+    <tr>
+      <th>q</th>
+      <td>0.019359</td>
+      <td>1.000000</td>
+      <td>0.280799</td>
+      <td>0.121217</td>
+      <td>0.172215</td>
+      <td>0.262234</td>
+      <td>0.304781</td>
+      <td>0.042748</td>
+      <td>0.844666</td>
+      <td>0.243317</td>
+    </tr>
+    <tr>
+      <th>r</th>
+      <td>0.088207</td>
+      <td>0.280799</td>
+      <td>1.000000</td>
+      <td>0.184988</td>
+      <td>0.223515</td>
+      <td>0.017763</td>
+      <td>0.449443</td>
+      <td>0.127091</td>
+      <td>0.228455</td>
+      <td>0.018350</td>
+    </tr>
+    <tr>
+      <th>s</th>
+      <td>0.087366</td>
+      <td>0.121217</td>
+      <td>0.184988</td>
+      <td>1.000000</td>
+      <td>0.210879</td>
+      <td>0.096695</td>
+      <td>0.422290</td>
+      <td>0.306141</td>
+      <td>0.100174</td>
+      <td>0.448728</td>
+    </tr>
+    <tr>
+      <th>t</th>
+      <td>0.819414</td>
+      <td>0.172215</td>
+      <td>0.223515</td>
+      <td>0.210879</td>
+      <td>1.000000</td>
+      <td>0.576720</td>
+      <td>0.334690</td>
+      <td>0.543456</td>
+      <td>0.047136</td>
+      <td>0.273478</td>
+    </tr>
+    <tr>
+      <th>u</th>
+      <td>0.736955</td>
+      <td>0.262234</td>
+      <td>0.017763</td>
+      <td>0.096695</td>
+      <td>0.576720</td>
+      <td>1.000000</td>
+      <td>0.137836</td>
+      <td>0.352145</td>
+      <td>0.363597</td>
+      <td>0.806184</td>
+    </tr>
+    <tr>
+      <th>v</th>
+      <td>0.070727</td>
+      <td>0.304781</td>
+      <td>0.449443</td>
+      <td>0.422290</td>
+      <td>0.334690</td>
+      <td>0.137836</td>
+      <td>1.000000</td>
+      <td>0.158152</td>
+      <td>0.188482</td>
+      <td>0.033227</td>
+    </tr>
+    <tr>
+      <th>w</th>
+      <td>0.338139</td>
+      <td>0.042748</td>
+      <td>0.127091</td>
+      <td>0.306141</td>
+      <td>0.543456</td>
+      <td>0.352145</td>
+      <td>0.158152</td>
+      <td>1.000000</td>
+      <td>0.325939</td>
+      <td>0.071704</td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td>0.163112</td>
+      <td>0.844666</td>
+      <td>0.228455</td>
+      <td>0.100174</td>
+      <td>0.047136</td>
+      <td>0.363597</td>
+      <td>0.188482</td>
+      <td>0.325939</td>
+      <td>1.000000</td>
+      <td>0.338705</td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td>0.665627</td>
+      <td>0.243317</td>
+      <td>0.018350</td>
+      <td>0.448728</td>
+      <td>0.273478</td>
+      <td>0.806184</td>
+      <td>0.033227</td>
+      <td>0.071704</td>
+      <td>0.338705</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max_abs_corr</span> <span class="o">=</span> <span class="n">abs_corr</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]).</span><span class="n">values</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max_abs_corr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.81941445, 0.84466639, 0.44944264, 0.44872809, 0.81941445,
+       0.80618428, 0.44944264, 0.5434561 , 0.84466639, 0.80618428])
+</code></pre></div></div>
+
+<p>We first calculate the absolute correlation the whole dataset. We use the <code class="language-plaintext highlighter-rouge">corr()</code> function and pass it as the argument to the NumPy function <code class="language-plaintext highlighter-rouge">abs</code> to get the absolute values (non-negative values).</p>
+
+<p>Now that we have the absolute correction, use lambda expression with the <code class="language-plaintext highlighter-rouge">apply</code> function to find the highest correlation value in each row.</p>
+
+<p>We sorted first each row (represented by <code class="language-plaintext highlighter-rouge">x</code> in the lambda expression), secondly get the second last element in the row using indexing. The reason why we get the second-highest value instead of the last one is because the last value is <code class="language-plaintext highlighter-rouge">1</code> (calculated from the correlation of the same column). We then form an array with the highest correlation values in each row.</p>
+
+<h3>Ex 61: How to create a column containing the minimum by the maximum of each row?</h3>
+
+<p>Q: Compute the minimum-by-maximum for every row of <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>52</td>
+      <td>93</td>
+      <td>15</td>
+      <td>72</td>
+      <td>61</td>
+      <td>21</td>
+      <td>83</td>
+      <td>87</td>
+      <td>75</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>88</td>
+      <td>24</td>
+      <td>3</td>
+      <td>22</td>
+      <td>53</td>
+      <td>2</td>
+      <td>88</td>
+      <td>30</td>
+      <td>38</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>64</td>
+      <td>60</td>
+      <td>21</td>
+      <td>33</td>
+      <td>76</td>
+      <td>58</td>
+      <td>22</td>
+      <td>89</td>
+      <td>49</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>59</td>
+      <td>42</td>
+      <td>92</td>
+      <td>60</td>
+      <td>80</td>
+      <td>15</td>
+      <td>62</td>
+      <td>62</td>
+      <td>47</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51</td>
+      <td>55</td>
+      <td>64</td>
+      <td>3</td>
+      <td>51</td>
+      <td>7</td>
+      <td>21</td>
+      <td>73</td>
+      <td>39</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>89</td>
+      <td>60</td>
+      <td>14</td>
+      <td>9</td>
+      <td>90</td>
+      <td>53</td>
+      <td>2</td>
+      <td>84</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>60</td>
+      <td>71</td>
+      <td>44</td>
+      <td>8</td>
+      <td>47</td>
+      <td>35</td>
+      <td>78</td>
+      <td>81</td>
+      <td>36</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2</td>
+      <td>6</td>
+      <td>54</td>
+      <td>4</td>
+      <td>54</td>
+      <td>93</td>
+      <td>63</td>
+      <td>18</td>
+      <td>90</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    0.161290
+# 1    0.022727
+# 2    0.230769
+# 3    0.163043
+# 4    0.041096
+# 5    0.021739
+# 6    0.098765
+# 7    0.021505
+# dtype: float64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_min</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_max</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_by_max</span> <span class="o">=</span> <span class="n">the_min</span><span class="o">/</span><span class="n">the_max</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_by_max</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    0.161290
+1    0.022727
+2    0.230769
+3    0.163043
+4    0.041096
+5    0.021739
+6    0.098765
+7    0.021505
+dtype: float64
+</code></pre></div></div>
+
+<p>The easiest way to solve this problem is to find the minimum values in each column using the <code class="language-plaintext highlighter-rouge">min</code> function by setting the axis to 1. We do the same for the maximum to finally divide the minimum values by the maximum values.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    0.161290
+1    0.022727
+2    0.230769
+3    0.163043
+4    0.041096
+5    0.021739
+6    0.098765
+7    0.021505
+dtype: float64
+</code></pre></div></div>
+
+<p>The previous method uses three lines of codes we can write in one line of code.  We use the lambda expression to calculate the division of the minimum by the maximum of <code class="language-plaintext highlighter-rouge">x</code> and set axis to <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<h3>Ex 62: How to create a column that contains the penultimate value in each row?</h3>
+
+<p>Q: Create a new column <code class="language-plaintext highlighter-rouge">penultimate</code> which has the second-largest value of each row of <code class="language-plaintext highlighter-rouge">the_dataframe</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex62.png" alt="Pandas_ex62" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">[</span><span class="s">'penultimate'</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">sort_values</span><span class="p">().</span><span class="n">unique</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>As previously seen, to solve this type of challenge, we use a lambda expression with the <code class="language-plaintext highlighter-rouge">apply</code> function. We first set <code class="language-plaintext highlighter-rouge">axis</code> to <code class="language-plaintext highlighter-rouge">1</code> as we are calculating the values row-wise and in the lambda expression, we sort <code class="language-plaintext highlighter-rouge">x</code> ignore the duplicate with <code class="language-plaintext highlighter-rouge">ignore</code> function and return the second largest value using indexing <code class="language-plaintext highlighter-rouge">[-2]</code>.</p>
+
+<h3>Ex 63: How to normalize all columns in a dataframe?</h3>
+
+<p>Q1: Normalize all columns of <code class="language-plaintext highlighter-rouge">the_dataframe</code> by subtracting the column mean and divide by standard deviation.</p>
+
+<p>Q2: Range all columns values of <code class="language-plaintext highlighter-rouge">the_dataframe</code> such that the minimum value in each column is 0 and max is 1.</p>
+
+<p>Note: Don’t use external packages like sklearn.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<h4>Q1</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex6_q1.png" alt="Pandas_ex63_q1" /></p>
+
+<h4>Q2</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex63_q2.png" alt="Pandas_ex63_q2" /></p>
+
+<h4>Solution</h4>
+
+<h4>Q1</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">x</span><span class="p">.</span><span class="n">std</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.144954</td>
+      <td>1.233620</td>
+      <td>-0.722109</td>
+      <td>1.495848</td>
+      <td>0.478557</td>
+      <td>-0.471883</td>
+      <td>0.718777</td>
+      <td>0.860589</td>
+      <td>1.241169</td>
+      <td>0.434515</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.372799</td>
+      <td>-0.977283</td>
+      <td>-1.096825</td>
+      <td>-0.434278</td>
+      <td>0.192317</td>
+      <td>-1.101061</td>
+      <td>0.894088</td>
+      <td>-1.017060</td>
+      <td>-0.475588</td>
+      <td>-1.680126</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.554235</td>
+      <td>0.176231</td>
+      <td>-0.534751</td>
+      <td>-0.009651</td>
+      <td>1.015256</td>
+      <td>0.753357</td>
+      <td>-1.420023</td>
+      <td>0.926472</td>
+      <td>0.034799</td>
+      <td>0.897999</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.383701</td>
+      <td>-0.400526</td>
+      <td>1.682318</td>
+      <td>1.032617</td>
+      <td>1.158376</td>
+      <td>-0.670571</td>
+      <td>-0.017531</td>
+      <td>0.037059</td>
+      <td>-0.057999</td>
+      <td>0.057935</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.110847</td>
+      <td>0.016021</td>
+      <td>0.807981</td>
+      <td>-1.167726</td>
+      <td>0.120757</td>
+      <td>-0.935488</td>
+      <td>-1.455085</td>
+      <td>0.399412</td>
+      <td>-0.429189</td>
+      <td>-1.216643</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-1.492172</td>
+      <td>1.105451</td>
+      <td>0.683076</td>
+      <td>-0.743098</td>
+      <td>-1.382001</td>
+      <td>1.813025</td>
+      <td>-0.333092</td>
+      <td>-1.939414</td>
+      <td>1.658759</td>
+      <td>0.926966</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.417808</td>
+      <td>0.528694</td>
+      <td>0.183455</td>
+      <td>-0.974714</td>
+      <td>-0.022362</td>
+      <td>-0.008279</td>
+      <td>0.543466</td>
+      <td>0.662942</td>
+      <td>-0.568386</td>
+      <td>-0.289677</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-1.492172</td>
+      <td>-1.682209</td>
+      <td>-1.003146</td>
+      <td>0.801002</td>
+      <td>-1.560900</td>
+      <td>0.620899</td>
+      <td>1.069400</td>
+      <td>0.070000</td>
+      <td>-1.403565</td>
+      <td>0.869031</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To solve this issue, we need to know the formula for normalizing. The formulation is as follow:</p>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex63_formula.png" alt="Pandas_ex63_formular" /></p>
+
+<p>So now we can proceed with the <code class="language-plaintext highlighter-rouge">apply</code> function and lambda expression. We set the <code class="language-plaintext highlighter-rouge">axis</code> to <code class="language-plaintext highlighter-rouge">0</code> since we are normalizing column-wise and with the lambda expression we do the calculation according to the formula above.</p>
+
+<h4>Q2</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nb">max</span><span class="p">()</span><span class="o">-</span><span class="n">x</span><span class="p">.</span><span class="nb">min</span><span class="p">()),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.428571</td>
+      <td>0.000000</td>
+      <td>0.865169</td>
+      <td>0.000000</td>
+      <td>0.250000</td>
+      <td>0.784091</td>
+      <td>0.138889</td>
+      <td>0.022989</td>
+      <td>0.136364</td>
+      <td>0.188889</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000000</td>
+      <td>0.758242</td>
+      <td>1.000000</td>
+      <td>0.724638</td>
+      <td>0.355263</td>
+      <td>1.000000</td>
+      <td>0.069444</td>
+      <td>0.678161</td>
+      <td>0.696970</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.285714</td>
+      <td>0.362637</td>
+      <td>0.797753</td>
+      <td>0.565217</td>
+      <td>0.052632</td>
+      <td>0.363636</td>
+      <td>0.986111</td>
+      <td>0.000000</td>
+      <td>0.530303</td>
+      <td>0.011111</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.345238</td>
+      <td>0.560440</td>
+      <td>0.000000</td>
+      <td>0.173913</td>
+      <td>0.000000</td>
+      <td>0.852273</td>
+      <td>0.430556</td>
+      <td>0.310345</td>
+      <td>0.560606</td>
+      <td>0.333333</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.440476</td>
+      <td>0.417582</td>
+      <td>0.314607</td>
+      <td>1.000000</td>
+      <td>0.381579</td>
+      <td>0.943182</td>
+      <td>1.000000</td>
+      <td>0.183908</td>
+      <td>0.681818</td>
+      <td>0.822222</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.000000</td>
+      <td>0.043956</td>
+      <td>0.359551</td>
+      <td>0.840580</td>
+      <td>0.934211</td>
+      <td>0.000000</td>
+      <td>0.555556</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.333333</td>
+      <td>0.241758</td>
+      <td>0.539326</td>
+      <td>0.927536</td>
+      <td>0.434211</td>
+      <td>0.625000</td>
+      <td>0.208333</td>
+      <td>0.091954</td>
+      <td>0.727273</td>
+      <td>0.466667</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.966292</td>
+      <td>0.260870</td>
+      <td>1.000000</td>
+      <td>0.409091</td>
+      <td>0.000000</td>
+      <td>0.298851</td>
+      <td>1.000000</td>
+      <td>0.022222</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To change the values in the dataframe to put them on a scale of <code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">1</code> we use the following formula<code class="language-plaintext highlighter-rouge">MAX - Z / MAX - MIN</code> and do the same as we did in Q1.</p>
+
+<h3>Ex 64: How to compute the correlation of each row with the succeeding row?</h3>
+
+<p>Q: Compute the correlation of each row with its previous row, round the result by 2.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0.31, -0.14, -0.15, 0.47, -0.32, -0.07, 0.12]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">corr</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]).</span><span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.31, -0.14, -0.15, 0.47, -0.32, -0.07, 0.12]
+</code></pre></div></div>
+
+<p>We first loop through the range of the number of rows in the dataframe using <code class="language-plaintext highlighter-rouge">shape</code> function (excluding the last row because we are comparing a pair of rows). We then call the <code class="language-plaintext highlighter-rouge">corr</code> function on each row using the <code class="language-plaintext highlighter-rouge">iloc</code> function and pass in the <code class="language-plaintext highlighter-rouge">corr</code> function the next row location by adding <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">i</code>. Finally, we round the result by two decimal point and place it in a list comprehension.</p>
+
+<h3>Ex 65:  How to replace both the diagonals of dataframe with 0?</h3>
+
+<p>Q: Replace both values in both diagonals of <code class="language-plaintext highlighter-rouge">the_dataframe</code> with 0.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex65.png" alt="Pandas_ex65" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">the_dataframe</span><span class="p">.</span><span class="n">iat</span><span class="p">[</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>93</td>
+      <td>15</td>
+      <td>72</td>
+      <td>61</td>
+      <td>21</td>
+      <td>83</td>
+      <td>87</td>
+      <td>75</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>88</td>
+      <td>0</td>
+      <td>3</td>
+      <td>22</td>
+      <td>53</td>
+      <td>2</td>
+      <td>88</td>
+      <td>30</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>64</td>
+      <td>60</td>
+      <td>0</td>
+      <td>33</td>
+      <td>76</td>
+      <td>58</td>
+      <td>22</td>
+      <td>0</td>
+      <td>49</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>59</td>
+      <td>42</td>
+      <td>92</td>
+      <td>0</td>
+      <td>80</td>
+      <td>15</td>
+      <td>0</td>
+      <td>62</td>
+      <td>47</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51</td>
+      <td>55</td>
+      <td>64</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>21</td>
+      <td>73</td>
+      <td>39</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>89</td>
+      <td>60</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>53</td>
+      <td>2</td>
+      <td>84</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>60</td>
+      <td>71</td>
+      <td>44</td>
+      <td>0</td>
+      <td>47</td>
+      <td>35</td>
+      <td>0</td>
+      <td>81</td>
+      <td>36</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>54</td>
+      <td>4</td>
+      <td>54</td>
+      <td>93</td>
+      <td>0</td>
+      <td>18</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>44</td>
+      <td>0</td>
+      <td>74</td>
+      <td>62</td>
+      <td>14</td>
+      <td>95</td>
+      <td>48</td>
+      <td>15</td>
+      <td>0</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>62</td>
+      <td>40</td>
+      <td>85</td>
+      <td>80</td>
+      <td>82</td>
+      <td>53</td>
+      <td>24</td>
+      <td>26</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We are going to fill both diagonal (right-to-left and left-to-right) with 0. There is a NumPy function called <code class="language-plaintext highlighter-rouge">fill_diagnol</code> to replace values on the left-to-right diagonal but the issue with this function is that it does not replace the right-to-left diagonal as well. We can’t use this function, therefore.</p>
+
+<p>To solve this challenge, we first loop through rows in the dataframe and then for each loop we are to replace two elements at a specific position with <code class="language-plaintext highlighter-rouge">0</code> row-wise.  For the left-to-right diagonal, we use the <code class="language-plaintext highlighter-rouge">iat</code> function which takes in at the first position index the row number and at the second position the column number, we use <code class="language-plaintext highlighter-rouge">i</code> for both positions. For the right-to-left diagonal, we use the <code class="language-plaintext highlighter-rouge">iat</code> function again but this time the first position we calculate the total number rows in the dataframe minus <code class="language-plaintext highlighter-rouge">i</code> (as <code class="language-plaintext highlighter-rouge">i</code> changes because of the loop) minus <code class="language-plaintext highlighter-rouge">1</code> because indexes start from 0 and for the second position corresponding to the columns we use <code class="language-plaintext highlighter-rouge">i</code>.</p>
+
+<h3>Ex 66: How to get the particular group of a groupby dataframe by key?</h3>
+
+<p>Q: This is a question related to the understanding of grouped dataframe. From <code class="language-plaintext highlighter-rouge">df_grouped</code>, get the group belonging to <code class="language-plaintext highlighter-rouge">apple</code> as a dataframe.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'col1'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                   <span class="s">'col2'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+                   <span class="s">'col3'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+
+<span class="n">df_grouped</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'col1'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>0.374540</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>0.950714</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>0.731994</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>0.598658</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>banana</td>
+      <td>0.156019</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>0.155995</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>0.058084</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>banana</td>
+      <td>0.866176</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>orange</td>
+      <td>0.601115</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_grouped</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fd121fc30d0&gt;
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#     col1      col2  col3
+# 0  apple  0.374540     7
+# 3  apple  0.598658     4
+# 6  apple  0.058084    11
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_grouped</span><span class="p">.</span><span class="n">get_group</span><span class="p">(</span><span class="s">"apple"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>0.374540</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>0.598658</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>0.058084</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To get the group belonging to <code class="language-plaintext highlighter-rouge">apple</code> we call <code class="language-plaintext highlighter-rouge">get_group</code> on the <code class="language-plaintext highlighter-rouge">df_grouped</code>.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">grp_val</span> <span class="ow">in</span> <span class="n">df_grouped</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"apple"</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">grp_val</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    col1      col2  col3
+0  apple  0.374540     7
+3  apple  0.598658     4
+6  apple  0.058084    11
+</code></pre></div></div>
+
+<p>Alternatively, we loop through all the elements in <code class="language-plaintext highlighter-rouge">df_grouped</code> and use the if statement to print the columns in the <code class="language-plaintext highlighter-rouge">apple</code> group.</p>
+
+<h3>Ex 67: How to get the nth largest value of a column when grouped by another column?</h3>
+
+<p>Q: In <code class="language-plaintext highlighter-rouge">the_dataframe</code>, find the second largest value of <code class="language-plaintext highlighter-rouge">taste</code> for <code class="language-plaintext highlighter-rouge">banana</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'fruit'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                   <span class="s">'taste'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+                   <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0.8661761457749352
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>taste</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>0.374540</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>0.950714</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>0.731994</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>0.598658</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>banana</td>
+      <td>0.156019</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>0.155995</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>0.058084</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>banana</td>
+      <td>0.866176</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>orange</td>
+      <td>0.601115</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_grouped</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"fruit"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sorted</span><span class="p">(</span><span class="n">df_grouped</span><span class="p">.</span><span class="n">get_group</span><span class="p">(</span><span class="s">"banana"</span><span class="p">)[</span><span class="s">"taste"</span><span class="p">])[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8661761457749352
+</code></pre></div></div>
+
+<p>Just like we did in the previous exercise, we first group the dataframe using the values in the <code class="language-plaintext highlighter-rouge">fruit</code> column and store it in <code class="language-plaintext highlighter-rouge">df_grouped</code>. Then we get <code class="language-plaintext highlighter-rouge">taste</code> column for <code class="language-plaintext highlighter-rouge">banana</code> using <code class="language-plaintext highlighter-rouge">get_group</code> function and sort it out. Finally, to get the second largest element, we use indexing <code class="language-plaintext highlighter-rouge">[-2]</code>.</p>
+
+<h3>Ex 68: How to compute grouped mean on pandas DataFrame and keep the grouped column as another column (not index)?</h3>
+
+<p>Q: In <code class="language-plaintext highlighter-rouge">the_dataframe</code>, Compute the mean price of every fruit, while keeping the fruit as another column instead of an index.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'fruit'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                   <span class="s">'taste'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+                   <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex69.png" alt="Pandas_ex69" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"fruit"</span><span class="p">).</span><span class="n">mean</span><span class="p">()[</span><span class="s">"price"</span><span class="p">].</span><span class="n">reset_index</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>7.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>5.333333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>5.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The most straightforward way to go about this exercise is to group the dataframe by <code class="language-plaintext highlighter-rouge">fruit</code> and get the mean of the numerical columns grouped by <code class="language-plaintext highlighter-rouge">price</code> and reset the index using <code class="language-plaintext highlighter-rouge">reset_index</code> which will change the index from <code class="language-plaintext highlighter-rouge">fruit</code> column to regular ascending numerical index.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"fruit"</span><span class="p">,</span><span class="n">as_index</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="s">"price"</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>7.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>5.333333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>5.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Alternatively, we can reset the index using the <code class="language-plaintext highlighter-rouge">as_index</code> parameter from the <code class="language-plaintext highlighter-rouge">groupby</code> function.</p>
+
+<h3>Ex 69: How to join two DataFrames by 2 columns so that they have only the common rows?</h3>
+
+<p>Q: Join dataframes <code class="language-plaintext highlighter-rouge">the_dataframe_1</code> and <code class="language-plaintext highlighter-rouge">the_dataframe_2</code> by <code class="language-plaintext highlighter-rouge">fruit-pazham</code> and <code class="language-plaintext highlighter-rouge">weight-kilo</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'fruit'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'weight'</span><span class="p">:</span> <span class="p">[</span><span class="s">'high'</span><span class="p">,</span> <span class="s">'medium'</span><span class="p">,</span> <span class="s">'low'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+
+<span class="n">the_dataframe_2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'pazham'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">,</span> <span class="s">'pine'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s">'kilo'</span><span class="p">:</span> <span class="p">[</span><span class="s">'high'</span><span class="p">,</span> <span class="s">'low'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex69.png" alt="Pandas_ex69" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_1</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>weight</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_2</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pazham</th>
+      <th>kilo</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pine</td>
+      <td>high</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>low</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>orange</td>
+      <td>high</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>pine</td>
+      <td>low</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">the_dataframe_1</span><span class="p">,</span> <span class="n">the_dataframe_2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">"inner"</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s">"fruit"</span><span class="p">,</span><span class="s">"weight"</span><span class="p">],</span> <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s">"pazham"</span><span class="p">,</span><span class="s">"kilo"</span><span class="p">],</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">[</span><span class="s">"_left"</span><span class="p">,</span><span class="s">"_right"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>weight</th>
+      <th>price_left</th>
+      <th>pazham</th>
+      <th>kilo</th>
+      <th>price_right</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>1</td>
+      <td>apple</td>
+      <td>high</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>0</td>
+      <td>apple</td>
+      <td>high</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>5</td>
+      <td>apple</td>
+      <td>high</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>4</td>
+      <td>orange</td>
+      <td>low</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>9</td>
+      <td>orange</td>
+      <td>low</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>11</td>
+      <td>orange</td>
+      <td>low</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We use the <code class="language-plaintext highlighter-rouge">merge</code> to combine the two dataframes, and set <code class="language-plaintext highlighter-rouge">how</code> parameter to <code class="language-plaintext highlighter-rouge">inner</code> which means that we are only interested in rows with the same value in <code class="language-plaintext highlighter-rouge">fruit</code> and <code class="language-plaintext highlighter-rouge">weight</code> column on the left and <code class="language-plaintext highlighter-rouge">pazham</code> and <code class="language-plaintext highlighter-rouge">kilo</code> column on the right. Finally, we add suffix “_left” and “_right” on those columns.</p>
+
+<h3>Ex 70: How to remove rows from a DataFrame that are present in another DataFrame?</h3>
+
+<p>Q: From <code class="language-plaintext highlighter-rouge">the_dataframe_1</code>, remove the rows present in <code class="language-plaintext highlighter-rouge">the_dataframe_2</code>. All three columns values must be the same for the row to be drop.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe_1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'fruit'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'weight'</span><span class="p">:</span> <span class="p">[</span><span class="s">'high'</span><span class="p">,</span> <span class="s">'medium'</span><span class="p">,</span> <span class="s">'low'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">)})</span>
+
+<span class="n">the_dataframe_2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'pazham'</span><span class="p">:</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">,</span> <span class="s">'pine'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s">'kilo'</span><span class="p">:</span> <span class="p">[</span><span class="s">'high'</span><span class="p">,</span> <span class="s">'low'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">'price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">)})</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex70.png" alt="Pandas_ex70" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_1</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>weight</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_2</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pazham</th>
+      <th>kilo</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pine</td>
+      <td>high</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>low</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>orange</td>
+      <td>high</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>pine</td>
+      <td>low</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe_1</span><span class="p">[</span><span class="o">~</span><span class="n">the_dataframe_1</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">the_dataframe_2</span><span class="p">).</span><span class="nb">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit</th>
+      <th>weight</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>apple</td>
+      <td>high</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>banana</td>
+      <td>medium</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>orange</td>
+      <td>low</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We first get the element in <code class="language-plaintext highlighter-rouge">the_dataframe_1</code> that are present in <code class="language-plaintext highlighter-rouge">the_dataframe_2</code> using the <code class="language-plaintext highlighter-rouge">isin</code> function. A new dataframe with boolean values will is return where <code class="language-plaintext highlighter-rouge">True</code> represent a similar value between <code class="language-plaintext highlighter-rouge">the_dataframe_1</code> and <code class="language-plaintext highlighter-rouge">the_dataframe_2</code> and <code class="language-plaintext highlighter-rouge">False</code> represent a different value. We use <code class="language-plaintext highlighter-rouge">all</code> to get an AND operator function between the boolean values row-wise(<code class="language-plaintext highlighter-rouge">axis</code> set to <code class="language-plaintext highlighter-rouge">1</code>). For example, in row 4, we’ll have “False” AND “False” AND “True” = “False”.</p>
+
+<p>Finally, we use <code class="language-plaintext highlighter-rouge">~</code> to reverse all the boolean value (“False” becomes “True” and “True” becomes “False”) and use indexing into <code class="language-plaintext highlighter-rouge">the_dataframe_1</code>. We find out that we are keeping all the rows in <code class="language-plaintext highlighter-rouge">the_dataframe_1</code> meaning that no row that is identical in <code class="language-plaintext highlighter-rouge">the_dataframe_1</code> and <code class="language-plaintext highlighter-rouge">the_dataframe_2</code>.</p>
+
+<h3>Ex 71: How to get the positions where values of two columns match?</h3>
+
+<p>Q: Get the positions where values of two columns match</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'fruit1'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                    <span class="s">'fruit2'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">],</span> <span class="mi">10</span><span class="p">)})</span>
+<span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit1</th>
+      <th>fruit2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>banana</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>apple</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>banana</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>apple</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>apple</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>banana</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>orange</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>banana</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>banana</td>
+      <td>orange</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0, 3, 5, 7]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit1"</span><span class="p">]</span> <span class="o">==</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit2"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fruit1</th>
+      <th>fruit2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>banana</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>apple</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>orange</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit1"</span><span class="p">]</span> <span class="o">==</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit2"</span><span class="p">]).</span><span class="n">dropna</span><span class="p">().</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 3, 5, 7]
+</code></pre></div></div>
+
+<p>We first call the <code class="language-plaintext highlighter-rouge">where</code> function the <code class="language-plaintext highlighter-rouge">the_dataframe</code> with the condition that we need to the same fruit in column <code class="language-plaintext highlighter-rouge">fruit1</code> and <code class="language-plaintext highlighter-rouge">fruit2</code>.  We get boolean values dataframe with the rows where the values are the same and <code class="language-plaintext highlighter-rouge">NaN</code> where the values are different. We drop <code class="language-plaintext highlighter-rouge">NaN</code> using <code class="language-plaintext highlighter-rouge">dropna</code> function and extract the indexes. Finally, place the array into a list et voila!</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit1"</span><span class="p">]</span> <span class="o">==</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit2"</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 3, 5, 7]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alternatevely</span> <span class="n">w</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit1"</span><span class="p">]</span> <span class="o">==</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit2"</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 3, 5, 7]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit1"</span><span class="p">]</span> <span class="o">==</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"fruit2"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([0, 3, 5, 7]),)
+</code></pre></div></div>
+
+<p>Alternatively, we can use the <code class="language-plaintext highlighter-rouge">where</code> function which returns a tuple with first element an array of the indexes where the condition is satisfied. We extract that array and cast it into a list. I prefer this second method as it is more concise.</p>
+
+<h3>Ex 72: How to create lags and leads of a column in a DataFrame?</h3>
+
+<p>Q: Create two new columns in <code class="language-plaintext highlighter-rouge">the_dataframe</code>, one of which is a <code class="language-plaintext highlighter-rouge">lag1</code> (shift column a down by 1 row) of column <code class="language-plaintext highlighter-rouge">a</code> and the other is a <code class="language-plaintext highlighter-rouge">lead1</code> (shift column b up by 1 row).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">'abcd'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex72.png" alt="Pandas_ex72" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>52</td>
+      <td>93</td>
+      <td>15</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>61</td>
+      <td>21</td>
+      <td>83</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>75</td>
+      <td>75</td>
+      <td>88</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>22</td>
+      <td>53</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>88</td>
+      <td>30</td>
+      <td>38</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"lag1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">the_dataframe</span><span class="p">[</span><span class="s">"lead1"</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>lag1</th>
+      <th>lead1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>52</td>
+      <td>93</td>
+      <td>15</td>
+      <td>72</td>
+      <td>NaN</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>61</td>
+      <td>21</td>
+      <td>83</td>
+      <td>87</td>
+      <td>52.0</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>75</td>
+      <td>75</td>
+      <td>88</td>
+      <td>24</td>
+      <td>61.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>22</td>
+      <td>53</td>
+      <td>2</td>
+      <td>75.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>88</td>
+      <td>30</td>
+      <td>38</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To create a shift of values in a column upward or downward, we use the <code class="language-plaintext highlighter-rouge">shift</code> function on the desired column and pass in as the <code class="language-plaintext highlighter-rouge">periods</code> number <code class="language-plaintext highlighter-rouge">1</code> to shift upward or <code class="language-plaintext highlighter-rouge">-1</code> to shift downward.</p>
+
+<h3>Ex 73: How to get the frequency of unique values in the entire DataFrame?</h3>
+
+<p>Q: Get the frequency of unique values in the entire DataFrame.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">'abcd'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 8    5
+# 5    4
+# 7    3
+# 6    2
+# 4    2
+# 3    2
+# 2    2
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7</td>
+      <td>4</td>
+      <td>8</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>4</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>6</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8</td>
+      <td>6</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">flatten</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8    5
+5    4
+7    3
+6    2
+4    2
+3    2
+2    2
+dtype: int64
+</code></pre></div></div>
+
+<p>To get the frequency of unique values or how many time one value is repeated in the dataframe, we use <code class="language-plaintext highlighter-rouge">value_counts</code> and pass in the values of <code class="language-plaintext highlighter-rouge">the_dataframe</code> flattened which transform the dataframe from an n-dimensional dataframe into a 1D array.</p>
+
+<h3>Ex 74: How to split a text column into two separate columns?</h3>
+
+<p>Q: Split the string column in <code class="language-plaintext highlighter-rouge">the_dataframe</code> to form a dataframe with 3 columns as shown.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="s">"Temperature, City    Province"</span><span class="p">,</span>
+                              <span class="s">"33, Bujumbura    Bujumbura"</span><span class="p">,</span>
+                              <span class="s">"30, Buganda    Cibitoke"</span><span class="p">,</span>
+                              <span class="s">"25, Ncendajuru    Cankuzo"</span><span class="p">,</span>
+                              <span class="s">"35, Giheta    Gitega"</span><span class="p">],</span> 
+                              <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'row'</span><span class="p">]</span>
+                            <span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex74.png" alt="Pandas_ex74" /></p>
+
+<h4>Solution</h4>
+
+<h4>Step 1: split the string data</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>row</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Temperature, City    Province</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>33, Bujumbura    Bujumbura</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>30, Buganda    Cibitoke</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25, Ncendajuru    Cankuzo</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35, Giheta    Gitega</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">.</span><span class="n">row</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s">",|</span><span class="se">\t</span><span class="s">|    "</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Temperature</td>
+      <td>City</td>
+      <td>Province</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>33</td>
+      <td>Bujumbura</td>
+      <td>Bujumbura</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>30</td>
+      <td>Buganda</td>
+      <td>Cibitoke</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25</td>
+      <td>Ncendajuru</td>
+      <td>Cankuzo</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35</td>
+      <td>Giheta</td>
+      <td>Gitega</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>In this first step, we split the strings in the one column into three different columns. We call the <code class="language-plaintext highlighter-rouge">split</code> function on the <code class="language-plaintext highlighter-rouge">str</code> function from the <code class="language-plaintext highlighter-rouge">row</code> dataframe. We pass in as the pattern a regular expression that targets <code class="language-plaintext highlighter-rouge">,</code> or <code class="language-plaintext highlighter-rouge">\t</code> (tab) and <code class="language-plaintext highlighter-rouge">   </code> (4 spaces) and set <code class="language-plaintext highlighter-rouge">expand</code> to <code class="language-plaintext highlighter-rouge">True</code> which expand the split strings into separate columns.</p>
+
+<h4>Step 2: Rename the columns</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_header</span> <span class="o">=</span> <span class="n">df_splitted</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_header</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    Temperature
+1           City
+2       Province
+Name: 0, dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">new_header</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature</th>
+      <th>City</th>
+      <th>Province</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Temperature</td>
+      <td>City</td>
+      <td>Province</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>33</td>
+      <td>Bujumbura</td>
+      <td>Bujumbura</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>30</td>
+      <td>Buganda</td>
+      <td>Cibitoke</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25</td>
+      <td>Ncendajuru</td>
+      <td>Cankuzo</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35</td>
+      <td>Giheta</td>
+      <td>Gitega</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>In step 2, we are going to use the first row strings as the column names. We first extract the row using <code class="language-plaintext highlighter-rouge">iloc</code> and store it in the <code class="language-plaintext highlighter-rouge">new_header</code>, Then assign it to <code class="language-plaintext highlighter-rouge">columns</code> of the dataframe.</p>
+
+<h4>Step 3: Drop the first row</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s">"index"</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_splitted</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature</th>
+      <th>City</th>
+      <th>Province</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>33</td>
+      <td>Bujumbura</td>
+      <td>Bujumbura</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>30</td>
+      <td>Buganda</td>
+      <td>Cibitoke</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25</td>
+      <td>Ncendajuru</td>
+      <td>Cankuzo</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>35</td>
+      <td>Giheta</td>
+      <td>Gitega</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Now that we have the column names all set, we no longer need that first row, so we are dropping it. We call the <code class="language-plaintext highlighter-rouge">drop</code> function on the dataframe and pass in as parameters <code class="language-plaintext highlighter-rouge">label</code> set to <code class="language-plaintext highlighter-rouge">0</code> to tell Pandas that we want to drop a row not a column, then set <code class="language-plaintext highlighter-rouge">axis</code> to <code class="language-plaintext highlighter-rouge">index</code> (We could also have used <code class="language-plaintext highlighter-rouge">0</code>) to tell Pandas that we want to drop labels from the index. Finally set <code class="language-plaintext highlighter-rouge">inplace</code> to <code class="language-plaintext highlighter-rouge">True</code> to tell Pandas we don’t want a copy of the dataframe that instead, we want the change to occur in the original dataframe.</p>
+
+<h3>Ex 75: How to reverse the columns of a DataFrame?</h3>
+
+<p>Q: Reverse all the columns of a DataFrame.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex75.png" alt="Pandas_ex75" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">[</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">columns</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>4</th>
+      <th>3</th>
+      <th>2</th>
+      <th>1</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>8</td>
+      <td>7</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>13</td>
+      <td>12</td>
+      <td>11</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>19</td>
+      <td>18</td>
+      <td>17</td>
+      <td>16</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24</td>
+      <td>23</td>
+      <td>22</td>
+      <td>21</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>This exercise is similar to exercise 57 the difference is that this time we are reversing columns instead of rows. To do the reversal, we first extract the columns and reverse them using indexing <code class="language-plaintext highlighter-rouge">[::-1]</code> and place it into the original dataframe using again indexing.</p>
+
+<h3>Conclusion</h3>
+
+<p>Yaaayy! We made it finally. In the last posts, we have explored more than 150 exercises on NumPy and Pandas. I am very confident that after going through all these exercises, you are ready to tackle the next step: Machine Learning with Scikit-learn. We will continue using NumPy in end-to-end Machine Learning projects coming in the next blog posts.</p>
+
+<p>In the next post, we will introduce the common jargon used in Machine Learning, code our first Machine Learning algorithm and after that post we will start working on machine learning projects finally. I am super duper excited for the upcoming posts. Remember, practice makes perfect! Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%203.ipynb" target="_blank">here</a>.</p>
+
+<p>Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=Pandas Exercises Part 3&url=http://localhost:4000/2021/01/25/pandas-exercise-part-3.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2021/01/25/pandas-exercise-part-3.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/01/25/pandas-exercise-part-3.html&title=Pandas Exercises Part 3&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2021/01/25/pandas-exercise-part-3.html&title=Pandas Exercises Part 3" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=Pandas Exercises Part 3&amp;body=Check out this post http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html';
+      this.page.identifier = 'http://localhost:4000/blog/2021/01/25/pandas-exercise-part-3.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

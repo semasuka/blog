@@ -1,0 +1,3906 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pandas Exercises Part 2 | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Pandas Exercises Part 2" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome back, guys! We will continue with part 2 in this series of Pandas exercise. I am very excited about this post because we will introducing DataFrame, the most used Pandas data structure. I hope you guys will enjoy this post." />
+<meta property="og:description" content="Welcome back, guys! We will continue with part 2 in this series of Pandas exercise. I am very excited about this post because we will introducing DataFrame, the most used Pandas data structure. I hope you guys will enjoy this post." />
+<link rel="canonical" href="http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-19T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="twitter:title" content="Pandas Exercises Part 2" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/pandas.jpg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html","@type":"BlogPosting","description":"Welcome back, guys! We will continue with part 2 in this series of Pandas exercise. I am very excited about this post because we will introducing DataFrame, the most used Pandas data structure. I hope you guys will enjoy this post.","headline":"Pandas Exercises Part 2","dateModified":"2020-10-19T00:00:00-06:00","datePublished":"2020-10-19T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post pandas-exercises-part-2">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/pandas.jpg" alt="Pandas Exercises Part 2">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">Pandas Exercises Part 2
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2020-10-19T00:00:00-06:00">Mon October 19, 2020</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>30 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>Welcome back, guys! We will continue with part 2 in this series of Pandas exercise. I am very excited about this post because we will introducing DataFrame, the most used Pandas data structure. I hope you guys will enjoy this post.<!-- more --></p>
+
+<p>With no further due, let’s get started.</p>
+
+<p>We will start by importing Pandas and NumPy</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h3>Ex 26: How to get the mean of a series grouped by another series?</h3>
+
+<p>Q: Compute the mean of weights of each fruit.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'carrot'</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Keep in mind that your values will be different from mine and you might only randomly select only 2 fruits instead of 3.
+</span></code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex26.png" alt="Pandas_ex26" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits_weights</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">({</span><span class="s">"fruits"</span><span class="p">:</span><span class="n">fruits</span><span class="p">,</span><span class="s">"weights"</span><span class="p">:</span><span class="n">weights</span><span class="p">},</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits_weights</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">"fruits"</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weights</th>
+    </tr>
+    <tr>
+      <th>fruits</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>carrot</th>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We concatenate horizontally (by setting the axis = 1) the two series into a dataframe by using the concat function and use that dataframe to group the fruits by the name of the fruit. After the grouping the dataframe, we get the mean of each fruit using the mean function.</p>
+
+<h3>Ex 27: How to compute the euclidean distance between two series?</h3>
+
+<p>Q: Compute the <a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidean distance</a> between series (points) p and q, using a packaged formula and another solution without.</p>
+
+<p>Euclidean distance formular:</p>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex27.png" alt="Pandas_ex27" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 18.165
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method using a built-in function</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">q</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18.16590212458495
+</code></pre></div></div>
+
+<p>We can get the Euclidean distance by calling the NumPy function linalg.norm function and pass in the difference in the two series.</p>
+
+<h4>2nd Method without using a built-in function</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sum</span><span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">.</span><span class="mi">5</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18.16590212458495
+</code></pre></div></div>
+
+<p>Using the Euclidean formula provided, we can use operators to find the Euclidean distance. We first subtract the corresponding elements in the two series and apply 2 as an exponent then sum it up and finally get the square root.</p>
+
+<h3>Ex 28: How to find all the local maxima (or peaks) in a numeric series?</h3>
+
+<p>Q: Get the positions of peaks (values surrounded by smaller values on both sides) in ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([1, 5, 7])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
+
+<span class="n">argrelextrema</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">greater</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([1, 5, 7]),)
+</code></pre></div></div>
+
+<p>To calculate the relative extrema of the series, we use argrelextrema function from the scipy (Scientific Python) which is a Python library close to NumPy used for mathematics, science, and engineering.</p>
+
+<p>In that function, we pass in the series and the comparator. Since we are looking for the maxima, in this case, the comparator will be np.greater.</p>
+
+<h3>Ex 29: How to replace missing spaces in a string with the least frequent character?</h3>
+
+<p>Q: Replace the spaces in my_str with the least frequent character.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'dbc deb abed gagde'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># least frequent element is c
+</span>
+<span class="c1"># ['d',
+#  'b',
+#  'c',
+#  'c',
+#  'd',
+#  'e',
+#  'b',
+#  'c',
+#  'a',
+#  'b',
+#  'e',
+#  'd',
+#  'c',
+#  'g',
+#  'a',
+#  'g',
+#  'd',
+#  'e']
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">least_common_char</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)).</span><span class="n">most_common</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Counter</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)).</span><span class="n">most_common</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('d', 4), ('b', 3), ('', 3), ('e', 3), ('a', 2), ('g', 2), ('c', 1)]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">least_common_char</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'c'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="n">least_common_char</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['d',
+ 'b',
+ 'c',
+ 'c',
+ 'd',
+ 'e',
+ 'b',
+ 'c',
+ 'a',
+ 'b',
+ 'e',
+ 'd',
+ 'c',
+ 'g',
+ 'a',
+ 'g',
+ 'd',
+ 'e']
+</code></pre></div></div>
+
+<p>To replace the white space with the most common element in the series, we need first to find the most common character in the series.</p>
+
+<p>To find it, we use the counter function from the collection library. We pass in the series without the white space (by replacing “ “ by “”) and apply to the counter function, the most_common function. We will get back a list of tuples will all characters and their counts in decreasing order. We use -1 to target the last tuple and 0 to get the character in that tuple.</p>
+
+<p>Now that we have the least common character, we can replace all the instances of white space by the least common character.</p>
+
+<h3>Ex 30: How to create a TimeSeries starting ‘2000-01-01’ and 10 weekends (Saturdays) and have random numbers as values?</h3>
+
+<p>Q: Create a TimeSeries starting ‘2000-01-01’ and 10 weekends (Saturdays) and have random numbers as values?</p>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># values will be different due to randomness
+</span>
+<span class="c1"># 2000-01-01    4
+# 2000-01-08    1
+# 2000-01-15    8
+# 2000-01-22    4
+# 2000-01-29    4
+# 2000-02-05    2
+# 2000-02-12    4
+# 2000-02-19    9
+# 2000-02-26    6
+# 2000-03-04    6
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span><span class="n">pd</span><span class="p">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s">"2000-01-01"</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s">"W-SAT"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2000-01-01    1
+2000-01-08    9
+2000-01-15    1
+2000-01-22    3
+2000-01-29    8
+2000-02-05    7
+2000-02-12    3
+2000-02-19    8
+2000-02-26    4
+2000-03-04    7
+Freq: W-SAT, dtype: int64
+</code></pre></div></div>
+
+<p>We create as the values of the series, the ten random numbers from 1 to 10 and as indexes, we create a date_range function which returns a date rage starting from 2000-01-01 and set the number of periods to generate to 10 with the frequency set to Saturday weekly. To get the list of all the frequencies, visit <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases" target="_blank">this link.</a></p>
+
+<h3>31: How to fill an intermittent time series so all missing dates show up with values of previous non-missing date?</h3>
+
+<p>Q:
+<code class="language-plaintext highlighter-rouge">ser</code> has missing dates and values. Make all missing dates appear and fill up with value from previous date.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s">'2000-01-01'</span><span class="p">,</span> <span class="s">'2000-01-03'</span><span class="p">,</span> <span class="s">'2000-01-06'</span><span class="p">,</span> <span class="s">'2000-01-08'</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2000-01-01     1.0
+# 2000-01-02     1.0
+# 2000-01-03    10.0
+# 2000-01-04    10.0
+# 2000-01-05    10.0
+# 2000-01-06     3.0
+# 2000-01-07     3.0
+# 2000-01-08     NaN
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">resample</span><span class="p">(</span><span class="s">"D"</span><span class="p">).</span><span class="n">ffill</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2000-01-01     1.0
+2000-01-02     1.0
+2000-01-03    10.0
+2000-01-04    10.0
+2000-01-05    10.0
+2000-01-06     3.0
+2000-01-07     3.0
+2000-01-08     NaN
+Freq: D, dtype: float64
+</code></pre></div></div>
+
+<p>We use the resample function to fill up all the days that are missing starting from <code class="language-plaintext highlighter-rouge">2000-01-01</code> to <code class="language-plaintext highlighter-rouge">2000-01-08</code> and uses the character <code class="language-plaintext highlighter-rouge">D</code> to specify that we want days as the interval. We then use <code class="language-plaintext highlighter-rouge">ffill</code> function to fill up the missing values from the previous row et voila!</p>
+
+<h3>32: How to compute the autocorrelations of a numeric series?</h3>
+
+<p>Q: Compute autocorrelations for the first 10 lags of ser. Find out which lag has the largest correlation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># values will change due to randomness
+</span>
+<span class="c1"># [-0.462232351922819,
+#  0.24702149262453904,
+#  -0.3667824631718427,
+#  0.09378057953432406,
+#  0.3382941938771548,
+#  -0.04450324725676436,
+#  0.16361925861505003,
+#  -0.5351035019540977,
+#  0.26359968436232056,
+#  0.03944833988252732]
+# the lag with the highest correlation is 8
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">autocorr</span> <span class="o">=</span> <span class="p">[</span><span class="n">ser</span><span class="p">.</span><span class="n">autocorr</span><span class="p">(</span><span class="n">lag</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)][</span><span class="mi">1</span><span class="p">:]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">autocorr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[-0.462232351922819,
+ 0.24702149262453904,
+ -0.3667824631718427,
+ 0.09378057953432406,
+ 0.3382941938771548,
+ -0.04450324725676436,
+ 0.16361925861505003,
+ -0.5351035019540977,
+ 0.26359968436232056,
+ 0.03944833988252732]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"the lag with the highest correlation is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">autocorr</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the lag with the highest correlation is 8
+</code></pre></div></div>
+
+<p>We first have to calculate the correlation between each consecutive number and to do that we loop through all the elements in the series using range and list comprehension. We use indexing to ignore the first correlation since the correction with the same element is 1.</p>
+
+<p>After finding all the correlation, it is time to find the position of the largest correlation. To do this, we use the NumPy function <code class="language-plaintext highlighter-rouge">argmax</code> to get back the position of the largest absolute (by changing negative correlation to positive) correlation number and add 1 since the count starts from 0.</p>
+
+<h3>Ex 33: How to import only every nth row from a csv file to create a dataframe?</h3>
+
+<p>Q: Import every 50th row of <a href="&quot;https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv&quot;" target="_blank">BostonHousing dataset</a> as a dataframe.</p>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex33.png" alt="Pandas_ex33" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boston_housing_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boston_housing_dataset</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>zn</th>
+      <th>indus</th>
+      <th>chas</th>
+      <th>nox</th>
+      <th>rm</th>
+      <th>age</th>
+      <th>dis</th>
+      <th>rad</th>
+      <th>tax</th>
+      <th>ptratio</th>
+      <th>b</th>
+      <th>lstat</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1</td>
+      <td>296</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>396.90</td>
+      <td>9.14</td>
+      <td>21.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>34.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+      <td>33.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>396.90</td>
+      <td>5.33</td>
+      <td>36.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boston_housing_dataset</span><span class="p">[::</span><span class="mi">50</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>zn</th>
+      <th>indus</th>
+      <th>chas</th>
+      <th>nox</th>
+      <th>rm</th>
+      <th>age</th>
+      <th>dis</th>
+      <th>rad</th>
+      <th>tax</th>
+      <th>ptratio</th>
+      <th>b</th>
+      <th>lstat</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1</td>
+      <td>296</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>0.08873</td>
+      <td>21.0</td>
+      <td>5.64</td>
+      <td>0</td>
+      <td>0.439</td>
+      <td>5.963</td>
+      <td>45.7</td>
+      <td>6.8147</td>
+      <td>4</td>
+      <td>243</td>
+      <td>16.8</td>
+      <td>395.56</td>
+      <td>13.45</td>
+      <td>19.7</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.14866</td>
+      <td>0.0</td>
+      <td>8.56</td>
+      <td>0</td>
+      <td>0.520</td>
+      <td>6.727</td>
+      <td>79.9</td>
+      <td>2.7778</td>
+      <td>5</td>
+      <td>384</td>
+      <td>20.9</td>
+      <td>394.76</td>
+      <td>9.42</td>
+      <td>27.5</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>1.65660</td>
+      <td>0.0</td>
+      <td>19.58</td>
+      <td>0</td>
+      <td>0.871</td>
+      <td>6.122</td>
+      <td>97.3</td>
+      <td>1.6180</td>
+      <td>5</td>
+      <td>403</td>
+      <td>14.7</td>
+      <td>372.80</td>
+      <td>14.10</td>
+      <td>21.5</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>0.01778</td>
+      <td>95.0</td>
+      <td>1.47</td>
+      <td>0</td>
+      <td>0.403</td>
+      <td>7.135</td>
+      <td>13.9</td>
+      <td>7.6534</td>
+      <td>3</td>
+      <td>402</td>
+      <td>17.0</td>
+      <td>384.30</td>
+      <td>4.45</td>
+      <td>32.9</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>0.14030</td>
+      <td>22.0</td>
+      <td>5.86</td>
+      <td>0</td>
+      <td>0.431</td>
+      <td>6.487</td>
+      <td>13.0</td>
+      <td>7.3967</td>
+      <td>7</td>
+      <td>330</td>
+      <td>19.1</td>
+      <td>396.28</td>
+      <td>5.90</td>
+      <td>24.4</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>0.04417</td>
+      <td>70.0</td>
+      <td>2.24</td>
+      <td>0</td>
+      <td>0.400</td>
+      <td>6.871</td>
+      <td>47.4</td>
+      <td>7.8278</td>
+      <td>5</td>
+      <td>358</td>
+      <td>14.8</td>
+      <td>390.86</td>
+      <td>6.07</td>
+      <td>24.8</td>
+    </tr>
+    <tr>
+      <th>350</th>
+      <td>0.06211</td>
+      <td>40.0</td>
+      <td>1.25</td>
+      <td>0</td>
+      <td>0.429</td>
+      <td>6.490</td>
+      <td>44.4</td>
+      <td>8.7921</td>
+      <td>1</td>
+      <td>335</td>
+      <td>19.7</td>
+      <td>396.90</td>
+      <td>5.98</td>
+      <td>22.9</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>25.04610</td>
+      <td>0.0</td>
+      <td>18.10</td>
+      <td>0</td>
+      <td>0.693</td>
+      <td>5.987</td>
+      <td>100.0</td>
+      <td>1.5888</td>
+      <td>24</td>
+      <td>666</td>
+      <td>20.2</td>
+      <td>396.90</td>
+      <td>26.77</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>6.71772</td>
+      <td>0.0</td>
+      <td>18.10</td>
+      <td>0</td>
+      <td>0.713</td>
+      <td>6.749</td>
+      <td>92.6</td>
+      <td>2.3236</td>
+      <td>24</td>
+      <td>666</td>
+      <td>20.2</td>
+      <td>0.32</td>
+      <td>17.44</td>
+      <td>13.4</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>0.22438</td>
+      <td>0.0</td>
+      <td>9.69</td>
+      <td>0</td>
+      <td>0.585</td>
+      <td>6.027</td>
+      <td>79.7</td>
+      <td>2.4982</td>
+      <td>6</td>
+      <td>391</td>
+      <td>19.2</td>
+      <td>396.90</td>
+      <td>14.33</td>
+      <td>16.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To import a csv(comma-separated value) dataset, we use the <code class="language-plaintext highlighter-rouge">read_csv</code> function and pass in the link to the csv file. Now we have the dataset imported and stored in the <code class="language-plaintext highlighter-rouge">boston_housing_dataset</code>.</p>
+
+<p>To get every 50th row in the dataset, we use indexing with a step of 50.</p>
+
+<h3>Ex 34: How to change column values when importing csv to a dataframe?</h3>
+
+<p>Q: Import <a href="&quot;https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv&quot;" target="_blank">the  BostonHousing dataset</a> dataset, but while importing change the ‘medv’ (median house value) column so that values &lt; 25 becomes ‘Low’ and &gt; 25 becomes ‘High’.</p>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex34.png" alt="Pandas_ex34" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boston_housing_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"</span><span class="p">,</span><span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s">"medv"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">"High"</span> <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">25</span> <span class="k">else</span> <span class="s">"Low"</span><span class="p">})</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boston_housing_dataset</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>zn</th>
+      <th>indus</th>
+      <th>chas</th>
+      <th>nox</th>
+      <th>rm</th>
+      <th>age</th>
+      <th>dis</th>
+      <th>rad</th>
+      <th>tax</th>
+      <th>ptratio</th>
+      <th>b</th>
+      <th>lstat</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00632</td>
+      <td>18.0</td>
+      <td>2.31</td>
+      <td>0</td>
+      <td>0.538</td>
+      <td>6.575</td>
+      <td>65.2</td>
+      <td>4.0900</td>
+      <td>1</td>
+      <td>296</td>
+      <td>15.3</td>
+      <td>396.90</td>
+      <td>4.98</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.02731</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>6.421</td>
+      <td>78.9</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>396.90</td>
+      <td>9.14</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02729</td>
+      <td>0.0</td>
+      <td>7.07</td>
+      <td>0</td>
+      <td>0.469</td>
+      <td>7.185</td>
+      <td>61.1</td>
+      <td>4.9671</td>
+      <td>2</td>
+      <td>242</td>
+      <td>17.8</td>
+      <td>392.83</td>
+      <td>4.03</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.03237</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>6.998</td>
+      <td>45.8</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>394.63</td>
+      <td>2.94</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.06905</td>
+      <td>0.0</td>
+      <td>2.18</td>
+      <td>0</td>
+      <td>0.458</td>
+      <td>7.147</td>
+      <td>54.2</td>
+      <td>6.0622</td>
+      <td>3</td>
+      <td>222</td>
+      <td>18.7</td>
+      <td>396.90</td>
+      <td>5.33</td>
+      <td>High</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To change the value of a column while importing the dataset, we use the parameter converters from the read_csv function. We pass in a dictionary with a key corresponding to the name of the column we want to change and value to be a lambda expression where “High” is for the value greater than 25 and “Low” is for the value less than 25.</p>
+
+<h3>Ex 35: How to create a dataframe with rows as strides from a given series?</h3>
+
+<p>Q: Create a dataframe with rows as strides from a given series with 2 as the stride length and 4 as length of each row.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_series</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[ 0,  1,  2,  3],
+#        [ 2,  3,  4,  5],
+#        [ 4,  5,  6,  7],
+#        [ 6,  7,  8,  9],
+#        [ 8,  9, 10, 11],
+#        [10, 11, 12, 13]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gen_strides</span><span class="p">(</span><span class="n">the_series</span><span class="p">,</span> <span class="n">stride_len</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">window_len</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">n_strides</span> <span class="o">=</span> <span class="p">((</span><span class="n">the_series</span><span class="p">.</span><span class="n">size</span> <span class="o">-</span> <span class="n">window_len</span><span class="p">)</span><span class="o">//</span><span class="n">stride_len</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">the_series</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="n">window_len</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">the_series</span><span class="p">.</span><span class="n">size</span><span class="p">,</span><span class="n">stride_len</span><span class="p">)[:</span><span class="n">n_strides</span><span class="p">]])</span>
+
+<span class="n">gen_strides</span><span class="p">(</span><span class="n">the_series</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0 2 4]
+</code></pre></div></div>
+
+<p>Strides are used in CNN (convolutional neural network), which will be covered in a future post. To get the stride, we first create a function that takes in the stride length 2 (which mean that the two last elements in the row will be the same as the first two elements in the following row) and a window length of 4 (corresponding to the number of elements in the row or the number of columns).</p>
+
+<p>We need first to get the numbers of rows by subtracting the size of the series by the number of element desired in a row and floor divide with the stride length and finally add 1.</p>
+
+<p>We proceed by using the list comprehension by looping through an array that starts from 0, step by <code class="language-plaintext highlighter-rouge">stride_len</code> and stops at <code class="language-plaintext highlighter-rouge">the_series.size</code>. We use indexing with <code class="language-plaintext highlighter-rouge">n_stride</code> to get the first six elements because we only have six rows.</p>
+
+<p>Now it is time to populate the rows, for each row we use the original series and start from index <code class="language-plaintext highlighter-rouge">i</code> to index <code class="language-plaintext highlighter-rouge">i + window_len</code> to get the strides.</p>
+
+<h3>Ex 36: How to import only specified columns from a csv file?</h3>
+
+<p>Q: Import <code class="language-plaintext highlighter-rouge">crim</code> and <code class="language-plaintext highlighter-rouge">medv</code> columns of the <a href="https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv" target="_blank">BostonHousing dataset</a> as a dataframe.</p>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex36.png" alt="Pandas_ex36" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">"crim"</span><span class="p">,</span><span class="s">"medv"</span><span class="p">]).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>crim</th>
+      <th>medv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00632</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.02731</td>
+      <td>21.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02729</td>
+      <td>34.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.03237</td>
+      <td>33.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.06905</td>
+      <td>36.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To import only the <code class="language-plaintext highlighter-rouge">crim</code> and the <code class="language-plaintext highlighter-rouge">medv</code> column, we pass a list of the names of those two columns the <code class="language-plaintext highlighter-rouge">usecols</code> parameter.</p>
+
+<h3>Ex 37: How to get the nrows, ncolumns, datatype, summary stats of each column of a dataframe? Also, get the array and list equivalent.</h3>
+
+<p>Q: Get the number of rows, columns, datatype, columns for  each datatype and statistical summary of each column of the <a href="&quot;https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv&quot;" target="_blank">Cars93</a> dataset. Also, get the numpy array and list equivalent of the dataframe.</p>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Rows and columns
+</span>
+<span class="c1">#(93, 27)
+</span>
+<span class="c1"># Datatype
+</span>
+<span class="c1"># Manufacturer           object
+# Model                  object
+# Type                   object
+# Min.Price             float64
+# Price                 float64
+# Max.Price             float64
+# MPG.city              float64
+# MPG.highway           float64
+# AirBags                object
+# DriveTrain             object
+# Cylinders              object
+# EngineSize            float64
+# Horsepower            float64
+# RPM                   float64
+# Rev.per.mile          float64
+# Man.trans.avail        object
+# Fuel.tank.capacity    float64
+# Passengers            float64
+# Length                float64
+# Wheelbase             float64
+# Width                 float64
+# Turn.circle           float64
+# Rear.seat.room        float64
+# Luggage.room          float64
+# Weight                float64
+# Origin                 object
+# Make                   object
+# dtype: object
+</span>
+<span class="c1"># Columns for each datatype
+</span>
+<span class="c1"># float64    18
+# object      9
+# dtype: int64
+</span>
+<span class="c1"># Statistical summary
+</span>
+<span class="c1"># Min.Price	Price	Max.Price	MPG.city	MPG.highway	EngineSize	Horsepower	RPM	Rev.per.mile	Fuel.tank.capacity	Passengers	Length	Wheelbase	Width	Turn.circle	Rear.seat.room	Luggage.room	Weight
+# count	86.000000	91.000000	88.000000	84.000000	91.000000	91.000000	86.000000	90.000000	87.000000	85.000000	91.000000	89.000000	92.000000	87.000000	88.000000	89.000000	74.000000	86.000000
+# mean	17.118605	19.616484	21.459091	22.404762	29.065934	2.658242	144.000000	5276.666667	2355.000000	16.683529	5.076923	182.865169	103.956522	69.448276	38.954545	27.853933	13.986486	3104.593023
+# std	8.828290	9.724280	10.696563	5.841520	5.370293	1.045845	53.455204	605.554811	486.916616	3.375748	1.045953	14.792651	6.856317	3.778023	3.304157	3.018129	3.120824	600.129993
+# min	6.700000	7.400000	7.900000	15.000000	20.000000	1.000000	55.000000	3800.000000	1320.000000	9.200000	2.000000	141.000000	90.000000	60.000000	32.000000	19.000000	6.000000	1695.000000
+# 25%	10.825000	12.350000	14.575000	18.000000	26.000000	1.800000	100.750000	4800.000000	2017.500000	14.500000	4.000000	174.000000	98.000000	67.000000	36.000000	26.000000	12.000000	2647.500000
+# 50%	14.600000	17.700000	19.150000	21.000000	28.000000	2.300000	140.000000	5200.000000	2360.000000	16.500000	5.000000	181.000000	103.000000	69.000000	39.000000	27.500000	14.000000	3085.000000
+# 75%	20.250000	23.500000	24.825000	25.000000	31.000000	3.250000	170.000000	5787.500000	2565.000000	19.000000	6.000000	192.000000	110.000000	72.000000	42.000000	30.000000	16.000000	3567.500000
+# max	45.400000	61.900000	80.000000	46.000000	50.000000	5.700000	300.000000	6500.000000	3755.000000	27.000000	8.000000	219.000000	119.000000	78.000000	45.000000	36.000000	22.000000	4105.000000
+</span>
+<span class="c1"># NumPy array
+</span>
+<span class="c1"># array(['Acura', 'Integra', 'Small', 12.9, 15.9, 18.8, 25.0, 31.0, 'None',
+#        'Front', '4', 1.8, 140.0, 6300.0, 2890.0, 'Yes', 13.2, 5.0, 177.0,
+#        102.0, 68.0, 37.0, 26.5, nan, 2705.0, 'non-USA', 'Acura Integra'],
+#       dtype=object)
+</span>
+<span class="c1"># List
+</span>
+<span class="c1"># ['Acura',
+#   'Integra',
+#   'Small',
+#   12.9,
+#   15.9,
+#   18.8,
+#   25.0,
+#   31.0,
+#   'None',
+#   'Front',
+#   '4',
+#   1.8,
+#   140.0,
+#   6300.0,
+#   2890.0,
+#   'Yes',
+#   13.2,
+#   5.0,
+#   177.0,
+#   102.0,
+#   68.0,
+#   37.0,
+#   26.5,
+#   nan,
+#   2705.0,
+#   'non-USA',
+#   'Acura Integra']
+</span>
+</code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Shape</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(93, 27)
+</code></pre></div></div>
+
+<p>We call the shape function on the dataset, we back a tuple with the first element as the number of rows and the second element is the number of columns in the dataframe.</p>
+
+<h4>Datatype</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">dtypes</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Manufacturer           object
+Model                  object
+Type                   object
+Min.Price             float64
+Price                 float64
+Max.Price             float64
+MPG.city              float64
+MPG.highway           float64
+AirBags                object
+DriveTrain             object
+Cylinders              object
+EngineSize            float64
+Horsepower            float64
+RPM                   float64
+Rev.per.mile          float64
+Man.trans.avail        object
+Fuel.tank.capacity    float64
+Passengers            float64
+Length                float64
+Wheelbase             float64
+Width                 float64
+Turn.circle           float64
+Rear.seat.room        float64
+Luggage.room          float64
+Weight                float64
+Origin                 object
+Make                   object
+dtype: object
+</code></pre></div></div>
+
+<p>To get the datatype for each column, we call the <code class="language-plaintext highlighter-rouge">dtypes</code> function on the dataset.</p>
+
+<h4>Columns for each datatype</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">dtypes</span><span class="p">.</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float64    18
+object      9
+dtype: int64
+</code></pre></div></div>
+
+<p>To get the columns count for each datatype, we call the <code class="language-plaintext highlighter-rouge">value_counts</code> on the <code class="language-plaintext highlighter-rouge">dtype</code> function.</p>
+
+<h4>Statistical summary</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Min.Price</th>
+      <th>Price</th>
+      <th>Max.Price</th>
+      <th>MPG.city</th>
+      <th>MPG.highway</th>
+      <th>EngineSize</th>
+      <th>Horsepower</th>
+      <th>RPM</th>
+      <th>Rev.per.mile</th>
+      <th>Fuel.tank.capacity</th>
+      <th>Passengers</th>
+      <th>Length</th>
+      <th>Wheelbase</th>
+      <th>Width</th>
+      <th>Turn.circle</th>
+      <th>Rear.seat.room</th>
+      <th>Luggage.room</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>86.000000</td>
+      <td>91.000000</td>
+      <td>88.000000</td>
+      <td>84.000000</td>
+      <td>91.000000</td>
+      <td>91.000000</td>
+      <td>86.000000</td>
+      <td>90.000000</td>
+      <td>87.000000</td>
+      <td>85.000000</td>
+      <td>91.000000</td>
+      <td>89.000000</td>
+      <td>92.000000</td>
+      <td>87.000000</td>
+      <td>88.000000</td>
+      <td>89.000000</td>
+      <td>74.000000</td>
+      <td>86.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>17.118605</td>
+      <td>19.616484</td>
+      <td>21.459091</td>
+      <td>22.404762</td>
+      <td>29.065934</td>
+      <td>2.658242</td>
+      <td>144.000000</td>
+      <td>5276.666667</td>
+      <td>2355.000000</td>
+      <td>16.683529</td>
+      <td>5.076923</td>
+      <td>182.865169</td>
+      <td>103.956522</td>
+      <td>69.448276</td>
+      <td>38.954545</td>
+      <td>27.853933</td>
+      <td>13.986486</td>
+      <td>3104.593023</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.828290</td>
+      <td>9.724280</td>
+      <td>10.696563</td>
+      <td>5.841520</td>
+      <td>5.370293</td>
+      <td>1.045845</td>
+      <td>53.455204</td>
+      <td>605.554811</td>
+      <td>486.916616</td>
+      <td>3.375748</td>
+      <td>1.045953</td>
+      <td>14.792651</td>
+      <td>6.856317</td>
+      <td>3.778023</td>
+      <td>3.304157</td>
+      <td>3.018129</td>
+      <td>3.120824</td>
+      <td>600.129993</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>6.700000</td>
+      <td>7.400000</td>
+      <td>7.900000</td>
+      <td>15.000000</td>
+      <td>20.000000</td>
+      <td>1.000000</td>
+      <td>55.000000</td>
+      <td>3800.000000</td>
+      <td>1320.000000</td>
+      <td>9.200000</td>
+      <td>2.000000</td>
+      <td>141.000000</td>
+      <td>90.000000</td>
+      <td>60.000000</td>
+      <td>32.000000</td>
+      <td>19.000000</td>
+      <td>6.000000</td>
+      <td>1695.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>10.825000</td>
+      <td>12.350000</td>
+      <td>14.575000</td>
+      <td>18.000000</td>
+      <td>26.000000</td>
+      <td>1.800000</td>
+      <td>100.750000</td>
+      <td>4800.000000</td>
+      <td>2017.500000</td>
+      <td>14.500000</td>
+      <td>4.000000</td>
+      <td>174.000000</td>
+      <td>98.000000</td>
+      <td>67.000000</td>
+      <td>36.000000</td>
+      <td>26.000000</td>
+      <td>12.000000</td>
+      <td>2647.500000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>14.600000</td>
+      <td>17.700000</td>
+      <td>19.150000</td>
+      <td>21.000000</td>
+      <td>28.000000</td>
+      <td>2.300000</td>
+      <td>140.000000</td>
+      <td>5200.000000</td>
+      <td>2360.000000</td>
+      <td>16.500000</td>
+      <td>5.000000</td>
+      <td>181.000000</td>
+      <td>103.000000</td>
+      <td>69.000000</td>
+      <td>39.000000</td>
+      <td>27.500000</td>
+      <td>14.000000</td>
+      <td>3085.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>20.250000</td>
+      <td>23.500000</td>
+      <td>24.825000</td>
+      <td>25.000000</td>
+      <td>31.000000</td>
+      <td>3.250000</td>
+      <td>170.000000</td>
+      <td>5787.500000</td>
+      <td>2565.000000</td>
+      <td>19.000000</td>
+      <td>6.000000</td>
+      <td>192.000000</td>
+      <td>110.000000</td>
+      <td>72.000000</td>
+      <td>42.000000</td>
+      <td>30.000000</td>
+      <td>16.000000</td>
+      <td>3567.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>45.400000</td>
+      <td>61.900000</td>
+      <td>80.000000</td>
+      <td>46.000000</td>
+      <td>50.000000</td>
+      <td>5.700000</td>
+      <td>300.000000</td>
+      <td>6500.000000</td>
+      <td>3755.000000</td>
+      <td>27.000000</td>
+      <td>8.000000</td>
+      <td>219.000000</td>
+      <td>119.000000</td>
+      <td>78.000000</td>
+      <td>45.000000</td>
+      <td>36.000000</td>
+      <td>22.000000</td>
+      <td>4105.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To get the statistical summary (mean, std, percentile, min, max and count), we call the <code class="language-plaintext highlighter-rouge">describe</code> function on the dataset.</p>
+
+<h4>Dataframe to NumPy</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">to_numpy</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Acura', 'Integra', 'Small', 12.9, 15.9, 18.8, 25.0, 31.0, 'None',
+       'Front', '4', 1.8, 140.0, 6300.0, 2890.0, 'Yes', 13.2, 5.0, 177.0,
+       102.0, 68.0, 37.0, 26.5, nan, 2705.0, 'non-USA', 'Acura Integra'],
+      dtype=object)
+</code></pre></div></div>
+
+<p>We extract the first row and call the <code class="language-plaintext highlighter-rouge">to_numpy</code> function to cast the row to a NumPy array. It is also possible to cast the whole dataframe to an array.</p>
+
+<h4>Dataframe to list</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Acura',
+ 'Integra',
+ 'Small',
+ 12.9,
+ 15.9,
+ 18.8,
+ 25.0,
+ 31.0,
+ 'None',
+ 'Front',
+ '4',
+ 1.8,
+ 140.0,
+ 6300.0,
+ 2890.0,
+ 'Yes',
+ 13.2,
+ 5.0,
+ 177.0,
+ 102.0,
+ 68.0,
+ 37.0,
+ 26.5,
+ nan,
+ 2705.0,
+ 'non-USA',
+ 'Acura Integra']
+</code></pre></div></div>
+
+<p>We extract the first row and call the <code class="language-plaintext highlighter-rouge">tolist</code> function on the <code class="language-plaintext highlighter-rouge">values</code> function to cast the row to a list. It is also possible to cast the whole dataframe to a list.</p>
+
+<h3>Ex 38: How to extract the row and column number of a particular cell with a given criterion?</h3>
+
+<p>Q: Which manufacturer, model and type have the highest Price? What are the row and column number of the cell with the highest Price value?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Manufacturer with the highest price
+</span>
+<span class="c1"># 'Mercedes-Benz'
+</span>
+<span class="c1"># Model with the highest price
+</span>
+<span class="c1"># '300E'
+</span>
+<span class="c1"># Type with the highest price
+</span>
+<span class="c1"># 'Midsize'
+</span>
+<span class="c1"># row and column number of the cell with the highest Price value
+</span>
+<span class="c1"># (array([58]), array([4]))
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>Manufacturer, model and midsize with the highest price</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Price"</span><span class="p">])][</span><span class="s">"Manufacturer"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Mercedes-Benz'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Price"</span><span class="p">])][</span><span class="s">"Model"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'300E'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Price"</span><span class="p">])][</span><span class="s">"Type"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Midsize'
+</code></pre></div></div>
+
+<p>We first find the row with the highest price using the NumPy <code class="language-plaintext highlighter-rouge">argmax</code> function by passing in the price column as an argument. With the index number of the row with the highest price, we use <code class="language-plaintext highlighter-rouge">iloc</code> to get all the columns of that row as Series and then use indexing on that Series to get the manufacturer, model and type.</p>
+
+<h4>Row and column with the highest price</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Price"</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array([58]), array([4]))
+</code></pre></div></div>
+
+<p>We use the NumPy <code class="language-plaintext highlighter-rouge">where</code> function to compares all the values in the dataset with the highest price and returns a tuple with the row and column.</p>
+
+<h3>Ex 39: How to rename a specific column in a dataframe?</h3>
+
+<p>Q: Rename the column Type as CarType in df and replace the ‘.’ in column names with ‘_’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['Manufacturer', 'Model', 'Type', 'Min.Price', 'Price', 'Max.Price',
+       'MPG.city', 'MPG.highway', 'AirBags', 'DriveTrain', 'Cylinders',
+       'EngineSize', 'Horsepower', 'RPM', 'Rev.per.mile', 'Man.trans.avail',
+       'Fuel.tank.capacity', 'Passengers', 'Length', 'Wheelbase', 'Width',
+       'Turn.circle', 'Rear.seat.room', 'Luggage.room', 'Weight', 'Origin',
+       'Make'],
+      dtype='object')
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Index(['Manufacturer', 'Model', 'Type', 'Min_Price', 'Price', 'Max_Price',
+#        'MPG_city', 'MPG_highway', 'AirBags', 'DriveTrain', 'Cylinders',
+#        'EngineSize', 'Horsepower', 'RPM', 'Rev_per_mile', 'Man_trans_avail',
+#        'Fuel_tank_capacity', 'Passengers', 'Length', 'Wheelbase', 'Width',
+#        'Turn_circle', 'Rear_seat_room', 'Luggage_room', 'Weight', 'Origin',
+#        'Make'],
+#       dtype='object')
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span><span class="s">"_"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['Manufacturer', 'Model', 'Type', 'Min_Price', 'Price', 'Max_Price',
+       'MPG_city', 'MPG_highway', 'AirBags', 'DriveTrain', 'Cylinders',
+       'EngineSize', 'Horsepower', 'RPM', 'Rev_per_mile', 'Man_trans_avail',
+       'Fuel_tank_capacity', 'Passengers', 'Length', 'Wheelbase', 'Width',
+       'Turn_circle', 'Rear_seat_room', 'Luggage_room', 'Weight', 'Origin',
+       'Make'],
+      dtype='object')
+</code></pre></div></div>
+
+<p>To replace all the occurrences of <code class="language-plaintext highlighter-rouge">.</code> by <code class="language-plaintext highlighter-rouge">_</code> we use the <code class="language-plaintext highlighter-rouge">str</code> function which captures the columns as string data type and uses the <code class="language-plaintext highlighter-rouge">replace</code> function to achieve the column’s name change.</p>
+
+<h3>Ex 40: How to check if a dataframe has any missing values?</h3>
+
+<p>Q: Check if <code class="language-plaintext highlighter-rouge">cars_dataset</code> has any missing values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># There are nan values in the dataset, so true has to be returned
+</span>
+<span class="c1"># True
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="n">values</span><span class="p">.</span><span class="nb">any</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
+
+<p>To check if there is any <code class="language-plaintext highlighter-rouge">nan</code> value in the whole dataset, we first use the <code class="language-plaintext highlighter-rouge">isnull</code> function to return booleans in each cell of the dataframe. <code class="language-plaintext highlighter-rouge">true</code> will be returned in a cell with a <code class="language-plaintext highlighter-rouge">nan</code> value and <code class="language-plaintext highlighter-rouge">false</code> will be a cell without a <code class="language-plaintext highlighter-rouge">nan</code> value. So to check if there any <code class="language-plaintext highlighter-rouge">nan</code> in the dataset, we use <code class="language-plaintext highlighter-rouge">any</code> on the values in the dataset. If there is at least one <code class="language-plaintext highlighter-rouge">nan</code> value <code class="language-plaintext highlighter-rouge">true</code> will be returned otherwise it will be<code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<h3>Ex 41: How to count the number of missing values in each column?</h3>
+
+<p>Q: Count the number of missing values in each column of df. Which column has the maximum number of missing values?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Count of missing values in each column
+</span>
+<span class="c1"># Manufacturer           4
+# Model                  1
+# Type                   3
+# Min.Price              7
+# Price                  2
+# Max.Price              5
+# MPG.city               9
+# MPG.highway            2
+# AirBags                6
+# DriveTrain             7
+# Cylinders              5
+# EngineSize             2
+# Horsepower             7
+# RPM                    3
+# Rev.per.mile           6
+# Man.trans.avail        5
+# Fuel.tank.capacity     8
+# Passengers             2
+# Length                 4
+# Wheelbase              1
+# Width                  6
+# Turn.circle            5
+# Rear.seat.room         4
+# Luggage.room          19
+# Weight                 7
+# Origin                 5
+# Make                   3
+# dtype: int64
+</span>
+<span class="c1"># column with the maximum number of missing values
+</span>
+<span class="c1"># 'Luggage.room'
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nan_per_column</span> <span class="o">=</span> <span class="n">cars_dataset</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nan_per_column</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Manufacturer           4
+Model                  1
+Type                   3
+Min.Price              7
+Price                  2
+Max.Price              5
+MPG.city               9
+MPG.highway            2
+AirBags                6
+DriveTrain             7
+Cylinders              5
+EngineSize             2
+Horsepower             7
+RPM                    3
+Rev.per.mile           6
+Man.trans.avail        5
+Fuel.tank.capacity     8
+Passengers             2
+Length                 4
+Wheelbase              1
+Width                  6
+Turn.circle            5
+Rear.seat.room         4
+Luggage.room          19
+Weight                 7
+Origin                 5
+Make                   3
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_data</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="n">nan_per_column</span><span class="p">.</span><span class="n">argmax</span><span class="p">()]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Luggage.room'
+</code></pre></div></div>
+
+<p>To get the count of <code class="language-plaintext highlighter-rouge">nan</code> values in each column, we use the <code class="language-plaintext highlighter-rouge">isnull</code> function. This function will return <code class="language-plaintext highlighter-rouge">True</code> in each cell where there is a <code class="language-plaintext highlighter-rouge">nan</code> value or <code class="language-plaintext highlighter-rouge">False</code> where there is any other value other than <code class="language-plaintext highlighter-rouge">nan</code>. Finally, we apply the <code class="language-plaintext highlighter-rouge">sum</code> function, to get back a series where the indexes are the column names and the values are the count of <code class="language-plaintext highlighter-rouge">nan</code> value in each column.</p>
+
+<p>To know which column has the highest number of <code class="language-plaintext highlighter-rouge">nan</code>, we use the <code class="language-plaintext highlighter-rouge">argmax</code> function which will return the index (column name in this case) with the highest count.</p>
+
+<h3>Ex 42: How to replace missing values of multiple numeric columns with the mean?</h3>
+
+<p>Q: Replace missing values in <code class="language-plaintext highlighter-rouge">Min.Price</code> and <code class="language-plaintext highlighter-rouge">Max.Price</code> columns with their respective mean.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex42.png" alt="Pandas_ex42" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_price_mean</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Min.Price"</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max_price_mean</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Max.Price"</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Min.Price"</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span><span class="n">min_price_mean</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">[</span><span class="s">"Max.Price"</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span><span class="n">max_price_mean</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Min.Price</th>
+      <th>Price</th>
+      <th>Max.Price</th>
+      <th>MPG.city</th>
+      <th>MPG.highway</th>
+      <th>AirBags</th>
+      <th>DriveTrain</th>
+      <th>...</th>
+      <th>Passengers</th>
+      <th>Length</th>
+      <th>Wheelbase</th>
+      <th>Width</th>
+      <th>Turn.circle</th>
+      <th>Rear.seat.room</th>
+      <th>Luggage.room</th>
+      <th>Weight</th>
+      <th>Origin</th>
+      <th>Make</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+      <td>12.90</td>
+      <td>15.9</td>
+      <td>18.80</td>
+      <td>25.0</td>
+      <td>31.0</td>
+      <td>None</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>177.0</td>
+      <td>102.0</td>
+      <td>68.0</td>
+      <td>37.0</td>
+      <td>26.5</td>
+      <td>NaN</td>
+      <td>2705.0</td>
+      <td>non-USA</td>
+      <td>Acura Integra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+      <td>29.20</td>
+      <td>33.9</td>
+      <td>38.70</td>
+      <td>18.0</td>
+      <td>25.0</td>
+      <td>Driver &amp; Passenger</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>195.0</td>
+      <td>115.0</td>
+      <td>71.0</td>
+      <td>38.0</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3560.0</td>
+      <td>non-USA</td>
+      <td>Acura Legend</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+      <td>25.90</td>
+      <td>29.1</td>
+      <td>32.30</td>
+      <td>20.0</td>
+      <td>26.0</td>
+      <td>Driver only</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>180.0</td>
+      <td>102.0</td>
+      <td>67.0</td>
+      <td>37.0</td>
+      <td>28.0</td>
+      <td>14.0</td>
+      <td>3375.0</td>
+      <td>non-USA</td>
+      <td>Audi 90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+      <td>17.12</td>
+      <td>37.7</td>
+      <td>44.60</td>
+      <td>19.0</td>
+      <td>26.0</td>
+      <td>Driver &amp; Passenger</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>193.0</td>
+      <td>106.0</td>
+      <td>NaN</td>
+      <td>37.0</td>
+      <td>31.0</td>
+      <td>17.0</td>
+      <td>3405.0</td>
+      <td>non-USA</td>
+      <td>Audi 100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+      <td>17.12</td>
+      <td>30.0</td>
+      <td>21.46</td>
+      <td>22.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>Rear</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>186.0</td>
+      <td>109.0</td>
+      <td>69.0</td>
+      <td>39.0</td>
+      <td>27.0</td>
+      <td>13.0</td>
+      <td>3640.0</td>
+      <td>non-USA</td>
+      <td>BMW 535i</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+
+<p>The first way to solve this problem is to use the <code class="language-plaintext highlighter-rouge">replace</code> function. First, we need to find the mean of the <code class="language-plaintext highlighter-rouge">Min.Price</code> and <code class="language-plaintext highlighter-rouge">Max.Price</code> columns and round it by two decimal places using <code class="language-plaintext highlighter-rouge">round</code>.</p>
+
+<p>After that, we select the columns and use the <code class="language-plaintext highlighter-rouge">replace</code> function to replace all the occurrences of the <code class="language-plaintext highlighter-rouge">nan</code> value with the means previously found and finally set the <code class="language-plaintext highlighter-rouge">inplace</code> argument to <code class="language-plaintext highlighter-rouge">True</code>, to apply the changes on the original dataset.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">[[</span><span class="s">"Min.Price"</span><span class="p">,</span><span class="s">"Max.Price"</span><span class="p">]]</span> <span class="o">=</span> <span class="n">cars_dataset</span><span class="p">[[</span><span class="s">"Min.Price"</span><span class="p">,</span><span class="s">"Max.Price"</span><span class="p">]].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span><span class="mi">2</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Min.Price</th>
+      <th>Price</th>
+      <th>Max.Price</th>
+      <th>MPG.city</th>
+      <th>MPG.highway</th>
+      <th>AirBags</th>
+      <th>DriveTrain</th>
+      <th>...</th>
+      <th>Passengers</th>
+      <th>Length</th>
+      <th>Wheelbase</th>
+      <th>Width</th>
+      <th>Turn.circle</th>
+      <th>Rear.seat.room</th>
+      <th>Luggage.room</th>
+      <th>Weight</th>
+      <th>Origin</th>
+      <th>Make</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+      <td>12.90</td>
+      <td>15.9</td>
+      <td>18.80</td>
+      <td>25.0</td>
+      <td>31.0</td>
+      <td>None</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>177.0</td>
+      <td>102.0</td>
+      <td>68.0</td>
+      <td>37.0</td>
+      <td>26.5</td>
+      <td>NaN</td>
+      <td>2705.0</td>
+      <td>non-USA</td>
+      <td>Acura Integra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+      <td>29.20</td>
+      <td>33.9</td>
+      <td>38.70</td>
+      <td>18.0</td>
+      <td>25.0</td>
+      <td>Driver &amp; Passenger</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>195.0</td>
+      <td>115.0</td>
+      <td>71.0</td>
+      <td>38.0</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3560.0</td>
+      <td>non-USA</td>
+      <td>Acura Legend</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+      <td>25.90</td>
+      <td>29.1</td>
+      <td>32.30</td>
+      <td>20.0</td>
+      <td>26.0</td>
+      <td>Driver only</td>
+      <td>Front</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>180.0</td>
+      <td>102.0</td>
+      <td>67.0</td>
+      <td>37.0</td>
+      <td>28.0</td>
+      <td>14.0</td>
+      <td>3375.0</td>
+      <td>non-USA</td>
+      <td>Audi 90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+      <td>17.12</td>
+      <td>37.7</td>
+      <td>44.60</td>
+      <td>19.0</td>
+      <td>26.0</td>
+      <td>Driver &amp; Passenger</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>193.0</td>
+      <td>106.0</td>
+      <td>NaN</td>
+      <td>37.0</td>
+      <td>31.0</td>
+      <td>17.0</td>
+      <td>3405.0</td>
+      <td>non-USA</td>
+      <td>Audi 100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+      <td>17.12</td>
+      <td>30.0</td>
+      <td>21.46</td>
+      <td>22.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>Rear</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>186.0</td>
+      <td>109.0</td>
+      <td>69.0</td>
+      <td>39.0</td>
+      <td>27.0</td>
+      <td>13.0</td>
+      <td>3640.0</td>
+      <td>non-USA</td>
+      <td>BMW 535i</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+
+<p>The alternative way to solve this is to use the <code class="language-plaintext highlighter-rouge">fillna</code> function. We start by selecting the two columns and then use the apply function with the lambda expression and pass in the <code class="language-plaintext highlighter-rouge">mean</code> function of <code class="language-plaintext highlighter-rouge">x</code> (<code class="language-plaintext highlighter-rouge">x</code> is the column selected). Then we assign the expression to the columns to make it in place.</p>
+
+<h3>43 : How to use the <code class="language-plaintext highlighter-rouge">apply</code> function on existing columns with global variables as additional arguments?</h3>
+
+<p>Q: In dataframe, use the <code class="language-plaintext highlighter-rouge">apply</code> method to replace the missing values in <code class="language-plaintext highlighter-rouge">Min.Price</code> with the column’s mean and those in <code class="language-plaintext highlighter-rouge">Max.Price</code> with the column’s median.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex43.png" alt="Pandas_ex43" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dict_fun</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Min.Price"</span><span class="p">:</span><span class="n">np</span><span class="p">.</span><span class="n">nanmean</span><span class="p">,</span><span class="s">"Max.Price"</span><span class="p">:</span><span class="n">np</span><span class="p">.</span><span class="n">nanmedian</span><span class="p">}</span>
+
+<span class="n">cars_dataset</span><span class="p">[[</span><span class="s">"Min.Price"</span><span class="p">,</span><span class="s">"Max.Price"</span><span class="p">]].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">dict_fun</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">dict_fun</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">name</span><span class="p">](</span><span class="n">x</span><span class="p">)),</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">dict_fun</span><span class="p">,))</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Min.Price</th>
+      <th>Max.Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12.900000</td>
+      <td>18.80</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>29.200000</td>
+      <td>38.70</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25.900000</td>
+      <td>32.30</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17.118605</td>
+      <td>44.60</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.118605</td>
+      <td>19.15</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>16.600000</td>
+      <td>22.70</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>17.600000</td>
+      <td>22.40</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>22.900000</td>
+      <td>23.70</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>21.800000</td>
+      <td>23.50</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>24.800000</td>
+      <td>28.50</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 2 columns</p>
+</div>
+
+<p>We first create a dictionary with <code class="language-plaintext highlighter-rouge">Min.Price</code> column as the key and value as the NumPy function to calculate the mean, then the second value has <code class="language-plaintext highlighter-rouge">Max.Price</code> column as the key and NumPy median function as the value.</p>
+
+<p>We select the <code class="language-plaintext highlighter-rouge">Min.Price</code> and <code class="language-plaintext highlighter-rouge">Max.Price</code> columns, apply the lambda expression, and replace in each instance of <code class="language-plaintext highlighter-rouge">nan</code> in <code class="language-plaintext highlighter-rouge">x</code>(representing the columns) by the mean or median of that column using the <code class="language-plaintext highlighter-rouge">fillna</code> function and pass in the dictionary’s value.</p>
+
+<p><strong>Note:</strong> Refer to <a href="&quot;https://stackoverflow.com/questions/32437435/passing-additional-arguments-to-python-pandas-dataframe-apply&quot;" target="_blank">this</a> StackOverflow question to learn more.</p>
+
+<h3>44: How to select a specific column from a dataframe as a dataframe instead of a series?</h3>
+
+<p>Q: Get the first column <code class="language-plaintext highlighter-rouge">a</code> in dataframe as a dataframe (rather than as a Series).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tab</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex44.png" alt="Pandas_ex44" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data type
+</span>
+<span class="c1"># pandas.core.frame.DataFrame
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[</span><span class="s">"a"</span><span class="p">].</span><span class="n">to_frame</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.frame.DataFrame
+</code></pre></div></div>
+
+<p>The first method is straight forward, we get column <code class="language-plaintext highlighter-rouge">a</code> as a series and then we cast it to a dataframe.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s">"a"</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.frame.DataFrame
+</code></pre></div></div>
+
+<p>We can get directly deduce a column as a dataframe by using the <code class="language-plaintext highlighter-rouge">loc</code> function and pass in <strong>the name of the column with brackets around it</strong>.</p>
+
+<h4>3rd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">[[</span><span class="s">'a'</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.frame.DataFrame
+</code></pre></div></div>
+
+<p>Something similar can be achieve using indexing.</p>
+
+<h4>4th Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.frame.DataFrame
+</code></pre></div></div>
+
+<p>Same as <code class="language-plaintext highlighter-rouge">iloc</code>.</p>
+
+<p><strong>Note:</strong> If you want to understand the difference between <code class="language-plaintext highlighter-rouge">loc</code> and <code class="language-plaintext highlighter-rouge">iloc</code>, read <a href="https://stackoverflow.com/questions/31593201/how-are-iloc-and-loc-different" target="_blank">this page from StackOverflow</a></p>
+
+<h3>Ex 45: How to change the order of columns of a Dataframe?</h3>
+
+<p>Q:</p>
+
+<ol>
+  <li>
+    <p>In <code class="language-plaintext highlighter-rouge">the_dataframe</code>, interchange columns <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">c</code>.</p>
+  </li>
+  <li>
+    <p>Create a generic function to interchange two columns, without hardcoding column names.</p>
+  </li>
+  <li>
+    <p>Sort the columns in reverse alphabetical order, starting from column <code class="language-plaintext highlighter-rouge">e</code> first through column <code class="language-plaintext highlighter-rouge">a</code> last.</p>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex45.png" alt="Pandas_ex45" /></p>
+
+<h4>Solution</h4>
+
+<h4>Q1</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>e</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_columns</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['a', 'b', 'c', 'd', 'e']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">the_columns</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">"a"</span><span class="p">),</span> <span class="n">the_columns</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">"c"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_columns</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">the_columns</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_columns</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">the_columns</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">the_dataframe</span><span class="p">[</span><span class="n">the_columns</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>c</th>
+      <th>b</th>
+      <th>a</th>
+      <th>d</th>
+      <th>e</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7</td>
+      <td>6</td>
+      <td>5</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>11</td>
+      <td>10</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>17</td>
+      <td>16</td>
+      <td>15</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To interchange column <code class="language-plaintext highlighter-rouge">a</code> by <code class="language-plaintext highlighter-rouge">c</code>, we first get all the column name as a list and store it in <code class="language-plaintext highlighter-rouge">the_columns</code> variable. We then extract the indexes of <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">c</code> which are 0 and 2 respectively, then swap them in <code class="language-plaintext highlighter-rouge">the_columns</code> list using the indexes previously extracted.</p>
+
+<p>We finally use indexing in the original dataframe to now swap the columns name and values from column <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">c</code>.</p>
+
+<h4>Q2</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">swap_col</span><span class="p">(</span><span class="n">col_1</span><span class="p">,</span><span class="n">col_2</span><span class="p">,</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">all_col</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">col_1_idx</span><span class="p">,</span> <span class="n">col_2_idx</span> <span class="o">=</span> <span class="n">all_col</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">col_1</span><span class="p">),</span> <span class="n">all_col</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">col_2</span><span class="p">)</span>
+    <span class="n">all_col</span><span class="p">[</span><span class="n">col_1_idx</span><span class="p">],</span><span class="n">all_col</span><span class="p">[</span><span class="n">col_2_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_col</span><span class="p">[</span><span class="n">col_2_idx</span><span class="p">],</span> <span class="n">all_col</span><span class="p">[</span><span class="n">col_1_idx</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">all_col</span><span class="p">]</span>
+    
+    
+<span class="k">print</span><span class="p">(</span><span class="n">swap_col</span><span class="p">(</span><span class="s">"d"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="n">the_dataframe</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    c   d   a   b   e
+0   2   3   0   1   4
+1   7   8   5   6   9
+2  12  13  10  11  14
+3  17  18  15  16  19
+</code></pre></div></div>
+
+<p>This function is based on the same steps as Q1. Instead of using the names of the columns <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, we use generic names parameters <code class="language-plaintext highlighter-rouge">col_1</code> and <code class="language-plaintext highlighter-rouge">col_2</code> and pass in the original dataframe as <code class="language-plaintext highlighter-rouge">df</code>. The rest is the same as Q1.</p>
+
+<h4>Q3</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_columns_reversed</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">the_dataframe</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span><span class="p">[</span><span class="n">the_columns_reversed</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>e</th>
+      <th>d</th>
+      <th>c</th>
+      <th>b</th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>8</td>
+      <td>7</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>13</td>
+      <td>12</td>
+      <td>11</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>19</td>
+      <td>18</td>
+      <td>17</td>
+      <td>16</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>For this subquestion, we get first the reversed list of columns starting from <code class="language-plaintext highlighter-rouge">e</code> to <code class="language-plaintext highlighter-rouge">a</code> and store it in the <code class="language-plaintext highlighter-rouge">the_columns_reversed</code> variable. We use indexing on the original dataframe to get the columns aligned in reverse alphabetical order.</p>
+
+<h3>Ex 46: How to set the number of rows and columns displayed in the output?</h3>
+
+<p>Q: Change the pandas display settings on printing the dataframe df it shows a maximum of 10 rows and 10 columns.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex46.png" alt="Pandas_ex46" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">options</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">pd</span><span class="p">.</span><span class="n">options</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Min.Price</th>
+      <th>Price</th>
+      <th>...</th>
+      <th>Rear.seat.room</th>
+      <th>Luggage.room</th>
+      <th>Weight</th>
+      <th>Origin</th>
+      <th>Make</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+      <td>12.9</td>
+      <td>15.9</td>
+      <td>...</td>
+      <td>26.5</td>
+      <td>NaN</td>
+      <td>2705.0</td>
+      <td>non-USA</td>
+      <td>Acura Integra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+      <td>29.2</td>
+      <td>33.9</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3560.0</td>
+      <td>non-USA</td>
+      <td>Acura Legend</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+      <td>25.9</td>
+      <td>29.1</td>
+      <td>...</td>
+      <td>28.0</td>
+      <td>14.0</td>
+      <td>3375.0</td>
+      <td>non-USA</td>
+      <td>Audi 90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+      <td>NaN</td>
+      <td>37.7</td>
+      <td>...</td>
+      <td>31.0</td>
+      <td>17.0</td>
+      <td>3405.0</td>
+      <td>non-USA</td>
+      <td>Audi 100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+      <td>NaN</td>
+      <td>30.0</td>
+      <td>...</td>
+      <td>27.0</td>
+      <td>13.0</td>
+      <td>3640.0</td>
+      <td>non-USA</td>
+      <td>BMW 535i</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Volkswagen</td>
+      <td>Eurovan</td>
+      <td>Van</td>
+      <td>16.6</td>
+      <td>19.7</td>
+      <td>...</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>3960.0</td>
+      <td>NaN</td>
+      <td>Volkswagen Eurovan</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Volkswagen</td>
+      <td>Passat</td>
+      <td>Compact</td>
+      <td>17.6</td>
+      <td>20.0</td>
+      <td>...</td>
+      <td>31.5</td>
+      <td>14.0</td>
+      <td>2985.0</td>
+      <td>non-USA</td>
+      <td>Volkswagen Passat</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Volkswagen</td>
+      <td>Corrado</td>
+      <td>Sporty</td>
+      <td>22.9</td>
+      <td>23.3</td>
+      <td>...</td>
+      <td>26.0</td>
+      <td>15.0</td>
+      <td>2810.0</td>
+      <td>non-USA</td>
+      <td>Volkswagen Corrado</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Volvo</td>
+      <td>240</td>
+      <td>Compact</td>
+      <td>21.8</td>
+      <td>22.7</td>
+      <td>...</td>
+      <td>29.5</td>
+      <td>14.0</td>
+      <td>2985.0</td>
+      <td>non-USA</td>
+      <td>Volvo 240</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>NaN</td>
+      <td>850</td>
+      <td>Midsize</td>
+      <td>24.8</td>
+      <td>26.7</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3245.0</td>
+      <td>non-USA</td>
+      <td>Volvo 850</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 27 columns</p>
+</div>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'display.max_columns'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'display.max_rows'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Min.Price</th>
+      <th>Price</th>
+      <th>...</th>
+      <th>Rear.seat.room</th>
+      <th>Luggage.room</th>
+      <th>Weight</th>
+      <th>Origin</th>
+      <th>Make</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+      <td>12.9</td>
+      <td>15.9</td>
+      <td>...</td>
+      <td>26.5</td>
+      <td>NaN</td>
+      <td>2705.0</td>
+      <td>non-USA</td>
+      <td>Acura Integra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+      <td>29.2</td>
+      <td>33.9</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3560.0</td>
+      <td>non-USA</td>
+      <td>Acura Legend</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+      <td>25.9</td>
+      <td>29.1</td>
+      <td>...</td>
+      <td>28.0</td>
+      <td>14.0</td>
+      <td>3375.0</td>
+      <td>non-USA</td>
+      <td>Audi 90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+      <td>NaN</td>
+      <td>37.7</td>
+      <td>...</td>
+      <td>31.0</td>
+      <td>17.0</td>
+      <td>3405.0</td>
+      <td>non-USA</td>
+      <td>Audi 100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+      <td>NaN</td>
+      <td>30.0</td>
+      <td>...</td>
+      <td>27.0</td>
+      <td>13.0</td>
+      <td>3640.0</td>
+      <td>non-USA</td>
+      <td>BMW 535i</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Volkswagen</td>
+      <td>Eurovan</td>
+      <td>Van</td>
+      <td>16.6</td>
+      <td>19.7</td>
+      <td>...</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>3960.0</td>
+      <td>NaN</td>
+      <td>Volkswagen Eurovan</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Volkswagen</td>
+      <td>Passat</td>
+      <td>Compact</td>
+      <td>17.6</td>
+      <td>20.0</td>
+      <td>...</td>
+      <td>31.5</td>
+      <td>14.0</td>
+      <td>2985.0</td>
+      <td>non-USA</td>
+      <td>Volkswagen Passat</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Volkswagen</td>
+      <td>Corrado</td>
+      <td>Sporty</td>
+      <td>22.9</td>
+      <td>23.3</td>
+      <td>...</td>
+      <td>26.0</td>
+      <td>15.0</td>
+      <td>2810.0</td>
+      <td>non-USA</td>
+      <td>Volkswagen Corrado</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Volvo</td>
+      <td>240</td>
+      <td>Compact</td>
+      <td>21.8</td>
+      <td>22.7</td>
+      <td>...</td>
+      <td>29.5</td>
+      <td>14.0</td>
+      <td>2985.0</td>
+      <td>non-USA</td>
+      <td>Volvo 240</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>NaN</td>
+      <td>850</td>
+      <td>Midsize</td>
+      <td>24.8</td>
+      <td>26.7</td>
+      <td>...</td>
+      <td>30.0</td>
+      <td>15.0</td>
+      <td>3245.0</td>
+      <td>non-USA</td>
+      <td>Volvo 850</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 27 columns</p>
+</div>
+
+<p>By change the <code class="language-plaintext highlighter-rouge">max_columns</code> or <code class="language-plaintext highlighter-rouge">max_rows</code> from the pandas’ display option either by using the dot operator or by calling the <code class="language-plaintext highlighter-rouge">set_option</code>, we can print only the five first and last rows/columns. All the rows/columns in between are abstracted by three dotes<code class="language-plaintext highlighter-rouge">...</code></p>
+
+<h3>Ex 47: How to format or suppress scientific notations in a pandas dataframe?</h3>
+
+<p>Q: Suppress scientific notations like <code class="language-plaintext highlighter-rouge">e-03</code> in <code class="language-plaintext highlighter-rouge">the_dataframe</code> and print up to 4 numbers after the decimal.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'random'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.694142e-18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.132125e-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.673025e-02</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.668673e-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Your result will be different from mine as the numbers are randomly generated
+</span></code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex47.png" alt="Pandas_ex47" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">options</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s">'{:.4f}'</span><span class="p">.</span><span class="nb">format</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0213</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0167</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3669</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">"display.float_format"</span><span class="p">,</span> <span class="s">'{:.4f}'</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0213</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0167</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3669</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To suppress the scientific notation, we use <code class="language-plaintext highlighter-rouge">display.float_format</code> or the <code class="language-plaintext highlighter-rouge">set_option</code> function just like we did in the previous exercise and we use this time <code class="language-plaintext highlighter-rouge">'{:.4f}'.format</code> to tell Pandas that we want to display numbers with a four decimal points.</p>
+
+<h3>Ex 48: How to format all the values in a Dataframe as percentages?</h3>
+
+<p>Q: Format the values in column <code class="language-plaintext highlighter-rouge">random</code> of <code class="language-plaintext highlighter-rouge">the_dataframe</code> as percentages.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'random'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.5170</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0474</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.4878</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.9220</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Your result will be different from mine as the numbers are randomly generated
+</span></code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex48.png" alt="Pandas_ex48" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">"display.float_format"</span><span class="p">,</span> <span class="s">'{:.2%}'</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51.70%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.74%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>48.78%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>92.20%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">options</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s">'{:.2%}'</span><span class="p">.</span><span class="nb">format</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_dataframe</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51.70%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.74%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>48.78%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>92.20%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Just as we did in the previous exercise, we use <code class="language-plaintext highlighter-rouge">display.float_format</code> or the <code class="language-plaintext highlighter-rouge">set_option</code> function but this time to display the values as percentages, we use <code class="language-plaintext highlighter-rouge">'{:.2%}'.format</code>.</p>
+
+<h3>Ex 49: How to filter every nth row in a Dataframe?</h3>
+
+<p>Q: From <code class="language-plaintext highlighter-rouge">cars_dataset</code>, filter the <code class="language-plaintext highlighter-rouge">Manufacturer</code>, <code class="language-plaintext highlighter-rouge">Model</code> and <code class="language-plaintext highlighter-rouge">Type</code> for every 20th row starting from 1st (row 0).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex49.png" alt="Pandas_ex49" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span><span class="p">[[</span><span class="s">"Manufacturer"</span><span class="p">,</span> <span class="s">"Model"</span><span class="p">,</span> <span class="s">"Type"</span><span class="p">]][::</span><span class="mi">20</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Chrysler</td>
+      <td>LeBaron</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Honda</td>
+      <td>Prelude</td>
+      <td>Sporty</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Mercury</td>
+      <td>Cougar</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Subaru</td>
+      <td>Loyale</td>
+      <td>Small</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We start by selecting the 3 columns and step by 20 on each row using indexing.</p>
+
+<h3>Ex 50: How to create a primary key index by combining relevant columns?</h3>
+
+<p>Q: In <code class="language-plaintext highlighter-rouge">cars_dataset</code>, Replace NaNs with <code class="language-plaintext highlighter-rouge">missing</code> in columns <code class="language-plaintext highlighter-rouge">Manufacturer</code>, <code class="language-plaintext highlighter-rouge">Model</code> and <code class="language-plaintext highlighter-rouge">Type</code> and create an index as a combination of these three columns and check if the index is a primary key.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cars_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex50.png" alt="Pandas_ex50" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">replaced_nan</span> <span class="o">=</span> <span class="n">cars_dataset</span><span class="p">[[</span><span class="s">"Manufacturer"</span><span class="p">,</span> <span class="s">"Model"</span><span class="p">,</span> <span class="s">"Type"</span><span class="p">]].</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">"missing"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">replaced_nan</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>missing</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Volkswagen</td>
+      <td>Eurovan</td>
+      <td>Van</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Volkswagen</td>
+      <td>Passat</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Volkswagen</td>
+      <td>Corrado</td>
+      <td>Sporty</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Volvo</td>
+      <td>240</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>missing</td>
+      <td>850</td>
+      <td>Midsize</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 3 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">replaced_nan</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">replaced_nan</span><span class="p">[</span><span class="s">"Manufacturer"</span><span class="p">]</span><span class="o">+</span><span class="s">"_"</span><span class="o">+</span><span class="n">replaced_nan</span><span class="p">[</span><span class="s">"Model"</span><span class="p">]</span><span class="o">+</span><span class="s">"_"</span><span class="o">+</span><span class="n">replaced_nan</span><span class="p">[</span><span class="s">"Type"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Acura_Integra_Small</th>
+      <td>Acura</td>
+      <td>Integra</td>
+      <td>Small</td>
+    </tr>
+    <tr>
+      <th>missing_Legend_Midsize</th>
+      <td>missing</td>
+      <td>Legend</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>Audi_90_Compact</th>
+      <td>Audi</td>
+      <td>90</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>Audi_100_Midsize</th>
+      <td>Audi</td>
+      <td>100</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>BMW_535i_Midsize</th>
+      <td>BMW</td>
+      <td>535i</td>
+      <td>Midsize</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Volkswagen_Eurovan_Van</th>
+      <td>Volkswagen</td>
+      <td>Eurovan</td>
+      <td>Van</td>
+    </tr>
+    <tr>
+      <th>Volkswagen_Passat_Compact</th>
+      <td>Volkswagen</td>
+      <td>Passat</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>Volkswagen_Corrado_Sporty</th>
+      <td>Volkswagen</td>
+      <td>Corrado</td>
+      <td>Sporty</td>
+    </tr>
+    <tr>
+      <th>Volvo_240_Compact</th>
+      <td>Volvo</td>
+      <td>240</td>
+      <td>Compact</td>
+    </tr>
+    <tr>
+      <th>missing_850_Midsize</th>
+      <td>missing</td>
+      <td>850</td>
+      <td>Midsize</td>
+    </tr>
+  </tbody>
+</table>
+<p>93 rows × 3 columns</p>
+</div>
+
+<p>We first select the 3 columns and use the <code class="language-plaintext highlighter-rouge">fillna</code> function to replace all the occurrences of <code class="language-plaintext highlighter-rouge">nan</code> by the string <code class="language-plaintext highlighter-rouge">missing</code> then store it the <code class="language-plaintext highlighter-rouge">replace_nan</code> variable.</p>
+
+<p>We call the <code class="language-plaintext highlighter-rouge">set_index</code> function on that dataframe to give it a new index column whereby each index value is a concatenation of the values from <code class="language-plaintext highlighter-rouge">Manufacturer</code> with the values in <code class="language-plaintext highlighter-rouge">Model</code> and lastly the values in <code class="language-plaintext highlighter-rouge">Type</code>.</p>
+
+<h3>Conclusion</h3>
+
+<p>In this part 2 of the pandas series, we have introduced the dataframe data structure which is the main data structure of Pandas. We have discovered how to import data from a CSV file, different ways to manipulate the data and many more techniques that you will be using on a daily basis if you will be working as a machine learning engineer or data scientist.</p>
+
+<p>Remember that 60% of the time spent on end-to-end machine learning project is dedicated to data cleaning and visualization. So Pandas, NumPy and Matplotlib (and Seaborn) are fantastic tools to learn and master. Practice makes perfect.</p>
+
+<p>In the next post, we will explore more advanced Pandas exercises that I am sure you will enjoy. Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20Exercise%20Part%202.ipynb" target="_blank">here</a>.</p>
+
+<p>Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!</p>
+
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=Pandas Exercises Part 2&url=http://localhost:4000/2020/10/19/pandas-exercise-part-2.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2020/10/19/pandas-exercise-part-2.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/10/19/pandas-exercise-part-2.html&title=Pandas Exercises Part 2&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2020/10/19/pandas-exercise-part-2.html&title=Pandas Exercises Part 2" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=Pandas Exercises Part 2&amp;body=Check out this post http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html';
+      this.page.identifier = 'http://localhost:4000/blog/2020/10/19/pandas-exercise-part-2.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

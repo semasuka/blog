@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pandas Exercises Part 1 | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Pandas Exercises Part 1" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise." />
+<meta property="og:description" content="Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise." />
+<link rel="canonical" href="http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-24T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/pandas.jpg" />
+<meta property="twitter:title" content="Pandas Exercises Part 1" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/pandas.jpg","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html","@type":"BlogPosting","description":"Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise.","headline":"Pandas Exercises Part 1","dateModified":"2020-09-24T00:00:00-06:00","datePublished":"2020-09-24T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post pandas-exercises-part-1">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/pandas.jpg" alt="Pandas Exercises Part 1">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">Pandas Exercises Part 1
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, pandas</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2020-09-24T00:00:00-06:00">Thu September 24, 2020</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>20 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>Welcome back, folks! In this series of 3 blog post, we will be discussing pandas which one of my favorite python libraries. We will go through 74 exercises to solidify your skills with pandas and as usual, I will explain the WHY behind every single exercise.<!-- more --></p>
+
+<p>Pandas is a powerful open-source library for data analysis and data manipulation. The library is packed with a ton of feature, well supported and documented by the community. It is built on top of NumPy and integrate well with all the main machine learning libraries like Scikit-learn and Matplotlib.</p>
+
+<p>Pandas already come bundles in the Anaconda distribution. If you don’t have it installed already, please refer to my other blog <a href="https://semasuka.github.io/blog/2019/01/06/introduction-to-jupyter-notebook.html" target="_blank">here</a> to get you started.</p>
+
+<p>These exercises are inspired from <a href="https://www.machinelearningplus.com/python/101-pandas-exercises-python/" target="_blank">this</a> amazing blog post.</p>
+
+<p>Remember there is always different ways we can achieve the same result, so if your code does not look like mine. No worries! if you got the same result, then you are good to go.</p>
+
+<p>Now let’s jump right in into the exercises.</p>
+
+<h3>Ex 1: How to import pandas and check the version?</h3>
+
+<p>Q: As a warm up, we will import pandas and print it’s version</p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">__version__</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'0.23.4'
+</code></pre></div></div>
+
+<p>We import pandas as pd which is the common way to refer to pandas and use the dot notation to print its version.</p>
+
+<h3>Ex 2: How to create a series from a list, numpy array and dict?</h3>
+
+<p>Q: Create a pandas series from each of the items below: a list, numpy and a dictionary and print the first 5 elements.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">'abcedfghijklmnopqrstuvwxyz'</span><span class="p">)</span>
+<span class="n">myarr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">myarr</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># List
+# 0    a
+# 1    b
+# 2    c
+# 3    e
+# 4    d
+# dtype: object
+#
+# Array
+# 0    0
+# 1    1
+# 2    2
+# 3    3
+# 4    4
+# dtype: int64
+#
+# Dictionary
+# a    0
+# b    1
+# c    2
+# e    3
+# d    4
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">mylist</span><span class="p">).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    a
+1    b
+2    c
+3    e
+4    d
+dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">myarr</span><span class="p">).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    0
+1    1
+2    2
+3    3
+4    4
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">mydict</span><span class="p">).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    0
+b    1
+c    2
+e    3
+d    4
+dtype: int64
+</code></pre></div></div>
+
+<p>Let’s first explain what is a series in pandas, as I said at the beginning of this post, pandas is a tool for data manipulation and most of the data is in form of tables and tables are comprised of columns. In pandas, the data are represented in a dataframe comprised of columns and rows and the basic data structure of a dataframe is a series comprised of one column and an index column.</p>
+
+<p>Coming back to our exercise, we are casting(changing the datatype) the list, array and the dictionary into a Series comprised of only one column of data and another column of indexes by using the Series method and print only the first 5 elements.</p>
+
+<h3>Ex 3: How to convert the index of a series into a column of a dataframe?</h3>
+
+<p>Q: Convert the series ser into a dataframe with its index as another column on the dataframe.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">'abcedfghijklmnopqrstuvwxyz'</span><span class="p">)</span>
+<span class="n">myarr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">myarr</span><span class="p">))</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">mydict</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex3.png" alt="ex_3_image" /></p>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">to_frame</span><span class="p">().</span><span class="n">reset_index</span><span class="p">().</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>e</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>d</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>To convert a series into a dataframe, we use the to_frame method and to change the ser’s index to number, we use the reset_index. We finally print the first 5 elements in the dataframe.</p>
+
+<h3>Ex 4: How to combine many series to form a dataframe?</h3>
+
+<p>Q: Combine ser1 and ser2 to form a dataframe.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcedfghijklmnopqrstuvwxyz'</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">"ser1"</span><span class="p">)</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">"ser2"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<p><img src="/blog/assets/post_cont_image/pandas_ex4.png" alt="ex_4_image" /></p>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ser1</span><span class="p">,</span><span class="n">ser2</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ser1</th>
+      <th>ser2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>e</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>d</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We can concatenate the two series into on a Dataframe using the concat method and set the axis equal to 1 to concatenate column-wise. We finally print the first 5 elements.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">"ser1"</span><span class="p">:</span><span class="n">ser1</span><span class="p">,</span><span class="s">"ser2"</span><span class="p">:</span><span class="n">ser2</span><span class="p">}).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ser1</th>
+      <th>ser2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>e</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>d</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>An alternative way to solve this issue, would be to use DataFrame method and passed in a dictionary where the keys are the column’s names and the value are the series and then print the first 5 elements.</p>
+
+<h3>Ex 5: How to assign name to the series’ index?</h3>
+
+<p>Q: Give a name to the series ser calling it ‘alphabets’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcedfghijklmnopqrstuvwxyz'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a    0
+# b    1
+# c    2
+# e    3
+# d    4
+# Name: alphabets, dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"alphabets"</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    0
+b    1
+c    2
+e    3
+d    4
+Name: alphabets, dtype: int64
+</code></pre></div></div>
+
+<p>We give a name to a series through the dot operator by calling the name method and assign it the actual name, in this example “alphabets”</p>
+
+<h3>Ex 6: How to get the items of series A not present in series B?</h3>
+
+<p>Q: From ser1 remove items present in ser2.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    1
+# 1    2
+# 2    3
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span><span class="p">[</span><span class="o">~</span><span class="n">ser1</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ser2</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    2
+2    3
+dtype: int64
+</code></pre></div></div>
+
+<p>We first find which elements present both in ser1 and ser2 using isin method, a boolean DataFrame is returned where True is the position of elements present in ser1 and ser2 and where False is the position of elements only in ser1.</p>
+
+<p>So to get the elements unique to ser1, we use the ~ to reverse the boolean DataFrame and then use indexing to get the actual value.</p>
+
+<h3>Ex 7: How to get the items not common to both series A and series B?</h3>
+
+<p>Q: Get all items of ser1 and ser2 not common to both.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    1
+# 1    2
+# 2    3
+# 3    6
+# 4    7
+# 5    8
+# dtype: int64
+</span></code></pre></div></div>
+
+<h3>Solution</h3>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_ser1</span> <span class="o">=</span> <span class="n">ser1</span><span class="p">[</span><span class="o">~</span><span class="n">ser1</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ser2</span><span class="p">)]</span>
+<span class="n">unique_ser2</span> <span class="o">=</span> <span class="n">ser2</span><span class="p">[</span><span class="o">~</span><span class="n">ser2</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ser1</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p>We get elements that are not common in both series just like we did in exercise 6</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_ser1</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    2
+2    3
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_ser2</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2    6
+3    7
+4    8
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">union1d</span><span class="p">(</span><span class="n">unique_ser1</span><span class="p">,</span><span class="n">unique_ser2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uniques</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    2
+2    3
+3    6
+4    7
+5    8
+dtype: int64
+</code></pre></div></div>
+
+<p>At last, we merge the two series unique_ser1 and unique_ser2 using the NumPy function union1d and cast the array into a series.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">series_u</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">union1d</span><span class="p">(</span><span class="n">ser1</span><span class="p">,</span><span class="n">ser2</span><span class="p">))</span>
+<span class="n">series_i</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">ser1</span><span class="p">,</span><span class="n">ser2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">series_u</span><span class="p">[</span><span class="o">~</span><span class="n">series_u</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">series_i</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    2
+2    3
+5    6
+6    7
+7    8
+dtype: int64
+</code></pre></div></div>
+
+<p>The second method is quite similar to the first one, the difference is that this time we get first the intersection and the union separately using NumPy function and then use indexing on the union series to get the unique element in the two series just like we did in exercise 6.</p>
+
+<h3>Ex 8: How to get the minimum, 25th percentile, median, 75th, and max of a numeric series?</h3>
+
+<p>Q: Compute the minimum, 25th percentile, median, 75th, and maximum of ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#the minimum is :1.63, the 25th percentile is: 7.27, the median is: 10.21, the 75th percentile is: 15.29 and the maximum is: 22.64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"the minimum is :{0:.2f}, the 25th percentile is: {1:.2f}, the median is: {2:.2f}, the 75th percentile is: {3:.2f} and the maximum is: {4:.2f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.25</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="n">median</span><span class="p">(),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.75</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="nb">max</span><span class="p">()))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the minimum is :1.63, the 25th percentile is: 7.27, the median is: 10.21, the 75th percentile is: 15.29 and the maximum is: 22.64
+</code></pre></div></div>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"the minimum is :{0:.2f}, the 25th percentile is: {1:.2f}, the median is: {2:.2f}, the 75th percentile is: {3:.2f} and the maximum is: {4:.2f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.25</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.50</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.75</span><span class="p">),</span><span class="n">ser</span><span class="p">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>the minimum is :1.63, the 25th percentile is: 7.27, the median is: 10.21, the 75th percentile is: 15.29 and the maximum is: 22.64
+</code></pre></div></div>
+
+<p>We can get the different percentile using the quantile method and pass as argument q the percentile, so for the 0th percentile (which is the min) q will be 0, for the 25th percentile q will be 0.25, for the 50th percentile (which is the median) q will be 0.5, for the 75th percentile q will be 0.75 and last for the 100th percentile (which is the max) q will be 1.</p>
+
+<p>The min, median and max have their functions too in case you don’t wanna use the quantile function.</p>
+
+<h3>Ex 9: How to get frequency counts of unique items of a series?</h3>
+
+<p>Q: Calculate the frequency counts of each unique value ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">take</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcdefgh'</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># b    7
+# a    5
+# e    5
+# f    4
+# d    4
+# c    2
+# h    2
+# g    1
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">value_counts</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b    7
+a    5
+e    5
+f    4
+d    4
+c    2
+h    2
+g    1
+dtype: int64
+</code></pre></div></div>
+
+<p>To get the count of how many times a value is repeated, we use the value_count function on the series.</p>
+
+<h3>Ex 10: How to keep only the top 2 most frequent values as it is and replace everything else as ‘Other’?</h3>
+
+<p>Q: From ser, keep the top 2 most frequent items as it is and replace everything else as ‘Other’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">12</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0         2
+# 1         4
+# 2         2
+# 3     other
+# 4         2
+# 5         4
+# 6     other
+# 7         2
+# 8         2
+# 9     other
+# 10    other
+# 11        4
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">most_freq_el</span> <span class="o">=</span> <span class="n">ser</span><span class="p">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">2</span><span class="p">].</span><span class="n">index</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">[</span><span class="o">~</span><span class="n">ser</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">most_freq_el</span><span class="p">)]</span> <span class="o">=</span> <span class="s">"other"</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0         2
+1         4
+2         2
+3     other
+4         2
+5         4
+6     other
+7         2
+8         2
+9     other
+10    other
+11        4
+dtype: object
+</code></pre></div></div>
+
+<p>We get first the two most frequent element in ser using the value_count, which will return the series with the values as indexes and the count of how many times those values are repeated. We only need the value so we called the index function.</p>
+
+<p>We use isin and indexing to select all the values other than the two most frequent value and assign it to the string “other”.</p>
+
+<h3>Ex 11: How to bin a numeric series to 10 groups of equal size?</h3>
+
+<p>Q: Bin the series ser into 10 equal deciles and replace the values with the bin name.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    4th
+# 1    9th
+# 2    6th
+# 3    2nd
+# 4    2nd
+# dtype: category
+# Categories (10, object): [1st &lt; 2nd &lt; 3rd &lt; 4th ... 7th &lt; 8th &lt; 9th &lt; 10th]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ser</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">"1st"</span><span class="p">,</span><span class="s">"2nd"</span><span class="p">,</span><span class="s">"3rd"</span><span class="p">,</span><span class="s">"4th"</span><span class="p">,</span><span class="s">"5th"</span><span class="p">,</span><span class="s">"6th"</span><span class="p">,</span><span class="s">"7th"</span><span class="p">,</span><span class="s">"8th"</span><span class="p">,</span><span class="s">"9th"</span><span class="p">,</span><span class="s">"10th"</span><span class="p">]).</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    4th
+1    9th
+2    6th
+3    2nd
+4    2nd
+dtype: category
+Categories (10, object): [1st &lt; 2nd &lt; 3rd &lt; 4th ... 7th &lt; 8th &lt; 9th &lt; 10th]
+</code></pre></div></div>
+
+<p>To get the segment of the series, we use the cut function pass the series, specify how many bins or basket we want to use and give them a label.</p>
+
+<h3>Ex 12: How to convert a numpy array to a dataframe of given shape? (L1)</h3>
+
+<p>Q: Reshape the series ser into a dataframe with 7 rows and 5 columns</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[9, 1, 4, 8, 3],
+#        [2, 3, 9, 7, 2],
+#        [2, 9, 6, 6, 5],
+#        [2, 2, 7, 8, 5],
+#        [7, 3, 3, 9, 6],
+#        [2, 3, 4, 3, 3],
+#        [1, 6, 6, 3, 1]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[9, 1, 4, 8, 3],
+       [2, 3, 9, 7, 2],
+       [2, 9, 6, 6, 5],
+       [2, 2, 7, 8, 5],
+       [7, 3, 3, 9, 6],
+       [2, 3, 4, 3, 3],
+       [1, 6, 6, 3, 1]])
+</code></pre></div></div>
+
+<p>To reshape the ser, we call the reshape function on the series and pass a tuple with the first element the number of rows and the second element the number of columns.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[9, 1, 4, 8, 3],
+       [2, 3, 9, 7, 2],
+       [2, 9, 6, 6, 5],
+       [2, 2, 7, 8, 5],
+       [7, 3, 3, 9, 6],
+       [2, 3, 4, 3, 3],
+       [1, 6, 6, 3, 1]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[9, 1, 4, 8, 3],
+       [2, 3, 9, 7, 2],
+       [2, 9, 6, 6, 5],
+       [2, 2, 7, 8, 5],
+       [7, 3, 3, 9, 6],
+       [2, 3, 4, 3, 3],
+       [1, 6, 6, 3, 1]])
+</code></pre></div></div>
+
+<p>The other way to go about this would be to populate the tuple with only one element (row or column) and let Pandas figure out the other element to be used by placing -1 in the tuple.</p>
+
+<h3>Ex 13: How to find the positions of numbers that are multiples of 3 from a series?</h3>
+
+<p>Q: Find the positions of numbers that are multiples of 3 from ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    1
+# 1    6
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ser</span><span class="p">[</span><span class="n">ser</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">].</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    6
+dtype: int64
+</code></pre></div></div>
+
+<p>We index the series and pass in the condition to return all the values that have a remainder of 0 when divided by 3. It means that those values are multiples of 3.</p>
+
+<p>We then extract the indexes(positions) and cast them to a series.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">ser</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">).</span><span class="n">flatten</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    1
+1    6
+dtype: int64
+</code></pre></div></div>
+
+<p>Alternately, we could use NumPy function argwhere which returns all the values that have a remainder of 0 when divided by 3. We then flatten the array and cast it to a series.</p>
+
+<h3>Ex 14: How to extract items at given positions from a series</h3>
+
+<p>Q: From ser, extract the items at positions in list pos.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcdefghijklmnopqrstuvwxyz'</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0     a
+# 4     e
+# 8     i
+# 14    o
+# 20    u
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ser</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     a
+4     e
+8     i
+14    o
+20    u
+dtype: object
+</code></pre></div></div>
+
+<p>We use the iloc function to get the element at a specific index and cast to a series.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">take</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     a
+4     e
+8     i
+14    o
+20    u
+dtype: object
+</code></pre></div></div>
+
+<p>Alternatively, we can use the take function to achieve the same result.</p>
+
+<h3>Ex 15: How to stack two series vertically?</h3>
+
+<p>Q: Stack ser1 and ser2 vertically to form a dataframe.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    0
+# 1    1
+# 2    2
+# 3    3
+# 4    4
+# 0    a
+# 1    b
+# 2    c
+# 3    d
+# 4    e
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">((</span><span class="n">ser1</span><span class="p">,</span><span class="n">ser2</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    0
+1    1
+2    2
+3    3
+4    4
+0    a
+1    b
+2    c
+3    d
+4    e
+dtype: object
+</code></pre></div></div>
+
+<p>To combine the two series into one, we use the concat function and pass in as a tuple the two series and set the axis to 0 to tell Pandas that we want to concatenate row-wise(vertically).</p>
+
+<h3>Ex 16: How to get the positions of items of series A in another series B?</h3>
+
+<p>Q: Get the positions of items of ser2 in ser1 as a list.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+<span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0, 4, 5, 8]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="n">ser1</span><span class="p">[</span><span class="n">ser1</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ser2</span><span class="p">)].</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 4, 5, 8]
+</code></pre></div></div>
+
+<p>We use the isin function on ser1 in ser2. We get back the indexes that correspond to the positions and cast them to a list.</p>
+
+<h3>Ex 17: How to compute the mean squared error on series A and predicted series B?</h3>
+
+<p>Q: Compute the mean squared error of truth and pred series.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">truth</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Since we are generating random variable, your result will be different
+</span>
+<span class="c1">#0.34688071383011976
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">truth</span><span class="p">,</span><span class="n">pred</span><span class="p">)).</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.34688071383011976
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">((</span><span class="n">truth</span><span class="o">-</span><span class="n">pred</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.34688071383011976
+</code></pre></div></div>
+
+<p>The two notation is the same, to find the mean squared error we use its formula which pretty much translates into the code above.</p>
+
+<p>Visit the <a href="https://en.wikipedia.org/wiki/Mean_squared_error" target="_blank">Wikipedia page</a> to learn more about the mean squared error.</p>
+
+<h3>Ex 18: How to convert the first character of each element in a series to uppercase?</h3>
+
+<p>Q: Change the first character of each word to upper case in each word of ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'how'</span><span class="p">,</span> <span class="s">'to'</span><span class="p">,</span> <span class="s">'kick'</span><span class="p">,</span> <span class="s">'ass?'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0     How
+# 1      To
+# 2    Kick
+# 3    Ass?
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: The pythonic way (least recommended)</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">uppercase</span><span class="p">(</span><span class="n">the_series</span><span class="p">):</span>
+    <span class="n">capitalized_ser</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">the_series</span><span class="p">:</span>
+        <span class="n">capitalized_ser</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="n">capitalize</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">capitalized_ser</span><span class="p">))</span>
+    
+<span class="n">uppercase</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     How
+1      To
+2    Kick
+3    Ass?
+dtype: object
+</code></pre></div></div>
+
+<p>One way to solve this would be to use the vanilla Python code. We build a function that takes the series and create a new list to store the words that we will be capitalizing. We loop through the series and capitalize each word and place it in the list. We finally cast the list to a series and print it.</p>
+
+<p>The reason why this is the least recommended of the bunch, it is because to achieve the result by writing five lines of code which make our code verbose.</p>
+
+<h4>2nd Method: Using May (recommended)</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     How
+1      To
+2    Kick
+3    Ass?
+dtype: object
+</code></pre></div></div>
+
+<p>Ban! a much simpler method in one line of code, is to use map with lambda expression. we use the title function to capitalize each first letter of each word. We can use the capitalize function instead of the title function.</p>
+
+<h4>3rd Method: Using Pandas built-in function (most recommended)</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">capitalize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     How
+1      To
+2    Kick
+3    Ass?
+dtype: object
+</code></pre></div></div>
+
+<p>We can call the pandas’s capitalize function write away series’string.</p>
+
+<h3>Ex 19: How to calculate the number of characters in each word in a series?</h3>
+
+<p>Q: Get the number of characters in each word in a series</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'how'</span><span class="p">,</span> <span class="s">'to'</span><span class="p">,</span> <span class="s">'kick'</span><span class="p">,</span> <span class="s">'ass?'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0    3
+# 1    2
+# 2    4
+# 3    4
+# dtype: int64
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s">"."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    3
+1    2
+2    4
+3    4
+dtype: int64
+</code></pre></div></div>
+
+<p>We can get the length of each word in the series by calling the string and the count function. We pass in the count function the pattern “.” (it is a regular expression) to select any character in the word.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    3
+1    2
+2    4
+3    4
+dtype: int64
+</code></pre></div></div>
+
+<p>We can also use map with lambda expression by getting the length of each word by using len(x).</p>
+
+<h3>Ex 20: How to compute the difference of differences between consecutive numbers of a series?</h3>
+
+<p>Q: Find the difference of differences between the consecutive numbers of ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [nan, 2.0, 3.0, 4.0, 5.0, 6.0, 6.0, 8.0]
+# [nan, nan, 1.0, 1.0, 1.0, 1.0, 0.0, 2.0]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">diff</span><span class="p">().</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[nan, 2.0, 3.0, 4.0, 5.0, 6.0, 6.0, 8.0]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">.</span><span class="n">diff</span><span class="p">().</span><span class="n">diff</span><span class="p">().</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[nan, nan, 1.0, 1.0, 1.0, 1.0, 0.0, 2.0]
+</code></pre></div></div>
+
+<p>To calculate the difference of a series element compared with another element in the series, we use the diff function.</p>
+
+<p>The first line of code we use it on the element in the series and the second time we use it on the difference list. So we have performed a difference of difference on that series.</p>
+
+<h3>Ex 21: How to convert a series of date-strings to a timeseries?</h3>
+
+<p>Q: How to convert a series of date-strings to a timeseries?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'01 Jan 2010'</span><span class="p">,</span> <span class="s">'02-02-2011'</span><span class="p">,</span> <span class="s">'20120303'</span><span class="p">,</span> <span class="s">'2013/04/04'</span><span class="p">,</span> <span class="s">'2014-05-05'</span><span class="p">,</span> <span class="s">'2015-06-06T12:20'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0   2010-01-01 00:00:00
+# 1   2011-02-02 00:00:00
+# 2   2012-03-03 00:00:00
+# 3   2013-04-04 00:00:00
+# 4   2014-05-05 00:00:00
+# 5   2015-06-06 12:20:00
+# dtype: datetime64[ns]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0   2010-01-01 00:00:00
+1   2011-02-02 00:00:00
+2   2012-03-03 00:00:00
+3   2013-04-04 00:00:00
+4   2014-05-05 00:00:00
+5   2015-06-06 12:20:00
+dtype: datetime64[ns]
+</code></pre></div></div>
+
+<p>To get the timeseries of the corresponding series, we use the function to_datetime and pass the series as the argument.</p>
+
+<h3>Ex 22: How to get the day of the month, week number, day of year and day of the week from a series of date strings?</h3>
+
+<p>Q: Get the day of the month, week number, day of year and day of the week from ser.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'01 Jan 2010'</span><span class="p">,</span> <span class="s">'02-02-2011'</span><span class="p">,</span> <span class="s">'20120303'</span><span class="p">,</span> <span class="s">'2013/04/04'</span><span class="p">,</span> <span class="s">'2014-05-05'</span><span class="p">,</span> <span class="s">'2015-06-06T12:20'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Date:  [1, 2, 3, 4, 5, 6]
+# Week number:  [53, 5, 9, 14, 19, 23]
+# Day num of year:  [1, 33, 63, 94, 125, 157]
+# Day of week:  ['Friday', 'Wednesday', 'Saturday', 'Thursday', 'Monday', 'Saturday']
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser_dt</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">date</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ser_dt</span><span class="p">.</span><span class="n">dt</span><span class="p">.</span><span class="n">day</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">week_number</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ser_dt</span><span class="p">.</span><span class="n">dt</span><span class="p">.</span><span class="n">week</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">day_num</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ser_dt</span><span class="p">.</span><span class="n">dt</span><span class="p">.</span><span class="n">dayofyear</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">day_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ser_dt</span><span class="p">.</span><span class="n">dt</span><span class="p">.</span><span class="n">day_name</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Date: {}</span><span class="se">\n</span><span class="s">Week number: {}</span><span class="se">\n</span><span class="s">Day num of year: {}</span><span class="se">\n</span><span class="s">Day of week: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span><span class="n">week_number</span><span class="p">,</span><span class="n">day_num</span><span class="p">,</span><span class="n">day_name</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date: [1, 2, 3, 4, 5, 6]
+Week number: [53, 5, 9, 14, 19, 23]
+Day num of year: [1, 33, 63, 94, 125, 157]
+Day of week: ['Friday', 'Wednesday', 'Saturday', 'Thursday', 'Monday', 'Saturday']
+</code></pre></div></div>
+
+<p>We start by changing the series into a datetime, then access its dt function to get the dates, week number, day of the year and day name. Finally, we cast them to a list and print those variables.</p>
+
+<h3>Ex 23: How to convert year-month string to dates corresponding to the 4th day of the month?</h3>
+
+<p>Q: Change ser to dates that start with 4th of the respective months.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'Jan 2010'</span><span class="p">,</span> <span class="s">'Feb 2011'</span><span class="p">,</span> <span class="s">'Mar 2012'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0   2010-01-04
+# 1   2011-02-04
+# 2   2012-03-04
+# dtype: datetime64[ns]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="n">ser</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">parse</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="s">" 4"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0   2010-01-04
+1   2011-02-04
+2   2012-03-04
+dtype: datetime64[ns]
+</code></pre></div></div>
+
+<p>For this exercise, we will need to install the parse function from the dateutile package to parse most known formats representing a date and/or time.</p>
+
+<p>Then we will use the map function with a lambda expression, and parse the series concatenated with the date we want to add to the series.</p>
+
+<h3>Ex 24: How to filter words that contain atleast 2 vowels from a series?</h3>
+
+<p>Q: From ser, extract words that contain atleast 2 vowels.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'Apple'</span><span class="p">,</span> <span class="s">'Orange'</span><span class="p">,</span> <span class="s">'Plan'</span><span class="p">,</span> <span class="s">'Python'</span><span class="p">,</span> <span class="s">'Money'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 0     Apple
+# 1    Orange
+# 4     Money
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vowel_count</span> <span class="o">=</span> <span class="n">ser</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s">"(?i)[aeiou]"</span><span class="p">)</span>
+<span class="n">vowel_count</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    2
+1    3
+2    1
+3    1
+4    2
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">vowel_count</span><span class="p">.</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">).</span><span class="n">flatten</span><span class="p">()]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0     Apple
+1    Orange
+4     Money
+dtype: object
+</code></pre></div></div>
+
+<p>We use the count function to get the count of vowels in each word by using a regular expression pattern. We get back a series with positions and the corresponding count of vowel at those positions.</p>
+
+<p>We use the Numpy argwhere function to return the indexes where the condition in the paratheses is satisfied. In this example, the condition is a vowel count greater than 2. we get back 3 arrays of the indexes where the word has 2 or more vowels and then we flatten the 3 arrays into one 1D array. We use indexing to get back the words from the original series.</p>
+
+<h3>Ex 25: How to filter valid emails from a series?</h3>
+
+<p>Extract the valid emails from the series emails. The regex pattern for valid emails is provided as reference.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">emails</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="s">'buying books at amazom.com'</span><span class="p">,</span> <span class="s">'rameses@egypt.com'</span><span class="p">,</span> <span class="s">'matt@t.co'</span><span class="p">,</span> <span class="s">'narendra@modi.com'</span><span class="p">,</span><span class="s">'dad@comp'</span><span class="p">])</span>
+<span class="n">pattern</span> <span class="o">=</span><span class="s">'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+</span><span class="se">\\</span><span class="s">.[A-Za-z]{2,4}'</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1    rameses@egypt.com
+# 2            matt@t.co
+# 3    narendra@modi.com
+# dtype: object
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">emails</span><span class="p">[</span><span class="n">emails</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="n">pattern</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1    rameses@egypt.com
+2            matt@t.co
+3    narendra@modi.com
+dtype: object
+</code></pre></div></div>
+
+<p>This exercise is similar to the previous one. This time, we use the match function to get back all the words that match the pattern and use the indexing to get those words.</p>
+
+<h3>Conclusion</h3>
+
+<p>Pandas is such a wonderful library that is why it is my favorite libraries. It is easy to grasp, and there are a plethora of resources online if you are stuck. Do not forget to visit StackOverflow too, and ask questions. There is always someone ready to help.</p>
+
+<p>This post is exclusively focused on series, the primary data structure of Pandas. In the next two posts, we will explore the dataframe which is the most popular Pandas data structure. Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/Pandas%20exercise%20Part%201.ipynb" target="_blank">here.</a></p>
+
+<p>Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Cheers, and keep learning!</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=Pandas Exercises Part 1&url=http://localhost:4000/2020/09/24/pandas-exercises-part-1.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2020/09/24/pandas-exercises-part-1.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/09/24/pandas-exercises-part-1.html&title=Pandas Exercises Part 1&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2020/09/24/pandas-exercises-part-1.html&title=Pandas Exercises Part 1" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=Pandas Exercises Part 1&amp;body=Check out this post http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html';
+      this.page.identifier = 'http://localhost:4000/blog/2020/09/24/pandas-exercises-part-1.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/blog/assets/favicon/favicon.png" >
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>NumPy Exercises Part 3 | MIB</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="NumPy Exercises Part 3" />
+<meta name="author" content="Stern Semasuka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects." />
+<meta property="og:description" content="Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects." />
+<link rel="canonical" href="http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html" />
+<meta property="og:site_name" content="MIB" />
+<meta property="og:image" content="http://localhost:4000/blog/assets/post_images/numpy.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-19T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/blog/assets/post_images/numpy.png" />
+<meta property="twitter:title" content="NumPy Exercises Part 3" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/blog/assets/logo/logo_1.png"},"name":"Stern Semasuka"},"image":"http://localhost:4000/blog/assets/post_images/numpy.png","author":{"@type":"Person","name":"Stern Semasuka"},"url":"http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html","@type":"BlogPosting","description":"Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects.","headline":"NumPy Exercises Part 3","dateModified":"2020-09-19T00:00:00-06:00","datePublished":"2020-09-19T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/blog/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i|Fira+Sans+Condensed">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="MIB" href="/blog/feed.xml">
+  
+</head>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+  <body class="layout--post numpy-exercises-part-3">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/blog/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/archives/" itemprop="url">
+            <span itemprop="name">Archives</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/blog/about/" itemprop="url">
+            <span itemprop="name">About</span>
+          </a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:ssemasuka@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/semasuka">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+    <li><a href="https://www.linkedin.com/in/stern-semasuka">
+  <span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span>
+  <span class="label">Linkedin</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/blog/feed.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">RSS</span>
+      </a>
+    
+  </li>
+  <li>
+    <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{
+        background:#fff;
+        clear:left;
+        font:14px Helvetica,Arial,sans-serif;
+        width:100%;
+    }
+    #mc_embed_signup input.email {
+        display: none
+    }
+    #mc_embed_signup .button{
+        background-color: #539F30;
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 8px;
+        -webkit-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        box-shadow: 9px 5px 52px -7px rgba(0, 0, 0, 0.52);
+        }
+    #mc_embed_signup .button:hover {
+        background-color: rgb(52, 99, 30);
+        -webkit-box-transition: all 0.5s ease;
+        -moz-box-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        color: rgb(187, 187, 187);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+    #mc_embed_signup {width: 80%;}
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us7.list-manage.com/subscribe/post?u=a42c4a501e1abb66402e41f08&amp;id=8b7e08e218" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get notified each time there's a new post by subscribing</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a42c4a501e1abb66402e41f08_8b7e08e218" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/blog/">
+            <img src="/blog/assets/logo/logo_1.png" alt="" class="site-logo">
+            <span>MIB</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          
+<header class="intro">
+  
+    
+    
+    
+
+    <div class="intro-image">
+        <img src="/blog/assets/post_images/numpy.png" alt="NumPy Exercises Part 3">
+        <div class="pattern"></div>
+        <h1 id="page-title" class="intro-title">NumPy Exercises Part 3
+</h1>
+    </div>
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      
+
+      
+        
+
+        <p class="entry-meta">
+          
+            <span class="byline-item">by Stern Semasuka</span>
+          
+          <span class="byline-item"><span class="icon"><img src=" /blog/assets/logo/tags.png" height="42" width="42"></span>python, exercises, numpy</span>
+          <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2020-09-19T00:00:00-06:00">Sat September 19, 2020</time></span>
+          
+            <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>39 min read</span>
+          
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div id="entry" class="entry-content">
+        <p>Welcome back, folks! This post is the last in the series of NumPy exercises. In this post, we will see intermediate and advanced level exercises. Remember, the more you practice, the more you will understand NumPy and will use it with ease in your ML projects.<!-- more --></p>
+
+<p>Let’s now start by importing the NumPy as usual.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h3>Ex 41: Convert a numeric to a categorical (text) array</h3>
+
+<p>Q: Bin the petal length (3rd) column of the_data_2d to form a text array, such that if petal length is:</p>
+
+<ul>
+  <li>Less than 3 we change it to ‘small.’</li>
+  <li>between 3 and 5 we change it to ‘medium.’</li>
+  <li>Greater or equal to 5 we change it to ‘large.’</li>
+</ul>
+
+<p>Finally, print the first four values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#['small', 'small', 'small', 'small']
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">petal_length_bins</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">),[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">label_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">'small'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">'medium'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">'large'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">}</span>
+<span class="n">petal_lenght_categorized</span> <span class="o">=</span> <span class="p">[</span><span class="n">label_map</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">petal_lenght_bins</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">petal_lenght_categorized</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['small', 'small', 'small', 'small']
+</code></pre></div></div>
+
+<p>We start by selecting the sepal length column and cast it to float. Then we use the digitize method to create bins or, as I like to call them, containers for the corresponding range of values in the column.</p>
+
+<p>So we are assigning the following values:</p>
+<ul>
+  <li>1 to all the elements between 0 and 3 exclusive (3 not included) in the petal length column.</li>
+  <li>2 to all the elements between 3 and 5 exclusive.</li>
+  <li>Finally, 3 to all the elements between 5 to 10 exclusive.</li>
+</ul>
+
+<p>We then now create a dictionary with key-value pairs where each key has a corresponding text. 1 is associated with small, 2 is associated with medium, and finally, 3 is associated with large.</p>
+
+<p>Finally, we use list comprehension to go through the bins and replace each instance of 1, 2, and 3 by the corresponding text and print the first four elements.</p>
+
+<h3>Ex 42: Create a new column from existing columns of a NumPy array</h3>
+
+<p>Q: Create a new column for volume in the_data_2d, where volume is (pi x petal length(3rd column) x sepal length(1st column)^2)/3</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[ 5.1       ,  3.5       ,  1.4       ,  0.2       , 38.13265163],
+#        [ 4.9       ,  3.        ,  1.4       ,  0.2       , 35.20049849],
+#        [ 4.7       ,  3.2       ,  1.3       ,  0.2       , 30.07237208],
+#        [ 4.6       ,  3.1       ,  1.5       ,  0.2       , 33.23805027],
+#        [ 5.        ,  3.6       ,  1.4       ,  0.2       , 36.65191429]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">volume</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">volume</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 38.13,  35.2 ,  30.07,  33.24,  36.65,  51.91,  31.02,  39.27,
+        28.38,  37.71,  45.8 ,  38.6 ,  33.78,  21.3 ,  42.27,  51.04,
+        39.7 ,  38.13,  57.84,  40.86,  51.91,  40.86,  22.16,  46.3 ,
+        45.84,  41.89,  41.89,  42.47,  39.64,  37.01,  38.6 ,  45.8 ,
+        42.47,  44.35,  37.71,  31.42,  41.18,  37.71,  26.36,  40.86,
+        34.03,  27.57,  26.36,  41.89,  51.75,  33.78,  43.58,  31.02,
+        44.12,  36.65, 241.17, 193.02, 244.3 , 126.71, 203.52, 153.11,
+       195.35,  82.97, 209.83, 110.43,  91.63, 153.1 , 150.8 , 183.14,
+       118.22, 206.84, 147.78, 144.43, 181.14, 128.08, 174.97, 155.86,
+       203.66, 183.14, 184.44, 200.71, 232.43, 235.04, 169.65, 119.08,
+       120.38, 117.21, 137.39, 192.27, 137.41, 169.65, 220.94, 182.88,
+       134.64, 126.71, 139.38, 179.24, 140.91,  86.39, 137.93, 142.9 ,
+       142.9 , 173.09,  81.71, 139.5 , 249.38, 179.66, 311.46, 232.75,
+       256.62, 399.21, 113.14, 351.57, 272.65, 331.15, 225.64, 227.33,
+       266.32, 170.12, 179.66, 227.33, 243.34, 415.99, 428.41, 188.5 ,
+       284.19, 160.92, 415.99, 203.66, 267.95, 325.72, 193.22, 190.93,
+       240.2 , 314.86, 349.8 , 418.28, 240.2 , 211.97, 218.21, 378.74,
+       232.75, 235.91, 180.96, 269.23, 263.25, 254.27, 179.66, 285.69,
+       267.95, 244.45, 207.82, 230.07, 217.37, 185.91])
+</code></pre></div></div>
+
+<p>We first get the volume by multiplying the pie constant with the third column times the power by two of the first column then finally dividing the whole by 3.</p>
+
+<p>But there is an issue; the volume is a one-dimensional array, while the_data_2d is a two-dimensional array. It means that we can not stack them together because they are of different dimensions. We have to change the dimension of volume to a two-dimensional array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">volume</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(150,)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">volume</span> <span class="o">=</span> <span class="n">volume</span><span class="p">[:,</span><span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>We use the newaxis method, which will increase a dimension to the next dimension. In our case, because we had a one-dimensional array, we would have a two-dimensional array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">volume</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(150, 1)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(150, 4)
+</code></pre></div></div>
+
+<p>Now we can append the volume to the the_data_2d array. There are two ways of achieving this.</p>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">,</span><span class="n">volume</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 5.1       ,  3.5       ,  1.4       ,  0.2       , 38.13265163],
+       [ 4.9       ,  3.        ,  1.4       ,  0.2       , 35.20049849],
+       [ 4.7       ,  3.2       ,  1.3       ,  0.2       , 30.07237208],
+       [ 4.6       ,  3.1       ,  1.5       ,  0.2       , 33.23805027],
+       [ 5.        ,  3.6       ,  1.4       ,  0.2       , 36.65191429]])
+</code></pre></div></div>
+
+<p>We don’t want to print the exponential; we suppress it using the set_printoption method. We append the volume column to the_data_2d column-wise by setting axis to 1 (column-wise or horizontally) and print the first five rows.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">the_data_2d</span><span class="p">,</span><span class="n">volume</span><span class="p">))[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 5.1       ,  3.5       ,  1.4       ,  0.2       , 38.13265163],
+       [ 4.9       ,  3.        ,  1.4       ,  0.2       , 35.20049849],
+       [ 4.7       ,  3.2       ,  1.3       ,  0.2       , 30.07237208],
+       [ 4.6       ,  3.1       ,  1.5       ,  0.2       , 33.23805027],
+       [ 5.        ,  3.6       ,  1.4       ,  0.2       , 36.65191429]])
+</code></pre></div></div>
+
+<p>We can also use hstack to stack column-wise the_data_2d and volume and print the first five rows.</p>
+
+<h3>Ex 43: Probabilistic sampling in numpy</h3>
+
+<p>Q: Randomly sample iris’s species such that setose is twice the number of versicolor and virginica</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use np.random.seed(100)
+#(array(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'], dtype='&lt;U15'), array([77, 37, 36]))
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="s">'Iris-setosa'</span><span class="p">,</span> <span class="s">'Iris-versicolor'</span><span class="p">,</span> <span class="s">'Iris-virginica'</span><span class="p">])</span>
+<span class="n">species_out</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>We first create an array with the three types of flowers, then use this array to create a random sample with p being the probabilities associated with each entry of size 150. The first entry (Iris-Setosa) has double the probabilities than the two other entries (Iris-versicolor and Iris-virginica). That’s why we have set the first element in p to 0.5 and the rest 0.25.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_out</span><span class="p">,</span><span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(array(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'], dtype='&lt;U15'), array([77, 37, 36]))
+</code></pre></div></div>
+
+<p>We now print out unique values from the species_out and return the count of each value.</p>
+
+<h3>Ex 44: Get the second largest value of an column in an array when grouped by another column?</h3>
+
+<p>Q: What is the value of the second-longest petal length of species setosa</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1.7
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">petal_lght_set</span> <span class="o">=</span> <span class="n">the_data_2d</span><span class="p">[</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="sa">b</span><span class="s">'Iris-setosa'</span><span class="p">,</span><span class="mi">2</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">petal_lght_set</span><span class="p">)</span>
+<span class="n">petal_lght_set_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">petal_lght_set</span><span class="p">)</span>
+<span class="n">petal_lght_set_sorted_unq</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">petal_lght_set_sorted</span><span class="p">)</span>
+<span class="n">petal_lght_set_sorted_unq</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3 1.4
+ 1.7 1.5 1.7 1.5 1.  1.7 1.9 1.6 1.6 1.5 1.4 1.6 1.6 1.5 1.5 1.4 1.5 1.2
+ 1.3 1.5 1.3 1.5 1.3 1.3 1.3 1.6 1.9 1.4 1.6 1.4 1.5 1.4]
+
+
+
+
+
+1.7
+</code></pre></div></div>
+
+<p>We first select the 5th column (species column) to extract only the iris-setosa species. This expression will return a boolean array, which will be indexed in the original array to get back all the rows where we have the iris-setosa as the species. Now we pass in 2 as the second element in the index to get the petal length column for only the iris-setosa species and cast the array to float.</p>
+
+<p>Then we proceed by sorting and removing duplicates in the column. After getting an ordered list of unique elements, we use indexing to get the second last element by passing in -2 which correspond to the second-longest petal length of setosa.</p>
+
+<h3>Ex 45: How to sort a 2D array by a column</h3>
+
+<p>Q: Sort the iris dataset based on the sepal length column.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[b'4.3', b'3.0', b'1.1', b'0.1', b'Iris-setosa'],
+#        [b'4.4', b'3.2', b'1.3', b'0.2', b'Iris-setosa'],
+#        [b'4.4', b'3.0', b'1.3', b'0.2', b'Iris-setosa'],
+#        [b'4.4', b'2.9', b'1.4', b'0.2', b'Iris-setosa'],
+#        [b'4.5', b'2.3', b'1.3', b'0.3', b'Iris-setosa'],
+#        [b'4.6', b'3.6', b'1.0', b'0.2', b'Iris-setosa'],
+#        [b'4.6', b'3.1', b'1.5', b'0.2', b'Iris-setosa'],
+#        [b'4.6', b'3.4', b'1.4', b'0.3', b'Iris-setosa'],
+#        [b'4.6', b'3.2', b'1.4', b'0.2', b'Iris-setosa'],
+#        [b'4.7', b'3.2', b'1.3', b'0.2', b'Iris-setosa']], dtype=object)
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_data_2d</span><span class="p">[</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">).</span><span class="n">argsort</span><span class="p">()][:</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[b'4.3', b'3.0', b'1.1', b'0.1', b'Iris-setosa'],
+       [b'4.4', b'3.2', b'1.3', b'0.2', b'Iris-setosa'],
+       [b'4.4', b'3.0', b'1.3', b'0.2', b'Iris-setosa'],
+       [b'4.4', b'2.9', b'1.4', b'0.2', b'Iris-setosa'],
+       [b'4.5', b'2.3', b'1.3', b'0.3', b'Iris-setosa'],
+       [b'4.6', b'3.6', b'1.0', b'0.2', b'Iris-setosa'],
+       [b'4.6', b'3.1', b'1.5', b'0.2', b'Iris-setosa'],
+       [b'4.6', b'3.4', b'1.4', b'0.3', b'Iris-setosa'],
+       [b'4.6', b'3.2', b'1.4', b'0.2', b'Iris-setosa'],
+       [b'4.7', b'3.2', b'1.3', b'0.2', b'Iris-setosa']], dtype=object)
+</code></pre></div></div>
+
+<p>We first select the column we want to sort (in our case the sepal length), cast it to float and use the argsort method to sort and get back the position index of each sorted element.</p>
+
+<p>Then pass the expression to the original array by using indexing, which will sort the whole array using the sepal length values. Finally, print the first 10 rows.</p>
+
+<h3>Ex 46: How to find the most frequent value in a NumPy column</h3>
+
+<p>Q: Find the most frequent value of petal length (3rd column) in the the_data_2d dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#1.5
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_num</span><span class="p">,</span> <span class="n">unique_count</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">2</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float64"</span><span class="p">),</span><span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_num</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">unique_count</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.5
+</code></pre></div></div>
+
+<p>Here we are using the unique value to get back unique elements (unduplicated elements) and set the total count to True, which will return the counts of how many times an element is duplicated in the column.</p>
+
+<p>With these two variables, we can get the element that was duplicated the most by using the argmax method and give it the argument unique_count and get back the position index of the greatest number. Then we use that position in the unique_num array to get the most reoccurring value.</p>
+
+<h3>Ex 47: Find the position and the first occurrence of a value greater than a given value</h3>
+
+<p>Q: Find the position and the exact value of the first occurrence greater than 1.0 in the petal width column (4th column) of the_data_2d dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The element is 1.4 and is located at position 50 in the petal width column
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_position</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">3</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">larg_num_position</span> <span class="o">=</span> <span class="n">all_position</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">larg_num</span> <span class="o">=</span> <span class="n">the_data_2d</span><span class="p">[</span><span class="n">larg_num_position</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"The element is {} and is located at position {} in the petal width column"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">larg_num</span><span class="p">),</span><span class="n">larg_num_position</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The element is 1.4 and is located at position 50 in the petal width column
+</code></pre></div></div>
+
+<p>We get all the elements in the petal width column and cast them to float, then compare each element to 1 and get back all the positions where the elements are greater than 1 using the numpy where method.</p>
+
+<p>At this stage, we have a 2D array with all the positions of elements higher than 1. To select the first element that corresponds to the first occurrence of a value greater than 1, we use [0] to get the first array within the 2D array and then another [0] right after to get the first element in the nested 1D array.</p>
+
+<p>Now that we managed to get the position of that number, we can get the value itself by using NumPy indexing in the 4th column.</p>
+
+<h3>Ex 48: Replace all values greater than a given value to a given cutoff</h3>
+
+<p>Q: From array_a, replace all values greater than 30 to 30 and less than 10 to 10.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">array_a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">array_a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([27.62684215, 14.64009987, 21.80136195, 42.39403048,  1.23122395,
+        6.95688692, 33.86670515, 41.466785  ,  7.69862289, 29.17957314,
+       44.67477576, 11.25090398, 10.08108276,  6.31046763, 11.76517714,
+       48.95256545, 40.77247431,  9.42510962, 40.99501269, 14.42961361])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([27.62684215, 14.64009987, 21.80136195, 30.        , 10.        ,
+#        10.        , 30.        , 30.        , 10.        , 29.17957314,
+#        30.        , 11.25090398, 10.08108276, 10.        , 11.76517714,
+#        30.        , 30.        , 10.        , 30.        , 14.42961361])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">array_a</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">array_a</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">array_a</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([27.62684215, 14.64009987, 21.80136195, 30.        , 10.        ,
+       10.        , 30.        , 30.        , 10.        , 29.17957314,
+       30.        , 11.25090398, 10.08108276, 10.        , 11.76517714,
+       30.        , 30.        , 10.        , 30.        , 14.42961361])
+</code></pre></div></div>
+
+<p>The first way to approach this problem is to use the where method, which takes in as the first argument, the condition we are looking for; in this case, we want to target elements in the array greater than 30. Then, the second argument is the value that will replace each position where the condition is satisfied. It means that all the elements greater than 30 will be replaced by number 30 in the array.</p>
+
+<p>Finally, the second argument is the value that will be placed in each position where the condition from the first argument is not met. But in our case, we want to change each value less than 10 to 10 that is why we are using another where method to change all the numbers less than 10 to 10 just like we did for 30. The only difference is that this time for the third argument in the nested where method, we pass in the original array, which leaves all the numbers greater than 10 untouched.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">clip</span><span class="p">(</span><span class="n">array_a</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([27.62684215, 14.64009987, 21.80136195, 30.        , 10.        ,
+       10.        , 30.        , 30.        , 10.        , 29.17957314,
+       30.        , 11.25090398, 10.08108276, 10.        , 11.76517714,
+       30.        , 30.        , 10.        , 30.        , 14.42961361])
+</code></pre></div></div>
+
+<p>We can use the clip method, which is easier to understand. We pass in the array itself, and then as a second argument, we place the number 10, which will replace all the numbers less than 10 by 10. The third argument is the maximum number, which will replace all the numbers greater than 30 by 30. That’s all!</p>
+
+<h3>Ex 49: How to get the positions of top n values from a NumPy array?</h3>
+
+<p>Q: Get the positions of top 5 maximum values in a given array a.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#array([18,  7,  3, 10, 15])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([18,  7,  3, 10, 15])
+</code></pre></div></div>
+
+<p>We can use the argsort method, which returns the position from the smallest to the highest elements. To get the position of 5 maximum element, we extract the five last elements using indexing [-5:]</p>
+
+<h3>Ex 50: How to compute the row-wise counts of all possible values in an array</h3>
+
+<p>Q: Compute the counts of unique values row-wise.</p>
+
+<p>Instruction: Output contains 10 columns representing numbers from 1 to 10. The values in the solution are the counts of the numbers in the respective rows.</p>
+
+<p>For example, Cell(0,2) in the solution has value 2, which means that the number 3 occurs precisely 2 times in the 1st row.</p>
+
+<p>Keep in mind that we are generating a random array from 1 to 10, not from 0 to 10. It means that in the output solution, 1 is in the first column, 2 in the second column, and so on.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 9,  9,  4,  8,  8,  1,  5,  3,  6,  3],
+       [ 3,  3,  2,  1,  9,  5,  1, 10,  7,  3],
+       [ 5,  2,  6,  4,  5,  5,  4,  8,  2,  2],
+       [ 8,  8,  1,  3, 10, 10,  4,  3,  6,  9],
+       [ 2,  1,  8,  7,  3,  1,  9,  3,  6,  2],
+       [ 9,  2,  6,  5,  3,  9,  4,  6,  1, 10]])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [[1, 0, 2, 1, 1, 1, 0, 2, 2, 0],
+#  [2, 1, 3, 0, 1, 0, 1, 0, 1, 1],
+#  [0, 3, 0, 2, 3, 1, 0, 1, 0, 0],
+#  [1, 0, 2, 1, 0, 1, 0, 2, 1, 2],
+#  [2, 2, 2, 0, 0, 1, 1, 1, 1, 0],
+#  [1, 1, 1, 1, 1, 2, 0, 0, 2, 1]]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">count_all_repeat</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">uni_count_arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">return_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">]</span>
+    <span class="n">final_array</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">int</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">uniques</span><span class="o">==</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">uniques</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">arr</span><span class="p">)]</span> <span class="k">for</span> <span class="n">uniques</span><span class="p">,</span> <span class="n">counts</span> <span class="ow">in</span> <span class="n">uni_count_arr</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">final_array</span>
+<span class="n">count_all_repeat</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1, 0, 2, 1, 1, 1, 0, 2, 2, 0],
+ [2, 1, 3, 0, 1, 0, 1, 0, 1, 1],
+ [0, 3, 0, 2, 3, 1, 0, 1, 0, 0],
+ [1, 0, 2, 1, 0, 1, 0, 2, 1, 2],
+ [2, 2, 2, 0, 0, 1, 1, 1, 1, 0],
+ [1, 1, 1, 1, 1, 2, 0, 0, 2, 1]]
+</code></pre></div></div>
+
+<p>We first create a function and then pass in the array. We search for unique elements and the number of times those elements occur in each row of the array. That is why we are using the list comprehension to go through all the rows to get the uni_count_arr.</p>
+
+<p>The next line is where the magic is happening! We start by going through all the uniques elements and counts from uni_count_arr variable. Then we create a nested list comprehension inside a list comprehension. Inside this list comprehension, we loop through all the unique elements in the array, which will between 1 to 10 and use an if statement to see if a specific number is in the uniques array.</p>
+
+<p>If it is not found, 0 will be returned, which means that the number is not in the row. If the number is found, we are using indexing on the counts array to get the position where there is a match between uniques value and i value, and cast it to an integer. Finally, we return the multidimensional array.</p>
+
+<p>Note: We could also have used a nested for loop with an if &amp; else statement.</p>
+
+<h3>Ex 51: How to convert an array of arrays into a flat 1d array</h3>
+
+<p>Q: Convert array_of_arrays into a flat linear 1d array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">array_of_arrays</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">arr3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">array_of_arrays</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre></div></div>
+
+<p>We use the concatenate method to merge all the arrays into one array.</p>
+
+<h3>Ex 52: How to generate one-hot encoding for an array</h3>
+
+<p>Q: Compute the one-hot encoding (dummy binary variables for each unique value in the array)</p>
+
+<p>Generating a one-hot encoding is creating a multidimensional array where the number of rows corresponds to the number of elements in the array. 1 will be placed in the position corresponding to the value of the component of the array and 0 will be placed in the remaining positions. for eg, if we have 2 as a value in the original array, the corresponding row will [ 0.,  1.,  0.] where 1 is placed at position 2.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> 
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2, 3, 2, 2, 2, 1])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#array([[ 0.,  1.,  0.],
+#       [ 0.,  0.,  1.],
+#       [ 0.,  1.,  0.],
+#       [ 0.,  1.,  0.],
+#       [ 0.,  1.,  0.],
+#       [ 1.,  0.,  0.]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">one_hot_encodings</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">the_uniques</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">the_out</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">arr</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">the_uniques</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+        <span class="n">the_out</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">element</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">the_out</span>
+
+<span class="n">one_hot_encodings</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0., 1., 0.],
+       [0., 0., 1.],
+       [0., 1., 0.],
+       [0., 1., 0.],
+       [0., 1., 0.],
+       [1., 0., 0.]])
+</code></pre></div></div>
+
+<p>aWe create first a function that takes in the original array. We get all the uniques elements from the array and create a multidimensional array using the np.zeros method, where the first element in the tuple corresponds to the row which is the numbers of elements in the original array and the second element is the columns corresponding to the uniques array(maximum is 3).</p>
+
+<p>We then create a for loop with the enumerate function, where each element in the array is assigned a number starting from 0. Then we use indexing on the_out variable to traverse all the rows using i value and the element minus 1 as the position of the column; we do subtract one to get the index in the row depending on the value of the element value. For example, for the second row, the corresponding element in the original array is 3, so 3 - 1 gives 2, which is the position to place 1.</p>
+
+<p>After targeting that specific row and column, we are going replacing 0 by 1 to that particular position. After the loop is done, we return the array.</p>
+
+<h3>Ex 53: How to create row numbers grouped by a categorical variable</h3>
+
+<p>Q: Create row numbers grouped by a categorical variable. Use the following sample from iris species as input.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">species</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'str'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">species_sm_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">species_sm_sorted</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Iris-setosa', 'Iris-setosa', 'Iris-setosa', 'Iris-setosa',
+       'Iris-setosa', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-virginica', 'Iris-virginica',
+       'Iris-virginica', 'Iris-virginica', 'Iris-virginica',
+       'Iris-virginica'], dtype='&lt;U15')
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: using the list comprehension</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">unique_val</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">[</span><span class="n">species_sm_sorted</span><span class="o">==</span><span class="n">unique_val</span><span class="p">])]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5]
+</code></pre></div></div>
+
+<p>The first way to go about to resolve this is to use a list comprehension. We get all the 3 unique species values and place them in the unique_val.</p>
+
+<p>We create another for loop with i value as the count from the enumerate function, which will count the number of occurrences of the unique_val variable in species_sm_sorted array starting from 0. For each species, the count is reset.</p>
+
+<p>Finally, we return the i variable in the array.</p>
+
+<h4>2nd Method: using the for loop</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">[</span><span class="n">species_sm_sorted</span><span class="o">==</span><span class="n">val</span><span class="p">]):</span>
+        <span class="n">output</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5]
+</code></pre></div></div>
+
+<p>We create a for loop to loop through the uniques elements in the array species_sm_sorted which are Iris-setosa, Iris-versicolor, and Iris-virginica.</p>
+
+<p>Then we create a nested for loop with i as the count from the enumerate function, which will count the number of occurrences of the unique_val variable in species_sm_sorted array starting from 0. For each species, the count is reset just as we did with the list comprehension method.</p>
+
+<p>Finally, we return the i variable in the array.</p>
+
+<h3>Ex 54: How to create group ids based on a given categorical variable</h3>
+
+<p>Q: Create group ids based on a given categorical variable. Use the following sample from iris species as input.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">species</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'str'</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">species_sm_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">species_sm_sorted</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['Iris-setosa', 'Iris-setosa', 'Iris-setosa', 'Iris-setosa',
+       'Iris-setosa', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor',
+       'Iris-versicolor', 'Iris-virginica', 'Iris-virginica',
+       'Iris-virginica', 'Iris-virginica', 'Iris-virginica',
+       'Iris-virginica'], dtype='&lt;U15')
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: Using list comprehension</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">)</span><span class="o">==</span><span class="n">each_unique</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">each_unique</span> <span class="ow">in</span> <span class="n">species_sm_sorted</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group_id</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+</code></pre></div></div>
+
+<p>This method is the same as using the for loop method just that, in this case, we are using a list comprehension. Please refer to for loop method for the explanation.</p>
+
+<h4>2nd Method: Using for loop</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">each_unique</span> <span class="ow">in</span> <span class="n">species_sm_sorted</span><span class="p">:</span>
+    <span class="n">group_id</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_sm_sorted</span><span class="p">)</span><span class="o">==</span><span class="n">each_unique</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">output</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_id</span><span class="p">)</span>
+        
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+</code></pre></div></div>
+
+<p>We first loop through each element of species_sm_sorted array. Then we use the np.argwhere method to get the positions where the condition inside the parenthesis is met. The condition is that uniques elements in species_sm_sorted array are equal to each_unique variable.</p>
+
+<p>We get back the positions where each_unique variables are found as standalone arrays. We use indexing [0][0] to the value inside the 2D array. So that means that Iris-setosa is found 5 times at position 0, then that Iris-versicolor is found 9 times at position 1 and finally that Iris-virginica is found 6 times at position 2.</p>
+
+<p>Finally, we append to the empty list output.</p>
+
+<h3>Ex 55: How to rank items in an array using NumPy</h3>
+
+<p>Q: Create the ranks for the given numeric array a.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 9,  4, 15,  0, 17, 16, 17,  8,  9,  0])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[4 2 6 0 8 7 9 3 5 1]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span><span class="p">.</span><span class="n">argsort</span><span class="p">().</span><span class="n">argsort</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([4, 2, 6, 0, 8, 7, 9, 3, 5, 1])
+</code></pre></div></div>
+
+<p>To get the rank of an array, we apply the argsort method on the array twice.</p>
+
+<p>The first time we apply the argsort method, we get back an array with the position that would sort the original array.</p>
+
+<p>Applying the argsort again on the previous array will return an array where those positions are sorted for the second time; to get back the ranks.</p>
+
+<h3>Ex 56: How to rank items in a multidimensional array using NumPy</h3>
+
+<p>Q: Create a rank array of the same shape as a given numeric array a.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[ 9,  4, 15,  0, 17],
+       [16, 17,  8,  9,  0]])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[4, 2, 6, 0, 8],
+#        [7, 9, 3, 5, 1]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span><span class="p">.</span><span class="n">ravel</span><span class="p">().</span><span class="n">argsort</span><span class="p">().</span><span class="n">argsort</span><span class="p">().</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[4, 2, 6, 0, 8],
+       [7, 9, 3, 5, 1]])
+</code></pre></div></div>
+
+<p>We first flatten the array to a 1D array by using the ravel method, then get the rank just as we did in the previous exercise using two argsort method.</p>
+
+<p>Finally, reshape it to the original array shape using the original array’s shape as the argument.</p>
+
+<h3>Ex 57: How to find the maximum value in each row of a NumPy array 2D</h3>
+
+<p>Q: Compute the maximum for each row in the given array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">the_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">the_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[9, 9, 4],
+       [8, 8, 1],
+       [5, 3, 6],
+       [3, 3, 3],
+       [2, 1, 9]])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#array([9, 8, 6, 3, 9])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_arr</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([9, 8, 6, 3, 9])
+</code></pre></div></div>
+
+<p>The first way to solve this question is by using the max method, which returns the highest number in an array. In our case, it is row-wise because we have specified the axis to be 1.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">the_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([9, 8, 6, 3, 9])
+</code></pre></div></div>
+
+<p>The second way is to use the apply_along_axis method, which will apply the function passed as an argument to the array row-wise because we set the axis parameter to 1.</p>
+
+<h3>Ex 58: How to compute the min-by-max for each row for a NumPy array 2d</h3>
+
+<p>Q: Compute the min-by-max for each row for a given 2d NumPy array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">the_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">the_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[9, 9, 4],
+       [8, 8, 1],
+       [5, 3, 6],
+       [3, 3, 3],
+       [2, 1, 9]])
+</code></pre></div></div>
+
+<h4>Desired solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([0.44444444, 0.125     , 0.5       , 1.        , 0.11111111])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_mins</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">amin</span><span class="p">(</span><span class="n">the_arr</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">the_maxs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">amax</span><span class="p">(</span><span class="n">the_arr</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_mins</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([4, 1, 3, 3, 1])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_maxs</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([9, 8, 6, 3, 9])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_mins</span> <span class="o">/</span> <span class="n">the_maxs</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.44444444, 0.125     , 0.5       , 1.        , 0.11111111])
+</code></pre></div></div>
+
+<p>The first method is straight forward; we get the minimum and the maximum elements on each row by using the amin and the amax method, pass in the array, and set the axis to 1, which correspond to the row to get back the lowest and highest values in the array.</p>
+
+<p>Then divide the_mins and the_maxs values.</p>
+
+<h4>2nd Method</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">the_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.44, 0.12, 0.5 , 1.  , 0.11])
+</code></pre></div></div>
+
+<p>The second method is by using the apply_along_axis, pass in a lambda expression, which will return the division of each minimum number by maximum number, then specified that we are dealing with the row by setting axis to 1, then finally pass in the array.</p>
+
+<h3>Ex 59: How to find the duplicate records in a NumPy array</h3>
+
+<p>Q: Find the duplicate entries (2nd occurrence onwards) in the given NumPy array and mark them as True. First time occurrences should be False.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0, 0, 3, 0, 2, 4, 2, 2, 2, 2])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [False  True False  True False False  True  True  True  True]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_True</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">full</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">fill_value</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">all_True</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_pos</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">return_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">unique_pos</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0, 4, 2, 5])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_True</span><span class="p">[</span><span class="n">unique_pos</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">all_True</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([False,  True, False,  True, False, False,  True,  True,  True,
+        True])
+</code></pre></div></div>
+
+<p>As of NumPy version 1.16.4, There is no specific method to perform this task. We have to figure out how to use different means to solve this issue.</p>
+
+<p>We first create an array comprised of only True values using the full method. The number of elements in this newly created array is the same as the number of elements in the original array.</p>
+
+<p>Then we use the unique method to get back the indices (or positions) of each unique (not duplicated) value in the array by setting return_index to True.</p>
+
+<p>Finally, we change all True values in the all_True array at the unique value position by False.</p>
+
+<h3>Ex 60: How to find the grouped mean in NumPy</h3>
+
+<p>Q: Find the mean of sepal width (2nd column) grouped by a categorical column in a 2D NumPy array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="n">the_data_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">'object'</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s">'sepallength'</span><span class="p">,</span> <span class="s">'sepalwidth'</span><span class="p">,</span> <span class="s">'petallength'</span><span class="p">,</span> <span class="s">'petalwidth'</span><span class="p">,</span> <span class="s">'species'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [[b'Iris-setosa', 3.418],
+# [b'Iris-versicolor', 2.770],
+# [b'Iris-virginica', 2.974]]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: using list comprehension</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numerical_column</span> <span class="o">=</span> <span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">)</span>
+<span class="n">species_column</span> <span class="o">=</span> <span class="n">the_data_2d</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[[</span><span class="n">uniques_species</span><span class="p">,</span><span class="n">numerical_column</span><span class="p">[</span><span class="n">species_column</span><span class="o">==</span><span class="n">uniques_species</span><span class="p">].</span><span class="n">mean</span><span class="p">()]</span> <span class="k">for</span> <span class="n">uniques_species</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_column</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[b'Iris-setosa', 3.418],
+ [b'Iris-versicolor', 2.7700000000000005],
+ [b'Iris-virginica', 2.974]]
+</code></pre></div></div>
+
+<p>We first get the sepal width column and cast it to float type and then extract the species column. Then we create a list comprehension expression and loop through the unique species in the column, which are Iris-setosa, Iris-versicolor, Iris-virginica.</p>
+
+<p>After the loop, we place the unique species value as the first element in the list, and as the second element, we use indexing to get the mean of the sepal length for each species type by applying the mean function to the numerical_column value where species_column equals uniques_species.</p>
+
+<h4>2nd Method: using for loop</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mean_species_grouped</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">uniques_species</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">species_column</span><span class="p">):</span>
+    <span class="n">mean_species_grouped</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">uniques_species</span><span class="p">,</span><span class="n">numerical_column</span><span class="p">[</span><span class="n">species_column</span><span class="o">==</span><span class="n">uniques_species</span><span class="p">].</span><span class="n">mean</span><span class="p">()])</span>
+<span class="n">mean_species_grouped</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[b'Iris-setosa', 3.418],
+ [b'Iris-versicolor', 2.7700000000000005],
+ [b'Iris-virginica', 2.974]]
+</code></pre></div></div>
+
+<p>Using the loop, it is almost similar to using the list comprehension. The only difference is that we create an empty list, and then we loop through the unique species.</p>
+
+<p>Then append to the empty list the unique species as the first element and as the second element, the mean of sepal length for each unique species just as we did for the list comprehension. Finally, we return the list.</p>
+
+<h3>Ex 61:  How to convert a PIL image to NumPy array</h3>
+
+<p>Q: Import the image from the following URL and convert it to a NumPy array and optionally convert it back to an image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">URL</span> <span class="o">=</span> <span class="s">'https://upload.wikimedia.org/wikipedia/commons/8/8b/Denali_Mt_McKinley.jpg'</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[[  9,  72, 125],
+#         [  9,  72, 125],
+#         [  9,  72, 125],
+#         ...,
+#         [ 42, 103, 147],
+#         [ 42, 103, 147],
+#         [ 43, 104, 148]],
+</span>
+<span class="c1">#        [[  9,  72, 125],
+#         [  9,  72, 125],
+#         [ 10,  73, 126],
+#         ...,
+#         [ 42, 103, 147],
+#         [ 42, 103, 147],
+#         [ 43, 104, 148]],
+</span>
+<span class="c1">#        [[  9,  72, 125],
+#         [ 10,  73, 126],
+#         [ 10,  73, 126],
+#         ...,
+#         [ 44, 105, 150],
+#         [ 45, 106, 151],
+#         [ 45, 106, 151]],
+</span>
+<span class="c1">#        ...,
+</span>
+<span class="c1">#        [[ 21,  41,  50],
+#         [ 29,  51,  64],
+#         [ 28,  54,  69],
+#         ...,
+#         [ 27,  58,  79],
+#         [ 22,  53,  74],
+#         [ 19,  47,  69]],
+</span>
+<span class="c1">#        [[ 27,  51,  63],
+#         [ 29,  55,  68],
+#         [ 27,  56,  72],
+#         ...,
+#         [ 33,  70,  97],
+#         [ 27,  64,  91],
+#         [ 22,  57,  85]],
+</span>
+<span class="c1">#        [[ 18,  45,  56],
+#         [ 20,  48,  62],
+#         [ 21,  52,  70],
+#         ...,
+#         [ 15,  51,  77],
+#         [ 12,  48,  74],
+#         [ 11,  45,  72]]], dtype=uint8)
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">PIL</span><span class="p">,</span> <span class="n">requests</span>
+
+
+<span class="n">the_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">the_image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">the_response</span><span class="p">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_image</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_numpy_ex_61.png" alt="image" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">the_image</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[[  9,  72, 125],
+        [  9,  72, 125],
+        [  9,  72, 125],
+        ...,
+        [ 42, 103, 147],
+        [ 42, 103, 147],
+        [ 43, 104, 148]],
+
+       [[  9,  72, 125],
+        [  9,  72, 125],
+        [ 10,  73, 126],
+        ...,
+        [ 42, 103, 147],
+        [ 42, 103, 147],
+        [ 43, 104, 148]],
+
+       [[  9,  72, 125],
+        [ 10,  73, 126],
+        [ 10,  73, 126],
+        ...,
+        [ 44, 105, 150],
+        [ 45, 106, 151],
+        [ 45, 106, 151]],
+
+       ...,
+
+       [[ 21,  41,  50],
+        [ 29,  51,  64],
+        [ 28,  54,  69],
+        ...,
+        [ 27,  58,  79],
+        [ 22,  53,  74],
+        [ 19,  47,  69]],
+
+       [[ 27,  51,  63],
+        [ 29,  55,  68],
+        [ 27,  56,  72],
+        ...,
+        [ 33,  70,  97],
+        [ 27,  64,  91],
+        [ 22,  57,  85]],
+
+       [[ 18,  45,  56],
+        [ 20,  48,  62],
+        [ 21,  52,  70],
+        ...,
+        [ 15,  51,  77],
+        [ 12,  48,  74],
+        [ 11,  45,  72]]], dtype=uint8)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_image_2</span> <span class="o">=</span> <span class="n">PIL</span><span class="p">.</span><span class="n">Image</span><span class="p">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Image_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_image_2</span>
+</code></pre></div></div>
+
+<p><img src="/blog/assets/post_cont_image/output_numpy_ex_61.png" alt="image" /></p>
+
+<p>For this example, we are importing a couple of libraries first the PIL (python imagery library), the requests library for making HTTP requests in Python, and finally, the io library for input and output.</p>
+
+<p>We start by getting the response from the URL given of the picture file by using the get method and store it in the_response variable.</p>
+
+<p>To print the image locally, we apply the content method to the response to get the content of the response, then change it into bytes using the BytesIO method and then open it as an image file using Image.open and store it in the the_image variable.</p>
+
+<p>To cast the image to an array, we use the np.array method and pass in the_image variable.</p>
+
+<p>Optionally, to convert back the array to an image file, this time, we use PIL.Image.fromarray method and pass in the Image_arr variable.</p>
+
+<h3>Ex 62: How to drop all missing values from a NumPy array</h3>
+
+<p>Q: Drop all nan values from a 1D numpy array</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">])</span>
+<span class="n">the_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 1.,  2.,  3., nan,  5.,  6.,  7., nan])
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([ 1.,  2.,  3.,  5.,  6.,  7.])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_arr</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">the_arr</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([1., 2., 3., 5., 6., 7.])
+</code></pre></div></div>
+
+<p>np.isnan method will return a boolean array where True is the position of the nan value in the array.</p>
+
+<p>To drop nan values, we are going to use the ~ operator to inverse the boolean array. This time we will get False on the position where nan is found and True on the rest of the positions. It means that if we use indexing on the original array, we will get back only values that are not nan values.</p>
+
+<h3>Ex 63: How to compute the euclidean distance between two arrays</h3>
+
+<p>Q: Compute the Euclidean distance between two arrays a and b</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 6.708203932499369
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">euclidean_dist</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">,</span><span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">euclidean_dist</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6.708203932499369
+</code></pre></div></div>
+
+<p>Theory Behind this exercise is from <a href="https://www.amazon.com/dp/0321321367/" target="_blank">Introduction to Data Mining</a></p>
+
+<p><img src="/blog/assets/post_cont_image/ex63.png" alt="title" /></p>
+
+<p>This function can return one of eight different matrix norms, or one of an infinite number of vector norms (described above), depending on the value of the ord parameter.</p>
+
+<p>It works because Euclidean distance is l2 norm and the value of ord parameter in numpy.linalg.norm method is 2.</p>
+
+<h3>Ex 64: How to find all the local maxima (or peaks) in a 1d array</h3>
+
+<p>Q: Find all the peaks in a 1D NumPy array a. Peaks are points surrounded by smaller values on both sides.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([2, 5])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">argrelextrema</span>
+
+<span class="n">maxInd</span> <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">greater</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">maxInd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([2, 5])
+</code></pre></div></div>
+
+<p>To calculate the extrema of a NumPy array, we use the argrelextrema method (from scipy library) and pass in the array as the first argument and then as the second argument we use the np.greater function which is a function to compare the greatest number along with two elements in the array.</p>
+
+<p>A tuple is returned and used [0] to get back the positions we are looking for.</p>
+
+<h3>Ex 65: How to subtract a 1D array from a 2D array, where each item of 1D array subtracts from respective row</h3>
+
+<p>Q: Subtract the 1D array b_1d from the 2D array a_2d, such that each item (element) of b_1d subtracts from the corresponding element in a row of a_2d.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="n">b_1d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [[2 2 2]
+#  [2 2 2]
+#  [2 2 2]]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a_2d</span><span class="p">[:,:]</span> <span class="o">-</span> <span class="n">b_1d</span><span class="p">[:,</span><span class="bp">None</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[2, 2, 2],
+       [2, 2, 2],
+       [2, 2, 2]])
+</code></pre></div></div>
+
+<p>We are taking each item in rows from the 2D array and subtract each item in each row by every element in the 1D array.</p>
+
+<p>So we are taking all the 3s in the first row of the 2D array and subtract them by 1 from the 1D array and the results are placed in a new array, then all the 4s are subtracted by 2 and finally all the 5s by 3.</p>
+
+<p>We will be left with a 2D array only comprised by 2s.</p>
+
+<h3>Ex 66: How to subtract a 1D array from a 2D array, where each item of 2D array subtracts from respective column</h3>
+
+<p>Q: Subtract the 1D array arr_1d from the 2D array arr_2d, such that each item (element) of arr_1d subtracts from the respective element in a column of arr_2d.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="n">b_1d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([[2, 1, 0],
+#        [3, 2, 1],
+#        [4, 3, 2]])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a_2d</span><span class="p">[:,:]</span> <span class="o">-</span> <span class="n">b_1d</span><span class="p">[</span><span class="bp">None</span><span class="p">,:]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[2, 1, 0],
+       [3, 2, 1],
+       [4, 3, 2]])
+</code></pre></div></div>
+
+<p>This one is similar to the previous one, but the difference is that we are subtracting each item in the 2D array by the corresponding item in the 1D array.</p>
+
+<p>So for the first row in the 2D array, we take 3 and subtract it by 1 from the 1D array, then we take the second 3 and subtract it by 2 in the 1D array and finally we take 3 at the third position and subtract it to 3 in the 1D array. We do the same for the rest of the arrays.</p>
+
+<h3>Ex 67: How to find the index of n’th repetition of an item in an array</h3>
+
+<p>Q: Find the index of 5th repetition of number 1 in x.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">the_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 10
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: NumPy way</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rep_pos</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">the_arr</span><span class="o">==</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rep_pos</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10
+</code></pre></div></div>
+
+<p>We use the where method to get the position of all the 1s in the array by using the condition the_arr == 1. We get back a tuple that is why we used [0] to select the first argument.</p>
+
+<p>To select the 5th repetition of 1, we then use indexing on the array.</p>
+
+<h4>2nd Method: Pythonic way</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tuple_pos_repeated</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">the_arr</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">tuple_pos_repeated</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(0, 1), (2, 1), (3, 1), (7, 1), (8, 1), (10, 1), (11, 1)]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tuple_pos_repeated</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10
+</code></pre></div></div>
+
+<p>The second way to approach this problem is by using list comprehension. We use the for loop and enumerate function to traverse the array and then use an if statement to only extract elements equal to 1. if you want to refresh your mind about loops and list comprehension, please read more <a href="https://semasuka.github.io/blog/2019/02/03/control-flow-part-2.html" target="_blank">here</a>.</p>
+
+<p>Now that we have a tuple of all the positions of number 1 in the array, we can proceed by using indexing on tuple by using[5] to get the 5th repetition of 1 and then indexing again by adding [0] to get only the position we are looking for.</p>
+
+<h3>Ex 68: How to convert NumPy’s datetime64 object to datetime’s datetime object</h3>
+
+<p>Q: Convert NumPy’s datetime64 object to datetime’s datetime object</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dt64</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s">'2018-02-25 22:10:10'</span><span class="p">)</span>
+<span class="n">dt64</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1519596610
+</code></pre></div></div>
+
+<h4>Desired output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># datetime.datetime(2018, 2, 25, 22, 10, 10)
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">datetime</span><span class="p">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">dt64</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>datetime.datetime(2018, 2, 25, 22, 10, 10)
+</code></pre></div></div>
+
+<p>We first import the datetime function from the datetime module, then pass the Numpy datetime object (converted into int type) which returns the UTC datetime object. Yeah, it is that simple!</p>
+
+<h3>Ex 69: How to compute the moving average of a NumPy array?</h3>
+
+<p>Q: Compute the moving average of window size 3, for the given a random 1D array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">oneD_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">oneD_arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([8, 8, 3, 7, 7, 0, 4, 2, 5, 2])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># moving average:  [ 6.33  6.    5.67  4.67  3.67  2.    3.67  3.  ]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">moving_average</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">w</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">accum_arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">accum_arr</span><span class="p">[</span><span class="n">w</span><span class="p">:]</span> <span class="o">=</span> <span class="n">accum_arr</span><span class="p">[</span><span class="n">w</span><span class="p">:]</span> <span class="o">-</span> <span class="n">accum_arr</span><span class="p">[:</span><span class="o">-</span><span class="n">w</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">accum_arr</span><span class="p">[</span><span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">/</span><span class="n">w</span>
+<span class="n">moving_average</span><span class="p">(</span><span class="n">oneD_arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([6.33, 6.  , 5.67, 4.67, 3.67, 2.  , 3.67, 3.  ])
+</code></pre></div></div>
+
+<p>To calculate the moving average of a set of data at a particular window, we first create a function that takes in the array itself and then set the window w by default to 3. Then we calculate the cumulative sum of the elements in the array, which in this case will be all the elements in the row axis since we only have a 1D array.</p>
+
+<p>Now comes the fun part! we subtract each element in the accum_arr starting from index 4 (which correspond to window 3 of the moving average) by each element in another accum_arr array, this time ending at the 4th last element inclusive. The result is assigned to accum_arr starting from index 4.</p>
+
+<p>Finally, we take the previous array this time starting from index 3(w-1) and we divide all the elements in that array by the window 3 to finally get the moving average of window 3 of that array.</p>
+
+<p>These steps above are from the formula to compute the moving average of a NumPy. Please refer <a href="https://en.wikipedia.org/wiki/Moving_average" target="_blank">this Wikipedia page</a> for more information. Refer <a href="https://stackoverflow.com/questions/14313510/how-to-calculate-moving-average-using-numpy" target="_blank">to this link</a> on StackOverflow where this exercise is inspired from.</p>
+
+<h3>Ex 70: How to create a NumPy array sequence given only the starting point, length and the step?</h3>
+
+<p>Q: Create a NumPy array of length 10, starting from 5 and has a step of 3 between consecutive numbers</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">start_num</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">step_num</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">size_num</span> <span class="o">=</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array([ 5,  8, 11, 14, 17, 20, 23, 26, 29, 32])
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">start_num</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">step_num</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">size_num</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">def</span> <span class="nf">seq</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">step</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">stop</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="n">step</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">,</span><span class="n">step</span><span class="p">)</span>
+<span class="n">seq</span><span class="p">(</span><span class="n">start_num</span><span class="p">,</span><span class="n">step_num</span><span class="p">,</span><span class="n">size_num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 5,  8, 11, 14, 17, 20, 23, 26, 29, 32])
+</code></pre></div></div>
+
+<p>This is an interesting exercise because we have the length of the array, the start and the step. To use the arange method on the NumPy variable, we need the start, stop and step. In this case, we are missing the stop value.
+So to get the stop, we can use the size, the step and the start.</p>
+
+<p>That is what we did by creating a new function that takes as parameter the start, the step and the size. To calculate the stop, we add the start and the product of the size and the step.</p>
+
+<p>Then returned the np.arange method with the start, the previously calculated stop and the step.</p>
+
+<h3>Ex 71: How to fill in missing dates in an irregular series of NumPy dates?</h3>
+
+<p>Q: Given an array of a non-continuous sequence of dates. Make it a continuous sequence of dates, by filling in the missing dates.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s">'2018-02-01'</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s">'2018-02-25'</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">dates</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['2018-02-01', '2018-02-03', '2018-02-05', '2018-02-07',
+       '2018-02-09', '2018-02-11', '2018-02-13', '2018-02-15',
+       '2018-02-17', '2018-02-19', '2018-02-21', '2018-02-23'],
+      dtype='datetime64[D]')
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># array(['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04',
+#        '2018-02-05', '2018-02-06', '2018-02-07', '2018-02-08',
+#        '2018-02-09', '2018-02-10', '2018-02-11', '2018-02-12',
+#        '2018-02-13', '2018-02-14', '2018-02-15', '2018-02-16',
+#        '2018-02-17', '2018-02-18', '2018-02-19', '2018-02-20',
+#        '2018-02-21', '2018-02-22', '2018-02-23'], dtype='datetime64[D]')
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<h4>1st Method: using list comprehension</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cont_no_last_date</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">date</span><span class="p">,(</span><span class="n">date</span><span class="o">+</span><span class="n">d</span><span class="p">))</span> <span class="k">for</span> <span class="n">date</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">diff</span><span class="p">(</span><span class="n">dates</span><span class="p">))]).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cont_with_last_date</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">cont_no_last_date</span><span class="p">,</span><span class="n">dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">cont_with_last_date</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04',
+       '2018-02-05', '2018-02-06', '2018-02-07', '2018-02-08',
+       '2018-02-09', '2018-02-10', '2018-02-11', '2018-02-12',
+       '2018-02-13', '2018-02-14', '2018-02-15', '2018-02-16',
+       '2018-02-17', '2018-02-18', '2018-02-19', '2018-02-20',
+       '2018-02-21', '2018-02-22', '2018-02-23'], dtype='datetime64[D]')
+</code></pre></div></div>
+
+<p>One of the ways to go about solving this issue is to use the list comprehension, we first loop through each date and the difference between those dates d (which is 2) and create a NumPy range starting from the date to a new date found using date + d and place those dates in an array. we end up with a continuous range of dates from ‘2018-02-01’ to ‘2018-02-22’ (notice how it is not ‘2018-02-23’) and reshape it using -1 which means that it is an unknown dimension and we want NumPy to figure out the correct dimension to use.</p>
+
+<p>Now we need to add the last date by stacking it horizontally (column-wise) using the hstack function to cont_no_last_date and pass in the last date using indexing -1.</p>
+
+<h4>2nd Method: using for loop</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cont_no_last_date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">date</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">diff</span><span class="p">(</span><span class="n">dates</span><span class="p">)):</span>
+    <span class="n">cont_no_last_date</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">date</span><span class="p">,</span><span class="n">date</span><span class="o">+</span><span class="n">d</span><span class="p">))</span>
+<span class="n">cont_no_last_date</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">cont_no_last_date</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cont_with_last_date</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">cont_no_last_date</span><span class="p">,</span><span class="n">dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">cont_with_last_date</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04',
+       '2018-02-05', '2018-02-06', '2018-02-07', '2018-02-08',
+       '2018-02-09', '2018-02-10', '2018-02-11', '2018-02-12',
+       '2018-02-13', '2018-02-14', '2018-02-15', '2018-02-16',
+       '2018-02-17', '2018-02-18', '2018-02-19', '2018-02-20',
+       '2018-02-21', '2018-02-22', '2018-02-23'], dtype='datetime64[D]')
+</code></pre></div></div>
+
+<p>The second way to approach this problem is by using the for loop statement. we first create an empty list and then loop through the dates and d value from zip method of the dates and the difference between the dates. Then inside the loop, we append the rage from the date to the date + d just as we did for the list comprehension.</p>
+
+<p>After the loop, we cast the list to an array, reshape and assign it to the cont_no_last_date value. Then we add the last date just as we did for the list comprehension method.</p>
+
+<h3>Ex 72: How to create strides from a given 1D array?</h3>
+
+<p>Q: From the given 1D array arr, generate a 2D matrix using strides, with a window length of 4 and strides of 2, like [[0,1,2,3], [2,3,4,5], [4,5,6,7]..]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> 
+<span class="n">arr</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
+</code></pre></div></div>
+
+<h4>Desire output</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># [[ 0  1  2  3]
+#  [ 2  3  4  5]
+#  [ 4  5  6  7]
+#  [ 6  7  8  9]
+#  [ 8  9 10 11]
+#  [10 11 12 13]]
+</span></code></pre></div></div>
+
+<h4>Solution</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gen_strides</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">stride_len</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">window_len</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">n_strides</span> <span class="o">=</span> <span class="p">((</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span> <span class="o">-</span> <span class="n">window_len</span><span class="p">)</span><span class="o">//</span><span class="n">stride_len</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># n_strides = 6
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">stride_len</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">arr</span><span class="p">[</span><span class="n">s</span><span class="p">:(</span><span class="n">s</span><span class="o">+</span><span class="n">window_len</span><span class="p">)]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_strides</span><span class="o">*</span><span class="n">stride_len</span><span class="p">,</span><span class="n">stride_len</span><span class="p">)])</span>
+<span class="n">gen_strides</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+
+
+
+
+
+array([[ 0,  1,  2,  3],
+       [ 2,  3,  4,  5],
+       [ 4,  5,  6,  7],
+       [ 6,  7,  8,  9],
+       [ 8,  9, 10, 11],
+       [10, 11, 12, 13]])
+</code></pre></div></div>
+
+<p>We first create a function that takes in the array, set the stride length to 2 and then window length to 4. Then we calculate the n_strides value by subtracting the array size to window_len and then dividing it (using floor division or integer division) by stride_len and adding 1 to it.</p>
+
+<p>Finally, we create a list comprehension that goes through a range from 0 to 12 (n_strides * stride_len) by stepping by 2 using s value which corresponds to the 6 lists that we are creating. We use indexing on the arr with the starting position s and the last element s + window_len in each of the 6 lists. At last, we place the 6 strides lists in an array.</p>
+
+<h3>Conclusion</h3>
+
+<p>There you go! 72 exercise on NumPy to solidify your understanding of NumPy. I can guaranty that if you completed all these exercises you are more than ready to start using NumPy in an end-to-end Machine Learning project.</p>
+
+<p>The next post will be an introduction to one of my favorite Machine learning libraries, pandas Library for tabular data manipulation. Stay tuned and don’t forget to subscribe to get notified for the next post.</p>
+
+<p>Find the jupyter notebook version of this post on my GitHub profile <a href="https://github.com/semasuka/blog/blob/gh-pages/ipynb/NumPy%20Exercises%20Part%203.ipynb" target="_blank">here.</a></p>
+
+<p>Thank you again for doing these exercises with me. I hope you have learned one or two things. If you like this post, please subscribe to stay updated with new posts, and if you have a thought or a question, I would love to hear it by commenting below. Remember keep learning!</p>
+
+        <div class="share-page">
+    Share this post on
+    <a href="https://twitter.com/intent/tweet?text=NumPy Exercises Part 3&url=http://localhost:4000/2020/09/19/numpy-exercises-part-3.html" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span></a>
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2020/09/19/numpy-exercises-part-3.html" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/09/19/numpy-exercises-part-3.html&title=NumPy Exercises Part 3&summary=&source=MIB" rel="nofollow" target="_blank" title="Share on LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></span></a>
+    <a href="http://www.reddit.com/submit?url=http://localhost:4000/2020/09/19/numpy-exercises-part-3.html&title=NumPy Exercises Part 3" rel="nofollow" target="_blank" title="Share on Reddit"><span class="icon icon--reddit"><svg viewBox="-6 2 34 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+</span></a>
+    <a href="mailto:?subject=NumPy Exercises Part 3&amp;body=Check out this post http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html" target="_blank" title="Share on Email"><span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span></a>
+</div>
+
+        
+          
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html';
+      this.page.identifier = 'http://localhost:4000/blog/2020/09/19/numpy-exercises-part-3.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://semasuka-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div>
+    </article>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/mburakerman/prognroll/master/src/prognroll.js"></script>
+<script>
+$(function() {
+  $("body").prognroll({
+    height: 5, //Progress bar height
+    color: "#539F30", //Progress bar background color
+    custom: false //If you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+</script>
+
+
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+    <div class="inner">
+      <div class="copyright">
+          <p></a>Copyright &copy; 2018-<script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></a>&#160;MIB.</br>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & hosted with <span style="color: #e25555;">&#9829;</span> on <a href="https://pages.github.com/">GitHub page</a></p>
+      </div>
+    </div>
+</footer>
+    
+
+<script async src="/blog/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '2G0E5ME37Q',
+  apiKey: 'afde2e91a28f543ce7c4afdefa8ecfbf',
+  indexName: 'Machine Learning Blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="/blog${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>
