@@ -35,7 +35,7 @@ algolia:
   application_id: 2G0E5ME37Q
   index_name: Machine Learning Blog
   search_only_api_key: afde2e91a28f543ce7c4afdefa8ecfbf
-  powered_by: true
+  powered_by: false
   files_to_exclude:
     - archive.md
     - index.html
