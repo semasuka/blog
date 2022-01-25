@@ -1,9 +1,9 @@
 /* ========================================================================== Default theme skin ========================================================================== */
 /*!
- * Basically Basic Jekyll Theme 1.4.1
+ * Basically Basic Jekyll Theme 1.4.5
  * Copyright 2017-2018 Michael Rose - mademistakes | @mmistakes
  * Free for personal and commercial use under the MIT license
- * https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE.md
+ * https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE
 */
 /* ========================================================================== Color Functions ========================================================================== */
 /* ========================================================================== Fluid Type as seen on https://madebymike.com.au/writing/fluid-type-calc-examples/ ========================================================================== */
@@ -787,6 +787,8 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   .btn { background: none; color: #000; }
   /* Hide the following elements on print ========================================================================== */
   .skip-links, .sidebar-toggle-wrapper, .sidebar, .title-area, .pager, .site-footer, .adsbygoogle { display: none !important; height: 1px; } }
+html { scroll-behavior: smooth; }
+
 a { color: #539F30; }
 
 a:hover { color: #539F30; }
@@ -937,3 +939,17 @@ a:hover { color: #539F30; }
 #myBtn { display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; font-size: 18px; border: none; outline: none; background-color: #539F30; color: white; cursor: pointer; padding: 15px; border-radius: 18px; -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; -webkit-box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7); -moz-box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7); box-shadow: 11px 4px 38px -6px rgba(0, 0, 0, 0.7); }
 
 #myBtn:hover { background-color: #3b7222; -webkit-box-transition: all 0.5s ease; -moz-box-transition: all 0.5s ease; transition: all 0.5s ease; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: #bbbbbb; }
+
+.intro-image { position: relative; }
+
+.scroll-down { height: 50px; width: 30px; border: 2px solid white; position: absolute; left: 50%; bottom: 20px; border-radius: 50px; cursor: pointer; }
+
+.scroll-down::before, .scroll-down::after { content: ""; position: absolute; top: 20%; left: 50%; height: 10px; width: 10px; transform: translate(-50%, -100%) rotate(45deg); border: 2px solid white; border-top: transparent; border-left: transparent; animation: scroll-down 1s ease-in-out infinite; }
+
+.scroll-down::before { top: 30%; animation-delay: 0.3s; /* animation: scroll-down 1s ease-in-out infinite; */ }
+
+@keyframes scroll-down { 0% { /* top:20%; */
+opacity: 0; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { top: 90%; opacity: 0; } }
