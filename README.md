@@ -1,5 +1,7 @@
 # Machine Intelligence Blog (MIB)
 
+![blog landing page](assets/post_cont_image/blog_screenshot.png)
+
 Machine Intelligence Blog (MIB) is your companion blog to get you up and running with machine learning and data science. On this blog, I will cover topics in the machine learning field ranging from maths, programming, algorithm optimization and data analysis.
 
 ## Getting Started
