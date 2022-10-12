@@ -25,7 +25,7 @@ Here is the roadmap we will follow:
 - Finally, deploy the model.
 
 
-The goal is to predict whether an application for a credit card will be approved or not, using the applicant data. 
+The goal is to predict whether an application for a credit card will be approved or not, using the applicant data.
 
 I chose this project because when applying for a loan, credit card, or any other type of credit at any financial institution, there is a hard inquiry that affects your credit score negatively. This app predicts the probability of being approved without affecting your credit score. This app can be used by applicants who want to find out if they will be approved for a credit card without affecting their credit score.
 
@@ -33,15 +33,15 @@ I chose this project because when applying for a loan, credit card, or any other
 
 Correlation between the features.
 
-![heatmap](../assets/post_cont_image/heatmap_cc_approval.png)
+![heatmap](/blog/assets/post_cont_image/heatmap_cc_approval.png)
 
 Confusion matrix of gradient boosting classifier.
 
-![Confusion matrix](../assets/post_cont_image/cm_cc_approval.png)
+![Confusion matrix](/blog/assets/post_cont_image/cm_cc_approval.png)
 
 ROC curve of gradient boosting classifier.
 
-![ROC curve](../assets/post_cont_image/roc_cc_approval.png)
+![ROC curve](/blog/assets/post_cont_image/roc_cc_approval.png)
 
 Top 3 models (with default parameters)
 
@@ -381,11 +381,11 @@ Now let's look at the metadata of the datasets to understand the data better.
 
 For the application record dataset.
 
-![appli_rec_metadata](../assets/post_cont_image/cc_app_meta.png)
+![appli_rec_metadata](/blog/assets/post_cont_image/cc_app_meta.png)
 
 And for the credit record dataset.
 
-![appli_rec_metadata](../assets/post_cont_image/credit_meta.png)
+![appli_rec_metadata](/blog/assets/post_cont_image/credit_meta.png)
 
 ### Creating a target variable
 
@@ -1085,7 +1085,7 @@ plt.show()
 
 
     
-![png](../assets/post_cont_image/output_52_0.png)
+![png](/blog/assets/post_cont_image/output_52_0.png)
     
 
 
@@ -1101,7 +1101,7 @@ plt.show()
 
 
     
-![png](../assets/post_cont_image/output_55_0.png)
+![png](/blog/assets/post_cont_image/output_55_0.png)
     
 
 
@@ -2086,7 +2086,7 @@ This class will remove outliers more or less than 3 inter-quantile ranges away f
 
 Note: Refer to this picture below to understand IQR. In the image below, 1.5 IQR is used; in our case, we use 3 IQR, which is more sensitive to extreme outliers than 1.5 IQR.
 
-![iqr](../assets/post_cont_image/iqr.png)
+![iqr](/blog/assets/post_cont_image/iqr.png)
 
 Image credit: [Research gate](https://www.researchgate.net/figure/Interquartile-range-IQR-projection-on-a-normally-distributed-density-The-median-of-IQR_fig2_340969321)
 
@@ -3237,7 +3237,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_1.png)
+![png](/blog/assets/post_cont_image/output_265_1.png)
     
 
 
@@ -3247,7 +3247,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_3.png)
+![png](/blog/assets/post_cont_image/output_265_3.png)
     
 
 
@@ -3276,7 +3276,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_5.png)
+![png](/blog/assets/post_cont_image/output_265_5.png)
     
 
 
@@ -3286,7 +3286,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_7.png)
+![png](/blog/assets/post_cont_image/output_265_7.png)
     
 
 
@@ -3296,7 +3296,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_9.png)
+![png](/blog/assets/post_cont_image/output_265_9.png)
     
 
 
@@ -3306,7 +3306,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_11.png)
+![png](/blog/assets/post_cont_image/output_265_11.png)
     
 
 
@@ -3332,7 +3332,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_13.png)
+![png](/blog/assets/post_cont_image/output_265_13.png)
     
 
 
@@ -3342,7 +3342,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_15.png)
+![png](/blog/assets/post_cont_image/output_265_15.png)
     
 
 
@@ -3371,7 +3371,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_17.png)
+![png](/blog/assets/post_cont_image/output_265_17.png)
     
 
 
@@ -3381,7 +3381,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_19.png)
+![png](/blog/assets/post_cont_image/output_265_19.png)
     
 
 
@@ -3391,7 +3391,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_21.png)
+![png](/blog/assets/post_cont_image/output_265_21.png)
     
 
 
@@ -3401,7 +3401,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_23.png)
+![png](/blog/assets/post_cont_image/output_265_23.png)
     
 
 
@@ -3427,7 +3427,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_25.png)
+![png](/blog/assets/post_cont_image/output_265_25.png)
     
 
 
@@ -3437,7 +3437,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_27.png)
+![png](/blog/assets/post_cont_image/output_265_27.png)
     
 
 
@@ -3447,7 +3447,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_29.png)
+![png](/blog/assets/post_cont_image/output_265_29.png)
     
 
 
@@ -3457,7 +3457,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_31.png)
+![png](/blog/assets/post_cont_image/output_265_31.png)
     
 
 
@@ -3483,7 +3483,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_33.png)
+![png](/blog/assets/post_cont_image/output_265_33.png)
     
 
 
@@ -3493,7 +3493,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_35.png)
+![png](/blog/assets/post_cont_image/output_265_35.png)
     
 
 
@@ -3522,7 +3522,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_37.png)
+![png](/blog/assets/post_cont_image/output_265_37.png)
     
 
 
@@ -3532,7 +3532,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_39.png)
+![png](/blog/assets/post_cont_image/output_265_39.png)
     
 
 
@@ -3561,7 +3561,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_41.png)
+![png](/blog/assets/post_cont_image/output_265_41.png)
     
 
 
@@ -3571,7 +3571,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_43.png)
+![png](/blog/assets/post_cont_image/output_265_43.png)
     
 
 
@@ -3581,7 +3581,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_45.png)
+![png](/blog/assets/post_cont_image/output_265_45.png)
     
 
 
@@ -3591,7 +3591,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_47.png)
+![png](/blog/assets/post_cont_image/output_265_47.png)
     
 
 
@@ -3617,7 +3617,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_49.png)
+![png](/blog/assets/post_cont_image/output_265_49.png)
     
 
 
@@ -3627,7 +3627,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_51.png)
+![png](/blog/assets/post_cont_image/output_265_51.png)
     
 
 
@@ -3637,7 +3637,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_53.png)
+![png](/blog/assets/post_cont_image/output_265_53.png)
     
 
 
@@ -3647,7 +3647,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_55.png)
+![png](/blog/assets/post_cont_image/output_265_55.png)
     
 
 
@@ -3673,7 +3673,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_57.png)
+![png](/blog/assets/post_cont_image/output_265_57.png)
     
 
 
@@ -3683,7 +3683,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_59.png)
+![png](/blog/assets/post_cont_image/output_265_59.png)
     
 
 
@@ -3712,7 +3712,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_61.png)
+![png](/blog/assets/post_cont_image/output_265_61.png)
     
 
 
@@ -3722,7 +3722,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_63.png)
+![png](/blog/assets/post_cont_image/output_265_63.png)
     
 
 
@@ -3751,7 +3751,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_65.png)
+![png](/blog/assets/post_cont_image/output_265_65.png)
     
 
 
@@ -3761,7 +3761,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_67.png)
+![png](/blog/assets/post_cont_image/output_265_67.png)
     
 
 
@@ -3771,7 +3771,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_69.png)
+![png](/blog/assets/post_cont_image/output_265_69.png)
     
 
 
@@ -3781,7 +3781,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_71.png)
+![png](/blog/assets/post_cont_image/output_265_71.png)
     
 
 
@@ -3807,7 +3807,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_73.png)
+![png](/blog/assets/post_cont_image/output_265_73.png)
     
 
 
@@ -3817,7 +3817,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_75.png)
+![png](/blog/assets/post_cont_image/output_265_75.png)
     
 
 
@@ -3827,7 +3827,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_77.png)
+![png](/blog/assets/post_cont_image/output_265_77.png)
     
 
 
@@ -3837,7 +3837,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](../assets/post_cont_image/output_265_79.png)
+![png](/blog/assets/post_cont_image/output_265_79.png)
     
 
 
@@ -3865,7 +3865,7 @@ Using the ROC curve and recall, we can conclude that the best model is:
 
 Let's look at the picture below to understand how to interpret a ROC curve.
 
-![heatmap](../assets/post_cont_image/roc_curve.svg)
+![heatmap](/blog/assets/post_cont_image/roc_curve.svg)
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#/media/File:Roc_curve.svg)
 
@@ -4126,51 +4126,51 @@ AWS S3 (S3 stands for Simple Storage Service) is a cloud storage service that pr
 
 Now, let's store the gradient boosting model on AWS S3, but you must create an AWS account first. AWS has a free tier subscription, and hosting this model on an S3 bucket is free of charge; also, remember to create an account as a root user. After creating an account on AWS, sign in as a root user and type on the search bar s3.
 
-![search bar s3](../assets/post_cont_image/search_bar_s3.png)
+![search bar s3](/blog/assets/post_cont_image/search_bar_s3.png)
 
 You should see a dropdown menu; click on the first option with a green bucket logo.
 
 It will take you to the Amazon s3 landing page, and click the Create bucket button.
 
-![create a bucket](../assets/post_cont_image/create_bucket.png)
+![create a bucket](/blog/assets/post_cont_image/create_bucket.png)
 
 You will be prompted with this page.
 
-![create bucket page](../assets/post_cont_image/create_bucket_page.png)
+![create bucket page](/blog/assets/post_cont_image/create_bucket_page.png)
 
 Give the bucket a name; in this case, we can call our bucket name creditcardapproval; in one word, select an AWS region close to your location for better latency. We will keep the default option for the rest, then hit the create bucket button.
 
 We see the bucket we just created in the list of buckets on the S3 landing page. Click on that bucket name, and you shall see the page below.
 
-![upload to bucket](../assets/post_cont_image/upload_bucket.png)
+![upload to bucket](/blog/assets/post_cont_image/upload_bucket.png)
 
 Click on the upload button, which will prompt you to another page. Click on add files, locate our saved model, hit the upload button and wait for it to upload to the bucket.
 
-![add the file to the bucket](../assets/post_cont_image/add_bucket.png)
+![add the file to the bucket](/blog/assets/post_cont_image/add_bucket.png)
 
 Our model is uploaded on AWS. The status should be successful if everything goes well, like the image below.
 
-![succeeded uploaded bucket](../assets/post_cont_image/succeeded_bucket.png)
+![succeeded uploaded bucket](/blog/assets/post_cont_image/succeeded_bucket.png)
 
 We have our model uploaded on the S3; we can now access it and make a prediction using access and secret access keys. So how do we get those two keys? We use IAM user and we need to create one.
 
 Search for iam and click on users.
 
-![search iam](../assets/post_cont_image/users_iam.png)
+![search iam](/blog/assets/post_cont_image/users_iam.png)
 
 Assuming you don't have any IAM users, you must create one by clicking on the add users.
 
 Note: I already have mine created, so I will add a new IAM user to show you how to get the keys because we can only access the secret access key once after creating a new user. Once it is created, you can no longer access the secret access key. So keep it private and store it in a safe place.
 
-![add IAM user](../assets/post_cont_image/add_iam_user.png)
+![add IAM user](/blog/assets/post_cont_image/add_iam_user.png)
 
 Give it a name, let's say ```stern-test``` or whatever you want. Check the access key checkbox so we can access our s3 blob storage API; now let's go to the next step, which is the permissions.
 
-![IAM user detail](../assets/post_cont_image/user_details.png)
+![IAM user detail](/blog/assets/post_cont_image/user_details.png)
 
 We will attach existing policies directly for the permission page. The existing permission we will be using are ```AmazonS3FullAccess``` and ```AWSCompromisedKeyQuarantineV2``` and check the corresponding checkbox. We will set the user without the permission boundary.
 
-![permission iam](../assets/post_cont_image/permissions_iam.png)
+![permission iam](/blog/assets/post_cont_image/permissions_iam.png)
 
 The next page is the tags page. IAM tags are key-value pairs you can add to your user. Tags can include user information, such as an email address, or can be descriptive, such as a job title. You can use the tags to organize, track, or control access for this user. Tags are optional, so it is up to you if you want to set them or not. I did not use them on my end since it is not helpful for this project. Press next for the review of the IAM user.
 
@@ -4182,9 +4182,9 @@ Note: This is the only time AWS will give you access to the secret access key fo
 
 Now that you have saved your access and secret access key, you can close the page, and if you go back to the IAM welcome page, you can see the user you just created.
 
-![final page iam user](../assets/post_cont_image/final_iam.png)
+![final page iam user](/blog/assets/post_cont_image/final_iam.png)
 
-![user creation confirmation](../assets/post_cont_image/confirmation-iam.png)
+![user creation confirmation](/blog/assets/post_cont_image/confirmation-iam.png)
 
 With our model stored on S3 and the two keys in our possession. We are good to go to our last two sections with Streamlit.
 
@@ -4802,7 +4802,7 @@ profile_to_pred_prep = train_copy_with_profile_to_pred_prep[train_copy_with_prof
 
 Now we will add an optional but cool animation of an impatient hand that will be displayed when the model makes the prediction; here is what it looks like.
 
-![hand animation](../assets/post_cont_image/hand_ani.png)
+![hand animation](/blog/assets/post_cont_image/hand_ani.png)
 
 Check out the animation in action [here](https://lottiefiles.com/89308-loading-hand-green)
 
@@ -4887,15 +4887,15 @@ Before deployment, we first need to store our Streamlit file on Github, where St
 
 Head on to Github, sign up for an account if you don't already have one and create a new repository just like this.
 
-![GitHub New Repo](../assets/post_cont_image/github_repo.png)
+![GitHub New Repo](/blog/assets/post_cont_image/github_repo.png)
 
 We get the following page, give it a name and description (optional) and set the repository to be public so that Streamlit can read the file. And hit the create repository button.
 
-![Github create repo](../assets/post_cont_image/github_create_repo.png)
+![Github create repo](/blog/assets/post_cont_image/github_create_repo.png)
 
 Drag and drop our streamlit python file in the area below.
 
-![GitHub drag](../assets/post_cont_image/github_drag.png)
+![GitHub drag](/blog/assets/post_cont_image/github_drag.png)
 
 Streamlit also needs a ```requirements.txt``` file to be added to the repo. This simple text file will inform Streamlit which version of the python libraries to install on the Streamlit servers.
 
@@ -4916,14 +4916,14 @@ streamlit-lottie==0.0.3
 
 So now we can commit the two files after giving them a brief description.
 
-![Github commit saved](../assets/post_cont_image/Github_commit_change.png)
+![Github commit saved](/blog/assets/post_cont_image/Github_commit_change.png)
 
 Now let's head to Streamlit share, [here](https://share.streamlit.io/) is the link. You can sign up with your Google account.
 
 
 After login in, you will land on this page. I already have three apps deployed here.
 
-![New app](../assets/post_cont_image/streamlit_new_app.png)
+![New app](/blog/assets/post_cont_image/streamlit_new_app.png)
 
 So on the deployment page, fill in the information below.
 
@@ -4933,19 +4933,19 @@ For main file path, it should be the Streamlit Python file name
 
 Then click on the Advanced settings.
 
-![Deploy an app on Streamlit](../assets/post_cont_image/deploy_app.png)
+![Deploy an app on Streamlit](/blog/assets/post_cont_image/deploy_app.png)
 
 A new pop window will come; select the latest Python version and past the access and secret access key from AWS S3.
 
-![Save deployed app](../assets/post_cont_image/save_deployed_app.png)
+![Save deployed app](/blog/assets/post_cont_image/save_deployed_app.png)
 
 Now relax and give it a minute while the app is deploying on Streamlit.
 
-![deploying](../assets/post_cont_image/deploying.png)
+![deploying](/blog/assets/post_cont_image/deploying.png)
 
 Tadaaaa! the app should be up and running on Streamlit.
 
-![App running](../assets/post_cont_image/running.png)
+![App running](/blog/assets/post_cont_image/running.png)
 
 [Here is the link](https://share.streamlit.io/semasuka/credit-card-approval-prediction-classification/main/cc_approval_pred.py) of the app deployed on Streamlit.
 
