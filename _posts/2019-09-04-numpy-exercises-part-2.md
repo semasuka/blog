@@ -10,7 +10,7 @@ tags:
 
 For this second post of NumPy exercises series, we will be doing intermediate level exercises in NumPy and will go through the solution together as we did in the first part. Try to solve the exercises on your own then compare your answer with mine. Let's get started.<!-- more -->
 
-We first import the NumPy.
+We first import the NumPy. 
 
 
 ```python
