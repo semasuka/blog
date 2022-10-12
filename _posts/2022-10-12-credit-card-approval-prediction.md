@@ -10,7 +10,6 @@ tags:
 - project
 - Deployment
 ---
-
 Welcome back, forks! After a long period of not posting here, I am happy to share that I am back again on MIB. In this post, we will work on an end-to-end machine learning project. I firmly believe this is one of the most detailed and comprehensive end-to-end ML project blog post on the internet. This project is perfect for the beginner in Machine Learning and seasoned ML engineers who could still learn one or two things from this post. This project was featured on Luke Barousse Youtube channel, click [here](https://www.youtube.com/watch?v=5Q0gB7imNOo&t=222s) to watch the video.<!-- more -->
 
 Here is the roadmap we will follow:
@@ -19,7 +18,7 @@ Here is the roadmap we will follow:
 - Feature selection
 - Data preprocessing
 - Model training
-- Model selection 
+- Model selection
 - Model storage on AWS blob storage
 - Build a web app interface for the model using Streamlit.
 - Finally, deploy the model.
@@ -415,22 +414,22 @@ cc_data_full_data.drop('dep_value',axis=1,inplace=True)
 pd.options.mode.chained_assignment = None # hide warning SettingWithCopyWarning
 ```
 
-    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_89860/1467211908.py:5: SettingWithCopyWarning: 
+    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_29855/1467211908.py:5: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame
     
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       credit_status['dep_value'][credit_status['STATUS'] =='2']='Yes'
-    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_89860/1467211908.py:6: SettingWithCopyWarning: 
+    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_29855/1467211908.py:6: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame
     
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       credit_status['dep_value'][credit_status['STATUS'] =='3']='Yes'
-    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_89860/1467211908.py:7: SettingWithCopyWarning: 
+    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_29855/1467211908.py:7: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame
     
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       credit_status['dep_value'][credit_status['STATUS'] =='4']='Yes'
-    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_89860/1467211908.py:8: SettingWithCopyWarning: 
+    /var/folders/bb/dzx22n7n1t1gkqfhhky4j2ch0000gn/T/ipykernel_29855/1467211908.py:8: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame
     
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -1154,7 +1153,7 @@ def gen_info_feat(df,feature):
         # print the datatype
         print('Object type:{}'.format(employment_len_no_ret.dtype))
     # if the feature is account age
-    if feature == 'Account age' | 'Income':
+    if feature == 'Account age' or feature == 'Income':
         # change the account age to a positive number of months and get the description
         print('Description:\n{}'.format((np.abs(df[feature])).describe()))
         # print separators
@@ -1185,7 +1184,7 @@ The following function prints a pie chart.
 def create_pie_plot(df,feature):
     '''function to create a pie chart plot'''
     # if the feature is dwelling or education level
-    if feature == 'Dwelling' | 'Education level':
+    if feature == 'Dwelling' or feature == 'Education level':
         # calling the value_cnt_norm_cal function previously seen
         ratio_size = value_cnt_norm_cal(df, feature)
         # get how many classes we have
@@ -1230,7 +1229,7 @@ The next function create a bar plot.
 ```python
 def create_bar_plot(df,feature):
     '''function to create a bar chart plot'''
-    if feature == 'Marital status' | 'Dwelling' | 'Job title' | 'Employment status' | 'Education level':
+    if feature == 'Marital status' or feature == 'Dwelling' or feature == 'Job title' or feature == 'Employment status' or feature == 'Education level':
         fig, ax = plt.subplots(figsize=(6,10))
         # create a barplot using seaborn with X-axis the indexes from value_cnt_norm_cal function and Y axis we use the value counts from the same function
         sns.barplot(x=value_cnt_norm_cal(df,feature).index,y=value_cnt_norm_cal(df,feature).values[:,0])
@@ -1428,25 +1427,20 @@ We start with ```Gender```. We call ```gen_info_feat``` and see that we have two
 gen_info_feat(cc_train_copy,'Gender')
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    Input In [39], in <cell line: 1>()
-    ----> 1 gen_info_feat(cc_train_copy,'Gender')
-
-
-    Input In [32], in gen_info_feat(df, feature)
-         22     print('Object type:{}'.format(employment_len_no_ret.dtype))
-         23 # if the feature is account age
-    ---> 24 if feature == 'Account age' | 'Income':
-         25     # change the account age to a positive number of months and get the description
-         26     print('Description:\n{}'.format((np.abs(df[feature])).describe()))
-         27     # print separators
-
-
-    TypeError: unsupported operand type(s) for |: 'str' and 'str'
+    Description:
+    count     29165
+    unique        2
+    top           F
+    freq      19549
+    Name: Gender, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    F  19549      67.028973
+    M   9616      32.971027
 
 
 
@@ -1455,9 +1449,21 @@ create_bar_plot(cc_train_copy,'Gender')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_78_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Gender')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_79_0.png)
+    
+
 
 ### Age
 
@@ -1468,10 +1474,59 @@ Now let's look at ```Age```; since age is a continuous variable, we will process
 gen_info_feat(cc_train_copy,'Age')
 ```
 
+    Description:
+    count    29165.000000
+    mean        43.749425
+    std         11.507180
+    min         21.095140
+    25%         34.154689
+    50%         42.614648
+    75%         53.234771
+    max         68.862423
+    Name: Age, dtype: float64
+    **************************************************
+    Object type:int64
+    Description:
+    count    29165.000000
+    mean    -15979.477490
+    std       4202.997485
+    min     -25152.000000
+    25%     -19444.000000
+    50%     -15565.000000
+    75%     -12475.000000
+    max      -7705.000000
+    Name: Age, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+            Count  Frequency (%)
+    -12676     44       0.150866
+    -15519     44       0.150866
+    -16896     33       0.113149
+    -16053     26       0.089148
+    -16768     26       0.089148
+    ...       ...            ...
+    -18253      1       0.003429
+    -23429      1       0.003429
+    -15478      1       0.003429
+    -21648      1       0.003429
+    -19564      1       0.003429
+    
+    [6794 rows x 2 columns]
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Age')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_83_0.png)
+    
+
 
 After that, we plot its histogram with the kernel density estimator. ``` Age `` is not normally distributed; it is slightly positively skewed.
 
@@ -1480,12 +1535,30 @@ After that, we plot its histogram with the kernel density estimator. ``` Age `` 
 create_hist_plot(cc_train_copy,'Age')
 ```
 
+
+    
+![png](/blog/assets/post_cont_image/output_85_0.png)
+    
+
+
 Now we perform a quick bivariate analysis (comparison of two features) of ```Age``` and the target variable ```Is high risk```. The blue box plot represents a good client (is high risk = No), and the green box plot represents a bad client (is high risk = Yes). We can see no significant difference between the age of those who are high risk and those who are not. The mean age for both groups is around 43 years old, and there is no correlation between the age and risk factors of the applicant.
 
 
 ```python
 low_high_risk_box_plot(cc_train_copy,'Age')
 ```
+
+    Is high risk
+    0    43.753103
+    1    43.538148
+    Name: Age, dtype: float64
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_87_1.png)
+    
+
 
 ### Marital status
 
@@ -1496,10 +1569,35 @@ There are 5 unique classes for this feature. Married constitutes the most signif
 gen_info_feat(cc_train_copy,'Marital status')
 ```
 
+    Description:
+    count       29165
+    unique          5
+    top       Married
+    freq        20044
+    Name: Marital status, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+                          Count  Frequency (%)
+    Married               20044      68.726213
+    Single / not married   3864      13.248757
+    Civil marriage         2312       7.927310
+    Separated              1712       5.870050
+    Widow                  1233       4.227670
+
+
 
 ```python
 create_pie_plot(cc_train_copy,'Marital status')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_91_0.png)
+    
+
 
 
 ```python
@@ -1507,9 +1605,24 @@ create_bar_plot(cc_train_copy,'Marital status')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_92_0.png)
+    
+
+
+
 ```python
 low_high_risk_bar_plot(cc_train_copy,'Marital status')
 ```
+
+    {'Married': 320, 'Single / not married': 87, 'Civil marriage': 34, 'Widow': 34, 'Separated': 24}
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_93_1.png)
+    
+
 
 ### Family member count
 
@@ -1520,15 +1633,55 @@ Family member count is a numerical feature, with the median of 2 family members 
 gen_info_feat(cc_train_copy,'Family member count')
 ```
 
+    Description:
+    count    29165.000000
+    mean         2.197531
+    std          0.912189
+    min          1.000000
+    25%          2.000000
+    50%          2.000000
+    75%          3.000000
+    max         20.000000
+    Name: Family member count, dtype: float64
+    **************************************************
+    Object type:
+    float64
+    **************************************************
+    Value count:
+          Count  Frequency (%)
+    2.0   15552      53.324190
+    1.0    5613      19.245671
+    3.0    5121      17.558718
+    4.0    2503       8.582205
+    5.0     309       1.059489
+    6.0      48       0.164581
+    7.0      14       0.048003
+    9.0       2       0.006858
+    15.0      2       0.006858
+    20.0      1       0.003429
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Family member count')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_97_0.png)
+    
+
+
+
 ```python
 create_bar_plot(cc_train_copy,'Family member count')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_98_0.png)
+    
+
 
 ### Children count
 
@@ -1539,15 +1692,54 @@ From the chart below, we can see that most applicants don't have any children. A
 gen_info_feat(cc_train_copy,'Children count')
 ```
 
+    Description:
+    count    29165.000000
+    mean         0.430790
+    std          0.741882
+    min          0.000000
+    25%          0.000000
+    50%          0.000000
+    75%          1.000000
+    max         19.000000
+    Name: Children count, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+        Count  Frequency (%)
+    0   20143      69.065661
+    1    6003      20.582890
+    2    2624       8.997086
+    3     323       1.107492
+    4      52       0.178296
+    5      15       0.051432
+    7       2       0.006858
+    14      2       0.006858
+    19      1       0.003429
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Children count')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_102_0.png)
+    
+
+
+
 ```python
 create_bar_plot(cc_train_copy,'Children count')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_103_0.png)
+    
+
 
 ### Dwelling type
 
@@ -1558,15 +1750,47 @@ create_bar_plot(cc_train_copy,'Children count')
 gen_info_feat(cc_train_copy,'Dwelling')
 ```
 
+    Description:
+    count                 29165
+    unique                    6
+    top       House / apartment
+    freq                  26059
+    Name: Dwelling, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+                         Count  Frequency (%)
+    House / apartment    26059      89.350249
+    With parents          1406       4.820847
+    Municipal apartment    912       3.127036
+    Rented apartment       453       1.553232
+    Office apartment       208       0.713184
+    Co-op apartment        127       0.435453
+
+
 
 ```python
 create_pie_plot(cc_train_copy,'Dwelling')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_107_0.png)
+    
+
+
+
 ```python
 create_bar_plot(cc_train_copy,'Dwelling')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_108_0.png)
+    
+
 
 ### Income
 
@@ -1580,15 +1804,41 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 gen_info_feat(cc_train_copy,'Income')
 ```
 
+    Description:
+    count     29165.00
+    mean     186890.39
+    std      101409.64
+    min       27000.00
+    25%      121500.00
+    50%      157500.00
+    75%      225000.00
+    max     1575000.00
+    Name: Income, dtype: float64
+    **************************************************
+    Object type:float64
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Income')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_112_0.png)
+    
+
+
+
 ```python
 create_hist_plot(cc_train_copy,'Income')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_113_0.png)
+    
+
 
 * bivariate analysis with target variable
 
@@ -1596,6 +1846,18 @@ create_hist_plot(cc_train_copy,'Income')
 ```python
 low_high_risk_box_plot(cc_train_copy,'Income')
 ```
+
+    Is high risk
+    0   186913.94
+    1   185537.26
+    Name: Income, dtype: float64
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_115_1.png)
+    
+
 
 ### Job title
 
@@ -1606,11 +1868,50 @@ The most common Job title is laborers by a large margin (24.85%), followed by co
 gen_info_feat(cc_train_copy,'Job title')
 ```
 
+    Description:
+    count        20138
+    unique          18
+    top       Laborers
+    freq          5004
+    Name: Job title, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+                           Count  Frequency (%)
+    Laborers                5004          24.85
+    Core staff              2866          14.23
+    Sales staff             2773          13.77
+    Managers                2422          12.03
+    Drivers                 1722           8.55
+    High skill tech staff   1133           5.63
+    Accountants              998           4.96
+    Medicine staff           956           4.75
+    Cooking staff            521           2.59
+    Security staff           464           2.30
+    Cleaning staff           425           2.11
+    Private service staff    287           1.43
+    Low-skill Laborers       138           0.69
+    Waiters/barmen staff     127           0.63
+    Secretaries              122           0.61
+    HR staff                  72           0.36
+    Realty agents             60           0.30
+    IT staff                  48           0.24
+
+
 
 ```python
 job_title_nan_count = cc_train_copy['Job title'].isna().sum()
 job_title_nan_count
 ```
+
+
+
+
+    9027
+
+
 
 
 ```python
@@ -1622,10 +1923,19 @@ rows_total_count = cc_train_copy.shape[0]
 print('The percentage of missing rows is {:.2f} %'.format(job_title_nan_count * 100 / rows_total_count))
 ```
 
+    The percentage of missing rows is 30.95 %
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Job title')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_122_0.png)
+    
+
 
 ### Employment status
 
@@ -1636,15 +1946,46 @@ Most applicants are working (51.62%); the next most represented status is commer
 gen_info_feat(cc_train_copy,'Employment status')
 ```
 
+    Description:
+    count       29165
+    unique          5
+    top       Working
+    freq        15056
+    Name: Employment status, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+                          Count  Frequency (%)
+    Working               15056          51.62
+    Commercial associate   6801          23.32
+    Pensioner              4920          16.87
+    State servant          2381           8.16
+    Student                   7           0.02
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Employment status')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_126_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Employment status')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_127_0.png)
+    
+
 
 ### Education level
 
@@ -1655,15 +1996,46 @@ Most applicants have completed their secondary degree (67.90%) ¼ completed thei
 gen_info_feat(cc_train_copy,'Education level')
 ```
 
+    Description:
+    count                             29165
+    unique                                5
+    top       Secondary / secondary special
+    freq                              19803
+    Name: Education level, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+                                   Count  Frequency (%)
+    Secondary / secondary special  19803          67.90
+    Higher education                7910          27.12
+    Incomplete higher               1129           3.87
+    Lower secondary                  298           1.02
+    Academic degree                   25           0.09
+
+
 
 ```python
 create_pie_plot(cc_train_copy,'Education level')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_131_0.png)
+    
+
+
+
 ```python
 create_bar_plot(cc_train_copy,'Education level')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_132_0.png)
+    
+
 
 ### Employment length
 
@@ -1674,15 +2046,70 @@ Most applicants have been working between 5 to 7 years on average, and we also h
 gen_info_feat(cc_train_copy,'Employment length')
 ```
 
+    Description:
+    count   24257.00
+    mean        7.26
+    std         6.46
+    min         0.05
+    25%         2.68
+    50%         5.45
+    75%         9.60
+    max        43.02
+    Name: Employment length, dtype: float64
+    **************************************************
+    Object type:int64
+    Description:
+    count    29165.00
+    mean     59257.76
+    std     137655.88
+    min     -15713.00
+    25%      -3153.00
+    50%      -1557.00
+    75%       -412.00
+    max     365243.00
+    Name: Employment length, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+             Count  Frequency (%)
+     365243   4908          16.83
+    -401        61           0.21
+    -200        55           0.19
+    -2087       53           0.18
+    -1539       51           0.17
+    ...        ...            ...
+    -8369        1           0.00
+    -6288        1           0.00
+    -6303        1           0.00
+    -3065        1           0.00
+    -8256        1           0.00
+    
+    [3483 rows x 2 columns]
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Employment length')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_136_0.png)
+    
+
+
+
 ```python
 create_hist_plot(cc_train_copy,'Employment length')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_137_0.png)
+    
+
 
 * bivariate analysis with target variable
 
@@ -1693,6 +2120,18 @@ create_hist_plot(cc_train_copy,'Employment length')
 low_high_risk_box_plot(cc_train_copy,'Employment length')
 ```
 
+    Is high risk
+    0   7.29
+    1   5.75
+    Name: Employment length, dtype: float64
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_139_1.png)
+    
+
+
 ### Has a car
 
 Most applicants don't own a car (62% of applicants).
@@ -1702,15 +2141,43 @@ Most applicants don't own a car (62% of applicants).
 gen_info_feat(cc_train_copy,'Has a car')
 ```
 
+    Description:
+    count     29165
+    unique        2
+    top           N
+    freq      18128
+    Name: Has a car, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    N  18128          62.16
+    Y  11037          37.84
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Has a car')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_143_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Has a car')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_144_0.png)
+    
+
 
 ### Has a property
 
@@ -1721,15 +2188,43 @@ Most applicants own a property (67% of applicants)
 gen_info_feat(cc_train_copy,'Has a property')
 ```
 
+    Description:
+    count     29165
+    unique        2
+    top           Y
+    freq      19557
+    Name: Has a property, dtype: object
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    Y  19557          67.06
+    N   9608          32.94
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Has a property')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_148_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Has a property')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_149_0.png)
+    
+
 
 ### Has a work phone
 
@@ -1743,15 +2238,47 @@ Note: Here, 0 represent no and 1 represents yes
 gen_info_feat(cc_train_copy,'Has a work phone')
 ```
 
+    Description:
+    count   29165.00
+    mean        0.22
+    std         0.42
+    min         0.00
+    25%         0.00
+    50%         0.00
+    75%         0.00
+    max         1.00
+    Name: Has a work phone, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    0  22623          77.57
+    1   6542          22.43
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Has a work phone')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_153_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Has a work phone')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_154_0.png)
+    
+
 
 ### Has a mobile phone
 
@@ -1765,10 +2292,35 @@ Note: Here, 0 is no and 1 is yes
 gen_info_feat(cc_train_copy,'Has a mobile phone')
 ```
 
+    Description:
+    count   29165.00
+    mean        1.00
+    std         0.00
+    min         1.00
+    25%         1.00
+    50%         1.00
+    75%         1.00
+    max         1.00
+    Name: Has a mobile phone, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    1  29165         100.00
+
+
 
 ```python
 create_pie_plot(cc_train_copy,'Has a mobile phone')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_158_0.png)
+    
+
 
 ### Has a phone
 
@@ -1782,15 +2334,47 @@ Note: Here, 0 is no and 1 is yes
 gen_info_feat(cc_train_copy,'Has a phone')
 ```
 
+    Description:
+    count   29165.00
+    mean        0.29
+    std         0.46
+    min         0.00
+    25%         0.00
+    50%         0.00
+    75%         1.00
+    max         1.00
+    Name: Has a phone, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    0  20562          70.50
+    1   8603          29.50
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Has a phone')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_162_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Has a phone')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_163_0.png)
+    
+
 
 ### Has an email
 
@@ -1803,15 +2387,47 @@ Note: Here, 0 is no and 1 is yes
 gen_info_feat(cc_train_copy,'Has an email')
 ```
 
+    Description:
+    count   29165.00
+    mean        0.09
+    std         0.29
+    min         0.00
+    25%         0.00
+    50%         0.00
+    75%         0.00
+    max         1.00
+    Name: Has an email, dtype: float64
+    **************************************************
+    Object type:
+    int64
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    0  26532          90.97
+    1   2633           9.03
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Has an email')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_167_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Has an email')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_168_0.png)
+    
+
 
 ### Account age
 
@@ -1822,15 +2438,41 @@ Most accounts are 26 months old. The account age feature is not normally distrib
 gen_info_feat(cc_train_copy,'Account age')
 ```
 
+    Description:
+    count   29165.00
+    mean       26.14
+    std        16.49
+    min         0.00
+    25%        12.00
+    50%        24.00
+    75%        39.00
+    max        60.00
+    Name: Account age, dtype: float64
+    **************************************************
+    Object type:float64
+
+
 
 ```python
 create_box_plot(cc_train_copy,'Account age')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_172_0.png)
+    
+
+
+
 ```python
 create_hist_plot(cc_train_copy,'Account age', the_bins=30)
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_173_0.png)
+    
+
 
 * bivariate analysis with target variable
 
@@ -1838,6 +2480,18 @@ create_hist_plot(cc_train_copy,'Account age', the_bins=30)
 ```python
 low_high_risk_box_plot(cc_train_copy,'Account age')
 ```
+
+    Is high risk
+    0   26.00
+    1   34.04
+    Name: Account age, dtype: float64
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_175_1.png)
+    
+
 
 ### Is high risk (target variable)
 
@@ -1850,15 +2504,43 @@ Note: Here, 0 is no and 1 is yes
 gen_info_feat(cc_train_copy,'Is high risk')
 ```
 
+    Description:
+    count     29165
+    unique        2
+    top           0
+    freq      28666
+    Name: Is high risk, dtype: int64
+    **************************************************
+    Object type:
+    object
+    **************************************************
+    Value count:
+       Count  Frequency (%)
+    0  28666          98.29
+    1    499           1.71
+
+
 
 ```python
 create_bar_plot(cc_train_copy,'Is high risk')
 ```
 
 
+    
+![png](/blog/assets/post_cont_image/output_179_0.png)
+    
+
+
+
 ```python
 create_pie_plot(cc_train_copy,'Is high risk')
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_180_0.png)
+    
+
 
 ### Bivariate analysis
 
@@ -1875,6 +2557,12 @@ sns.pairplot(cc_train_copy[cc_train_copy['Employment length'] < 0].drop(['ID','H
 plt.show()
 ```
 
+
+    
+![png](/blog/assets/post_cont_image/output_184_0.png)
+    
+
+
 Now let's look at the two interesting scatter plots.
 
 We will start with the family member count vs children count. Of course, the more children a person has, the larger the family count. We added a line of best fit, also called the regression line, and you can read more about it in this blog post [here](https://semasuka.github.io/blog/2021/04/04/demystify-machine-learning.html).
@@ -1884,6 +2572,12 @@ We will start with the family member count vs children count. Of course, the mor
 sns.regplot(x='Children count',y='Family member count',data=cc_train_copy,line_kws={'color': 'red'})
 plt.show()
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_186_0.png)
+    
+
 
 When we compare the employment length and age, the scatterplot shows a trend between the age and the length of employment.
 
@@ -1903,6 +2597,16 @@ plt.show()
 
 ```
 
+    /Users/sternsemasuka/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+      warnings.warn(
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_188_1.png)
+    
+
+
 Now comparing account age and applicant age, we can see that most applicants are between 20 and 45 years old and have an account less than 25 months old. This information is deduced from darker blue hexagons (high-density area) between 22 and 43 on the Y axis and between 3 and 28 on the X axis.
 
 
@@ -1913,6 +2617,16 @@ plt.xticks(np.arange(0, 65, 5))
 plt.ylabel('Age')
 plt.show()
 ```
+
+    /Users/sternsemasuka/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+      warnings.warn(
+
+
+
+    
+![png](/blog/assets/post_cont_image/output_190_1.png)
+    
+
 
 ### Heatmap
 
@@ -1944,6 +2658,12 @@ sns.heatmap(cc_train_copy_corr_no_mobile, annot=True, cmap='flare',mask=mask, li
 plt.show()
 ```
 
+
+    
+![png](/blog/assets/post_cont_image/output_194_0.png)
+    
+
+
 ### ANOVA
 
 Now, let's do an ANOVA (analysis of variance) between age and other categorical features.
@@ -1972,6 +2692,12 @@ for cat_ft_count, ax in enumerate(axes):
     break
 ```
 
+
+    
+![png](/blog/assets/post_cont_image/output_197_0.png)
+    
+
+
 Now let's turn our attention to employment length versus categorical features. The only interesting observation is that state-employed and medical staff applicants tend to have been employed longer than the rest.
 
 
@@ -1990,6 +2716,12 @@ for cat_ft_count, ax in enumerate(axes):
             cat_ft_count += 1
     break
 ```
+
+
+    
+![png](/blog/assets/post_cont_image/output_199_0.png)
+    
+
 
 ### Applicant general profile
 
@@ -2465,187 +3197,187 @@ cc_train_prep.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.417817</td>
-      <td>4.0</td>
-      <td>0.602718</td>
-      <td>0.273442</td>
-      <td>2.0</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.42</td>
+      <td>4.00</td>
+      <td>0.60</td>
+      <td>0.27</td>
+      <td>2.00</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.417817</td>
-      <td>1.0</td>
-      <td>0.203417</td>
-      <td>0.144410</td>
-      <td>2.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.42</td>
+      <td>1.00</td>
+      <td>0.20</td>
+      <td>0.14</td>
+      <td>2.00</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.519094</td>
-      <td>4.0</td>
-      <td>0.394044</td>
-      <td>0.498453</td>
-      <td>4.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.52</td>
+      <td>4.00</td>
+      <td>0.39</td>
+      <td>0.50</td>
+      <td>4.00</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.806979</td>
-      <td>1.0</td>
-      <td>0.841939</td>
-      <td>0.179319</td>
-      <td>1.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.81</td>
+      <td>1.00</td>
+      <td>0.84</td>
+      <td>0.18</td>
+      <td>1.00</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.679378</td>
-      <td>4.0</td>
-      <td>0.599130</td>
-      <td>0.044012</td>
-      <td>1.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.68</td>
+      <td>4.00</td>
+      <td>0.60</td>
+      <td>0.04</td>
+      <td>1.00</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -2726,183 +3458,183 @@ X_cc_train_prep.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.417817</td>
-      <td>4.0</td>
-      <td>0.602718</td>
-      <td>0.273442</td>
-      <td>2.0</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.42</td>
+      <td>4.00</td>
+      <td>0.60</td>
+      <td>0.27</td>
+      <td>2.00</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.417817</td>
-      <td>1.0</td>
-      <td>0.203417</td>
-      <td>0.144410</td>
-      <td>2.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.42</td>
+      <td>1.00</td>
+      <td>0.20</td>
+      <td>0.14</td>
+      <td>2.00</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.519094</td>
-      <td>4.0</td>
-      <td>0.394044</td>
-      <td>0.498453</td>
-      <td>4.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.52</td>
+      <td>4.00</td>
+      <td>0.39</td>
+      <td>0.50</td>
+      <td>4.00</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.806979</td>
-      <td>1.0</td>
-      <td>0.841939</td>
-      <td>0.179319</td>
-      <td>1.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.81</td>
+      <td>1.00</td>
+      <td>0.84</td>
+      <td>0.18</td>
+      <td>1.00</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.679378</td>
-      <td>4.0</td>
-      <td>0.599130</td>
-      <td>0.044012</td>
-      <td>1.0</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.68</td>
+      <td>4.00</td>
+      <td>0.60</td>
+      <td>0.04</td>
+      <td>1.00</td>
     </tr>
   </tbody>
 </table>
@@ -3190,8 +3922,6 @@ def folder_check_model():
         os.makedirs('saved_models/{}'.format(model_name))
 ```
 
-Lastly, we create a for loop function that will go through the dictionary of models and call all the functions that we have defined above.
-
 
 ```python
 # loop over all the models
@@ -3237,7 +3967,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_1.png)
+![png](/blog/assets/post_cont_image/output_264_1.png)
     
 
 
@@ -3247,7 +3977,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_3.png)
+![png](/blog/assets/post_cont_image/output_264_3.png)
     
 
 
@@ -3276,7 +4006,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_5.png)
+![png](/blog/assets/post_cont_image/output_264_5.png)
     
 
 
@@ -3286,7 +4016,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_7.png)
+![png](/blog/assets/post_cont_image/output_264_7.png)
     
 
 
@@ -3296,7 +4026,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_9.png)
+![png](/blog/assets/post_cont_image/output_264_9.png)
     
 
 
@@ -3306,7 +4036,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_11.png)
+![png](/blog/assets/post_cont_image/output_264_11.png)
     
 
 
@@ -3332,7 +4062,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_13.png)
+![png](/blog/assets/post_cont_image/output_264_13.png)
     
 
 
@@ -3342,7 +4072,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_15.png)
+![png](/blog/assets/post_cont_image/output_264_15.png)
     
 
 
@@ -3371,7 +4101,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_17.png)
+![png](/blog/assets/post_cont_image/output_264_17.png)
     
 
 
@@ -3381,7 +4111,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_19.png)
+![png](/blog/assets/post_cont_image/output_264_19.png)
     
 
 
@@ -3391,7 +4121,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_21.png)
+![png](/blog/assets/post_cont_image/output_264_21.png)
     
 
 
@@ -3401,7 +4131,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_23.png)
+![png](/blog/assets/post_cont_image/output_264_23.png)
     
 
 
@@ -3427,7 +4157,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_25.png)
+![png](/blog/assets/post_cont_image/output_264_25.png)
     
 
 
@@ -3437,7 +4167,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_27.png)
+![png](/blog/assets/post_cont_image/output_264_27.png)
     
 
 
@@ -3447,7 +4177,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_29.png)
+![png](/blog/assets/post_cont_image/output_264_29.png)
     
 
 
@@ -3457,7 +4187,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_31.png)
+![png](/blog/assets/post_cont_image/output_264_31.png)
     
 
 
@@ -3483,7 +4213,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_33.png)
+![png](/blog/assets/post_cont_image/output_264_33.png)
     
 
 
@@ -3493,7 +4223,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_35.png)
+![png](/blog/assets/post_cont_image/output_264_35.png)
     
 
 
@@ -3522,7 +4252,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_37.png)
+![png](/blog/assets/post_cont_image/output_264_37.png)
     
 
 
@@ -3532,7 +4262,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_39.png)
+![png](/blog/assets/post_cont_image/output_264_39.png)
     
 
 
@@ -3561,7 +4291,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_41.png)
+![png](/blog/assets/post_cont_image/output_264_41.png)
     
 
 
@@ -3571,7 +4301,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_43.png)
+![png](/blog/assets/post_cont_image/output_264_43.png)
     
 
 
@@ -3581,7 +4311,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_45.png)
+![png](/blog/assets/post_cont_image/output_264_45.png)
     
 
 
@@ -3591,7 +4321,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_47.png)
+![png](/blog/assets/post_cont_image/output_264_47.png)
     
 
 
@@ -3617,7 +4347,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_49.png)
+![png](/blog/assets/post_cont_image/output_264_49.png)
     
 
 
@@ -3627,7 +4357,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_51.png)
+![png](/blog/assets/post_cont_image/output_264_51.png)
     
 
 
@@ -3637,7 +4367,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_53.png)
+![png](/blog/assets/post_cont_image/output_264_53.png)
     
 
 
@@ -3647,7 +4377,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_55.png)
+![png](/blog/assets/post_cont_image/output_264_55.png)
     
 
 
@@ -3673,7 +4403,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_57.png)
+![png](/blog/assets/post_cont_image/output_264_57.png)
     
 
 
@@ -3683,7 +4413,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_59.png)
+![png](/blog/assets/post_cont_image/output_264_59.png)
     
 
 
@@ -3712,7 +4442,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_61.png)
+![png](/blog/assets/post_cont_image/output_264_61.png)
     
 
 
@@ -3722,7 +4452,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_63.png)
+![png](/blog/assets/post_cont_image/output_264_63.png)
     
 
 
@@ -3751,7 +4481,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_65.png)
+![png](/blog/assets/post_cont_image/output_264_65.png)
     
 
 
@@ -3761,7 +4491,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_67.png)
+![png](/blog/assets/post_cont_image/output_264_67.png)
     
 
 
@@ -3771,7 +4501,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_69.png)
+![png](/blog/assets/post_cont_image/output_264_69.png)
     
 
 
@@ -3781,7 +4511,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_71.png)
+![png](/blog/assets/post_cont_image/output_264_71.png)
     
 
 
@@ -3807,7 +4537,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_73.png)
+![png](/blog/assets/post_cont_image/output_264_73.png)
     
 
 
@@ -3817,7 +4547,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_75.png)
+![png](/blog/assets/post_cont_image/output_264_75.png)
     
 
 
@@ -3827,7 +4557,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_77.png)
+![png](/blog/assets/post_cont_image/output_264_77.png)
     
 
 
@@ -3837,7 +4567,7 @@ for model_name,model in classifiers.items():
 
 
     
-![png](/blog/assets/post_cont_image/output_265_79.png)
+![png](/blog/assets/post_cont_image/output_264_79.png)
     
 
 
@@ -3846,6 +4576,8 @@ for model_name,model in classifiers.items():
 
 
 ### What metrics to use in order to choose the best model for this problem?
+
+Lastly, we create a for loop function that will go through the dictionary of models and call all the functions that we have defined above.
 
   Since the objective of this problem is to minimize the risk of a credit default, the metrics to use depends on the current economic situation:
 
@@ -3943,7 +4675,7 @@ cc_test_copy.head(5)
       <td>N</td>
       <td>Y</td>
       <td>0</td>
-      <td>202500.0</td>
+      <td>202500.00</td>
       <td>State servant</td>
       <td>Secondary / secondary special</td>
       <td>Separated</td>
@@ -3955,8 +4687,8 @@ cc_test_copy.head(5)
       <td>0</td>
       <td>0</td>
       <td>Medicine staff</td>
-      <td>1.0</td>
-      <td>-6.0</td>
+      <td>1.00</td>
+      <td>-6.00</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3966,7 +4698,7 @@ cc_test_copy.head(5)
       <td>Y</td>
       <td>N</td>
       <td>0</td>
-      <td>675000.0</td>
+      <td>675000.00</td>
       <td>Commercial associate</td>
       <td>Higher education</td>
       <td>Married</td>
@@ -3978,8 +4710,8 @@ cc_test_copy.head(5)
       <td>1</td>
       <td>0</td>
       <td>Managers</td>
-      <td>2.0</td>
-      <td>-16.0</td>
+      <td>2.00</td>
+      <td>-16.00</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3989,7 +4721,7 @@ cc_test_copy.head(5)
       <td>N</td>
       <td>N</td>
       <td>0</td>
-      <td>234000.0</td>
+      <td>234000.00</td>
       <td>State servant</td>
       <td>Higher education</td>
       <td>Civil marriage</td>
@@ -4001,8 +4733,8 @@ cc_test_copy.head(5)
       <td>0</td>
       <td>1</td>
       <td>Core staff</td>
-      <td>2.0</td>
-      <td>-52.0</td>
+      <td>2.00</td>
+      <td>-52.00</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4012,7 +4744,7 @@ cc_test_copy.head(5)
       <td>Y</td>
       <td>Y</td>
       <td>0</td>
-      <td>445500.0</td>
+      <td>445500.00</td>
       <td>Commercial associate</td>
       <td>Higher education</td>
       <td>Married</td>
@@ -4024,8 +4756,8 @@ cc_test_copy.head(5)
       <td>0</td>
       <td>0</td>
       <td>Managers</td>
-      <td>2.0</td>
-      <td>-54.0</td>
+      <td>2.00</td>
+      <td>-54.00</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4035,7 +4767,7 @@ cc_test_copy.head(5)
       <td>Y</td>
       <td>N</td>
       <td>0</td>
-      <td>225000.0</td>
+      <td>225000.00</td>
       <td>Working</td>
       <td>Secondary / secondary special</td>
       <td>Married</td>
@@ -4047,8 +4779,8 @@ cc_test_copy.head(5)
       <td>0</td>
       <td>0</td>
       <td>Laborers</td>
-      <td>2.0</td>
-      <td>-48.0</td>
+      <td>2.00</td>
+      <td>-48.00</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -4115,7 +4847,7 @@ We divide the number of correct predictions by the total number of predictions t
 print(n_correct/len(final_predictions))
 ```
 
-    0.8562725244551227
+    0.8579028659687661
 
 
 ### Deploying the model on AWS S3
@@ -4918,7 +5650,7 @@ So now we can commit the two files after giving them a brief description.
 
 ![Github commit saved](/blog/assets/post_cont_image/Github_commit_change.png)
 
-Now let's head to Streamlit share, [here](https://share.streamlit.io/) is the link. You can sign up with your Google account.
+Now let's head to Streamlit share, [here](https://share.streamlit.io/) is the link. You can sign up with your Google account. 
 
 
 After login in, you will land on this page. I already have three apps deployed here.
