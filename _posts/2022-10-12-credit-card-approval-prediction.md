@@ -19,7 +19,7 @@ Here is the roadmap we will follow:
 - Feature selection
 - Data preprocessing
 - Model training
-- Model selection
+- Model selection 
 - Model storage on AWS blob storage
 - Build a web app interface for the model using Streamlit.
 - Finally, deploy the model.
