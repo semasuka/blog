@@ -25,7 +25,7 @@ Here is the roadmap we will follow:
 - Finally, deploy the model.
 
 
-The goal is to predict whether an application for a credit card will be approved or not, using the applicant data.
+The goal is to predict whether an application for a credit card will be approved or not, using the applicant data. 
 
 I chose this project because when applying for a loan, credit card, or any other type of credit at any financial institution, there is a hard inquiry that affects your credit score negatively. This app predicts the probability of being approved without affecting your credit score. This app can be used by applicants who want to find out if they will be approved for a credit card without affecting their credit score.
 
