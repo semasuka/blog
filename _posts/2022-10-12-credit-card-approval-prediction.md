@@ -1126,7 +1126,7 @@ def value_cnt_norm_cal(df,feature):
 
 ```gen_info_feat``` returned the description, the datatype, statistics, the value counts and frequencies
 
-Note: I have used the switch statement to handle features differently depending on their data type and characteristics. For example, I divided age by 365.25 and changed it to a positive value because it is expressed in days instead of years. Same as employment length; however, we did not print the value count for account age.
+Note: I have used the if statement to handle features differently depending on their data type and characteristics. For example, I divided age by 365.25 and changed it to a positive value because it is expressed in days instead of years. Same as employment length; however, we did not print the value count for account age.
 
 
 ```python
@@ -5695,7 +5695,7 @@ In this project, we touched at pretty much the main processes into carring an en
 - Building a web interface for the model
 - Deploying the model
 
-The only process I would say is missing is Web Scrapping the data because, in the real world, data is not found on Kaggle or clean. Either through source data (could be a file, database, or API), but sometimes we might need to scrap it from a website. Hey! this is an excellent idea for you to apply the knowledge you gained from this project to your project. Try to scrap a website for your next project and create an end-to-end machine- earning project as we did in this post.
+The only process I would say is missing is Web Scrapping the data because, in the real world, data is not found on Kaggle or clean. Data is received either through source data (could be a file, database, or API), but sometimes we might need to scrap it from a website. Hey! this is an excellent idea for you to apply the knowledge you gained from this project to your project. Try to scrap a website for your next project and create an end-to-end machine learning project as we did in this post.
 
 I also want to mention some of the limitations of this project and what could be improved:
   - This model only predicts if an applicant is approved or not for a credit card, we could combine this model with a regression model to predict how much of a credit limit an applicant will be approved for.
