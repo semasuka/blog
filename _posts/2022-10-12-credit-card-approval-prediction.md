@@ -8,7 +8,7 @@ tags:
 - tutorial
 - classification
 - project
-- Deployment
+- deployment
 ---
 Welcome back, forks! After a long period of not posting here, I am happy to share that I am back again on MIB. In this post, we will work on an end-to-end machine learning project. I firmly believe this is one of the most detailed and comprehensive end-to-end ML project blog post on the internet. This project is perfect for the beginner in Machine Learning and seasoned ML engineers who could still learn one or two things from this post. This project was featured on Luke Barousse Youtube channel, click [here](https://www.youtube.com/watch?v=5Q0gB7imNOo&t=222s) to watch the video.<!-- more -->
 
