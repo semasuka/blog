@@ -13,13 +13,11 @@ I firmly believe that ***anyone***, with enough commitment and perseverance (gon
 
 This one is different. This blog helps anyone who is interested in Machine Learning but doesn't have a clue where to start because many blogs out there assume that you already a bad*ss data scientist. I said to myself why not create a resource that show case what I am learning.
 
-I write on topics ranging from programming, a little bit of maths used in machine learning, SQL, data analysis to model optimization used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced topic.
+I write on topics ranging from programming, machine learning models and little bit of maths behind them, SQL, data analysis to model optimization used in machine learning through easy to understand projects. The post starts from the beginner level of machine learning to more advanced topic.
 
 # About the blog
 
-This blog is ranked among [the top Machine Learning blogs online](https://blog.feedspot.com/machine_learning_blogs/). The blog itself is built using [Jekyll](https://jekyllrb.com "Jekyll").
-
-If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge should be shared), do a pull request on GitHub [here](https://github.com/semasuka/blog).
+The blog is built using [Jekyll](https://jekyllrb.com "Jekyll"). If you wish to use this blog as a template to create your own blog or to contribute to this project (as I am a strong believer that knowledge should be shared), do a pull request on GitHub [here](https://github.com/semasuka/blog).
 
 # Contact the author
 
