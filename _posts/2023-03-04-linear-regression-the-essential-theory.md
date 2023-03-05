@@ -43,7 +43,7 @@ Using the graph, given an unemployment rate of city F = 1.2, the predicted consu
 
 ### Sum Squared Error (SSE)
 
-However, our model is not perfect (and it should not be because otherwise, it might be overfitting the data, meaning we won't be able to predict untrained data). It has errors (also called residual, as discussed earlier), meaning it has actual and predicted data; the difference is the pink dot line.
+However, our model is not perfect (and it should not be because otherwise, it might be overfitting the data, meaning we won't be able to predict untrained data). It has errors (also called residual, as discussed earlier), meaning it has actual and predicted data.
 
 ![error_us_vs_cs](/blog/assets/post_cont_image/error_us_vs_cs.jpg)
 
