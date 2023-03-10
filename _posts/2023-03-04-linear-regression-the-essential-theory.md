@@ -116,7 +116,7 @@ So now let's find the MSE of the 8 cites(A, B,C, D,E, F,G, H); we take the SSE o
 
 MSE is a better metric to use than SSE, but this metric could also be better; let's see this in an example.
 
-Let's change the scale of how we are expression the dependent variable(consumer spending), so instead of expressing it in units of 10s, let's define it in units of 10,000s
+Let's change the scale of how we are expressing the dependent variable(consumer spending), so instead of expressing it in units of 10s, let's define it in units of 10,000s
 
 ![scaled_consumer_spending](/blog/assets/post_cont_image/scalled_cs.jpg)
 
@@ -168,7 +168,7 @@ If SSE (mean) = SSE (line of best fit) or if R² = 0, that means that the two mo
 
     R² = SSE(mean) - SSE(line of best fit)/SSE(mean)
 
-* Those with a background in statistics might wonder if R² is related to Pearson's correlation coefficient (r). yes, it.
+* Those with a background in statistics might wonder if R² is related to Pearson's correlation coefficient (r). yes, it is.
 
     The Pearson correlation coefficient measures the strength and direction of the linear relationship between two variables. It ranges from -1 to 1, where -1 indicates a perfect negative linear relationship, 0 shows no linear association, and 1 indicates a perfect positive linear relationship.
 
