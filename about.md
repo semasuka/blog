@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About the author
 
-Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a data engineer based in Calgary and currently working at [Westjet](https://www.westjet.com/en-ca). I'm interested in using machine learning to solve humankind challenges especially in the finance sector. The act of writing posts helps to explain complex topics in simple words using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
+Hi there! welcome to Machine Intelligence Blog! I'm Stern Semasuka, and I'm a data engineer based in Calgary and currently working at [Westjet](https://www.westjet.com/en-ca). I'm interested in using machine learning to solve humankind challenges especially in the finance and aviation sector. The act of writing posts helps to explain complex topics in simple words using the [Feynman Technique](https://www.youtube.com/watch?v=_f-qkGJBPts).
 
 I firmly believe that ***anyone***, with enough commitment and perseverance (gonna need a lot of it 😉), can learn and understand machine learning and start using it right away to solve challenges.
 
